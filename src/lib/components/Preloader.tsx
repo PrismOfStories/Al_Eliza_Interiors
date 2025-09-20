@@ -13,10 +13,9 @@ export default function Preloader() {
     const timers: NodeJS.Timeout[] = [];
 
     setStep("words");
-    // faster sequence timings:
-    timers.push(setTimeout(() => setStep("brand"), 1500)); // was 3000
-    timers.push(setTimeout(() => setStep("swipe"), 3000)); // was 6000
-    timers.push(setTimeout(() => setStep("done"), 3500)); // was 7000
+    timers.push(setTimeout(() => setStep("brand"), 1500));
+    timers.push(setTimeout(() => setStep("swipe"), 3000));
+    timers.push(setTimeout(() => setStep("done"), 3500));
 
     return () => timers.forEach(clearTimeout);
   }, []);
@@ -27,7 +26,7 @@ export default function Preloader() {
         <motion.div
           className={cn(
             "fixed inset-0 z-[9999] flex items-center justify-center",
-            step === "swipe" ? "bg-black/90" : "bg-black"
+            step === "swipe" ? "bg-brown/40" : "bg-background"
           )}
           initial={{ y: 0 }}
           animate={step === "swipe" ? { y: "-100%" } : { y: 0 }}
@@ -35,7 +34,7 @@ export default function Preloader() {
           transition={{ duration: 0.5, ease: "easeInOut" }} // was 1
         >
           {step === "words" && (
-            <div className="flex gap-4 text-5xl text-white">
+            <div className="flex gap-4 text-5xl text-gold">
               <motion.span
                 key="Inspired"
                 initial={{ y: 40, opacity: 0 }}
@@ -71,7 +70,7 @@ export default function Preloader() {
           {step === "brand" && (
             <motion.div className="relative flex items-center justify-center overflow-hidden h-full w-full">
               <motion.div
-                className="absolute inset-0 bg-white origin-left h-16 w-64 mx-auto my-auto"
+                className="absolute inset-0 bg-gold-dark origin-left h-16 w-64 mx-auto my-auto"
                 initial={{ scaleX: 0, x: 0 }}
                 animate={{ scaleX: [0, 1, 1], x: [0, "40%", 0] }}
                 transition={{
@@ -82,7 +81,7 @@ export default function Preloader() {
                 exit={{ scaleX: [1, 1, 0] }}
               />
               <motion.h1
-                className="relative text-5xl font-extrabold text-[#DAA520]"
+                className="relative text-5xl font-extrabold text-background"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4, ease: "easeInOut", delay: 0.5 }} // was 0.8/1
