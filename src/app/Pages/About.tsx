@@ -100,7 +100,7 @@ function About() {
 
     return (
         <>
-            <section className="relative w-full h-[90vh] flex items-center justify-center">
+            <section className="relative w-full h-[90vh] flex items-center justify-center mt-16">
                 {/* Background Image */}
                 <Image
                     src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"

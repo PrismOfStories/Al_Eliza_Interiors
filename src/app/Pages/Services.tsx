@@ -34,7 +34,7 @@ const services = [
     description:
       "Navigating Dubai's regulatory landscape is a critical part of any commercial interior project. We manage the entire approval process, liaising with building owners, developers, and government bodies across Dubai and the UAE.",
     image:
-      "https://res.cloudinary.com/dxhmpdzgqj/image/upload/v1753375128/about_3_tp5mmt.webp",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img1_crbyqj.webp",
   }
 ];
 
