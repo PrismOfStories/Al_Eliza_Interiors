@@ -91,12 +91,6 @@ function About() {
     };
 
 
-    const stats = [
-        { value: "98%", label: "Customer Satisfaction Rate", desc: "Our clients consistently rate their experience as excellent." },
-        { value: "250+", label: "Projects Completed", desc: "Our clients consistently rate their experience as excellent." },
-        { value: "64%", label: "Repeat Client Rate", desc: "A majority of our clients trust us again for new projects." },
-    ];
-
 
     return (
         <>

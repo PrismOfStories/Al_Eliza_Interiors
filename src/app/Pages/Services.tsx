@@ -80,7 +80,7 @@ export default function ServicesCombined() {
           });
         }, 60);
       } catch (e) {
-        // split-type not available — ignore gracefully
+        console.log("Split type error:", e)
       }
     })();
 
