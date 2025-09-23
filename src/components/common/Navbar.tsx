@@ -55,7 +55,7 @@ export default function Navbar() {
               <Link href="/our-story">Our Story</Link>
             </li>
             <li className="hover:text-gold">
-              <Link href="/solutions">Solutions</Link>
+              <Link href="/services">Solutions</Link>
             </li>
             <li className="hover:text-gold">
               <Link href="/projects">Projects</Link>

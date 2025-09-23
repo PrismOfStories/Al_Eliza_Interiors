@@ -49,20 +49,20 @@ export default function About() {
               className="space-y-6 text-gray-700 text-lg leading-relaxed max-w-xl"
             >
               <p>
-                <span className="text-amber-600 italic font-medium">
+                <span className="text-gold italic font-medium">
                   Established in 2021
                 </span>
               </p>
 
               <p>
                 At{" "}
-                <span className="text-amber-600 italic font-medium">
+                <span className="text-gold italic font-medium">
                   Al Eliza Interior Design
                 </span>
                 , we transform residential and commercial spaces into refined,
                 functional environments. Our designs elevate mood, enhance
                 utility, and add lasting value. Collaborating closely, we craft{" "}
-                <span className="text-amber-600 italic font-medium">
+                <span className="text-gold italic font-medium">
                   elegant yet practical
                 </span>{" "}
                 interiors that leave remarkable first impressions.
@@ -70,7 +70,7 @@ export default function About() {
 
               <p>
                 Ready to begin?{" "}
-                <span className="text-amber-600 italic font-medium">
+                <span className="text-gold italic font-medium">
                   Contact us
                 </span>{" "}
                 to bring your vision to life.
@@ -83,7 +83,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               className="pt-4"
             >
-              <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg font-medium transition-colors duration-300 group">
+              <button className="bg-gold hover:bg-amber-700 text-white px-8 py-4 text-lg font-medium transition-colors duration-300 group">
                 Tell us about your project
                 <svg
                   className="inline-block ml-3 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
