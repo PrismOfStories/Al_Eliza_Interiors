@@ -43,7 +43,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} bg-background antialiased`}
       >
-        {/* <Preloader /> */}
+        <Preloader />
         <Navbar />
         <SmoothScroll />
         {children}

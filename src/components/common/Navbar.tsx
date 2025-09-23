@@ -28,58 +28,51 @@ export default function Navbar() {
       className={[
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "md:bg-white md:backdrop-blur-md  text-3xl md:text-4xl"
+          ? "md:bg-white md:backdrop-blur-md text-3xl md:text-4xl"
           : "bg-transparent text-3xl md:text-5xl",
       ].join(" ")}
     >
       <div className="mx-auto max-w-[110rem] px-6 py-4">
-        <div className="flex items-start justify-between text-brown   font-bebas-neue">
-          <p className="">Logo</p>
+        <div className="flex items-start justify-between text-brown font-bebas-neue">
+          <p>Logo</p>
 
-          {/* Desktop links: only on home; vertical at top, horizontal after scroll */}
-          {isHome && (
-            <ul
-              className={[
-                "hidden md:flex transition-all duration-300",
-                scrolled
+          {/* Desktop links */}
+          <ul
+            className={[
+              "hidden md:flex transition-all duration-300",
+              // Home: vertical at top, row after scroll; Other pages: always row
+              isHome
+                ? scrolled
                   ? "flex-row items-center space-x-8"
-                  : "flex-col items-end space-y-4",
-              ].join(" ")}
-            >
-              <li className="hover:text-gold">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="hover:text-gold">
-                <Link href="/our-story">Our Story</Link>
-              </li>
-              <li className="hover:text-gold">
-                <Link href="/solutions">Solutions</Link>
-              </li>
-              <li className="hover:text-gold">
-                <Link href="/projects">Projects</Link>
-              </li>
-              <li className="hover:text-gold">
-                <Link href="/get-in-touch">Get In Touch</Link>
-              </li>
-            </ul>
-          )}
+                  : "flex-col items-end space-y-4"
+                : "flex-row items-center space-x-8",
+            ].join(" ")}
+          >
+            <li className="hover:text-gold">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="hover:text-gold">
+              <Link href="/our-story">Our Story</Link>
+            </li>
+            <li className="hover:text-gold">
+              <Link href="/solutions">Solutions</Link>
+            </li>
+            <li className="hover:text-gold">
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li className="hover:text-gold">
+              <Link href="/get-in-touch">Get In Touch</Link>
+            </li>
+          </ul>
 
+          {/* Mobile menu button (always shown on small screens) */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="hover:text-gold text-2xl md:text-3xl md:hidden"
+            className="hover:text-gold text-2xl md:hidden"
             aria-label="Open menu"
           >
             Menu
           </button>
-          {!isHome && (
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="hover:text-gold text-3xl hidden md:block"
-              aria-label="Open menu"
-            >
-              Menu
-            </button>
-          )}
         </div>
       </div>
 
@@ -107,7 +100,7 @@ export default function Navbar() {
             >
               <button
                 onClick={() => setMenuOpen(false)}
-                className="absolute top-6 right-6 text-3xl cursor-pointer"
+                className="absolute top-6 right-6 text-3xl"
                 aria-label="Close menu"
               >
                 ✕
