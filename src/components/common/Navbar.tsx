@@ -80,7 +80,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="fixed top-0 left-0 w-screen h-screen bg-gold/30 z-[60]"
+              className="fixed top-0 left-0 w-screen h-screen bg-gold/40 z-[60]"
               onClick={() => setMenuOpen(false)}
             />
 
@@ -90,7 +90,7 @@ export default function Navbar() {
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-              className="fixed top-0 left-0 w-screen h-screen bg-gold z-[70] flex flex-col items-center justify-center text-brown font-bebas-neue text-4xl lg:text-5xl space-y-8"
+              className="fixed top-0 left-0 w-screen h-screen bg-brown z-[70] flex flex-col items-center justify-center text-gold-dark font-bebas-neue text-4xl lg:text-5xl space-y-8"
             >
               <button
                 onClick={() => setMenuOpen(false)}
