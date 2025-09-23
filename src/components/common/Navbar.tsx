@@ -1,100 +1,114 @@
 "use client";
 
-import { cn } from "@/lib/utils/tailwind";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    function handleScroll() {
-      setScrolled(window.scrollY > 0);
-    }
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
+    document.body.classList.toggle("overflow-hidden", menuOpen);
     return () => document.body.classList.remove("overflow-hidden");
   }, [menuOpen]);
 
   return (
-    <>
-      <div
-        className={cn(
-          "flex justify-between items-start p-6 text-brown w-screen text-3xl md:text-5xl font-bebas-neue fixed top-0 left-0 z-50 transition-colors duration-300",
-          scrolled ? "bg-transparent" : "bg-transparent"
-        )}
-      >
-        <p>Logo</p>
+    <nav
+      className={[
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled
+          ? "md:bg-white md:backdrop-blur-md  text-3xl md:text-4xl"
+          : "bg-transparent text-3xl md:text-5xl",
+      ].join(" ")}
+    >
+      <div className="mx-auto max-w-[110rem] px-6 py-4">
+        <div className="flex items-start justify-between text-brown   font-bebas-neue">
+          <p className="">Logo</p>
 
-        {!scrolled && (
-          <ul className="hidden md:flex flex-col items-end space-y-4">
-            <li className="hover:text-gold cursor-pointer">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="hover:text-gold cursor-pointer">
-              <Link href="/our-story">Our Story</Link>
-            </li>
-            <li className="hover:text-gold cursor-pointer">
-              <Link href="/solutions">Solutions</Link>
-            </li>
-            <li className="hover:text-gold cursor-pointer">
-              <Link href="/projects">Projects</Link>
-            </li>
-            <li className="hover:text-gold cursor-pointer">
-              <Link href="/get-in-touch">Get In Touch</Link>
-            </li>
-          </ul>
-        )}
+          {/* Desktop links: only on home; vertical at top, horizontal after scroll */}
+          {isHome && (
+            <ul
+              className={[
+                "hidden md:flex transition-all duration-300",
+                scrolled
+                  ? "flex-row items-center space-x-8"
+                  : "flex-col items-end space-y-4",
+              ].join(" ")}
+            >
+              <li className="hover:text-gold">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="hover:text-gold">
+                <Link href="/our-story">Our Story</Link>
+              </li>
+              <li className="hover:text-gold">
+                <Link href="/solutions">Solutions</Link>
+              </li>
+              <li className="hover:text-gold">
+                <Link href="/projects">Projects</Link>
+              </li>
+              <li className="hover:text-gold">
+                <Link href="/get-in-touch">Get In Touch</Link>
+              </li>
+            </ul>
+          )}
 
-        {((scrolled && !menuOpen) || !scrolled) && (
-          <p
-            className={cn(
-              "hover:text-gold cursor-pointer",
-              "block md:hidden",
-              scrolled ? "md:block" : "md:hidden"
-            )}
+          <button
             onClick={() => setMenuOpen(true)}
+            className="hover:text-gold text-2xl md:text-3xl md:hidden"
+            aria-label="Open menu"
           >
             Menu
-          </p>
-        )}
+          </button>
+          {!isHome && (
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="hover:text-gold text-3xl hidden md:block"
+              aria-label="Open menu"
+            >
+              Menu
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* SLIDING MENU / OVERLAY */}
+      {/* Overlay / Menu Drawer */}
       <AnimatePresence>
         {menuOpen && (
           <>
-            <motion.div
+            <motion.button
               key="overlay"
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="fixed top-0 left-0 w-screen h-screen bg-gold/40 z-[60]"
+              className="fixed inset-0 bg-gold/40 z-[60]"
               onClick={() => setMenuOpen(false)}
+              aria-label="Close menu overlay"
             />
-
             <motion.div
               key="menu"
               initial={{ y: "-100%" }}
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-              className="fixed top-0 left-0 w-screen h-screen bg-brown z-[70] flex flex-col items-center justify-center text-gold-dark font-bebas-neue text-4xl lg:text-5xl space-y-8"
+              className="fixed inset-0 bg-brown z-[70] flex flex-col items-center justify-center text-gold-dark font-bebas-neue text-4xl lg:text-5xl space-y-8"
             >
               <button
                 onClick={() => setMenuOpen(false)}
                 className="absolute top-6 right-6 text-3xl cursor-pointer"
+                aria-label="Close menu"
               >
                 ✕
               </button>
@@ -138,6 +152,6 @@ export default function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </>
+    </nav>
   );
 }

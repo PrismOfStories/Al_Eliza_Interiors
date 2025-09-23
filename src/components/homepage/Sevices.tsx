@@ -105,7 +105,7 @@ function ServiceItem({
   return (
     <div
       ref={ref}
-      className="service flex flex-col md:flex-row items-stretch p-5 border-b border-brown bg-white"
+      className="service flex flex-col md:flex-row items-stretch p-5 border-b border-brown bg-white  "
     >
       <div className="service-info flex flex-col justify-between p-4 md:max-w-xl">
         <div className="mb-4">

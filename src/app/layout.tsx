@@ -3,7 +3,7 @@ import { Bebas_Neue, Geist, Geist_Mono, Unbounded } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/lib/components/Preloader";
 import Navbar from "@/components/common/Navbar";
-// import SmoothScroll from "@/components/common/SmoothScroll";
+import SmoothScroll from "@/components/common/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +45,7 @@ export default function RootLayout({
       >
         {/* <Preloader /> */}
         <Navbar />
-        {/* <SmoothScroll /> */}
+        <SmoothScroll />
         {children}
       </body>
     </html>
