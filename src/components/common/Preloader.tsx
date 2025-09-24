@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils/tailwind";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { cn } from "../utils/tailwind";
 
 export default function Preloader() {
   const [step, setStep] = useState<"words" | "brand" | "swipe" | "done">(
@@ -40,7 +40,7 @@ export default function Preloader() {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0 }} // was 0.4
-                className="font-extralight"
+                className="font-light text-neutral-500"
               >
                 Inspired
               </motion.span>
@@ -50,7 +50,7 @@ export default function Preloader() {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.25 }} // was 0.5
-                className="font-bold"
+                className="font-bold text-neutral-200"
               >
                 Creative
               </motion.span>
@@ -60,7 +60,7 @@ export default function Preloader() {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.5 }} // was 1
-                className="font-extralight"
+                className="font-light text-neutral-500"
               >
                 Functional
               </motion.span>
@@ -70,9 +70,9 @@ export default function Preloader() {
           {step === "brand" && (
             <motion.div className="relative flex items-center justify-center overflow-hidden h-full w-full">
               <motion.div
-                className="absolute inset-0 bg-gold-dark origin-left h-16 w-64 mx-auto my-auto"
-                initial={{ scaleX: 0, x: 0 }}
-                animate={{ scaleX: [0, 1, 1], x: [0, "40%", 0] }}
+                className="absolute inset-0 bg-neutral-800 origin-left h-16 w-64 mx-auto my-auto"
+                initial={{ scaleX: 0, x: 0, skewX: -20 }}
+                animate={{ scaleX: [0, 1, 1], x: [0, "40%", 0], skewX: -20 }}
                 transition={{
                   duration: 1,
                   ease: "easeInOut",
@@ -81,7 +81,7 @@ export default function Preloader() {
                 exit={{ scaleX: [1, 1, 0] }}
               />
               <motion.h1
-                className="relative text-5xl font-extrabold text-background"
+                className="relative text-5xl font-extrabold text-white"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4, ease: "easeInOut", delay: 0.5 }} // was 0.8/1

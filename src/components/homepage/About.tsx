@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
 import { motion, Transition, useInView } from "framer-motion";
+import { FaChevronRight } from "react-icons/fa6";
 
 export default function About() {
   const [order, setOrder] = useState(initialOrder);
@@ -20,7 +21,7 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="bg-background py-24  px-4 md:px-8 lg:px-16 min-h-screen flex flex-col justify-center"
+      className="bg-[#fbfbfb] rounded py-24 px-4 md:px-8 lg:px-16 min-h-screen flex flex-col justify-center"
     >
       <div className="w-full max-w-[90rem] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -28,7 +29,7 @@ export default function About() {
           <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}} // only animate when in view
+              animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="space-y-4"
             >
@@ -46,7 +47,7 @@ export default function About() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="space-y-6 text-gray-700 text-lg leading-relaxed max-w-xl"
+              className="space-y-6 text-brown text-lg leading-relaxed max-w-xl"
             >
               <p>
                 <span className="text-gold italic font-medium">
@@ -70,9 +71,7 @@ export default function About() {
 
               <p>
                 Ready to begin?{" "}
-                <span className="text-gold italic font-medium">
-                  Contact us
-                </span>{" "}
+                <span className="text-gold italic font-medium">Contact us</span>{" "}
                 to bring your vision to life.
               </p>
             </motion.div>
@@ -83,21 +82,11 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               className="pt-4"
             >
-              <button className="bg-gold hover:bg-amber-700 text-white px-8 py-4 text-lg font-medium transition-colors duration-300 group">
-                Tell us about your project
-                <svg
-                  className="inline-block ml-3 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+              <button className="group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-4 text-lg font-medium transition-colors duration-300 [transform:skewX(-20deg)]">
+                <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                  Tell us about your project
+                  <FaChevronRight />
+                </span>
               </button>
             </motion.div>
           </div>

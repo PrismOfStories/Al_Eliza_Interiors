@@ -1,6 +1,6 @@
 import React from "react";
-import About from "@/app/Pages/About";
+import OurStory from "@/components/pages/OurStory";
 
 export default function page() {
-  return <About />;
+  return <OurStory />;
 }

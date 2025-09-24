@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Geist, Geist_Mono, Unbounded } from "next/font/google";
 import "./globals.css";
-import Preloader from "@/lib/components/Preloader";
+import Preloader from "@/components/common/Preloader";
 import Navbar from "@/components/common/Navbar";
 import SmoothScroll from "@/components/common/SmoothScroll";
 

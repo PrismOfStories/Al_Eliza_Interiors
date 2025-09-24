@@ -1,21 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-// small helper hook to detect mobile width
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const update = () => setIsMobile(window.innerWidth < 768);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-  return isMobile;
-}
-
+// Main Services component
 export default function Services() {
   const services = [
     {
@@ -78,6 +66,7 @@ export default function Services() {
   );
 }
 
+// Individual Service Item
 function ServiceItem({
   service,
   index,
@@ -85,31 +74,14 @@ function ServiceItem({
   service: { title: string; description: string; image: string };
   index: number;
 }) {
-  const isMobile = useIsMobile();
-  const ref = useRef<HTMLDivElement>(null);
-
-  // only run scroll animation on desktop
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1 0"],
-  });
-
-  // width & height transformations
-  const rawWidth = useTransform(scrollYProgress, [0, 1], ["30%", "100%"]);
-  const rawHeight = useTransform(scrollYProgress, [0, 1], ["300px", "450px"]);
-
-  // spring for smoother interpolation
-  const width = useSpring(rawWidth, { stiffness: 120, damping: 20 });
-  const height = useSpring(rawHeight, { stiffness: 120, damping: 20 });
-
   return (
-    <div
-      ref={ref}
-      className="service flex flex-col md:flex-row items-stretch p-5 border-b border-brown bg-white  "
-    >
+    <div className="service flex flex-col md:flex-row items-stretch p-5 border-b border-neutral-700 text-neutral-200 lg:gap-20">
+      {/* Left Info */}
       <div className="service-info flex flex-col justify-between p-4 md:max-w-xl">
         <div className="mb-4">
-          <span className="text-4xl font-medium block mb-2">0{index + 1}.</span>
+          <span className="text-4xl font-medium block mb-2 text-neutral-400">
+            0{index + 1}.
+          </span>
           <h1 className="text-3xl md:text-5xl font-semibold">
             {service.title}
           </h1>
@@ -119,32 +91,17 @@ function ServiceItem({
         </p>
       </div>
 
-      <div className="service-img md:w-full w-full h-full p-4 flex items-start justify-start">
-        {isMobile ? (
-          // no animation on mobile, just full width
-          <div className="relative w-full h-[300px] rounded overflow-hidden">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-cover"
-              sizes="(max-width:768px) 100vw, 50vw"
-            />
-          </div>
-        ) : (
-          <motion.div
-            style={{ width, height }}
-            className="relative rounded overflow-hidden"
-          >
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-cover"
-              sizes="(max-width:768px) 100vw, 50vw"
-            />
-          </motion.div>
-        )}
+      {/* Right Image */}
+      <div className="service-img md:w-full w-full p-4 flex items-start justify-start min-h-[300px]">
+        <motion.div className="relative h-[300px] lg:h-[450px] w-full overflow-hidden">
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            className="object-cover"
+            sizes="(max-width:768px) 100vw, 50vw"
+          />
+        </motion.div>
       </div>
     </div>
   );

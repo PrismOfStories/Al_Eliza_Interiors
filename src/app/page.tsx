@@ -25,12 +25,12 @@ export default function Home() {
       <Hero />
 
       {/* Scroll Animation Section */}
-      <div className="relative bg-white min-h-screen">
+      <div className="relative bg-black min-h-screen">
         <ScrollContainer>
           <ScrollPage>
             <Animator animation={batch(FadeIn(), Sticky(), MoveOut(0, -200))}>
               <div className="flex items-center justify-center min-h-screen">
-                <span className="text-3xl font-light tracking-widest uppercase text-brown">
+                <span className="text-3xl font-light tracking-widest uppercase text-white">
                   Welcome to Al-Eliza Interiors
                 </span>
               </div>
@@ -40,7 +40,7 @@ export default function Home() {
           <ScrollPage>
             <Animator animation={ZoomInScrollOut}>
               <div className="flex items-center justify-center min-h-screen text-center">
-                <span className="text-[42px] font-bold font-bebas-neue leading-tight text-brown">
+                <span className="text-[42px] font-bold font-bebas-neue leading-tight text-white">
                   Crafting Spaces <br /> That Inspire & Delight
                 </span>
               </div>
@@ -50,7 +50,7 @@ export default function Home() {
           <ScrollPage>
             <Animator animation={batch(Fade(), Sticky())}>
               <div className="flex items-center justify-center min-h-screen text-center">
-                <span className="text-xl lg:text-2xl font-semibold italic text-brown max-w-xl p-8 block">
+                <span className="text-xl lg:text-2xl font-semibold italic text-white max-w-xl p-8 block">
                   Experience the art of refined living. <br />
                   Contact us to begin your design journey.
                 </span>
@@ -63,8 +63,8 @@ export default function Home() {
       <About />
 
       {/* Services Section */}
-      <section className="bg-white py-28 lg:py-40 ">
-        <p className="text-right w-full max-w-[90rem] mx-auto text-xl lg:text-8xl font-bebas-neue font-medium text-brown mb-5">
+      <section className="py-28 lg:py-40 ">
+        <p className="text-left lg:text-right w-full lg:max-w-[90rem] mx-auto text-6xl lg:text-9xl font-bebas-neue font-medium text-[#878787] mb-5">
           solutions
         </p>
         <hr className="bg-brown mb-5" />

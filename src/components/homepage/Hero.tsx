@@ -27,7 +27,7 @@ export default function Hero() {
       {/* VIDEO BACKGROUND */}
       {showVideo && (
         <video
-          className="absolute inset-0 w-full h-full object-cover -z-10"
+          className="absolute inset-0 w-full h-full object-cover -z-10 preload-asset"
           src="https://res.cloudinary.com/dxhmpdgqj/video/upload/v1758311809/intro-video_gyb10k.mp4"
           autoPlay
           loop

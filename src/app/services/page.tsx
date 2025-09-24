@@ -1,5 +1,5 @@
 import React from "react";
-import Services from "@/app/Pages/Services";
+import Services from "@/components/pages/Services";
 
 export default function page() {
   return <Services />;

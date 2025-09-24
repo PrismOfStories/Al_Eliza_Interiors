@@ -35,7 +35,7 @@ const services = [
       "Navigating Dubai's regulatory landscape is a critical part of any commercial interior project. We manage the entire approval process, liaising with building owners, developers, and government bodies across Dubai and the UAE.",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img1_crbyqj.webp",
-  }
+  },
 ];
 
 export default function ServicesCombined() {
@@ -80,7 +80,7 @@ export default function ServicesCombined() {
           });
         }, 60);
       } catch (e) {
-        console.log("Split type error:", e)
+        console.log("Split type error:", e);
       }
     })();
 
@@ -93,7 +93,11 @@ export default function ServicesCombined() {
 
   // Main scroll behavior: preload images, animate overlays, crossfade images
   useEffect(() => {
-    if (!containerRef.current || !imageFrontRef.current || !imageBackRef.current)
+    if (
+      !containerRef.current ||
+      !imageFrontRef.current ||
+      !imageBackRef.current
+    )
       return;
 
     let tlHandles: gsap.core.Timeline[] = [];
@@ -123,7 +127,11 @@ export default function ServicesCombined() {
         const newSrc = services[i].image;
 
         // put new image into the back layer
-        gsap.set(back, { backgroundImage: `url(${newSrc})`, opacity: 0, zIndex: 3 });
+        gsap.set(back, {
+          backgroundImage: `url(${newSrc})`,
+          opacity: 0,
+          zIndex: 3,
+        });
         gsap.set(front, { zIndex: 2 });
 
         // animate back layer in, then copy to front and reset back
@@ -228,14 +236,18 @@ export default function ServicesCombined() {
         {/* Short intro paragraph */}
         <div className="max-w-7xl mx-auto text-center mb-12 px-6">
           <p className="text-gray-800 text-lg md:text-xl mt-4 max-w-3xl mx-auto leading-relaxed">
-            We offer a comprehensive range of architectural services — from initial
-            concept to final construction. Our approach combines creativity,
-            precision, and collaboration to bring purposeful spaces to life.
+            We offer a comprehensive range of architectural services — from
+            initial concept to final construction. Our approach combines
+            creativity, precision, and collaboration to bring purposeful spaces
+            to life.
           </p>
         </div>
 
         {/* Services Section */}
-        <section ref={containerRef} className="relative w-full min-h-screen flex">
+        <section
+          ref={containerRef}
+          className="relative w-full min-h-screen flex"
+        >
           {/* Left: Text content (triggers) */}
           <div className="w-full md:w-1/2 flex flex-col gap-40 py-36 px-12">
             {services.map((service, idx) => (
