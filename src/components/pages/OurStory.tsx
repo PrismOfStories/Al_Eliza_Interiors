@@ -94,28 +94,28 @@ function About() {
 
   return (
     <>
-      <section className="relative w-full h-[90vh] flex items-center justify-center mt-16">
+      <section className="relative w-full h-[90vh] flex items-center justify-center">
         {/* Background Image */}
-        {/* <Image
+        <Image
           src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
           alt="Background"
           fill
           className="object-cover"
           priority
-        /> */}
+        /> 
 
         {/* Overlay */}
-        {/* <div className="absolute inset-0 bg-black/40"></div> */}
+         <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-end text-right">
-          <p className="text-[#878787] text-xl md:text-xl lg:text-2xl mb-6 max-w-2xl">
+          <p className="text-gray-300 text-xl md:text-xl lg:text-2xl mb-6 max-w-2xl">
             We&apos;ve worked with over 120 clients to transform homes, gardens,
             and interiors with care. Our approach blends function, beauty, and
             personal style.
           </p>
-          <h1 className="text-[#878787] text-5xl md:text-8xl lg:text-[8rem] font-bold leading-tight">
-            About Aleliza
+          <h1 className="text-white text-5xl md:text-8xl lg:text-[8rem] font-bold leading-tight">
+            About Al Eliza
           </h1>
         </div>
       </section>
@@ -135,7 +135,7 @@ function About() {
             {/* Right side - Description (2/3 width) */}
             <div className="col-span-2 text-left">
               <h2 className="text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
-                At Revana Studio, we transform spaces with{" "}
+                At  AL Eliza, we transform spaces with{" "}
                 <span className="font-bold">thoughtful design and care</span> —{" "}
                 <span className="text-white">
                   creating spaces that inspire, nurture, and reflect your unique
@@ -251,7 +251,7 @@ function About() {
                 repeat: Infinity,
                 repeatType: "loop",
                 ease: "linear",
-                duration: 25,
+                duration: 23,
               }}
             >
               {[...logos, ...logos].map((logo, i) => (
