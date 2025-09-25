@@ -1,8 +1,8 @@
 "use client";
 
+import ServiceCard from "@/components/common/ServiceCard";
 import About from "@/components/homepage/About";
 import Hero from "@/components/homepage/Hero";
-import Services from "@/components/homepage/Sevices";
 import {
   Animator,
   ScrollContainer,
@@ -18,9 +18,66 @@ import {
 
 export default function Home() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
-
+  const projects = [
+    {
+      title: "Residential & Commercial Designs",
+      description:
+        "We provide tailored interior design solutions for residential and commercial spaces with elegance and functionality.",
+      src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
+      url: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
+      color: "#000000", // fallback color if needed
+    },
+    {
+      title: "Design Consultancy",
+      description:
+        "Expert design consultations to turn your vision into reality, from layout planning to final finishes.",
+      src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img1_crbyqj.webp",
+      url: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
+      color: "#000000",
+    },
+    {
+      title: "Virtual Reality 360° Designs",
+      description:
+        "Experience your space before it's built with immersive 360° VR walkthroughs and visualizations.",
+      src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img5_nsn0nj.webp",
+      url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
+      color: "#000000",
+    },
+    {
+      title: "Fit out Approvals",
+      description:
+        "We manage and secure fit-out approvals with relevant authorities to ensure smooth project execution.",
+      src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img2_oziylz.webp",
+      url: "https://www.ignant.com/2019/03/13/a-photographic-series-depicting-the-uncertain-future-of-denmarks-treasured-coastlines/",
+      color: "#000000",
+    },
+    {
+      title: "Turnkey Fit out Projects",
+      description:
+        "From concept to completion we handle every aspect of your project with end-to-end solutions.",
+      src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/img3_u7qqdu.webp",
+      url: "https://www.ignant.com/2023/04/12/mark-rammers-all-over-again-is-a-study-of-regret-and-the-willingness-to-move-forward/",
+      color: "#000000",
+    },
+    {
+      title: "Landscaping",
+      description:
+        "Transform your outdoor spaces with creative and sustainable landscaping solutions.",
+      src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/about_3_tp5mmt.webp",
+      url: "https://www.ignant.com/2023/04/12/mark-rammers-all-over-again-is-a-study-of-regret-and-the-willingness-to-move-forward/",
+      color: "#000000",
+    },
+    {
+      title: "Maintenance",
+      description:
+        "Comprehensive maintenance services to keep your spaces functional, safe, and beautiful.",
+      src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/about_2_ucqtyb.webp",
+      url: "https://www.ignant.com/2023/04/12/mark-rammers-all-over-again-is-a-study-of-regret-and-the-willingness-to-move-forward/",
+      color: "#000000",
+    },
+  ];
   return (
-    <main className="overflow-x-hidden">
+    <main className="">
       {/* Hero Section with Video Background */}
       <Hero />
 
@@ -65,7 +122,9 @@ export default function Home() {
 
       <About />
 
-      <Services />
+      {/* <Services /> */}
+
+      <ServiceCard projects={projects} />
       <div className="h-screen"></div>
     </main>
   );
