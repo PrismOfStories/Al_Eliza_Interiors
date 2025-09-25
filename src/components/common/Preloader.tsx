@@ -13,14 +13,13 @@ export default function Preloader({ onDone }: { onDone?: () => void }) {
     const timers: NodeJS.Timeout[] = [];
 
     setStep("words");
-    timers.push(setTimeout(() => setStep("brand"), 1500));
-    timers.push(setTimeout(() => setStep("swipe"), 3000));
+    timers.push(setTimeout(() => setStep("brand"), 1200));
+    timers.push(setTimeout(() => setStep("swipe"), 2400));
     timers.push(
       setTimeout(() => {
         setStep("done");
-        // Call onDone after animation completes
         setTimeout(() => onDone?.(), 300);
-      }, 3500)
+      }, 2700)
     );
 
     return () => timers.forEach(clearTimeout);
