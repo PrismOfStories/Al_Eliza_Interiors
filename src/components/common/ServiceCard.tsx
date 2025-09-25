@@ -2,8 +2,7 @@
 
 import Card from "@/components/common/CardParallax";
 import { useScroll } from "framer-motion";
-import { useEffect, useRef } from "react";
-import Lenis from "lenis";
+import { useRef } from "react";
 
 interface ServiceProps {
   projects: {
@@ -22,19 +21,6 @@ export default function ServiceCard({ projects }: ServiceProps) {
     target: container,
     offset: ["start start", "end end"],
   });
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => lenis.destroy();
-  }, []);
 
   return (
     <section ref={container} className="relative mt-[50vh]">
