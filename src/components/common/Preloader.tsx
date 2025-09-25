@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils/tailwind";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-export default function Preloader() {
+export default function Preloader({ onDone }: { onDone?: () => void }) {
   const [step, setStep] = useState<"words" | "brand" | "swipe" | "done">(
     "words"
   );
@@ -15,10 +15,16 @@ export default function Preloader() {
     setStep("words");
     timers.push(setTimeout(() => setStep("brand"), 1500));
     timers.push(setTimeout(() => setStep("swipe"), 3000));
-    timers.push(setTimeout(() => setStep("done"), 3500));
+    timers.push(
+      setTimeout(() => {
+        setStep("done");
+        // Call onDone after animation completes
+        setTimeout(() => onDone?.(), 300);
+      }, 3500)
+    );
 
     return () => timers.forEach(clearTimeout);
-  }, []);
+  }, [onDone]);
 
   return (
     <AnimatePresence>
@@ -31,15 +37,15 @@ export default function Preloader() {
           initial={{ y: 0 }}
           animate={step === "swipe" ? { y: "-100%" } : { y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }} // was 1
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           {step === "words" && (
-            <div className="flex gap-4 text-5xl text-gold">
+            <div className="flex flex-col lg:flex-row gap-4 text-5xl text-gold">
               <motion.span
                 key="Inspired"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0 }} // was 0.4
+                transition={{ duration: 0.2, delay: 0 }}
                 className="font-light text-neutral-500"
               >
                 Inspired
@@ -49,7 +55,7 @@ export default function Preloader() {
                 key="Creative"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.25 }} // was 0.5
+                transition={{ duration: 0.2, delay: 0.25 }}
                 className="font-bold text-neutral-200"
               >
                 Creative
@@ -59,7 +65,7 @@ export default function Preloader() {
                 key="Functional"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.5 }} // was 1
+                transition={{ duration: 0.2, delay: 0.5 }}
                 className="font-light text-neutral-500"
               >
                 Functional
@@ -84,7 +90,7 @@ export default function Preloader() {
                 className="relative text-5xl font-extrabold text-white"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.4, ease: "easeInOut", delay: 0.5 }} // was 0.8/1
+                transition={{ duration: 0.4, ease: "easeInOut", delay: 0.5 }}
               >
                 Al Eliza
               </motion.h1>

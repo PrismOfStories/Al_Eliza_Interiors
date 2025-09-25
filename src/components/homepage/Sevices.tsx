@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Main Services component
-export default function Services() {
+export default function HomeServices() {
   const services = [
     {
       title: "Residential & Commercial Designs",
@@ -58,51 +57,56 @@ export default function Services() {
   ];
 
   return (
-    <div className="services bg-background w-full">
-      {services.map((service, i) => (
-        <ServiceItem key={i} service={service} index={i} />
-      ))}
-    </div>
-  );
-}
+    <section className="py-24 lg:py-28 overflow-hidden">
+      <motion.p
+        initial={{ opacity: 0, x: 300 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+        className="text-center lg:text-right w-full lg:max-w-[90rem] mx-auto text-7xl lg:text-9xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
+      >
+        solutions
+      </motion.p>
 
-// Individual Service Item
-function ServiceItem({
-  service,
-  index,
-}: {
-  service: { title: string; description: string; image: string };
-  index: number;
-}) {
-  return (
-    <div className="service flex flex-col md:flex-row items-stretch p-5 border-b border-neutral-700 text-neutral-200 lg:gap-20">
-      {/* Left Info */}
-      <div className="service-info flex flex-col justify-between p-4 md:max-w-xl">
-        <div className="mb-4">
-          <span className="text-4xl font-medium block mb-2 text-neutral-400">
-            0{index + 1}.
-          </span>
-          <h1 className="text-3xl md:text-5xl font-semibold">
-            {service.title}
-          </h1>
-        </div>
-        <p className="text-lg md:text-xl leading-relaxed">
-          {service.description}
-        </p>
-      </div>
+      <hr className="bg-brown mb-5" />
 
-      {/* Right Image */}
-      <div className="service-img md:w-full w-full p-4 flex items-start justify-start min-h-[300px]">
-        <motion.div className="relative h-[300px] lg:h-[450px] w-full overflow-hidden">
-          <Image
-            src={service.image}
-            alt={service.title}
-            fill
-            className="object-cover"
-            sizes="(max-width:768px) 100vw, 50vw"
-          />
-        </motion.div>
+      {/* Services list */}
+      <div className="services bg-background w-full">
+        {services.map((service, i) => (
+          <div
+            key={i}
+            className="service flex flex-col md:flex-row items-center p-5 border-b border-neutral-700 text-neutral-200 lg:gap-20"
+          >
+            {/* Left Info */}
+            <div className="service-info flex flex-col justify-between flex-1 md:max-w-xl p-4 self-stretch">
+              <div className="mb-4">
+                <span className="text-4xl font-medium block mb-2 text-neutral-400">
+                  0{i + 1}.
+                </span>
+                <h1 className="text-3xl md:text-5xl font-semibold">
+                  {service.title}
+                </h1>
+              </div>
+              <p className="text-lg md:text-xl leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+
+            {/* Right Image */}
+            <div className="service-img flex-1 w-full p-4">
+              <motion.div className="relative h-[300px] lg:h-[450px] w-full overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width:768px) 100vw, 50vw"
+                />
+              </motion.div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
