@@ -115,7 +115,7 @@ function About() {
             personal style.
           </p>
           <h1 className="text-white text-5xl md:text-8xl lg:text-[8rem] font-bold leading-tight">
-            About Aleliza
+            About Al Eliza
           </h1>
         </div>
       </section>
@@ -135,7 +135,7 @@ function About() {
             {/* Right side - Description (2/3 width) */}
             <div className="col-span-2 text-left">
               <h2 className="text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
-                At Revana Studio, we transform spaces with{" "}
+                At  AL Eliza, we transform spaces with{" "}
                 <span className="font-bold">thoughtful design and care</span> —{" "}
                 <span className="text-white">
                   creating spaces that inspire, nurture, and reflect your unique
@@ -251,7 +251,7 @@ function About() {
                 repeat: Infinity,
                 repeatType: "loop",
                 ease: "linear",
-                duration: 25,
+                duration: 23,
               }}
             >
               {[...logos, ...logos].map((logo, i) => (

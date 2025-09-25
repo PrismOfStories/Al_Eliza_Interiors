@@ -218,10 +218,10 @@ export default function GetInTouch() {
                     {/* Right Side: Office Image (2/3) */}
                     <div className="relative w-full h-[350px] md:h-[450px] lg:h-[500px] md:col-span-2">
                         <Image
-                            src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
+                            src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/about_2_ucqtyb.webp"
                             alt="Head Office"
                             fill
-                            className="object-cover rounded-lg shadow-lg"
+                            className="object-cover  shadow-lg"
                             priority
                         />
                     </div>
