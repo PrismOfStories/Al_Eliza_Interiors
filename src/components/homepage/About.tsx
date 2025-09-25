@@ -20,7 +20,7 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#fbfbfb] rounded py-20 min-h-screen rounded-t-2xl  lg:py-28 px-6 md:px-8  flex flex-col justify-center z-0"
+      className="bg-[#fbfbfb] rounded py-20 min-h-screen lg:py-28 px-6 md:px-8  flex flex-col justify-center z-0"
     >
       <div className="w-full max-w-[90rem] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">

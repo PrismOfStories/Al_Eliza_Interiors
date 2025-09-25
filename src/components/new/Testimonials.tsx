@@ -1,0 +1,212 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+
+interface Testimonial {
+  id: number;
+  company: string;
+  logo: string;
+  text: string;
+  name: string;
+  title: string;
+  image: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    company: "delaware",
+    logo: "/logos/delaware.svg",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+    name: "Liam Cole",
+    title: "CEO",
+    image: "/avatars/liam.jpg",
+  },
+  {
+    id: 2,
+    company: "Amsterdam",
+    logo: "/logos/amsterdam.svg",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+    name: "Emma Gray",
+    title: "CEO",
+    image: "/avatars/emma.jpg",
+  },
+  {
+    id: 3,
+    company: "sweden",
+    logo: "/logos/sweden.svg",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+    name: "Emily Hill",
+    title: "CEO",
+    image: "/avatars/emily.jpg",
+  },
+  {
+    id: 4,
+    company: "norway",
+    logo: "/logos/norway.svg",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+    name: "Alex Johnson",
+    title: "CTO",
+    image: "/avatars/alex.jpg",
+  },
+  {
+    id: 5,
+    company: "finland",
+    logo: "/logos/finland.svg",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+    name: "Sarah Wilson",
+    title: "CMO",
+    image: "/avatars/sarah.jpg",
+  },
+  {
+    id: 6,
+    company: "denmark",
+    logo: "/logos/denmark.svg",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+    name: "Michael Brown",
+    title: "CEO",
+    image: "/avatars/michael.jpg",
+  },
+];
+
+export default function TestimonialsSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const itemsPerSlide = 3;
+  const totalSlides = Math.ceil(testimonials.length / itemsPerSlide);
+
+  const getCurrentTestimonials = () => {
+    const startIndex = currentSlide * itemsPerSlide;
+    return testimonials.slice(startIndex, startIndex + itemsPerSlide);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const goToSlide = (slideIndex: number) => {
+    setCurrentSlide(slideIndex);
+  };
+
+  return (
+    <section className="relative mx-auto w-full bg-[#FAF7F0] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
+      <div className="mx-auto max-w-7xl">
+        {/* Top Label */}
+        <div className="mb-12 text-center">
+          <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-brown">
+            Happy Clients
+          </div>
+
+          {/* Main Headline */}
+          <h2 className="font-display text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-[#171614]">
+            TESTIMONIALS
+          </h2>
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] bg-[#FAF7F0] backdrop-blur-sm transition-all hover:bg-white hover:shadow-md lg:left-10"
+          aria-label="Previous testimonials"
+        >
+          <svg
+            className="h-5 w-5 text-[#171614]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8]  backdrop-blur-sm transition-all hover:bg-white hover:shadow-md lg:right-10"
+          aria-label="Next testimonials"
+        >
+          <svg
+            className="h-5 w-5 text-brown"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {getCurrentTestimonials().map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="flex flex-col  border border-[#E5E0D8] bg-[#FAF7F0] p-8 shadow-sm transition-all hover:shadow-md"
+            >
+              {/* Company Logo */}
+              <div className="mb-6">
+                <div className="flex h-8 items-center">
+                  <span className="text-lg font-semibold text-brown">
+                    {testimonial.company}
+                  </span>
+                </div>
+              </div>
+
+              {/* Testimonial Text */}
+              <p className="mb-8 flex-1 text-[15px] leading-relaxed text-brown">
+                &ldquo;{testimonial.text}&ldquo;
+              </p>
+
+              {/* Profile Section */}
+              <div className="flex items-center">
+                <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-brown">
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-brown font-medium">
+                    {testimonial.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[15px] font-semibold text-[#171614]">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-[13px] text-[#7A7671]">
+                    {testimonial.title}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Dot Navigation */}
+        <div className="mt-12 flex justify-center space-x-2">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 w-2 rounded-full transition-all ${
+                index === currentSlide
+                  ? "bg-[#171614]"
+                  : "bg-[#D1CCC4] hover:bg-[#B5AFA5]"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

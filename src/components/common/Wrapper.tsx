@@ -9,11 +9,11 @@ interface WrapperProps {
 }
 
 export default function Wrapper({ children }: WrapperProps) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <>
-      {/* {loading && <Preloader onDone={() => setLoading(false)} />} */}
+      {loading && <Preloader onDone={() => setLoading(false)} />}
       {!loading && (
         <motion.div
           initial={{ opacity: 0 }}
