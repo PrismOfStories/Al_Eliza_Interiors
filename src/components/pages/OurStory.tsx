@@ -94,27 +94,27 @@ function About() {
 
   return (
     <>
-      <section className="relative w-full h-[90vh] flex items-center justify-center mt-16">
+      <section className="relative w-full h-[90vh] flex items-center justify-center">
         {/* Background Image */}
-        {/* <Image
+        <Image
           src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
           alt="Background"
           fill
           className="object-cover"
           priority
-        /> */}
+        /> 
 
         {/* Overlay */}
-        {/* <div className="absolute inset-0 bg-black/40"></div> */}
+         <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-end text-right">
-          <p className="text-[#878787] text-xl md:text-xl lg:text-2xl mb-6 max-w-2xl">
+          <p className="text-gray-300 text-xl md:text-xl lg:text-2xl mb-6 max-w-2xl">
             We&apos;ve worked with over 120 clients to transform homes, gardens,
             and interiors with care. Our approach blends function, beauty, and
             personal style.
           </p>
-          <h1 className="text-[#878787] text-5xl md:text-8xl lg:text-[8rem] font-bold leading-tight">
+          <h1 className="text-white text-5xl md:text-8xl lg:text-[8rem] font-bold leading-tight">
             About Aleliza
           </h1>
         </div>
