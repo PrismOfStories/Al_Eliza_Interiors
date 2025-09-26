@@ -17,9 +17,9 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
         {/* Menu Element */}
         <div
           onClick={toggleMenu}
-          className="w-full h-full bg-[#c19a5b] flex justify-center  items-center relative overflow-hidden group"
+          className="w-full h-full bg-[#b48c37] flex justify-center  items-center relative overflow-hidden group"
         >
-          <PerspectiveText label="Menu" />
+          <PerspectiveText label="Menu" textColor="text-white" />
         </div>
 
         {/* Close Element */}
@@ -27,7 +27,7 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
           onClick={toggleMenu}
           className="w-full h-full bg-black flex justify-center items-center relative overflow-hidden group"
         >
-          <PerspectiveText label="Close" textColor="text-[#c19a5b]" />
+          <PerspectiveText label="Close" textColor="text-[#b48c37]" />
         </div>
       </motion.div>
     </div>
