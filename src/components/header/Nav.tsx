@@ -84,7 +84,7 @@ export default function Nav() {
             }}
           >
             <a
-              className="text-black text-3xl sm:text-4xl md:text-[46px] font-semibold no-underline block"
+              className="text-white text-3xl sm:text-4xl md:text-[46px] font-semibold no-underline block"
               href={link.href}
             >
               {link.title}
@@ -109,7 +109,7 @@ export default function Nav() {
                 ease: [0.215, 0.61, 0.355, 1],
               },
             }}
-            className="w-1/2 sm:w-1/4 text-base sm:text-xl text-black"
+            className="w-1/2 sm:w-1/4 text-base sm:text-xl text-white"
           >
             {link.title}
           </motion.a>
