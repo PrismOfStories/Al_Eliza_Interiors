@@ -7,7 +7,6 @@ import RotatingGallery from "../RotatingGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const services = [
   {
     title: "Residential & Commercial Interior Design",
@@ -123,7 +122,8 @@ export default function ServicesCombined() {
       tl.kill();
       ScrollTrigger.getAll().forEach((t) => t.kill());
       // cleanup inline styles
-      if (sectionRef.current) gsap.set(sectionRef.current, { clearProps: "all" });
+      if (sectionRef.current)
+        gsap.set(sectionRef.current, { clearProps: "all" });
       cards.forEach((card) => {
         card.style.minHeight = "";
         card.style.willChange = "";
@@ -195,12 +195,11 @@ export default function ServicesCombined() {
               At Al Eliza Services, we deliver solutions with{" "}
               <span className="font-bold">dedication, skill and care</span> —{" "}
               <span className="text-white">
-                providing services that support, empower, and match your unique way of
-                living.
+                providing services that support, empower, and match your unique
+                way of living.
               </span>
             </h2>
           </div>
-
         </div>
       </section>
 
@@ -210,12 +209,12 @@ export default function ServicesCombined() {
           START BUILDING
         </p>
         <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-8 leading-none">
-          LET'S DESIGN
+          LET&lsquo;S DESIGN
         </h1>
         <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-12">
-          Ready to bring your vision to life? Whether it’s a home, a
-          workspace, or a public space, we’re here to design environments that
-          inspire, function, and endure. Let’s start your project together.
+          Ready to bring your vision to life? Whether it’s a home, a workspace,
+          or a public space, we’re here to design environments that inspire,
+          function, and endure. Let’s start your project together.
         </p>
       </section>
 
