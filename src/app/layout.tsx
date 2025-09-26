@@ -7,6 +7,7 @@ import SmoothScroll from "@/components/common/SmoothScroll";
 import Footer from "@/components/common/Footer";
 import Wrapper from "@/components/common/Wrapper";
 import Header from "@/components/header/Header";
+import Preloader from "@/components/common/Preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,13 +47,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} bg-background antialiased`}
       >
-        <Wrapper>
-          {/* <Navbar /> */}
-          <Header />
-          <SmoothScroll />
-          {children} {/* your page content, e.g., homepage video */}
-          <Footer />
-        </Wrapper>
+        <Preloader />
+        <Header />
+        <SmoothScroll />
+        {children}
+        <Footer />
       </body>
     </html>
   );

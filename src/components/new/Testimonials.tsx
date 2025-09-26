@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface Testimonial {
   id: number;
@@ -71,7 +71,26 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const itemsPerSlide = 3;
+  const [itemsPerSlide, setItemsPerSlide] = useState(3);
+
+  // Responsive items per slide based on screen size
+  useEffect(() => {
+    const updateItemsPerSlide = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerSlide(1); // Mobile: 1 card
+      } else if (window.innerWidth < 1024) {
+        setItemsPerSlide(2); // Tablet: 2 cards
+      } else {
+        setItemsPerSlide(3); // Desktop: 3 cards
+      }
+    };
+
+    updateItemsPerSlide();
+    window.addEventListener("resize", updateItemsPerSlide);
+
+    return () => window.removeEventListener("resize", updateItemsPerSlide);
+  }, []);
+
   const totalSlides = Math.ceil(testimonials.length / itemsPerSlide);
 
   const getCurrentTestimonials = () => {
@@ -92,103 +111,90 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative mx-auto w-full bg-[#FAF7F0] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
+    <section className="mx-auto w-full bg-[#FAF7F0] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
       <div className="mx-auto max-w-7xl">
         {/* Top Label */}
-        <div className="mb-12 text-center">
+        <div className="mb-16 lg:mb-28 text-center">
           <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-brown">
             Happy Clients
           </div>
 
           {/* Main Headline */}
-          <h2 className="font-display text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-[#171614]">
+          <h2 className="font-display text-[clamp(18px,10vw,80px)] lg:text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-[#171614]">
             TESTIMONIALS
           </h2>
         </div>
 
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] bg-[#FAF7F0] backdrop-blur-sm transition-all hover:bg-white hover:shadow-md lg:left-10"
-          aria-label="Previous testimonials"
-        >
-          <svg
-            className="h-5 w-5 text-[#171614]"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        {/* Testimonials Grid with Navigation - Centered relative to cards */}
+        <div className="relative">
+          {/* Navigation Arrows - Positioned relative to the grid container */}
+          <button
+            onClick={prevSlide}
+            className="absolute -left-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] bg-[#FAF7F0] backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
+            aria-label="Previous testimonials"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
+            <FaChevronLeft />
+          </button>
 
-        <button
-          onClick={nextSlide}
-          className="absolute right-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8]  backdrop-blur-sm transition-all hover:bg-white hover:shadow-md lg:right-10"
-          aria-label="Next testimonials"
-        >
-          <svg
-            className="h-5 w-5 text-brown"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          <button
+            onClick={nextSlide}
+            className="absolute -right-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] bg-[#FAF7F0] backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
+            aria-label="Next testimonials"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
+            <FaChevronRight />
+          </button>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {getCurrentTestimonials().map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="flex flex-col  border border-[#E5E0D8] bg-[#FAF7F0] p-8 shadow-sm transition-all hover:shadow-md"
-            >
-              {/* Company Logo */}
-              <div className="mb-6">
-                <div className="flex h-8 items-center">
-                  <span className="text-lg font-semibold text-brown">
-                    {testimonial.company}
-                  </span>
-                </div>
-              </div>
-
-              {/* Testimonial Text */}
-              <p className="mb-8 flex-1 text-[15px] leading-relaxed text-brown">
-                &ldquo;{testimonial.text}&ldquo;
-              </p>
-
-              {/* Profile Section */}
-              <div className="flex items-center">
-                <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-brown">
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-brown font-medium">
-                    {testimonial.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
+          {/* Testimonials Grid - Responsive */}
+          <div
+            className={`grid gap-6 ${
+              itemsPerSlide === 1
+                ? "grid-cols-1"
+                : itemsPerSlide === 2
+                ? "grid-cols-1 md:grid-cols-2"
+                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
+            {getCurrentTestimonials().map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="flex flex-col border border-[#E5E0D8] bg-[#FAF7F0] p-8 shadow-sm transition-all hover:shadow-md"
+              >
+                {/* Company Logo */}
+                <div className="mb-6">
+                  <div className="flex h-8 items-center">
+                    <span className="text-lg font-semibold text-brown">
+                      {testimonial.company}
+                    </span>
                   </div>
                 </div>
-                <div>
-                  <div className="text-[15px] font-semibold text-[#171614]">
-                    {testimonial.name}
+
+                {/* Testimonial Text */}
+                <p className="mb-8 flex-1 text-[15px] leading-relaxed text-brown flex-wrap">
+                  &ldquo;{testimonial.text}&rdquo;
+                </p>
+
+                {/* Profile Section */}
+                <div className="flex items-center">
+                  <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-brown">
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-brown font-medium">
+                      {testimonial.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </div>
                   </div>
-                  <div className="text-[13px] text-[#7A7671]">
-                    {testimonial.title}
+                  <div>
+                    <div className="text-[15px] font-semibold text-[#171614]">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-[13px] text-[#7A7671]">
+                      {testimonial.title}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Dot Navigation */}

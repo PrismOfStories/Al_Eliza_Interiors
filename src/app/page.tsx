@@ -1,7 +1,6 @@
 "use client";
 
 import ServiceCard from "@/components/common/ServiceCard";
-// import About from "@/components/homepage/About";
 import Hero from "@/components/homepage/Hero";
 import {
   Animator,
@@ -15,10 +14,9 @@ import {
   MoveOut,
   Fade,
 } from "react-scroll-motion";
-import Section from "@/components/new/Section";
-import Arc from "@/components/new/Arc";
-import TestimonialsSection from "@/components/new/Testimonials";
-// import HomeServices from "@/components/homepage/Sevices";
+import ParallaxHero from "@/components/homepage/ParallaxHero";
+import InteriorDesignHero from "@/components/homepage/InteriorDesignHero";
+import Testimonials from "@/components/new/Testimonials";
 
 export default function Home() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
@@ -82,9 +80,7 @@ export default function Home() {
   ];
   return (
     <main className="">
-      {/* Hero Section with Video Background */}
       <Hero />
-      {/* Scroll Animation Section */}
       <div className="relative bg-black min-h-screen">
         <ScrollContainer>
           <ScrollPage>
@@ -122,13 +118,10 @@ export default function Home() {
           </ScrollPage>
         </ScrollContainer>
       </div>{" "}
-      {/* <Services /> */}
-      <Section />
-      <Arc />
-      {/* <HomeServices /> */}
-      {/* <About /> */}
+      <ParallaxHero />
+      <InteriorDesignHero />
       <ServiceCard projects={projects} />
-      <TestimonialsSection />
+      <Testimonials />
     </main>
   );
 }

@@ -56,7 +56,7 @@ export default function ArchitectureHero() {
               <span className="text-brown italic font-medium">Contact us</span>{" "}
               us to bring your vision to life.
             </p>{" "}
-            <button className="group cursor-pointer inline-flex bg-brown hover:bg-gold-dark text-white px-8 py-4 text-lg font-medium transition-colors duration-300 [transform:skewX(-20deg)]">
+            <button className="group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-4 text-lg font-medium transition-colors duration-300 [transform:skewX(-20deg)]">
               <span className="flex items-center gap-2 [transform:skewX(20deg)]">
                 Tell us about your project
                 <FaChevronRight />

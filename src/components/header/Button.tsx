@@ -17,9 +17,9 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
         {/* Menu Element */}
         <div
           onClick={toggleMenu}
-          className="w-full h-full bg-[#b48c37] flex justify-center  items-center relative overflow-hidden group"
+          className="w-full h-full bg-[#b48c37] flex justify-center  items-center relative overflow-hidden group "
         >
-          <PerspectiveText label="Menu"  />
+          <PerspectiveText label="Menu" />
         </div>
 
         {/* Close Element */}
@@ -41,7 +41,7 @@ type PerspectiveTextProps = {
 
 function PerspectiveText({
   label,
-  textColor = "text-black",
+  textColor = "text-white",
 }: PerspectiveTextProps) {
   return (
     <div
@@ -50,14 +50,14 @@ function PerspectiveText({
     >
       {/* First Text */}
       <p
-        className={`transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:-translate-y-full group-hover:opacity-0`}
+        className={`transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)]  pointer-events-none ${textColor} uppercase group-hover:-translate-y-full group-hover:opacity-0`}
       >
         {label}
       </p>
 
       {/* Second Text */}
       <p
-        className={`absolute bottom-0 transform -rotate-x-90 translate-y-[9px] opacity-0 transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:opacity-100`}
+        className={`absolute bottom-0 transform -rotate-x-90 translate-y-[9px] opacity-0  transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:opacity-100`}
       >
         {label}
       </p>

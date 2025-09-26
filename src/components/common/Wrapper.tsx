@@ -13,7 +13,7 @@ export default function Wrapper({ children }: WrapperProps) {
 
   return (
     <>
-      {loading && <Preloader onDone={() => setLoading(false)} />}
+      {loading && <Preloader />}
       {!loading && (
         <motion.div
           initial={{ opacity: 0 }}

@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { FaChevronRight } from "react-icons/fa";
+import Link from "next/link";
 
 type CardProps = {
   i: number;
@@ -58,42 +60,27 @@ const Card = ({
 
         {/* Overlay content */}
         <div className="relative z-10 flex flex-col h-full">
-          <h2 className="text-center text-xl sm:text-2xl font-semibold text-white m-0">
+          <h2 className="text-center text-xl sm:text-[clamp(12px,8vw,60px)] font-semibold text-white m-0">
             {title}
           </h2>
 
           <div className="flex flex-col lg:flex-row h-full mt-8 sm:mt-12 gap-6 sm:gap-12">
             {/* Description */}
-            <div className="w-full lg:w-2/5 relative top-1/10 text-white">
-              <p className="text-base sm:text-lg first-letter:text-2xl first-letter:font-title">
+            <div className="w-full  relative top-1/10 text-white">
+              <p className="text-base sm:text-3xl w-full lg:w-4xl text-center mx-auto first-letter:text-2xl first-letter:font-title">
                 {description}
               </p>
-              <span className="flex items-center gap-2 mt-4">
-                <a
+              <p className="flex justify-center items-center gap-2 mt-4 w-full lg:w-4xl  mx-auto">
+                <Link
                   href={url}
                   target="_blank"
-                  className="text-xs sm:text-sm underline cursor-pointer"
+                  className=" text-lg cursor-pointer"
                 >
                   See more
-                </a>
-                {/* SVG arrow */}
-                <svg
-                  width="22"
-                  height="12"
-                  viewBox="0 0 22 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
+                </Link>
+                <FaChevronRight />
+              </p>
             </div>
-
-            {/* Spacer for image if needed */}
-            <div className="hidden lg:block lg:w-3/5"></div>
           </div>
         </div>
       </motion.div>

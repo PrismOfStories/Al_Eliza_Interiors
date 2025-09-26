@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils/tailwind";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-export default function Preloader({ onDone }: { onDone?: () => void }) {
+export default function Preloader() {
   const [step, setStep] = useState<"words" | "brand" | "swipe" | "done">(
     "words"
   );
@@ -17,13 +17,12 @@ export default function Preloader({ onDone }: { onDone?: () => void }) {
     timers.push(setTimeout(() => setStep("swipe"), 2400));
     timers.push(
       setTimeout(() => {
-        setStep("done");
-        setTimeout(() => onDone?.(), 300);
+        setStep("done"); // just mark done
       }, 2700)
     );
 
     return () => timers.forEach(clearTimeout);
-  }, [onDone]);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -40,6 +39,7 @@ export default function Preloader({ onDone }: { onDone?: () => void }) {
         >
           {step === "words" && (
             <div className="flex flex-col lg:flex-row gap-4 text-5xl text-gold">
+              {/* words */}
               <motion.span
                 key="Inspired"
                 initial={{ y: 40, opacity: 0 }}
@@ -49,7 +49,6 @@ export default function Preloader({ onDone }: { onDone?: () => void }) {
               >
                 Inspired
               </motion.span>
-
               <motion.span
                 key="Creative"
                 initial={{ y: 40, opacity: 0 }}
@@ -59,7 +58,6 @@ export default function Preloader({ onDone }: { onDone?: () => void }) {
               >
                 Creative
               </motion.span>
-
               <motion.span
                 key="Functional"
                 initial={{ y: 40, opacity: 0 }}

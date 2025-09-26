@@ -24,7 +24,7 @@ export default function ServiceCard({ projects }: ServiceProps) {
   });
 
   return (
-    <section ref={container} className="relative mt-[10vh]">
+    <section ref={container} className="relative mt-[10vh] px-6">
       {" "}
       <motion.p
         initial={{ opacity: 0, x: -300 }}
