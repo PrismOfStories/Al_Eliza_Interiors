@@ -66,7 +66,7 @@ export default function Nav({ closeMenu }: NavProps) {
   return (
     <div className="flex flex-col justify-between h-full p-8 sm:p-12 md:p-16 box-border">
       {/* Main links */}
-      <div className="flex flex-col gap-4 md:gap-6">
+      <div className="flex flex-col gap-4 md:gap-6 mt-14">
         {routes.map((link, i) => (
           <motion.div
             key={i}
@@ -89,7 +89,7 @@ export default function Nav({ closeMenu }: NavProps) {
             }}
           >
             <Link
-              className="text-white text-3xl sm:text-4xl md:text-[46px] font-semibold no-underline block"
+              className="text-white text-3xl sm:text-4xl  font-semibold no-underline block font-michroma tracking-widest"
               href={link.href}
               onClick={() => closeMenu?.()}
             >
@@ -118,7 +118,7 @@ export default function Nav({ closeMenu }: NavProps) {
           >
             <Link
               href={link.href}
-              className="text-base sm:text-xl text-white block"
+              className="text-base sm:text-xl text-white block font-geist-sans"
               onClick={() => closeMenu?.()}
               target={link.href.startsWith("http") ? "_blank" : undefined} // external links open in new tab
               rel={

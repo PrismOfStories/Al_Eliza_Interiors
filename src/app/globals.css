@@ -16,8 +16,12 @@
   --color-brown: var(--color-brown);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
   --font-bebas-neue: var(--font-bebas-neue);
   --font-unbounded: var(--font-unbounded);
+  --font-michroma: var(--font-michroma);
+  --font-geo: var(--font-geo);
 }
 
 /* @media (prefers-color-scheme: dark) {

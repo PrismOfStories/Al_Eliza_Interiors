@@ -24,7 +24,7 @@ export default function ScrollHero() {
             animation={batch(FadeIn(), Sticky(), MoveOut(0, -200))}
             className="w-full flex items-center justify-center min-h-screen flex-wrap text-center"
           >
-            <p className="text-xl flex text-center flex-wrap lg:text-3xl font-light tracking-widest uppercase text-white px-8">
+            <p className="text-xl flex text-center flex-wrap lg:text-xl font-light uppercase text-gold-dark px-8 font-michroma tracking-widest">
               Welcome to Al-Eliza Interiors
             </p>
           </Animator>
@@ -35,7 +35,7 @@ export default function ScrollHero() {
             animation={ZoomInScrollOut}
             className="w-full px-8 flex items-center justify-center min-h-screen text-center"
           >
-            <p className="text-5xl flex text-center flex-wrap font-bold font-bebas-neue leading-tight text-white">
+            <p className="text-5xl flex text-center flex-wrap font-bold font-geist-sans uppercase leading-tight text-white">
               Crafting Spaces <br /> That Inspire & Delight
             </p>
           </Animator>

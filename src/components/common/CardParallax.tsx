@@ -60,21 +60,21 @@ const Card = ({
 
         {/* Overlay content */}
         <div className="relative z-10 flex flex-col h-full">
-          <h2 className="text-center text-xl sm:text-[clamp(12px,8vw,60px)] font-semibold text-white m-0">
+          <h2 className="text-center font-michroma text-xl sm:text-[clamp(12px,8vw,40px)] font-semibold text-white m-0 tracking-widest">
             {title}
           </h2>
 
           <div className="flex flex-col lg:flex-row h-full mt-8 sm:mt-12 gap-6 sm:gap-12">
             {/* Description */}
             <div className="w-full  relative top-1/10 text-white">
-              <p className="text-base sm:text-3xl w-full lg:w-4xl text-center mx-auto first-letter:text-2xl first-letter:font-title">
+              <p className="text-base sm:text-3xl  w-full lg:w-4xl text-center mx-auto first-letter:text-2xl first-letter:font-title font-geist-sans">
                 {description}
               </p>
-              <p className="flex justify-center items-center gap-2 mt-4 w-full lg:w-4xl  mx-auto">
+              <p className="flex justify-center font-michroma items-center gap-2 mt-4 w-full lg:w-4xl  mx-auto">
                 <Link
                   href={url}
                   target="_blank"
-                  className=" text-lg cursor-pointer"
+                  className=" text-lg cursor-pointer tracking-widest"
                 >
                   See more
                 </Link>

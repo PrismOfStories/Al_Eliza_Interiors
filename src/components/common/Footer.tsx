@@ -29,9 +29,11 @@ export default function Footer() {
           <div className="text-center">
             <h1 className="select-none text-[2.25rem] tracking-[0.35em] text-neutral-200">
               {/* <span className="font-light">AL</span>{" "} */}
-              <span className="font-semibold text-white">AL ELIZA</span>
+              <span className="font-semibold text-white font-michroma">
+                AL ELIZA
+              </span>
             </h1>
-            <p className="mt-3 text-xs tracking-[0.45em] text-neutral-400">
+            <p className="mt-3 text-lg tracking-widest text-neutral-400 font-michroma">
               INTERIOR DESIGN
             </p>
           </div>
@@ -43,10 +45,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
           {/* Navigation */}
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400 font-michroma uppercase">
               Navigation
             </h3>
-            <ul className="space-y-4 text-lg">
+            <ul className="space-y-4 text-md font-geist-sans uppercase">
               <li>
                 <Link
                   href="/"
@@ -92,10 +94,10 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
               Services
             </h3>
-            <ul className="space-y-4 text-lg">
+            <ul className="space-y-4 text-md  font-geist-sans uppercase">
               <li className="text-neutral-400 hover:text-neutral-200">
                 Residential & Commercial Designs
               </li>
@@ -122,19 +124,19 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
               Contact
             </h3>
             <div className="space-y-4 text-lg">
-              <p className="max-w-sm text-neutral-400">
+              <p className="max-w-sm text-neutral-400 font-geist-sans">
                 Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
                 United Arab Emirates
               </p>
-              <p className="text-neutral-400">
+              <p className="text-neutral-400 font-geist-sans">
                 +971 522 889 300 <br />
                 +971 54 378 3000
               </p>
-              <p>
+              <p className="font-geist-sans">
                 <a
                   href="mailto:info@sarahbrown-design.com"
                   className="text-neutral-400 hover:text-neutral-200"

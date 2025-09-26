@@ -15,7 +15,7 @@ export default function ClientsCard() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: false }}
-            className="text-center  w-full  text-7xl lg:text-7xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
+            className="text-center w-full text-2xl lg:text-4xl tracking-widest font-michroma font-medium text-gold-dark mb-10 lg:mb-20"
           >
             OUR PRESTIGIOUS CLIENTS
           </motion.p>

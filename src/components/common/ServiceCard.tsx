@@ -31,7 +31,7 @@ export default function ServiceCard({ projects }: ServiceProps) {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: false }}
-        className="text-center lg:text-right w-full lg:max-w-[90rem] mx-auto text-7xl lg:text-9xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
+        className="text-center lg:text-right w-full lg:max-w-[90rem] font-michroma tracking-widest mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
       >
         Expertise
       </motion.p>

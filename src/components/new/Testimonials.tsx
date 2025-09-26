@@ -115,7 +115,7 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-7xl">
         {/* Top Label */}
         <div className="mb-16 lg:mb-28 text-center">
-          <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-black">
+          <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-gold-dark">
             Happy Clients
           </div>
 
@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
           {/* Navigation Arrows - Positioned relative to the grid container */}
           <button
             onClick={prevSlide}
-            className="absolute -left-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] bg-[#FAF7F0] backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
+            className="absolute -left-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8]  backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
             aria-label="Previous testimonials"
           >
             <FaChevronLeft />
@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
 
           <button
             onClick={nextSlide}
-            className="absolute -right-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] bg-[#FAF7F0] backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
+            className="absolute -right-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8]  backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
             aria-label="Next testimonials"
           >
             <FaChevronRight />
@@ -150,8 +150,8 @@ export default function TestimonialsSection() {
               itemsPerSlide === 1
                 ? "grid-cols-1"
                 : itemsPerSlide === 2
-                ? "grid-cols-1 md:grid-cols-2"
-                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                  ? "grid-cols-1 md:grid-cols-2"
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             }`}
           >
             {getCurrentTestimonials().map((testimonial) => (
@@ -162,14 +162,14 @@ export default function TestimonialsSection() {
                 {/* Company Logo */}
                 <div className="mb-6">
                   <div className="flex h-8 items-center">
-                    <span className="text-lg font-semibold text-black">
+                    <span className="text-lg font-semibold text-black font-michroma uppercase tracking-widest">
                       {testimonial.company}
                     </span>
                   </div>
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="mb-8 flex-1 text-[15px] leading-relaxed text-black flex-wrap">
+                <p className="mb-8 flex-1 text-[15px] leading-relaxed text-black flex-wrap font-geist-sans">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
@@ -184,10 +184,10 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <div>
-                    <div className="text-[15px] font-semibold text-black">
+                    <div className="text-[15px] font-semibold text-black font-geist-sans ">
                       {testimonial.name}
                     </div>
-                    <div className="text-[13px] text-[#7A7671]">
+                    <div className="text-[13px] text-[#7A7671] font-geist-sans">
                       {testimonial.title}
                     </div>
                   </div>

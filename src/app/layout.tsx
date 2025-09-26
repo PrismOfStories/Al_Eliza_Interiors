@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Geist, Geist_Mono, Unbounded } from "next/font/google";
+import {
+  Bebas_Neue,
+  Geist,
+  Geist_Mono,
+  Geo,
+  Michroma,
+  Unbounded,
+} from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "@/components/new/ClientWrapper";
 
@@ -25,6 +32,18 @@ const unbounded = Unbounded({
   weight: "400",
 });
 
+const michroma = Michroma({
+  variable: "--font-michroma",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const geo = Geo({
+  variable: "--font-geo",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Al Eliza Interior - Transform Your Space with Elegant Designs",
   description:
@@ -39,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} bg-background antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
       >
         <ClientWrapper>{children}</ClientWrapper>
       </body>
