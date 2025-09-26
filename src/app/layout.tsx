@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Geist, Geist_Mono, Unbounded } from "next/font/google";
 import "./globals.css";
-// import Preloader from "@/components/common/Preloader";
-// import Navbar from "@/components/common/Navbar";
-import SmoothScroll from "@/components/common/SmoothScroll";
-import Footer from "@/components/common/Footer";
-// import Wrapper from "@/components/common/Wrapper";
-import Header from "@/components/header/Header";
-import Preloader from "@/components/common/Preloader";
+import ClientWrapper from "@/components/new/ClientWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,11 +41,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} bg-background antialiased`}
       >
-        <Preloader />
-        <Header />
-        <SmoothScroll />
-        {children}
-        <Footer />
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );

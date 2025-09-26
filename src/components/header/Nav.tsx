@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const routes = [
   { title: "Home", href: "/" },
@@ -21,7 +22,11 @@ const footerLinks = [
   },
 ];
 
-export default function Nav() {
+interface NavProps {
+  closeMenu?: () => void;
+}
+
+export default function Nav({ closeMenu }: NavProps) {
   // const perspective = {
   //   initial: { opacity: 0, rotateX: 90, translateY: 80, translateX: -20 },
   //   enter: (i: number) => ({
@@ -83,12 +88,13 @@ export default function Nav() {
               },
             }}
           >
-            <a
+            <Link
               className="text-white text-3xl sm:text-4xl md:text-[46px] font-semibold no-underline block"
               href={link.href}
+              onClick={() => closeMenu?.()}
             >
               {link.title}
-            </a>
+            </Link>
           </motion.div>
         ))}
       </div>
@@ -96,9 +102,8 @@ export default function Nav() {
       {/* Footer links */}
       <motion.div className="flex flex-wrap mt-6 gap-x-2 gap-y-1 sm:gap-x-4 sm:gap-y-2">
         {footerLinks.map((link, i) => (
-          <motion.a
+          <motion.div
             key={i}
-            href={link.href}
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: 1,
@@ -109,10 +114,20 @@ export default function Nav() {
                 ease: [0.215, 0.61, 0.355, 1],
               },
             }}
-            className="w-1/2 sm:w-1/4 text-base sm:text-xl text-white"
+            className="w-1/2 sm:w-1/4"
           >
-            {link.title}
-          </motion.a>
+            <Link
+              href={link.href}
+              className="text-base sm:text-xl text-white block"
+              onClick={() => closeMenu?.()}
+              target={link.href.startsWith("http") ? "_blank" : undefined} // external links open in new tab
+              rel={
+                link.href.startsWith("http") ? "noopener noreferrer" : undefined
+              }
+            >
+              {link.title}
+            </Link>
+          </motion.div>
         ))}
       </motion.div>
     </div>

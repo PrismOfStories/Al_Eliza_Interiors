@@ -73,7 +73,9 @@ export default function Header() {
             right: "0px",
           }}
         >
-          <AnimatePresence>{isActive && <Nav />}</AnimatePresence>
+          <AnimatePresence>
+            {isActive && <Nav closeMenu={() => setIsActive(false)} />}
+          </AnimatePresence>
         </motion.div>
 
         <Button isActive={isActive} toggleMenu={() => setIsActive(!isActive)} />

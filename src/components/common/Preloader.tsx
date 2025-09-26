@@ -73,7 +73,7 @@ export default function Preloader() {
           {step === "brand" && (
             <motion.div className="relative flex items-center justify-center overflow-hidden h-full w-full">
               <motion.div
-                className="absolute inset-0 bg-neutral-800 origin-left h-16 w-64 mx-auto my-auto"
+                className="absolute inset-0 bg-gold origin-left h-16 w-64 mx-auto my-auto"
                 initial={{ scaleX: 0, x: 0, skewX: -20 }}
                 animate={{ scaleX: [0, 1, 1], x: [0, "40%", 0], skewX: -20 }}
                 transition={{
