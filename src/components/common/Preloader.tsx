@@ -45,7 +45,7 @@ export default function Preloader() {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0 }}
-                className="font-light text-neutral-500"
+                className="font-light text-neutral-500 font-michroma"
               >
                 Inspired
               </motion.span>
@@ -54,7 +54,7 @@ export default function Preloader() {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.25 }}
-                className="font-bold text-neutral-200"
+                className="font-bold text-neutral-200 font-michroma "
               >
                 Creative
               </motion.span>
@@ -63,7 +63,7 @@ export default function Preloader() {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.5 }}
-                className="font-light text-neutral-500"
+                className="font-light text-neutral-500 font-michroma"
               >
                 Functional
               </motion.span>
@@ -84,7 +84,7 @@ export default function Preloader() {
                 exit={{ scaleX: [1, 1, 0] }}
               />
               <motion.h1
-                className="relative text-5xl font-extrabold text-white"
+                className="relative text-4xl font-extrabold text-white font-michroma tracking-widest"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4, ease: "easeInOut", delay: 0.5 }}
