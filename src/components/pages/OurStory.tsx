@@ -9,6 +9,7 @@ import {
   useTransform,
   animate,
 } from "framer-motion";
+import { logos, team } from "@/lib/static-data/about";
 
 function Counter({ from = 0, to }: { from?: number; to: number }) {
   const spanRef = useRef<HTMLSpanElement>(null);
@@ -37,44 +38,6 @@ function Counter({ from = 0, to }: { from?: number; to: number }) {
 }
 
 function About() {
-  const team = [
-    {
-      name: "Emily Chen",
-      role: "Lead Interior Designer",
-      image: "/images/harif.jpg",
-    },
-    {
-      name: "Daniel Lee",
-      role: "Project Manager",
-      image: "/images/harif.jpg",
-    },
-    {
-      name: "Sophia Kim",
-      role: "Architect",
-      image: "/images/harif.jpg",
-    },
-    {
-      name: "Michael Park",
-      role: "Creative Director",
-      image: "/images/harif.jpg",
-    },
-  ];
-
-  const logos = [
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649514/client_12_x2umsr.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649513/client_11_r3vmqh.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649513/client_10_mov009.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649512/client_9_vupxmb.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649512/client_7_sbknzn.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649512/client_8_c2mixb.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649512/client_6_cxbizc.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649511/client_5_xjpakh.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649510/client_3_mzdfzf.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649511/client_4_ymbtyk.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649510/client_2_bzhf63.webp",
-    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649510/client_1_x55ndy.webp",
-  ];
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -102,10 +65,10 @@ function About() {
           fill
           className="object-cover"
           priority
-        /> 
+        />
 
         {/* Overlay */}
-         <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-end text-right">
@@ -120,10 +83,10 @@ function About() {
         </div>
       </section>
 
-      <section className="w-full py-20 px-6 md:px-12 mt-14 ">
+      <section className="w-full py-20 px-6 md:px-12 mt-14 lg:mt-48 ">
         <div className="max-w-7xl mx-auto">
           {/* Mission + Description */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18 lg:mb-48">
             {/* Left side - OUR MISSION */}
             <div className="col-span-1 flex items-center gap-2">
               <span className="w-3 h-3 bg-gold"></span>
@@ -135,7 +98,7 @@ function About() {
             {/* Right side - Description (2/3 width) */}
             <div className="col-span-2 text-left">
               <h2 className="text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
-                At  AL Eliza, we transform spaces with{" "}
+                At AL Eliza, we transform spaces with{" "}
                 <span className="font-bold">thoughtful design and care</span> —{" "}
                 <span className="text-white">
                   creating spaces that inspire, nurture, and reflect your unique
@@ -148,42 +111,42 @@ function About() {
           {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="flex flex-col justify-between h-48 p-6">
-              <h3 className="text-6xl font-bold text-[#878787]">
+              <h3 className="text-6xl text-right font-bold text-[#878787]">
                 <Counter to={98} />%
               </h3>
               <div className="text-right mt-24">
-                <p className="text-lg font-medium text-white mb-2">
+                <p className="text-xl font-medium text-white mb-2">
                   Customer Satisfaction Rate
                 </p>
-                <p className="text-sm text-[#878787]">
+                <p className="text-lg text-[#878787]">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col justify-between h-48 p-6">
-              <h3 className="text-6xl font-bold text-[#878787]">
+              <h3 className="text-6xl text-right font-bold text-[#878787]">
                 <Counter to={250} />+
               </h3>
               <div className="text-right mt-24">
-                <p className="text-lg font-medium text-white mb-2">
+                <p className="text-xl font-medium text-white mb-2">
                   Projects Completed
                 </p>
-                <p className="text-sm text-[#878787]">
+                <p className="text-lg text-[#878787]">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col justify-between h-48 p-6">
-              <h3 className="text-6xl font-bold text-[#878787]">
+              <h3 className="text-6xl text-right font-bold text-[#878787]">
                 <Counter to={64} />%
               </h3>
               <div className="text-right mt-24">
-                <p className="text-lg font-medium text-white mb-2">
+                <p className="text-xl font-medium text-white mb-2 ">
                   Repeat Client Rate
                 </p>
-                <p className="text-sm text-[#878787]">
+                <p className="text-lg text-[#878787]">
                   A majority of our clients trust us again for new projects.
                 </p>
               </div>
@@ -193,11 +156,11 @@ function About() {
       </section>
 
       <section className="py-20 px-6 md:px-12  mt-16">
-        <div className="max-w-7xl mx-auto text-left mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#878787]">
+        <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
+          <h2 className=" text-7xl lg:text-7xl font-bebas-neue font-medium text-[#878787] ">
             Meet Our Team
           </h2>
-          <p className="text-white mt-4">
+          <p className="text-white mt-4 ">
             Get to know the people turning ideas into inspiring homes and
             gardens.
           </p>
@@ -231,61 +194,54 @@ function About() {
         </div>
       </section>
 
-      <section className=" py-10 mb-8">
-        <div className="max-w-7xl mx-auto relative flex items-center px-8">
-          {/* Fixed Trusted By box */}
-          <div className="flex-shrink-0 flex items-center justify-center mr-8">
-            <div className="w-32 h-16 bg-white flex items-center justify-center">
-              <p className="text-gray-600 font-medium text-sm tracking-wide">
-                TRUSTED BY
-              </p>
-            </div>
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <motion.p
+              initial={{ opacity: 0, x: -300 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: false }}
+              className="text-center  w-full  text-7xl lg:text-7xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
+            >
+              OUR PRESTIGIOUS CLIENTS
+            </motion.p>
           </div>
 
-          {/* Scrolling logos */}
-          <div className="flex-1 overflow-hidden">
-            <motion.div
-              className="flex gap-12 items-center"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "linear",
-                duration: 23,
-              }}
-            >
-              {[...logos, ...logos].map((logo, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 flex items-center justify-center"
-                >
-                  <div className="w-32 h-16 relative">
-                    <Image
-                      src={logo}
-                      alt={`Logo ${i}`}
-                      fill
-                      className="object-contain opacity-60"
-                    />
-                  </div>
+          {/* Logo Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center">
+            {logos.map((logo, index) => (
+              <div
+                key={index}
+                className="group flex items-center justify-center p-4  transition-all duration-300 rounded-lg"
+              >
+                <div className="relative w-full h-16 sm:h-20">
+                  <Image
+                    src={logo}
+                    alt={`Client ${index + 1}`}
+                    fill
+                    className="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
+                  />
                 </div>
-              ))}
-            </motion.div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-black text-white py-20 px-6">
+      <section className="bg-background text-white py-20 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Left Side - Contact Info */}
           <div className="flex flex-col justify-between">
-            <h2 className="flex items-center text-lg font-semibold">
-              <span className="w-4 h-4 bg-[#a37e41] rounded-sm mr-3"></span>
-              CONTACT US
+            <h2 className="flex items-center text-3xl font-semibold">
+              <span className="w-6 h-6 bg-[#a37e41] [transform:skewX(-20deg)] mr-3"></span>
+              Get in Touch
             </h2>
 
             {/* Phone + Email at bottom aligned with submit */}
             <div className="flex flex-col items-left mt-4 gap-2">
-              <p className="text-gray-400 text-xl">206-339-2947</p>
+              <p className="text-[#878787] text-xl">206-339-2947</p>
               <p className="text-3xl md:text-4xl font-semibold">
                 info@aleliza.com
               </p>
@@ -305,7 +261,7 @@ function About() {
                 placeholder="Enter name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full bg-black border-b border-gray-700 focus:border-white outline-none py-2"
+                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2"
               />
             </div>
 
@@ -317,7 +273,7 @@ function About() {
                 placeholder="Enter email address"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-black border-b border-gray-700 focus:border-white outline-none py-2"
+                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2"
                 required
               />
             </div>
@@ -330,37 +286,37 @@ function About() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-black border-b border-gray-700 focus:border-white outline-none py-2"
+                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2"
                 required
               />
             </div>
 
-            <button
-              type="submit"
-              className="flex items-center gap-2 text-3xl font-semibold hover:underline"
-            >
-              Submit
+            <button className="w-52  justify-center group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-4 text-xl font-medium transition-colors duration-300 [transform:skewX(-20deg)]">
+              <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                Submit
+              </span>
             </button>
           </form>
         </div>
       </section>
 
-      <section className="bg-black text-white py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 items-center gap-10">
-          {/* Left Image - 1/4 */}
-          <div className="w-full md:col-span-1">
-            <Image
-              src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
-              alt="Let's Chat"
-              width={400}
-              height={100}
-              className="w-full  shadow-lg object-cover"
-            />
+      <section className="bg-background text-white py-20 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:justify-between gap-10">
+          {/* Left Image */}
+          <div className="w-full lg:w-1/2">
+            <div className="h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative">
+              <Image
+                src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
+                alt="Let's Chat"
+                fill
+                className="w-full rounded-[25px] object-cover"
+              />
+            </div>
           </div>
 
-          {/* Right Text - 3/4 */}
-          <div className="md:col-span-3 flex items-center">
-            <h2 className="text-[8rem] sm:text-[10rem] md:text-[12rem] font-bold leading-none tracking-tight text-[#878787]">
+          {/* Right Text */}
+          <div className="flex items-center w-full lg:w-1/2">
+            <h2 className="text-5xl sm:text-7xl lg:text-9xl font-bold leading-none tracking-tight text-[#878787]">
               Let&apos;s Chat
             </h2>
           </div>
