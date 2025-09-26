@@ -25,9 +25,9 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
         {/* Close Element */}
         <div
           onClick={toggleMenu}
-          className="w-full h-full bg-black flex justify-center items-center relative overflow-hidden group"
+          className="w-full h-full bg-gold flex justify-center items-center relative overflow-hidden group"
         >
-          <PerspectiveText label="Close" textColor="text-[#b48c37]" />
+          <PerspectiveText label="Close" textColor="text-white" />
         </div>
       </motion.div>
     </div>

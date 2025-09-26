@@ -33,7 +33,7 @@ export default function ServiceCard({ projects }: ServiceProps) {
         viewport={{ once: false }}
         className="text-center lg:text-right w-full lg:max-w-[90rem] mx-auto text-7xl lg:text-9xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
       >
-        solutions
+        Expertise
       </motion.p>
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;

@@ -17,7 +17,7 @@ export default function ScrollHero() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 
   return (
-    <div className="relative bg-black min-h-screen">
+    <div className="relative  min-h-screen">
       <ScrollContainer>
         <ScrollPage>
           <Animator

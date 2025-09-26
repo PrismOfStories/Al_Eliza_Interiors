@@ -111,16 +111,16 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="mx-auto w-full bg-[#FAF7F0] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
+    <section className="mx-auto w-full bg-[#fbfbfb] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
       <div className="mx-auto max-w-7xl">
         {/* Top Label */}
         <div className="mb-16 lg:mb-28 text-center">
-          <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-brown">
+          <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-black">
             Happy Clients
           </div>
 
           {/* Main Headline */}
-          <h2 className="font-display text-[clamp(18px,10vw,80px)] lg:text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-[#171614]">
+          <h2 className="font-display text-[clamp(18px,10vw,80px)] lg:text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-black">
             TESTIMONIALS
           </h2>
         </div>
@@ -157,26 +157,26 @@ export default function TestimonialsSection() {
             {getCurrentTestimonials().map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="flex flex-col border border-[#E5E0D8] bg-[#FAF7F0] p-8 shadow-sm transition-all hover:shadow-md"
+                className="flex flex-col border border-[#fbfbfb] bg-[#fbfbfb] p-8 shadow-sm transition-all hover:shadow-md"
               >
                 {/* Company Logo */}
                 <div className="mb-6">
                   <div className="flex h-8 items-center">
-                    <span className="text-lg font-semibold text-brown">
+                    <span className="text-lg font-semibold text-black">
                       {testimonial.company}
                     </span>
                   </div>
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="mb-8 flex-1 text-[15px] leading-relaxed text-brown flex-wrap">
+                <p className="mb-8 flex-1 text-[15px] leading-relaxed text-black flex-wrap">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 {/* Profile Section */}
                 <div className="flex items-center">
                   <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-brown">
-                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-brown font-medium">
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-black font-medium">
                       {testimonial.name
                         .split(" ")
                         .map((n) => n[0])
@@ -184,7 +184,7 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <div>
-                    <div className="text-[15px] font-semibold text-[#171614]">
+                    <div className="text-[15px] font-semibold text-black">
                       {testimonial.name}
                     </div>
                     <div className="text-[13px] text-[#7A7671]">

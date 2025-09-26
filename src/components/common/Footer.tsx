@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative isolate w-full bg-[#1f1f1f] text-neutral-300">
+    <footer className="relative isolate w-full bg-[#100c08] text-neutral-300">
       {/* Watermark “S” on the right */}
       <div
         aria-hidden

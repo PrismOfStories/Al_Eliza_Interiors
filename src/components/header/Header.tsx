@@ -54,7 +54,7 @@ export default function Header() {
       {/* Menu + Button */}
       <div className={"flex items-start justify-end gap-4 relative mt-3 "}>
         <motion.div
-          className="rounded-[25px] bg-black overflow-hidden relative"
+          className="rounded-[25px] bg-[#100c08] w-hidden relative"
           animate={{
             width: isActive ? (isMobile ? "90vw" : "480px") : "100px",
             height: isActive ? (isMobile ? "80vh" : "650px") : "40px",
