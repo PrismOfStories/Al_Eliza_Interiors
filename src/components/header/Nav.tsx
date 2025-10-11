@@ -1,6 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FaFacebookF } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
+import { SlSocialLinkedin } from "react-icons/sl";
 
 const routes = [
   { title: "Home", href: "/" },
@@ -14,11 +17,17 @@ const footerLinks = [
   {
     title: "Facebook",
     href: "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406/",
+    icon: <FaFacebookF className="h-7 w-7" />,
   },
-  { title: "Instagram", href: "https://www.instagram.com/al_eliza_interiors/" },
+  {
+    title: "Instagram",
+    href: "https://www.instagram.com/al_eliza_interiors/",
+    icon: <FiInstagram className="h-7 w-7" />,
+  },
   {
     title: "Linkedin",
     href: "https://www.linkedin.com/in/al-eliza-interior-5618aa274/%20",
+    icon: <SlSocialLinkedin className="h-7 w-7" />,
   },
 ];
 
@@ -64,9 +73,9 @@ export default function Nav({ closeMenu }: NavProps) {
   // };
 
   return (
-    <div className="flex flex-col justify-between h-full p-8 sm:p-12 md:p-16 box-border">
+    <div className="flex flex-col justify-between h-full p-8 sm:px-12  box-border">
       {/* Main links */}
-      <div className="flex flex-col gap-4 md:gap-6 mt-14">
+      <div className="flex flex-col gap-4 mt-14">
         {routes.map((link, i) => (
           <motion.div
             key={i}
@@ -89,7 +98,7 @@ export default function Nav({ closeMenu }: NavProps) {
             }}
           >
             <Link
-              className="text-white text-3xl sm:text-4xl  font-semibold no-underline block font-michroma tracking-widest"
+              className="text-white text-2xl  font-semibold no-underline block font-michroma tracking-widest"
               href={link.href}
               onClick={() => closeMenu?.()}
             >
@@ -100,7 +109,7 @@ export default function Nav({ closeMenu }: NavProps) {
       </div>
 
       {/* Footer links */}
-      <motion.div className="flex flex-wrap mt-6 gap-x-2 gap-y-1 sm:gap-x-4 sm:gap-y-2">
+      <motion.div className="flex mt-6 gap-x-2 gap-y-1  sm:gap-y-2">
         {footerLinks.map((link, i) => (
           <motion.div
             key={i}
@@ -118,14 +127,14 @@ export default function Nav({ closeMenu }: NavProps) {
           >
             <Link
               href={link.href}
-              className="text-base sm:text-xl text-white block font-geist-sans"
+              className="text-base  text-white block font-geist-sans"
               onClick={() => closeMenu?.()}
               target={link.href.startsWith("http") ? "_blank" : undefined} // external links open in new tab
               rel={
                 link.href.startsWith("http") ? "noopener noreferrer" : undefined
               }
             >
-              {link.title}
+              {link.icon}
             </Link>
           </motion.div>
         ))}
