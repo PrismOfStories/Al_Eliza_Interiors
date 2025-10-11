@@ -13,16 +13,16 @@ export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const isScrolled = useScrolled(50);
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   // Calculate logo size - keep it stable
   const logoSize = isMobile ? 80 : isScrolled ? 80 : 110;
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         menuRef.current &&
-        !menuRef.current.contains(event.target) &&
+        !menuRef.current.contains(event.target as Node) &&
         isActive
       ) {
         setIsActive(false);

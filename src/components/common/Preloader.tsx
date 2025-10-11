@@ -1,98 +1,58 @@
 "use client";
 
-import { cn } from "@/lib/utils/tailwind";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 export default function Preloader() {
-  const [step, setStep] = useState<"words" | "brand" | "swipe" | "done">(
-    "words"
-  );
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const timers: NodeJS.Timeout[] = [];
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 2500);
 
-    setStep("words");
-    timers.push(setTimeout(() => setStep("brand"), 1200));
-    timers.push(setTimeout(() => setStep("swipe"), 2400));
-    timers.push(
-      setTimeout(() => {
-        setStep("done"); // just mark done
-      }, 2700)
-    );
-
-    return () => timers.forEach(clearTimeout);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <AnimatePresence>
-      {step !== "done" && (
+    <AnimatePresence mode="wait">
+      {isVisible && (
         <motion.div
-          className={cn(
-            "fixed inset-0 z-[9999] flex items-center justify-center",
-            step === "swipe" ? "bg-brown/40" : "bg-background"
-          )}
-          initial={{ y: 0 }}
-          animate={step === "swipe" ? { y: "-100%" } : { y: 0 }}
+          key="preloader"
+          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-black"
+          initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          {step === "words" && (
-            <div className="flex flex-col lg:flex-row gap-4 text-5xl text-gold">
-              {/* words */}
-              <motion.span
-                key="Inspired"
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0 }}
-                className="font-light text-neutral-500 font-michroma"
-              >
-                Inspired
-              </motion.span>
-              <motion.span
-                key="Creative"
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.25 }}
-                className="font-bold text-neutral-200 font-michroma "
-              >
-                Creative
-              </motion.span>
-              <motion.span
-                key="Functional"
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.5 }}
-                className="font-light text-neutral-500 font-michroma"
-              >
-                Functional
-              </motion.span>
-            </div>
-          )}
-
-          {step === "brand" && (
-            <motion.div className="relative flex items-center justify-center overflow-hidden h-full w-full">
-              <motion.div
-                className="absolute inset-0 bg-gold origin-left h-16 w-64 mx-auto my-auto"
-                initial={{ scaleX: 0, x: 0, skewX: -20 }}
-                animate={{ scaleX: [0, 1, 1], x: [0, "40%", 0], skewX: -20 }}
-                transition={{
-                  duration: 1,
-                  ease: "easeInOut",
-                  times: [0, 0.5, 1],
-                }}
-                exit={{ scaleX: [1, 1, 0] }}
-              />
-              <motion.h1
-                className="relative text-4xl font-extrabold text-white font-michroma tracking-widest"
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.4, ease: "easeInOut", delay: 0.5 }}
-              >
-                Al Eliza
-              </motion.h1>
-            </motion.div>
-          )}
+          <div className="masking-container flex items-center justify-center">
+            <h1
+              className="masked-text text-[clamp(6rem,10vw,9rem)] font-extrabold"
+              style={{
+                color: "transparent",
+                backgroundImage:
+                  "url('https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp')",
+                backgroundSize: "200%",
+                backgroundPosition: "0 50%",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                animation: "animate-background 5s infinite alternate linear",
+                fontFamily: "Arial, sans-serif",
+              }}
+            >
+              AL&nbsp;ELIZA
+            </h1>
+            <style jsx>{`
+              @keyframes animate-background {
+                0% {
+                  background-position: 0 50%;
+                }
+                100% {
+                  background-position: 100% 50%;
+                }
+              }
+            `}</style>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
