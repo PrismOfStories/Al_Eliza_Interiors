@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fancyapps/ui": "^6.0.34",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.16",
     "gsap": "^3.13.0",
@@ -22,7 +21,8 @@
     "react-icons": "^5.5.0",
     "react-scroll-motion": "^0.3.5",
     "split-type": "^0.3.4",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "yet-another-react-lightbox": "^3.25.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

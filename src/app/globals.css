@@ -36,3 +36,9 @@
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+@layer base {
+  .yarl__container {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+  }
+}
