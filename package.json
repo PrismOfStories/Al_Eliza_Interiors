@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fancyapps/ui": "^6.0.34",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.16",
     "gsap": "^3.13.0",

@@ -10,7 +10,7 @@ const routes = [
   { title: "Home", href: "/" },
   { title: "Our Story", href: "/our-story" },
   { title: "Expertise", href: "/services" },
-  { title: "Projects", href: "/Projects" },
+  { title: "Portfolio", href: "/portfolio" },
   { title: "Contact", href: "/get-in-touch" },
 ];
 
