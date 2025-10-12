@@ -10,6 +10,8 @@ import {
   animate,
 } from "framer-motion";
 import { logos, team } from "@/lib/static-data/about";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Counter({ from = 0, to }: { from?: number; to: number }) {
   const spanRef = useRef<HTMLSpanElement>(null);
@@ -41,6 +43,7 @@ function About() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
@@ -50,17 +53,44 @@ function About() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+     e.preventDefault();
+     const form = e.currentTarget;
+     const formData = new FormData(form);
+     const data = Object.fromEntries(formData.entries());
+ 
+     const loadingToast = toast.loading("Sending message...");
+ 
+     try {
+       const res = await fetch("/api/contact", {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify(data),
+       });
+       const result = await res.json();
+ 
+       toast.dismiss(loadingToast);
+ 
+       if (result.success) {
+         toast.success("Message sent successfully! 🎉");
+         form.reset();
+       } else {
+         toast.error("Failed to send message.");
+       }
+     } catch {
+       toast.dismiss(loadingToast);
+       toast.error("Something went wrong!");
+     }
+   };
 
   return (
     <>
+          <ToastContainer />
+    
       <section className="relative w-full h-[90vh] flex items-center justify-center">
         {/* Background Image */}
         <Image
-          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
+          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
           alt="Background"
           fill
           className="object-cover"
@@ -72,13 +102,13 @@ function About() {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-end text-right">
-          <p className="text-gray-300 text-xl md:text-xl lg:text-2xl mb-6 max-w-2xl">
+          {/* <p className="font-ethnocentric text-gray-300 text-xl md:text-xl lg:text-2xl mb-6 max-w-2xl">
             We&apos;ve worked with over 120 clients to transform homes, gardens,
             and interiors with care. Our approach blends function, beauty, and
             personal style.
-          </p>
-          <h1 className="text-white text-5xl md:text-8xl lg:text-[8rem] font-bold leading-tight">
-            About Al Eliza
+          </p> */}
+          <h1 className="font-deltha text-white text-2xl md:text-7xl lg:text-[8rem] font-bold leading-tight">
+            About <br />Al Eliza
           </h1>
         </div>
       </section>
@@ -90,17 +120,17 @@ function About() {
             {/* Left side - OUR MISSION */}
             <div className="col-span-1 flex items-center gap-2">
               <span className="w-3 h-3 bg-gold"></span>
-              <span className="uppercase text-sm font-semibold tracking-wider text-[#878787]">
+              <span className="font-deltha uppercase text-sm font-semibold tracking-wider text-[#878787]">
                 Our Mission
               </span>
             </div>
 
             {/* Right side - Description (2/3 width) */}
             <div className="col-span-2 text-left">
-              <h2 className="text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
+              <h2 className=" font-redhat text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
                 At AL Eliza, we transform spaces with{" "}
                 <span className="font-bold">thoughtful design and care</span> —{" "}
-                <span className="text-white">
+                <span className="font-redhat text-white">
                   creating spaces that inspire, nurture, and reflect your unique
                   way of living.
                 </span>
@@ -157,7 +187,7 @@ function About() {
 
       <section className="py-20 px-6 md:px-12  mt-16">
         <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
-          <h2 className=" text-7xl lg:text-7xl font-bebas-neue font-medium text-[#878787] ">
+          <h2 className="font-deltha text-7xl lg:text-5xl font-bebas-neue font-medium text-[#878787] ">
             Meet Our Team
           </h2>
           <p className="text-white mt-4 ">
@@ -202,7 +232,7 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: false }}
-              className="text-center  w-full  text-7xl lg:text-7xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
+              className="font-deltha text-center  w-full  text-7xl lg:text-5xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
             >
               OUR PRESTIGIOUS CLIENTS
             </motion.p>
@@ -234,7 +264,7 @@ function About() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Left Side - Contact Info */}
           <div className="flex flex-col justify-between">
-            <h2 className="flex items-center text-3xl font-semibold">
+            <h2 className="font-deltha flex items-center text-3xl font-semibold">
               <span className="w-6 h-6 bg-[#a37e41] [transform:skewX(-20deg)] mr-3"></span>
               Get in Touch
             </h2>
@@ -272,6 +302,18 @@ function About() {
                 name="email"
                 placeholder="Enter email address"
                 value={formData.email}
+                onChange={handleChange}
+                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm mb-2">Subject</label>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Enter your subject"
+                value={formData.subject}
                 onChange={handleChange}
                 className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2"
                 required

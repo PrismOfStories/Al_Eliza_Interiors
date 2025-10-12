@@ -10,6 +10,9 @@ import {
 } from "react-icons/fa6";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +38,44 @@ export default function GetInTouch() {
 
     return () => ctx.revert();
   }, []);
+
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    const loadingToast = toast.loading("Sending message...");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      toast.dismiss(loadingToast);
+
+      if (result.success) {
+        toast.success("Message sent successfully! 🎉");
+        form.reset();
+      } else {
+        toast.error("Failed to send message.");
+      }
+    } catch {
+      toast.dismiss(loadingToast);
+      toast.error("Something went wrong!");
+    }
+  };
+
+
+
   return (
     <>
+      <ToastContainer />
+
       <section
         ref={sectionRef}
         className="bg-background text-center mt-4 py-24 px-6"
@@ -45,7 +84,7 @@ export default function GetInTouch() {
           CONTACT US
         </p>
 
-        <h1 className="contact-animate text-6xl md:text-8xl font-extrabold text-white mb-6 leading-none">
+        <h1 className="contact-animate font-deltha text-6xl md:text-8xl font-extrabold text-white mb-6 leading-none">
           GET IN TOUCH
         </h1>
 
@@ -94,7 +133,7 @@ export default function GetInTouch() {
       <section className="relative min-h-screen flex items-center justify-center">
         {/* Background Image */}
         <Image
-          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp"
+          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760201119/form_vlsyjw.webp"
           alt="Background"
           fill
           className="object-cover"
@@ -106,60 +145,39 @@ export default function GetInTouch() {
 
         {/* Form Container */}
         <div className="relative z-10 w-full max-w-2xl bg-background p-10 rounded-[25px] ">
-          <form className="space-y-8">
-            {/* Name */}
+          <form className="space-y-8" onSubmit={handleSubmit}>
             <div className="border-b border-[#fbfbfb] pb-2">
-              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">
-                NAME
-              </label>
-              <input
-                type="text"
-                className="w-full bg-transparent focus:outline-none text-[#fbfbfb]"
-              />
+              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">NAME</label>
+              <input name="name" type="text" required className="w-full bg-transparent focus:outline-none text-[#fbfbfb]" />
             </div>
 
-            {/* Email */}
             <div className="border-b border-gray-300 pb-2">
-              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">
-                EMAIL ADDRESS
-              </label>
-              <input
-                type="email"
-                className="w-full bg-transparent focus:outline-none text-[#fbfbfb]"
-              />
+              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">EMAIL ADDRESS</label>
+              <input name="email" type="email" required className="w-full bg-transparent focus:outline-none text-[#fbfbfb]" />
             </div>
 
-            {/* Subject */}
             <div className="border-b border-gray-300 pb-2">
-              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">
-                SUBJECT
-              </label>
-              <input
-                type="text"
-                className="w-full bg-transparent focus:outline-none text-[#fbfbfb]"
-              />
+              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">SUBJECT</label>
+              <input name="subject" type="text" required className="w-full bg-transparent focus:outline-none text-[#fbfbfb]" />
             </div>
 
-            {/* Message */}
             <div className="border-b border-gray-300 pb-2">
-              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">
-                MESSAGE
-              </label>
-              <textarea
-                rows={4}
-                className="w-full bg-transparent focus:outline-none text-[#fbfbfb]"
-              ></textarea>
+              <label className="block text-sm font-medium text-[#fbfbfb] mb-1">MESSAGE</label>
+              <textarea name="message" rows={4} required className="w-full bg-transparent focus:outline-none text-[#fbfbfb]" />
             </div>
 
-            {/* Button */}
             <div className="pt-4">
-              <button className="group w-full justify-center cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-3 text-lg font-medium transition-colors duration-300 [transform:skewX(-20deg)]">
+              <button
+                type="submit"
+                className="group w-full justify-center cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-3 text-lg font-medium transition-colors duration-300 [transform:skewX(-20deg)]"
+              >
                 <span className="flex items-center gap-2 [transform:skewX(20deg)]">
                   SEND MESSAGE
                 </span>
               </button>
             </div>
           </form>
+
         </div>
       </section>
       <section className="bg-background text-center py-24 px-6">
@@ -169,7 +187,7 @@ export default function GetInTouch() {
         </p>
 
         {/* Main Title */}
-        <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-8 leading-none">
+        <h1 className="text-6xl font-deltha md:text-8xl font-extrabold text-white mb-8 leading-none">
           VISIT US
         </h1>
 
@@ -188,7 +206,7 @@ export default function GetInTouch() {
             <div className="pl-6 space-y-12">
               {/* Office Block */}
               <div>
-                <h2 className="text-xl font-bold text-black uppercase tracking-wide">
+                <h2 className=" font-xl font-bold text-black uppercase tracking-wide">
                   Head Office
                 </h2>
                 <p className="text-black mt-2 leading-relaxed">

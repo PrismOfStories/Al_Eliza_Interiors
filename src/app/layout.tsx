@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import {
   Bebas_Neue,
   Geist,
@@ -6,9 +7,30 @@ import {
   Geo,
   Michroma,
   Unbounded,
+  Poiret_One,
+  Red_Hat_Display
 } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "@/components/new/ClientWrapper";
+
+const deltha = localFont({
+  src: [
+    { path: "../../public/fonts/Deltha.ttf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Deltha.otf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-deltha",
+});
+const majer = localFont({
+  src: [
+    { path: "../../public/fonts/Majer.ttf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/majer.otf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-majer",
+});
+
+
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +66,18 @@ const geo = Geo({
   weight: "400",
 });
 
+const poiret = Poiret_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-poiret",
+});
+
+const redHat = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], 
+  variable: "--font-redhat",
+});
+
 export const metadata: Metadata = {
   title: "Al Eliza Interior - Transform Your Space with Elegant Designs",
   description:
@@ -58,7 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
+        className={`${deltha.variable}  ${majer.variable} ${geistSans.variable} ${redHat.variable} ${poiret.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
       >
         <ClientWrapper>{children}</ClientWrapper>
       </body>
