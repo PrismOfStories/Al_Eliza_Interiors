@@ -11,7 +11,7 @@ let hasShownPreloader = false;
 
 export default function ClientWrapper({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(!hasShownPreloader);
-  const [showContent, setShowContent] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     if (!hasShownPreloader) {
@@ -29,7 +29,7 @@ export default function ClientWrapper({ children }: { children: ReactNode }) {
 
   return (
     <>
-      {/* <AnimatePresence>{loading && <Preloader />}</AnimatePresence> */}
+      <AnimatePresence>{loading && <Preloader />}</AnimatePresence>
 
       {showContent && (
         <motion.div
