@@ -75,10 +75,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects"
+                  href="/portfolio"
                   className="text-neutral-400 hover:text-neutral-200"
                 >
-                  Projects
+                  Portfolio
                 </Link>
               </li>
               <li>
