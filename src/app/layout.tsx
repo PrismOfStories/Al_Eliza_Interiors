@@ -20,13 +20,13 @@ const deltha = localFont({
   ],
   variable: "--font-deltha",
 });
-const majer = localFont({
-  src: [
-    { path: "../../public/fonts/Majer.ttf", weight: "400", style: "normal" },
-    { path: "../../public/fonts/majer.otf", weight: "700", style: "normal" },
-  ],
-  variable: "--font-majer",
-});
+// const majer = localFont({
+//   src: [
+//     { path: "../../public/fonts/Majer.ttf", weight: "400", style: "normal" },
+//     { path: "../../public/fonts/majer.otf", weight: "700", style: "normal" },
+//   ],
+//   variable: "--font-majer",
+// });
 
 
 
@@ -92,7 +92,7 @@ export default function RootLayout({
   return ( 
     <html lang="en">
       <body
-        className={`${deltha.variable}  ${majer.variable} ${geistSans.variable} ${redHat.variable} ${poiret.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
+        className={`${deltha.variable}  ${geistSans.variable} ${redHat.variable} ${poiret.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
       >
         <ClientWrapper>{children}</ClientWrapper>
       </body>
