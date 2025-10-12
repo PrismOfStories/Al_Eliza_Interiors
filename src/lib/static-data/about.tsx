@@ -1,18 +1,18 @@
 export const team = [
   {
-    name: "Emily Chen",
-    role: "Lead Interior Designer",
-    image: "/images/harif.jpg",
+    name: "Mr. Mohammed Ashiq",
+    role: "Managing Director",
+    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/ashiq_axmp9d.jpg",
   },
   {
-    name: "Daniel Lee",
-    role: "Project Manager",
-    image: "/images/harif.jpg",
+    name: "Mr. Harif Harry",
+    role: "Business Development Manager",
+    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/harif_bc8lea.jpg",
   },
   {
-    name: "Sophia Kim",
-    role: "Architect",
-    image: "/images/harif.jpg",
+    name: "Mr. Jerais Mohammed",
+    role: "Creative Consultant",
+    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/jerry_nrgv00.jpg",
   },
   {
     name: "Michael Park",

@@ -13,14 +13,14 @@ const services = [
     description:
       "Whether it's a brand new build or a space refresh, we offer full spectrum interior styling services in Dubai, UAE. For new homeowners, we design interiors from the ground up. For clients looking to enhance existing spaces, we expertly rearrange furniture, recommend paint colors, and source new décor tailored to their style.",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760180954/residencial_foz8ns.webp",
   },
   {
     title: "Interior Design Consultancy",
     description:
       "In today’s people first world, workplace expectations have evolved. Our Dubai-based interior design consultants help businesses across the UAE create flexible, wellness driven environments aligned with their company’s purpose and culture.",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/img3_u7qqdu.webp",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760181123/interior_a4vwkt.webp",
   },
   {
     title: "360° Virtual Reality Interior Design",
@@ -34,22 +34,22 @@ const services = [
     description:
       "Navigating Dubai's regulatory landscape is a critical part of any commercial interior project. We manage the entire approval process, liaising with building owners, developers, and government bodies across Dubai and the UAE.",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_3_tp5mmt.webp",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760181681/fit_spqqr1.webp",
   },
 
-  {
-    title: "Turnkey Fit-Out Solutions",
-    description:
-      "Our turnkey fit out services in Dubai provide a hassle free, end to end solution for commercial and residential spaces. From concept development to final handover, we deliver fully functional interiors tailored to your needs.",
-    image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img2_oziylz.webp",
-  },
+  // {
+  //   title: "Turnkey Fit-Out Solutions",
+  //   description:
+  //     "Our turnkey fit out services in Dubai provide a hassle free, end to end solution for commercial and residential spaces. From concept development to final handover, we deliver fully functional interiors tailored to your needs.",
+  //   image:
+  //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img2_oziylz.webp",
+  // },
   {
     title: "Landscaping & Outdoor Design",
     description:
       "Our landscaping services in Dubai transform outdoor spaces into lush, livable environments. We design and install gardens, courtyards, and terraces that balance natural beauty with function perfect for villas, offices, and commercial properties.",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760182478/06_4_cxzfrg.webp",
   },
   {
     title: "Interior Maintenance Services",
@@ -138,7 +138,7 @@ export default function ServicesCombined() {
       {/* Intro Section */}
       <section className="flex flex-col items-center justify-center min-h-screen px-6">
         <p className="text-sm tracking-widest mb-6">OUR SERVICES</p>
-        <div className="text-center">
+        <div className=" font-deltha text-center">
           <h1 className="text-[8vw] md:text-[10vw] font-extrabold leading-[1.05]">
             DESIGN
           </h1>
@@ -151,7 +151,7 @@ export default function ServicesCombined() {
       {/* Card Stacking Section */}
       <section
         ref={sectionRef}
-        className="relative w-full h-screen flex items-center justify-center overflow-hidden mb-12"
+        className="relative w-full h-screen flex items-center justify-center overflow-hidden mb"
       >
         <div className="relative w-full max-w-5xl h-[80vh]">
           {services.map((service, i) => (
@@ -185,7 +185,7 @@ export default function ServicesCombined() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18">
           <div className="col-span-1 flex items-center gap-2">
             <span className="w-3 h-3 bg-yellow-500"></span>
-            <span className="uppercase text-sm font-semibold tracking-wider text-[#878787]">
+            <span className="font-deltha uppercase text-sm font-semibold tracking-wider text-[#878787]">
               Our Services
             </span>
           </div>
@@ -208,7 +208,7 @@ export default function ServicesCombined() {
         <p className="text-sm tracking-widest text-gray-300 mt-10 mb-4">
           START BUILDING
         </p>
-        <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-8 leading-none">
+        <h1 className="font-deltha text-6xl md:text-8xl font-extrabold text-white mb-8 leading-none">
           LET&lsquo;S DESIGN
         </h1>
         <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-12">
