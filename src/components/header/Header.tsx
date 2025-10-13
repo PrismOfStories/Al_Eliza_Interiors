@@ -15,8 +15,7 @@ export default function Header() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Calculate logo size - keep it stable
-  const logoSize = isMobile ? 80 : isScrolled ? 80 : 110;
+  const logoSize = isMobile ? (isScrolled ? 60 : 100) : isScrolled ? 80 : 150;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,7 +36,13 @@ export default function Header() {
   }, [isActive]);
 
   return (
-    <div className="fixed top-4 left-4 right-4 z-50 px-4 md:px-12">
+    <div
+      className={`fixed left-0 right-0 z-50 px-4 md:px-12 transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? "pt-0 py-1 backdrop-blur-md bg-black/30"
+          : "pt-4 backdrop-blur-none bg-transparent"
+      }`}
+    >
       <div className="flex items-start justify-between">
         <Link href="/" className="flex-shrink-0">
           <Image
@@ -56,14 +61,25 @@ export default function Header() {
           ref={menuRef}
         >
           <motion.div
-            className="rounded-[25px] bg-[#161616] absolute right-0 top-0"
+            className="bg-[#161616] absolute right-0 top-0 overflow-hidden"
             animate={{
-              width: isActive ? (isMobile ? "90vw" : "380px") : "100px",
-              height: isActive ? (isMobile ? "65vh" : "430px") : "40px",
-              ...(!isMobile && {
-                top: isActive ? "-25px" : "0px",
-                right: isActive ? "-25px" : "0px",
-              }),
+              width: isActive
+                ? isMobile
+                  ? "80vw"
+                  : "340px"
+                : isScrolled
+                ? "90px"
+                : "100px",
+              height: isActive
+                ? isMobile
+                  ? "60vh"
+                  : "410px"
+                : isScrolled
+                ? "35px"
+                : "40px",
+              top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
+              right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
+              skewX: isActive ? "0deg" : "-20deg",
               transition: {
                 duration: 0.75,
                 type: "tween",
@@ -75,16 +91,26 @@ export default function Header() {
               height: "40px",
               top: "0px",
               right: "0px",
+              skewX: "-20deg",
             }}
           >
-            <AnimatePresence>
-              {isActive && <Nav closeMenu={() => setIsActive(false)} />}
-            </AnimatePresence>
+            <div
+              className={
+                !isActive
+                  ? "[transform:skewX(20deg)] w-full h-full"
+                  : "w-full h-full"
+              }
+            >
+              <AnimatePresence>
+                {isActive && <Nav closeMenu={() => setIsActive(false)} />}
+              </AnimatePresence>
+            </div>
           </motion.div>
 
           <Button
             isActive={isActive}
             toggleMenu={() => setIsActive(!isActive)}
+            isScrolled={isScrolled}
           />
         </div>
       </div>

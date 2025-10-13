@@ -4,11 +4,23 @@ import { motion } from "framer-motion";
 type ButtonProps = {
   isActive: boolean;
   toggleMenu: () => void;
+  isScrolled: boolean;
 };
 
-export default function Button({ isActive, toggleMenu }: ButtonProps) {
+export default function Button({
+  isActive,
+  toggleMenu,
+  isScrolled,
+}: ButtonProps) {
   return (
-    <div className="absolute top-0 right-0 w-[100px] h-[40px] cursor-pointer rounded-[25px] overflow-hidden">
+    <motion.div
+      className="absolute top-0 right-0 cursor-pointer overflow-hidden [transform:skewX(-20deg)]"
+      animate={{
+        width: isScrolled ? "90px" : "100px",
+        height: isScrolled ? "35px" : "40px",
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
       <motion.div
         className="relative w-full h-full"
         animate={{ top: isActive ? "-100%" : "0%" }}
@@ -16,47 +28,65 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
       >
         <div
           onClick={toggleMenu}
-          className="w-full h-full bg-gold flex justify-center  items-center relative overflow-hidden group  "
+          className="w-full h-full bg-gold flex justify-center items-center relative overflow-hidden group"
         >
-          <PerspectiveText label="Menu" />
+          <div className="[transform:skewX(20deg)]">
+            <PerspectiveText label="Menu" isScrolled={isScrolled} />
+          </div>
         </div>
 
         <div
           onClick={toggleMenu}
           className="w-full h-full bg-gold flex justify-center items-center relative overflow-hidden group"
         >
-          <PerspectiveText label="Close" textColor="text-white" />
+          <div className="[transform:skewX(20deg)]">
+            <PerspectiveText
+              label="Close"
+              textColor="text-white"
+              isScrolled={isScrolled}
+            />
+          </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
 type PerspectiveTextProps = {
   label: string;
   textColor?: string;
+  isScrolled: boolean;
 };
 
 function PerspectiveText({
   label,
   textColor = "text-white",
+  isScrolled,
 }: PerspectiveTextProps) {
   return (
     <div
       className="flex flex-col justify-center items-center h-full w-full transform-style-preserve-3d transition-transform duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:rotate-x-90"
       style={{ transformStyle: "preserve-3d" }}
     >
-      <p
-        className={`transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)]  pointer-events-none ${textColor} uppercase group-hover:-translate-y-full group-hover:opacity-0 font-michroma tracking-widest`}
+      <motion.p
+        className={`transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:-translate-y-full group-hover:opacity-0 font-michroma tracking-widest`}
+        animate={{
+          fontSize: isScrolled ? "0.75rem" : "0.875rem",
+        }}
+        transition={{ duration: 0.3 }}
       >
         {label}
-      </p>
+      </motion.p>
 
-      <p
-        className={`absolute bottom-0 transform -rotate-x-90 translate-y-[9px] opacity-0  transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:opacity-100 font-michroma tracking-widest`}
+      <motion.p
+        className={`absolute bottom-0 transform -rotate-x-90 translate-y-[9px] opacity-0 transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:opacity-100 font-michroma tracking-widest`}
+        animate={{
+          fontSize: isScrolled ? "0.75rem" : "0.875rem",
+        }}
+        transition={{ duration: 0.3 }}
       >
         {label}
-      </p>
+      </motion.p>
     </div>
   );
 }

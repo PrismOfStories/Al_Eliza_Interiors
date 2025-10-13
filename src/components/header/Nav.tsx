@@ -70,7 +70,7 @@ export default function Nav({ closeMenu }: NavProps) {
             }}
           >
             <Link
-              className={`text-2xl font-semibold no-underline block font-michroma tracking-widest transition-colors duration-300 ${
+              className={`text-xl sm:text-2xl font-semibold no-underline block font-michroma tracking-widest transition-colors duration-300 ${
                 isActive(link.href) ? "text-gold" : "text-white hover:text-gold"
               }`}
               href={link.href}
@@ -100,7 +100,7 @@ export default function Nav({ closeMenu }: NavProps) {
           >
             <Link
               href={link.href}
-              className="text-base  text-white block font-geist-sans hover:text-gold"
+              className="text-xl sm:text-2xl  text-white block font-geist-sans hover:text-gold"
               onClick={() => closeMenu?.()}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={
