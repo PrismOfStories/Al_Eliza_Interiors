@@ -14,7 +14,7 @@ export default function Home() {
       <ScrollHero />
       <ProjectsScroll />
       <InteriorDesignHero />
-      <ServiceCard projects={services} />
+      <ServiceCard title="Expertise" projects={services} />
       <section className="py-16 lg:py-28">
         {" "}
         <ClientsCard />

@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 
 interface ServiceProps {
+  type?: "home" | "page";
+  title?: string;
   projects: {
     title: string;
     description: string;
@@ -15,7 +17,11 @@ interface ServiceProps {
   }[];
 }
 
-export default function ServiceCard({ projects }: ServiceProps) {
+export default function ServiceCard({
+  type = "home",
+  title,
+  projects,
+}: ServiceProps) {
   const container = useRef<HTMLElement>(null);
   const headingRef = useRef(null);
 
@@ -29,20 +35,24 @@ export default function ServiceCard({ projects }: ServiceProps) {
   });
   return (
     <section ref={container} className="relative mt-[10vh] px-4">
-      <motion.p
-        ref={headingRef}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="text-center lg:text-right w-full lg:max-w-[90rem] font-michroma tracking-widest mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
-      >
-        Expertise
-      </motion.p>
+      {title && (
+        <motion.p
+          ref={headingRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: false, margin: "0px 0px -40% 0px" }}
+          className="text-center lg:text-right w-full lg:max-w-[90rem] font-michroma tracking-widest mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
+        >
+          {title}
+        </motion.p>
+      )}
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
 
         return (
           <Card
+            type={type}
             key={`p_${i}`}
             i={i}
             {...project}

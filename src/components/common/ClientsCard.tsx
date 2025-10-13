@@ -28,7 +28,7 @@ export default function ClientsCard() {
               key={index}
               className="group flex items-center justify-center p-4  transition-all duration-300 rounded-lg"
             >
-              <div className="relative w-full h-16 sm:h-20">
+              <div className="relative w-full h-20 sm:h-28">
                 <Image
                   src={logo}
                   alt={`Client ${index + 1}`}

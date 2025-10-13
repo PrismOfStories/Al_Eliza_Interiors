@@ -24,7 +24,6 @@ export default function Hero() {
       ref={heroRef}
       className="relative w-full min-h-screen overflow-hidden"
     >
-      {/* VIDEO BACKGROUND */}
       {showVideo && (
         <video
           className="absolute inset-0 w-full h-full object-cover -z-10 preload-asset"

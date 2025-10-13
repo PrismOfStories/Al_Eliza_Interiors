@@ -7,6 +7,7 @@ import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 
 type CardProps = {
+  type: "home" | "page";
   i: number;
   title: string;
   description: string;
@@ -18,6 +19,7 @@ type CardProps = {
 };
 
 const Card = ({
+  type = "home",
   i,
   title,
   description,
@@ -36,49 +38,97 @@ const Card = ({
       ref={container}
       className="h-screen flex items-center justify-center sticky top-0"
     >
-      <motion.div
-        style={{ scale, top: `calc(-5vh + ${i * 25}px)` }}
-        className="relative flex flex-col rounded-xl p-8 sm:p-12 w-full max-w-[90rem] h-[450px] sm:h-[550px] lg:h-[650px] origin-top overflow-hidden"
-      >
-        <Image
-          src={src}
-          alt={title}
-          fill
-          className="absolute inset-0 object-cover rounded-xl"
-          priority
-        />
+      {type === "home" ? (
+        <motion.div
+          style={{ scale, top: `calc(-5vh + ${i * 25}px)` }}
+          className="relative flex flex-col rounded-xl p-8 sm:p-12 w-full max-w-[90rem] h-[450px] sm:h-[550px] lg:h-[650px] origin-top overflow-hidden"
+        >
+          <Image
+            src={src}
+            alt={title}
+            fill
+            className="absolute inset-0 object-cover rounded-xl"
+            priority
+          />
 
-        <div className="absolute inset-0 bg-black/40 rounded-xl"></div>
+          <div className="absolute inset-0 bg-black/40 rounded-xl"></div>
 
-        <div className="relative z-10 flex flex-col h-full justify-between p-4 sm:p-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: false }}
-            className="text-center w-full font-michroma text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 tracking-widest"
-          >
-            {title}
-          </motion.h2>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl mx-auto text-white font-geist-sans">
-              {description}
-            </p>
-
-            <Link
-              href={url}
-              target="_blank"
-              className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-michroma tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
+          <div className="relative z-10 flex flex-col h-full justify-between p-4 sm:p-8">
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              viewport={{ once: false }}
+              className="text-center w-full font-michroma text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 tracking-widest"
             >
-              <span className="flex items-center gap-2 [transform:skewX(20deg)]">
-                See more
-                <FaChevronRight className="transition-transform group-hover:translate-x-1" />
-              </span>
-            </Link>
+              {title}
+            </motion.h2>
+
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl  text-white font-geist-sans">
+                {description}
+              </p>
+
+              <Link
+                href={url}
+                target="_blank"
+                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-michroma tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
+              >
+                <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                  See more
+                  <FaChevronRight className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      ) : (
+        <motion.div
+          style={{ scale, top: `calc(-5vh + ${i * 25}px)` }}
+          className="relative flex flex-col md:flex-row w-full max-w-[90rem] rounded-xl h-auto md:h-[650px] lg:h-[700px] origin-top overflow-hidden shadow-2xl"
+        >
+          {/* Left Side - Image */}
+          <div className="relative w-full md:w-1/2 h-[300px] md:h-full">
+            <Image
+              src={src}
+              alt={title}
+              fill
+              className="absolute inset-0 object-cover"
+              priority
+            />
+          </div>
+
+          <div className="relative w-full md:w-1/2 h-auto md:h-full bg-[#f4f4f4] flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 font-michroma">
+                From Concept to Construction
+              </p>
+
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-black mb-4 sm:mb-6 leading-tight font-michroma">
+                {title}
+              </h2>
+
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-700 mb-6 sm:mb-8 font-geist-sans max-w-xl">
+                {description}
+              </p>
+
+              <Link
+                href={url}
+                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-michroma tracking-widest transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg w-fit"
+              >
+                <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                  Learn More
+                  <FaChevronRight className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };

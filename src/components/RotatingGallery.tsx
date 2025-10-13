@@ -26,8 +26,8 @@ export default function SemiCircleFan() {
       x,
       y: -y,
       rotate: angle,
-      scale: 1,       // No scaling for outer cards
-      opacity: 1,     // Always visible
+      scale: 1, // No scaling for outer cards
+      opacity: 1, // Always visible
     };
   };
 
@@ -91,8 +91,8 @@ export default function SemiCircleFan() {
       setTimeout(animateCards, 1500);
     };
 
-    positionCards();   // Initial position
-    animateCards();    // Begin animation
+    positionCards(); // Initial position
+    animateCards(); // Begin animation
 
     return () => {
       gsap.killTweensOf(cards);

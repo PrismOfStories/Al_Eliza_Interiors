@@ -18,7 +18,6 @@ function Counter({ from = 0, to }: { from?: number; to: number }) {
   const motionValue = useMotionValue(from);
   const rounded = useTransform(motionValue, (latest) => Math.floor(latest));
 
-  // detect when the span is visible
   const isInView = useInView(spanRef, { once: true });
 
   useEffect(() => {
@@ -54,41 +53,40 @@ function About() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-     e.preventDefault();
-     const form = e.currentTarget;
-     const formData = new FormData(form);
-     const data = Object.fromEntries(formData.entries());
- 
-     const loadingToast = toast.loading("Sending message...");
- 
-     try {
-       const res = await fetch("/api/contact", {
-         method: "POST",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify(data),
-       });
-       const result = await res.json();
- 
-       toast.dismiss(loadingToast);
- 
-       if (result.success) {
-         toast.success("Message sent successfully! 🎉");
-         form.reset();
-       } else {
-         toast.error("Failed to send message.");
-       }
-     } catch {
-       toast.dismiss(loadingToast);
-       toast.error("Something went wrong!");
-     }
-   };
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    const loadingToast = toast.loading("Sending message...");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      toast.dismiss(loadingToast);
+
+      if (result.success) {
+        toast.success("Message sent successfully! 🎉");
+        form.reset();
+      } else {
+        toast.error("Failed to send message.");
+      }
+    } catch {
+      toast.dismiss(loadingToast);
+      toast.error("Something went wrong!");
+    }
+  };
 
   return (
     <>
-          <ToastContainer />
-    
-      <section className="relative w-full h-[90vh] flex items-center justify-center">
-        {/* Background Image */}
+      <ToastContainer />
+
+      <section className="relative w-full min-h-screen flex items-center justify-center">
         <Image
           src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
           alt="Background"
@@ -97,35 +95,32 @@ function About() {
           priority
         />
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
 
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-end text-right">
-          {/* <p className="font-ethnocentric text-gray-300 text-xl md:text-xl lg:text-2xl mb-6 max-w-2xl">
-            We&apos;ve worked with over 120 clients to transform homes, gardens,
-            and interiors with care. Our approach blends function, beauty, and
-            personal style.
-          </p> */}
-          <h1 className="font-deltha text-white text-2xl md:text-7xl lg:text-[8rem] font-bold leading-tight">
-            About <br />Al Eliza
-          </h1>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center sm:items-end text-center sm:text-right">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: false }}
+            className="font-deltha text-white text-[clamp(2.5rem,6vw,8rem)] font-bold leading-tight"
+          >
+            About <br />
+            Al Eliza
+          </motion.h1>
         </div>
       </section>
 
       <section className="w-full py-20 px-6 md:px-12 mt-14 lg:mt-48 ">
         <div className="max-w-7xl mx-auto">
-          {/* Mission + Description */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18 lg:mb-48">
-            {/* Left side - OUR MISSION */}
             <div className="col-span-1 flex items-center gap-2">
               <span className="w-3 h-3 bg-gold"></span>
-              <span className="font-deltha uppercase text-sm font-semibold tracking-wider text-[#878787]">
+              <span className="font-deltha uppercase text-sm font-semibold tracking-wider text-white">
                 Our Mission
               </span>
             </div>
 
-            {/* Right side - Description (2/3 width) */}
             <div className="col-span-2 text-left">
               <h2 className=" font-redhat text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
                 At AL Eliza, we transform spaces with{" "}
@@ -138,13 +133,12 @@ function About() {
             </div>
           </div>
 
-          {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="flex flex-col justify-between h-48 p-6">
-              <h3 className="text-6xl text-right font-bold text-[#878787]">
+            <div className="flex flex-col justify-between">
+              <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={98} />%
               </h3>
-              <div className="text-right mt-24">
+              <div className="sm:text-right mt-10">
                 <p className="text-xl font-medium text-white mb-2">
                   Customer Satisfaction Rate
                 </p>
@@ -154,11 +148,13 @@ function About() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between h-48 p-6">
-              <h3 className="text-6xl text-right font-bold text-[#878787]">
+            <hr className="bg-gold h-0.5 sm:hidden" />
+
+            <div className="flex flex-col justify-between">
+              <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={250} />+
               </h3>
-              <div className="text-right mt-24">
+              <div className="sm:text-right mt-10">
                 <p className="text-xl font-medium text-white mb-2">
                   Projects Completed
                 </p>
@@ -168,11 +164,13 @@ function About() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between h-48 p-6">
-              <h3 className="text-6xl text-right font-bold text-[#878787]">
+            <hr className="bg-gold h-0.5 sm:hidden" />
+
+            <div className="flex flex-col justify-between">
+              <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={64} />%
               </h3>
-              <div className="text-right mt-24">
+              <div className="sm:text-right mt-10">
                 <p className="text-xl font-medium text-white mb-2 ">
                   Repeat Client Rate
                 </p>
@@ -181,28 +179,29 @@ function About() {
                 </p>
               </div>
             </div>
+
+            <hr className="bg-gold h-0.5 sm:hidden" />
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-6 md:px-12  mt-16">
+      <section className="sm:py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
-          <h2 className="font-deltha text-7xl lg:text-5xl font-bebas-neue font-medium text-[#878787] ">
+          <h2 className="font-deltha text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-bebas-neue font-medium text-gold">
             Meet Our Team
           </h2>
-          <p className="text-white mt-4 ">
+          <p className="text-[#878787]  mt-4  text-base lg:text-xl">
             Get to know the people turning ideas into inspiring homes and
             gardens.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
           {team.map((member, index) => (
             <div
               key={index}
               className="relative group overflow-hidden shadow-lg aspect-[2/3]"
             >
-              {/* Team Image */}
               <Image
                 src={member.image}
                 alt={member.name}
@@ -210,7 +209,6 @@ function About() {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
-              {/* Hover Overlay */}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-start p-4">
                 <div>
                   <h3 className="text-white text-lg font-semibold">
@@ -218,6 +216,32 @@ function About() {
                   </h3>
                   <p className="text-gray-200 text-sm">{member.role}</p>
                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="sm:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pt-10">
+          {team.map((member, index) => (
+            <div key={index} className="group">
+              {/* Image Container */}
+              <div className="relative h-[380px] w-full overflow-hidden shadow-lg">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-fit transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+
+              {/* Text Content Below Image */}
+              <div className="mt-4 text-center">
+                <h3 className="text-gold text-lg font-semibold font-michroma">
+                  {member.name}
+                </h3>
+                <p className="text-white text-sm font-geist-sans mt-1">
+                  {member.role}
+                </p>
               </div>
             </div>
           ))}
@@ -232,20 +256,19 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: false }}
-              className="font-deltha text-center  w-full  text-7xl lg:text-5xl font-bebas-neue font-medium text-[#878787] mb-10 lg:mb-20"
+              className="font-deltha text-center  w-full text-[clamp(1.7rem,5vw,3rem)] font-bebas-neue font-medium text-gold mb-10 lg:mb-20"
             >
               OUR PRESTIGIOUS CLIENTS
             </motion.p>
           </div>
 
-          {/* Logo Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center">
             {logos.map((logo, index) => (
               <div
                 key={index}
                 className="group flex items-center justify-center p-4  transition-all duration-300 rounded-lg"
               >
-                <div className="relative w-full h-16 sm:h-20">
+                <div className="relative w-full h-20 sm:h-28">
                   <Image
                     src={logo}
                     alt={`Client ${index + 1}`}
@@ -260,16 +283,13 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-background text-white py-20 px-6">
+      <section className="bg-background text-white py-10 sm:py-20 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Left Side - Contact Info */}
           <div className="flex flex-col justify-between">
             <h2 className="font-deltha flex items-center text-3xl font-semibold">
               <span className="w-6 h-6 bg-[#a37e41] [transform:skewX(-20deg)] mr-3"></span>
               Get in Touch
             </h2>
-
-            {/* Phone + Email at bottom aligned with submit */}
             <div className="flex flex-col items-left mt-4 gap-2">
               <p className="text-[#878787] text-xl">206-339-2947</p>
               <p className="text-3xl md:text-4xl font-semibold">
@@ -277,8 +297,6 @@ function About() {
               </p>
             </div>
           </div>
-
-          {/* Right Side - Form */}
           <form
             onSubmit={handleSubmit}
             className="flex flex-col justify-between space-y-8"
@@ -342,23 +360,21 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-background text-white py-20 px-6">
+      <section className="bg-background text-white py-10 sm:py-20 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:justify-between gap-10">
-          {/* Left Image */}
           <div className="w-full lg:w-1/2">
-            <div className="h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative">
+            <div className="h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative sm:[transform:skewX(-10deg)]">
               <Image
                 src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
                 alt="Let's Chat"
                 fill
-                className="w-full rounded-[25px] object-cover"
+                className="w-full object-cover"
               />
             </div>
           </div>
 
-          {/* Right Text */}
           <div className="flex items-center w-full lg:w-1/2">
-            <h2 className="text-5xl sm:text-7xl lg:text-9xl font-bold leading-none tracking-tight text-[#878787]">
+            <h2 className="text-5xl sm:text-7xl lg:text-9xl font-bold leading-none tracking-tight text-gold">
               Let&apos;s Chat
             </h2>
           </div>
