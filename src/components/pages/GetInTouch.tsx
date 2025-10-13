@@ -77,7 +77,7 @@ export default function GetInTouch() {
         ref={sectionRef}
         className="bg-background text-center py-24 px-6"
       >
-        <p className="contact-animate text-sm tracking-widest text-silver mt-14 mb-4">
+        <p className="contact-animate text-sm tracking-widest text-neutral-400 mt-14 mb-4">
           CONTACT US
         </p>
 
@@ -96,33 +96,33 @@ export default function GetInTouch() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-black hover:text-white hover:bg-gold transition-all duration-300"
+            className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
           >
-            <FaInstagram size={20} />
+            <FaInstagram className="h-10 w-10" />
           </a>
           <a
             href="https://x.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-black hover:text-white hover:bg-gold transition-all duration-300"
+            className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
           >
-            <FaXTwitter size={20} />
+            <FaXTwitter className="h-10 w-10" />
           </a>
           <a
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-black hover:text-white hover:bg-gold transition-all duration-300"
+            className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
           >
-            <FaLinkedinIn size={20} />
+            <FaLinkedinIn className="h-10 w-10" />
           </a>
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-black hover:text-white hover:bg-gold transition-all duration-300"
+            className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
           >
-            <FaFacebookF size={20} />
+            <FaFacebookF className="h-10 w-10" />
           </a>
         </div>
       </section>

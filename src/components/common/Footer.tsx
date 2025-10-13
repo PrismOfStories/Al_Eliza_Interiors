@@ -43,10 +43,75 @@ export default function Footer() {
       {/* Link columns */}
       <div className="relative mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
+          <div>
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
+              Contact
+            </h3>
+            <div className="space-y-4 text-lg">
+              <p className="max-w-sm text-neutral-400 font-geist-sans">
+                Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
+                United Arab Emirates
+              </p>
+
+              <div className="mt-2 space-y-1">
+                <Link
+                  href="tel:+971522889300"
+                  className="block text-neutral-400 hover:text-white text-base sm:text-xl"
+                >
+                  +971 522 889 300
+                </Link>
+                <Link
+                  href="tel:+971543783000"
+                  className="block  text-neutral-400 hover:text-white text-base sm:text-xl"
+                >
+                  +971 54 378 3000
+                </Link>
+              </div>
+              <p className="font-geist-sans">
+                <Link
+                  href="mailto:info@alelizainteriors.com"
+                  className="block text-neutral-400 hover:text-white mt-2 text-base sm:text-xl"
+                >
+                  info@alelizainteriors.com
+                </Link>
+              </p>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
+              Services
+            </h3>
+            <ul className="space-y-4 text-md  font-geist-sans uppercase">
+              <li className="text-neutral-400 hover:text-neutral-200">
+                Residential & Commercial Designs
+              </li>
+              <li className="text-neutral-400 hover:text-neutral-200">
+                Design Consultancy
+              </li>
+              <li className="text-neutral-400 hover:text-neutral-200">
+                Virtual Reality 360° Designs
+              </li>
+              <li className="text-neutral-400 hover:text-neutral-200">
+                Fit out Approvals
+              </li>
+              <li className="text-neutral-400 hover:text-neutral-200">
+                Turnkey Fit out Projects
+              </li>
+              <li className="text-neutral-400 hover:text-neutral-200">
+                Landscaping
+              </li>
+              <li className="text-neutral-400 hover:text-neutral-200">
+                Maintenance
+              </li>
+            </ul>
+          </div>
+
           {/* Navigation */}
           <div>
             <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400 font-michroma uppercase">
-              Navigation
+              Menu
             </h3>
             <ul className="space-y-4 text-md font-geist-sans uppercase">
               <li>
@@ -92,60 +157,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
-              Services
-            </h3>
-            <ul className="space-y-4 text-md  font-geist-sans uppercase">
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Residential & Commercial Designs
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Design Consultancy
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Virtual Reality 360° Designs
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Fit out Approvals
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Turnkey Fit out Projects
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Landscaping
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Maintenance
-              </li>
-            </ul>
-          </div>
-
           {/* Contact */}
-          <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
-              Contact
-            </h3>
-            <div className="space-y-4 text-lg">
-              <p className="max-w-sm text-neutral-400 font-geist-sans">
-                Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
-                United Arab Emirates
-              </p>
-              <p className="text-neutral-400 font-geist-sans">
-                +971 522 889 300 <br />
-                +971 54 378 3000
-              </p>
-              <p className="font-geist-sans">
-                <a
-                  href="mailto:info@sarahbrown-design.com"
-                  className="text-neutral-400 hover:text-neutral-200"
-                >
-                  info@alelizainteriors.com
-                </a>
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </footer>
