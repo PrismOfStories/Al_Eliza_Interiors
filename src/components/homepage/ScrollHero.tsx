@@ -34,7 +34,7 @@ export default function ScrollHero() {
             animation={ZoomInScrollOut}
             className="w-full px-8 flex items-center justify-center min-h-screen text-center"
           >
-            <p className="text-center text-[clamp(1.5rem,5vw,2.5rem)] font-bold font-geist-sans uppercase leading-tight text-white block">
+            <p className="font-deltha text-center text-[clamp(1.5rem,5vw,2.5rem)] font-bold  uppercase leading-tight text-white block">
               Crafting Spaces <br /> That Inspire & Delight
             </p>
           </Animator>

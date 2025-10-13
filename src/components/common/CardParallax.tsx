@@ -59,13 +59,13 @@ const Card = ({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
-              className="text-center w-full font-michroma text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 tracking-widest"
+              className="text-center w-full exclusive-text text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 tracking-widest"
             >
               {title}
             </motion.h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-              <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl  text-white font-geist-sans">
+              <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl  text-white exclusive-text">
                 {description}
               </p>
 
@@ -74,7 +74,7 @@ const Card = ({
                 target="_blank"
                 className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-michroma tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
               >
-                <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                <span className="flex exclusive-text items-center gap-2 [transform:skewX(20deg)]">
                   See more
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>
@@ -104,21 +104,21 @@ const Card = ({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 font-michroma">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 font-deltha">
                 From Concept to Construction
               </p>
 
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-black mb-4 sm:mb-6 leading-tight font-michroma">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-black mb-4 sm:mb-6 leading-tight exclusive-text">
                 {title}
               </h2>
 
-              <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-700 mb-6 sm:mb-8 font-geist-sans max-w-xl">
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-800 mb-6 sm:mb-8 exclusive-text max-w-xl">
                 {description}
               </p>
 
               <Link
                 href={url}
-                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-michroma tracking-widest transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg w-fit"
+                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-deltha tracking-widest transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg w-fit"
               >
                 <span className="flex items-center gap-2 [transform:skewX(20deg)]">
                   Learn More

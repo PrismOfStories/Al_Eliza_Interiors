@@ -70,7 +70,7 @@ export default function Nav({ closeMenu }: NavProps) {
             }}
           >
             <Link
-              className={`text-xl sm:text-2xl font-semibold no-underline block font-michroma tracking-widest transition-colors duration-300 ${
+              className={`text-xl sm:text-2xl font-semibold no-underline block exclusive-text tracking-widest transition-colors duration-300 ${
                 isActive(link.href) ? "text-gold" : "text-white hover:text-gold"
               }`}
               href={link.href}

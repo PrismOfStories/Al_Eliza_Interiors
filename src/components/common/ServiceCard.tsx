@@ -42,7 +42,7 @@ export default function ServiceCard({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: false, margin: "0px 0px -40% 0px" }}
-          className="text-center lg:text-right w-full lg:max-w-[90rem] font-michroma tracking-widest mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
+          className="text-center lg:text-right w-full lg:max-w-[90rem] font-deltha tracking-widest mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
         >
           {title}
         </motion.p>

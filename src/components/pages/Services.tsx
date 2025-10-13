@@ -21,7 +21,7 @@ export default function ServicesCombined() {
 
       <ServiceCard type="page" projects={servicePage} />
 
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto mt-28 px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18">
           <div className="col-span-1 flex items-center gap-2">
             <span className="w-3 h-3 bg-yellow-500"></span>
@@ -31,7 +31,7 @@ export default function ServicesCombined() {
           </div>
 
           <div className="col-span-2 text-left">
-            <h2 className="text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
+            <h2 className="text-xl md:text-3xl exclusive-text font-semibold text-[#878787] leading-snug">
               At Al Eliza Services, we deliver solutions with{" "}
               <span className="font-bold">dedication, skill and care</span> —{" "}
               <span className="text-white">
@@ -44,13 +44,13 @@ export default function ServicesCombined() {
       </section>
 
       <section className="bg-background text-center py-8 px-4">
-        <p className="text-sm tracking-widest text-gray-300 mt-10 mb-4">
+        <p className="text-sm font-deltha tracking-widest text-gray-300 mt-10 mb-4">
           START BUILDING
         </p>
         <h1 className="font-deltha text-6xl md:text-8xl font-extrabold text-gold mb-8 leading-none">
           LET&lsquo;S DESIGN
         </h1>
-        <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-12">
+        <p className="text-base exclusive-text md:text-lg text-gray-400 max-w-2xl mx-auto mb-12">
           Ready to bring your vision to life? Whether it’s a home, a workspace,
           or a public space, we’re here to design environments that inspire,
           function, and endure. Let’s start your project together.

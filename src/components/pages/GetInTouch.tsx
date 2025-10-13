@@ -77,7 +77,7 @@ export default function GetInTouch() {
         ref={sectionRef}
         className="bg-background text-center py-24 px-6"
       >
-        <p className="contact-animate text-sm tracking-widest text-neutral-400 mt-14 mb-4">
+        <p className="contact-animate font-deltha text-sm tracking-widest text-neutral-400 mt-14 mb-4">
           CONTACT US
         </p>
 
@@ -85,7 +85,7 @@ export default function GetInTouch() {
           GET IN TOUCH
         </h1>
 
-        <p className="contact-animate text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
+        <p className="contact-animate exclusive-text text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
           Reach out to start the conversation, schedule a consultation, or ask
           any questions.
         </p>
@@ -141,7 +141,7 @@ export default function GetInTouch() {
         <div className="absolute inset-0 bg-black/70" />
 
         {/* Form Container */}
-        <div className="relative z-10 w-full max-w-2xl bg-white p-5 sm:p-10 rounded-xl sm:rounded-2xl ">
+        <div className="relative z-10 w-full max-w-2xl bg-white p-5 sm:p-10 exclusive-text rounded-xl sm:rounded-2xl ">
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div className="border-b border-background pb-2">
               <label className="block text-sm font-medium text-background mb-1">
@@ -207,7 +207,7 @@ export default function GetInTouch() {
 
       <section className="bg-background text-center py-10 sm:py-24 px-6">
         {/* Small Heading */}
-        <p className="text-sm tracking-widest text-silver mt-14 mb-4">
+        <p className="text-sm font-deltha tracking-widest text-silver mt-14 mb-4">
           OUR LOCATIONS
         </p>
 
@@ -217,7 +217,7 @@ export default function GetInTouch() {
         </h1>
 
         {/* Subtext */}
-        <p className="text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
+        <p className="text-base md:text-lg exclusive-text text-silver max-w-2xl mx-auto mb-12">
           Visit us at one of our conveniently located studios, where our team is
           ready to discuss your design goals and explore possibilities for your
           space.
@@ -231,10 +231,10 @@ export default function GetInTouch() {
             <div className="pl-6 space-y-12">
               {/* Office Block */}
               <div>
-                <h2 className=" font-xl font-bold text-gold uppercase tracking-wide">
+                <h2 className=" font-xl font-deltha font-bold text-gold uppercase tracking-wide">
                   Head Office
                 </h2>
-                <p className="text-white mt-2 leading-relaxed text-base sm:text-xl">
+                <p className="text-white exclusive-text mt-2 leading-relaxed text-base sm:text-lg">
                   Al Eliza Interior, <br />
                   FBL Business Center, <br />
                   Al Mamzar - Dubai - UAE
@@ -242,8 +242,8 @@ export default function GetInTouch() {
               </div>
 
               {/* Email */}
-              <div>
-                <h2 className="text-xl font-bold text-gold uppercase tracking-wide">
+              <div className="exclusive-text">
+                <h2 className="text-xl font-deltha font-bold text-gold uppercase tracking-wide">
                   Email
                 </h2>
                 <Link
@@ -255,8 +255,8 @@ export default function GetInTouch() {
               </div>
 
               {/* Phone */}
-              <div>
-                <h2 className="text-xl font-bold text-gold uppercase tracking-wide">
+              <div className="exclusive-text">
+                <h2 className="text-xl font-deltha font-bold text-gold uppercase tracking-wide">
                   Call Us
                 </h2>
 
