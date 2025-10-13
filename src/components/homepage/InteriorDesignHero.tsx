@@ -13,7 +13,7 @@ export default function ArchitectureHero() {
             whileInView={{ opacity: 1, rotateX: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true, margin: "0px 0px -40% 0px" }}
-            className="text-center text-sm sm:text-base lg:text-lg uppercase tracking-[0.25em] text-gold-dark font-medium font-michroma"
+            className="text-center text-sm sm:text-base lg:text-lg uppercase tracking-[0.25em] text-gold-dark font-medium font-deltha"
           >
             Established in 2021
           </motion.p>
@@ -31,12 +31,12 @@ export default function ArchitectureHero() {
                 +4
               </motion.p>
             </div>
-            <p className="text-xs sm:text-sm uppercase tracking-[0.15em] text-gold-dark mt-2 ml-1 text-center lg:text-start">
+            <p className="text-xs sm:text-sm exclusive-text uppercase tracking-[0.15em] text-gold-dark mt-2 ml-1 text-center lg:text-start">
               Years of experience
             </p>
           </div>
           <div>
-            <h1 className="font-black text-black tracking-tight space-y-4 font-michroma text-center lg:text-start">
+            <h1 className="font-black  text-black tracking-tight space-y-4 font-deltha text-center lg:text-start">
               <motion.p
                 initial={{ opacity: 0, rotateX: -90 }}
                 whileInView={{ opacity: 1, rotateX: 0 }}
@@ -68,7 +68,7 @@ export default function ArchitectureHero() {
                 10+
               </motion.p>
             </div>
-            <p className="text-xs sm:text-sm uppercase tracking-[0.15em] text-gold-dark mt-2 mr-1 text-center lg:text-start">
+            <p className="text-xs sm:text-sm uppercase exclusive-text tracking-[0.15em] text-gold-dark mt-2 mr-1 text-center lg:text-start">
               Successful Projects
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function ArchitectureHero() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: true, margin: "0px 0px -40% 0px" }}
-              className="text-sm sm:text-base lg:text-lg leading-relaxed tracking-wide text-black max-w-[50ch] mx-auto lg:mx-0 font-michroma text-center lg:text-start"
+              className="text-sm sm:text-base lg:text-lg leading-relaxed tracking-wide text-black max-w-[100ch] mx-auto lg:mx-0 exclusive-text text-center lg:text-start"
             >
               At Al Eliza Interior Design, we transform residential and
               commercial spaces into refined, functional environments. Our
@@ -90,7 +90,7 @@ export default function ArchitectureHero() {
               that leave remarkable first impressions.
             </motion.p>
           </div>
-          <div className="font-michroma">
+          <div className="exclusive-text">
             <p className="text-sm sm:text-base lg:text-lg tracking-wide leading-relaxed text-black max-w-[50ch] mx-auto lg:mx-0 lg:ml-auto mb-5 text-center lg:text-right">
               Ready to begin?{" "}
               <span className="text-brown italic font-medium">Contact us</span>{" "}
@@ -104,7 +104,7 @@ export default function ArchitectureHero() {
                 viewport={{ once: true, margin: "0px 0px -40% 0px" }}
                 className="group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-colors duration-300"
               >
-                <span className="flex items-center font-michroma gap-2 [transform:skewX(20deg)]">
+                <span className="flex items-center exclusive-text gap-2 [transform:skewX(20deg)]">
                   Tell us about your project
                   <FaChevronRight />
                 </span>

@@ -28,6 +28,33 @@ const deltha = localFont({
 //   variable: "--font-majer",
 // });
 
+const environment = localFont({
+  src: [
+    {
+      path: "../../public/fonts/environment/Environment Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/environment/Environment Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/environment/Environment Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/environment/Environment Bold Italic.otf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-environment",
+});
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -88,7 +115,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${deltha.variable}  ${geistSans.variable} ${redHat.variable} ${poiret.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
+        className={`${deltha.variable} ${environment.variable} ${geistSans.variable} ${redHat.variable} ${poiret.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
       >
         <Wrapper>{children}</Wrapper>
       </body>

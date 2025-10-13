@@ -55,3 +55,12 @@
     background-color: rgba(0, 0, 0, 0.9) !important;
   }
 }
+
+.exclusive-text {
+  font-family: var(--font-environment);
+  font-weight: 700; /* use 400 for regular, 700 for bold */
+  font-style: normal; /* or italic if needed */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+

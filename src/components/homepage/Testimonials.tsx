@@ -114,7 +114,7 @@ export default function TestimonialsSection() {
     <section className="mx-auto w-full bg-[#fbfbfb] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 lg:mb-28 text-center">
-          <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-gold-dark">
+          <div className="mb-8 text-[clamp(12px,8vw,18px)] font-deltha uppercase tracking-[0.22em] text-gold-dark">
             <motion.p
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -175,13 +175,13 @@ export default function TestimonialsSection() {
                   </div>
                 </div>
 
-                <p className="mb-8 flex-1 text-[15px] leading-relaxed text-black flex-wrap font-geist-sans">
+                <p className="mb-8 flex-1 text-[13px] leading-relaxed text-black flex-wrap exclusive-text">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 <div className="flex items-center">
                   <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-brown">
-                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-black font-medium">
+                    <div className="flex h-full w-full items-center  justify-center bg-gradient-to-br from-white to-brown text-black font-medium">
                       {testimonial.name
                         .split(" ")
                         .map((n) => n[0])

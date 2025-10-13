@@ -103,7 +103,7 @@ function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: false }}
-            className="font-deltha text-white text-[clamp(2.5rem,6vw,8rem)] font-bold leading-tight"
+            className="font-deltha text-9xl text-white  font-[700] leading-tight uppercase tracking-[0.1em]"
           >
             About <br />
             Al Eliza
@@ -116,16 +116,16 @@ function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18 lg:mb-48">
             <div className="col-span-1 flex items-center gap-2">
               <span className="w-3 h-3 bg-gold"></span>
-              <span className="font-deltha uppercase text-sm font-semibold tracking-wider text-white">
+              <span className="exclusive-text  uppercase text-sm font-semibold tracking-wider text-white">
                 Our Mission
               </span>
             </div>
 
             <div className="col-span-2 text-left">
-              <h2 className=" font-redhat text-xl md:text-4xl font-semibold text-[#878787] leading-snug">
+              <h2 className=" exclusive-text  text-xl md:text-3xl font-semibold text-[#878787] leading-snug">
                 At AL Eliza, we transform spaces with{" "}
                 <span className="font-bold">thoughtful design and care</span> —{" "}
-                <span className="font-redhat text-white">
+                <span className="exclusive-text text-white">
                   creating spaces that inspire, nurture, and reflect your unique
                   way of living.
                 </span>
@@ -134,15 +134,15 @@ function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="flex flex-col justify-between">
+            <div className="flex  flex-col justify-between">
               <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={98} />%
               </h3>
               <div className="sm:text-right mt-10">
-                <p className="text-xl font-medium text-white mb-2">
+                <p className="text-lg exclusive-text font-medium text-white mb-2">
                   Customer Satisfaction Rate
                 </p>
-                <p className="text-lg text-[#878787]">
+                <p className="text-lg exclusive-text text-[#878787]">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
@@ -155,10 +155,10 @@ function About() {
                 <Counter to={250} />+
               </h3>
               <div className="sm:text-right mt-10">
-                <p className="text-xl font-medium text-white mb-2">
+                <p className="text-lg exclusive-text font-medium text-white mb-2">
                   Projects Completed
                 </p>
-                <p className="text-lg text-[#878787]">
+                <p className="text-lg exclusive-text text-[#878787]">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
@@ -171,10 +171,10 @@ function About() {
                 <Counter to={64} />%
               </h3>
               <div className="sm:text-right mt-10">
-                <p className="text-xl font-medium text-white mb-2 ">
+                <p className="text-lg exclusive-text font-medium text-white mb-2 ">
                   Repeat Client Rate
                 </p>
-                <p className="text-lg text-[#878787]">
+                <p className="text-lg exclusive-text text-[#878787]">
                   A majority of our clients trust us again for new projects.
                 </p>
               </div>
@@ -190,7 +190,7 @@ function About() {
           <h2 className="font-deltha text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-bebas-neue font-medium text-gold">
             Meet Our Team
           </h2>
-          <p className="text-[#878787]  mt-4  text-base lg:text-xl">
+          <p className="text-[#878787] exclusive-text mt-4  text-sm lg:text-lg">
             Get to know the people turning ideas into inspiring homes and
             gardens.
           </p>
@@ -235,8 +235,8 @@ function About() {
               </div>
 
               {/* Text Content Below Image */}
-              <div className="mt-4 text-center">
-                <h3 className="text-gold text-lg font-semibold font-michroma">
+              <div className="exclusive-text mt-4 text-center ">
+                <h3 className="text-gold exclusive-text text-lg font-semibold ">
                   {member.name}
                 </h3>
                 <p className="text-white text-sm font-geist-sans mt-1">
@@ -291,15 +291,15 @@ function About() {
               Get in Touch
             </h2>
             <div className="flex flex-col items-left mt-4 gap-2">
-              <p className="text-[#878787] text-xl">206-339-2947</p>
-              <p className="text-3xl md:text-4xl font-semibold">
+              <p className="text-[#878787] exclusive-text text-xl">206-339-2947</p>
+              <p className="text-2xl exclusive-text md:text-3xl font-semibold">
                 info@aleliza.com
               </p>
             </div>
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col justify-between space-y-8"
+            className="flex flex-col exclusive-text justify-between space-y-8"
           >
             <div>
               <label className="block text-sm mb-2">Name</label>
@@ -352,7 +352,7 @@ function About() {
             </div>
 
             <button className="w-52  justify-center group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-4 text-xl font-medium transition-colors duration-300 [transform:skewX(-20deg)]">
-              <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+              <span className="flex exclusive-text items-center gap-2 [transform:skewX(20deg)]">
                 Submit
               </span>
             </button>
@@ -374,7 +374,7 @@ function About() {
           </div>
 
           <div className="flex items-center w-full lg:w-1/2">
-            <h2 className="text-5xl sm:text-7xl lg:text-9xl font-bold leading-none tracking-tight text-gold">
+            <h2 className="text-5xl font-deltha sm:text-7xl lg:text-9xl font-bold leading-none tracking-tight text-gold">
               Let&apos;s Chat
             </h2>
           </div>
