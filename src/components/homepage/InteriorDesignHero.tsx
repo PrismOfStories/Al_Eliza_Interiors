@@ -12,7 +12,7 @@ export default function ArchitectureHero() {
             initial={{ opacity: 0, rotateX: -90 }}
             whileInView={{ opacity: 1, rotateX: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -40% 0px" }}
             className="text-center text-sm sm:text-base lg:text-lg uppercase tracking-[0.25em] text-gold-dark font-medium font-michroma"
           >
             Established in 2021
@@ -26,9 +26,8 @@ export default function ArchitectureHero() {
                 initial={{ opacity: 0, rotateX: -90 }}
                 whileInView={{ opacity: 1, rotateX: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -40% 0px" }}
               >
-                {" "}
                 +4
               </motion.p>
             </div>
@@ -42,7 +41,7 @@ export default function ArchitectureHero() {
                 initial={{ opacity: 0, rotateX: -90 }}
                 whileInView={{ opacity: 1, rotateX: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -40% 0px" }}
                 className="w-full text-center text-3xl sm:text-4xl lg:text-6xl xl:text-7xl tracking-widest"
               >
                 YOUR DREAMS
@@ -51,7 +50,7 @@ export default function ArchitectureHero() {
                 initial={{ opacity: 0, rotateX: -90 }}
                 whileInView={{ opacity: 1, rotateX: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -40% 0px" }}
                 className="w-full text-center text-2xl sm:text-3xl lg:text-5xl xl:text-6xl tracking-widest"
               >
                 OUR EXPERTISE
@@ -64,9 +63,8 @@ export default function ArchitectureHero() {
                 initial={{ opacity: 0, rotateX: -90 }}
                 whileInView={{ opacity: 1, rotateX: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -40% 0px" }}
               >
-                {" "}
                 10+
               </motion.p>
             </div>
@@ -78,26 +76,32 @@ export default function ArchitectureHero() {
 
         <div className="flex justify-between flex-col lg:flex-row items-center lg:items-stretch gap-10 lg:gap-0">
           <div>
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed tracking-wide text-black max-w-[50ch] mx-auto lg:mx-0 font-michroma text-center lg:text-start">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              viewport={{ once: true, margin: "0px 0px -40% 0px" }}
+              className="text-sm sm:text-base lg:text-lg leading-relaxed tracking-wide text-black max-w-[50ch] mx-auto lg:mx-0 font-michroma text-center lg:text-start"
+            >
               At Al Eliza Interior Design, we transform residential and
               commercial spaces into refined, functional environments. Our
               designs elevate mood, enhance utility, and add lasting value.
               Collaborating closely, we craft elegant yet practical interiors
               that leave remarkable first impressions.
-            </p>
+            </motion.p>
           </div>
           <div className="font-michroma">
-            <p className="text-sm sm:text-base lg:text-lg tracking-wide leading-relaxed text-black max-w-[50ch] mx-auto lg:mx-0 lg:ml-auto  mb-5 text-center lg:text-right">
+            <p className="text-sm sm:text-base lg:text-lg tracking-wide leading-relaxed text-black max-w-[50ch] mx-auto lg:mx-0 lg:ml-auto mb-5 text-center lg:text-right">
               Ready to begin?{" "}
               <span className="text-brown italic font-medium">Contact us</span>{" "}
               to bring your vision to life.
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center lg:justify-end">
               <motion.button
                 initial={{ opacity: 0, x: -90, skewX: 0 }}
                 whileInView={{ opacity: 1, x: 0, skewX: -20 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -40% 0px" }}
                 className="group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-colors duration-300"
               >
                 <span className="flex items-center font-michroma gap-2 [transform:skewX(20deg)]">
