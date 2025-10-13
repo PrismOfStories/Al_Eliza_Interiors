@@ -8,10 +8,10 @@ import {
   Michroma,
   Unbounded,
   Poiret_One,
-  Red_Hat_Display
+  Red_Hat_Display,
 } from "next/font/google";
 import "./globals.css";
-import ClientWrapper from "@/components/new/ClientWrapper";
+import Wrapper from "@/components/common/Wrapper";
 
 const deltha = localFont({
   src: [
@@ -27,10 +27,6 @@ const deltha = localFont({
 //   ],
 //   variable: "--font-majer",
 // });
-
-
-
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,7 +70,7 @@ const poiret = Poiret_One({
 
 const redHat = Red_Hat_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], 
+  weight: ["400", "500", "700"],
   variable: "--font-redhat",
 });
 
@@ -89,12 +85,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return ( 
+  return (
     <html lang="en">
       <body
         className={`${deltha.variable}  ${geistSans.variable} ${redHat.variable} ${poiret.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
       >
-        <ClientWrapper>{children}</ClientWrapper>
+        <Wrapper>{children}</Wrapper>
       </body>
     </html>
   );
