@@ -6,6 +6,7 @@
   --gold: #c19a5b;
   --gold-dark: #a37e41;
   --color-brown: #25211d;
+  --silver: #878787;
 }
 
 @theme inline {
@@ -14,6 +15,7 @@
   --color-gold: var(--gold);
   --color-gold-dark: var(--gold-dark);
   --color-brown: var(--color-brown);
+  --color-silver: var(--silver);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-geist-sans: var(--font-geist-sans);
@@ -45,7 +47,7 @@
 }
 
 .font-ethnocentric {
-  font-family: var(--font-ethnocentric)
+  font-family: var(--font-ethnocentric);
 }
 
 @layer base {
