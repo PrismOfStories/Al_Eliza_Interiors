@@ -2,7 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Lenis from "lenis";
-import { useTransform, useScroll, motion } from "framer-motion";
+import { useTransform, useScroll, motion, MotionValue } from "framer-motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 
 const images = [
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
@@ -22,6 +23,7 @@ const images = [
 export default function ProjectsScroll() {
   const gallery = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const { scrollYProgress } = useScroll({
     target: gallery,
@@ -56,17 +58,25 @@ export default function ProjectsScroll() {
     <main className="relative bg-background">
       <div
         ref={gallery}
-        className="flex gap-8 p-8 overflow-hidden relative h-[175vh]"
+        className="flex gap-2 md:gap-8 p-4 md:p-8 overflow-hidden relative h-[175vh]"
       >
-        <Column images={images.slice(0, 3)} y={y} top="-45%" />
-        <Column images={images.slice(3, 6)} y={y2} top="-95%" />
-        <Column images={images.slice(6, 9)} y={y3} top="-45%" />
-        <Column images={images.slice(9, 12)} y={y4} top="-75%" />
+        {isMobile ? (
+          <>
+            <Column images={images.slice(0, 6)} y={y} top="-45%" />
+            <Column images={images.slice(6, 12)} y={y2} top="-95%" />
+          </>
+        ) : (
+          <>
+            <Column images={images.slice(0, 3)} y={y} top="-45%" />
+            <Column images={images.slice(3, 6)} y={y2} top="-95%" />
+            <Column images={images.slice(6, 9)} y={y3} top="-45%" />
+            <Column images={images.slice(9, 12)} y={y4} top="-75%" />
+          </>
+        )}
       </div>
 
-      <div className="absolute inset-0 pointer-events-none ">
-        {/* Top-right */}
-        <div className="absolute top-20 right-20  text-right">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 right-20 text-right">
           <p className="text-gold-dark text-xl sm:text-5xl font-semibold font-michroma uppercase tracking-widest">
             Showcasing our finest projects
           </p>
@@ -74,8 +84,6 @@ export default function ProjectsScroll() {
             Every detail crafted with care and creativity
           </p>
         </div>
-
-        {/* Bottom-left */}
         <div className="absolute bottom-20 left-20 text-left">
           <p className="text-gold-dark text-xl sm:text-5xl font-semibold font-michroma uppercase tracking-widest">
             Transforming spaces beautifully
@@ -95,20 +103,21 @@ const Column = ({
   top,
 }: {
   images: string[];
-  y: any;
+  y: MotionValue<number>;
   top: string;
 }) => {
   return (
     <motion.div
-      className="relative flex flex-col gap-8 min-w-[250px] w-1/4"
+      className="relative flex flex-col gap-4 md:gap-8 min-w-[150px] md:min-w-[250px] w-1/2 md:w-1/4"
       style={{ y, top }}
     >
       {images.map((src, i) => (
         <div
           key={i}
-          className="relative w-full h-full rounded-[1vw] overflow-hidden"
+          className="group relative w-full h-full rounded-[1vw] overflow-hidden cursor-pointer"
         >
           <Image src={src} alt="image" fill style={{ objectFit: "cover" }} />
+          <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
         </div>
       ))}
     </motion.div>

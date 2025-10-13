@@ -11,11 +11,11 @@ export default function ClientsCard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <motion.p
-            initial={{ opacity: 0, x: -300 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: false }}
-            className="text-center w-full text-2xl lg:text-4xl tracking-widest font-michroma font-medium text-gold-dark mb-10 lg:mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-center w-full text-xl leading-loose lg:text-4xl tracking-widest font-michroma font-medium text-gold-dark mb-10 lg:mb-20"
           >
             OUR PRESTIGIOUS CLIENTS
           </motion.p>

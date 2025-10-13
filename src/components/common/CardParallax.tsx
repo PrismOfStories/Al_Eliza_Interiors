@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { useTransform, motion, MotionValue } from "framer-motion";
 import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ type CardProps = {
   i: number;
   title: string;
   description: string;
-  src: string; // matches
+  src: string;
   url: string;
   progress: MotionValue<number>;
   range: [number, number];
@@ -29,12 +29,6 @@ const Card = ({
 }: CardProps) => {
   const container = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
@@ -46,41 +40,42 @@ const Card = ({
         style={{ scale, top: `calc(-5vh + ${i * 25}px)` }}
         className="relative flex flex-col rounded-xl p-8 sm:p-12 w-full max-w-[90rem] h-[450px] sm:h-[550px] lg:h-[650px] origin-top overflow-hidden"
       >
-        {/* Background Image */}
         <Image
-          src={src} // full URL or /images/...
+          src={src}
           alt={title}
           fill
           className="absolute inset-0 object-cover rounded-xl"
           priority
         />
 
-        {/* Black overlay */}
         <div className="absolute inset-0 bg-black/40 rounded-xl"></div>
 
-        {/* Overlay content */}
-        <div className="relative z-10 flex flex-col h-full">
-          <h2 className="text-center font-michroma text-xl sm:text-[clamp(12px,8vw,40px)] font-semibold text-white m-0 tracking-widest">
+        <div className="relative z-10 flex flex-col h-full justify-between p-4 sm:p-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: false }}
+            className="text-center w-full font-michroma text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 tracking-widest"
+          >
             {title}
-          </h2>
+          </motion.h2>
 
-          <div className="flex flex-col lg:flex-row h-full mt-8 sm:mt-12 gap-6 sm:gap-12">
-            {/* Description */}
-            <div className="w-full  relative top-1/10 text-white">
-              <p className="text-base sm:text-3xl  w-full lg:w-4xl text-center mx-auto first-letter:text-2xl first-letter:font-title font-geist-sans">
-                {description}
-              </p>
-              <p className="flex justify-center font-michroma items-center gap-2 mt-4 w-full lg:w-4xl  mx-auto">
-                <Link
-                  href={url}
-                  target="_blank"
-                  className=" text-lg cursor-pointer tracking-widest"
-                >
-                  See more
-                </Link>
-                <FaChevronRight />
-              </p>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl mx-auto text-white font-geist-sans">
+              {description}
+            </p>
+
+            <Link
+              href={url}
+              target="_blank"
+              className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-michroma tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
+            >
+              <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                See more
+                <FaChevronRight className="transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
           </div>
         </div>
       </motion.div>

@@ -1,6 +1,5 @@
 import ServiceCard from "@/components/common/ServiceCard";
 import Hero from "@/components/homepage/Hero";
-// import ParallaxHero from "@/components/homepage/ParallaxHero";
 import InteriorDesignHero from "@/components/homepage/InteriorDesignHero";
 import Testimonials from "@/components/new/Testimonials";
 import ScrollHero from "@/components/homepage/ScrollHero";
@@ -13,7 +12,6 @@ export default function Home() {
     <main>
       <Hero />
       <ScrollHero />
-      {/* <ParallaxHero /> */}
       <ProjectsScroll />
       <InteriorDesignHero />
       <ServiceCard projects={services} />

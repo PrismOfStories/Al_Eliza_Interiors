@@ -9,7 +9,7 @@ interface ServiceProps {
   projects: {
     title: string;
     description: string;
-    src: string; // <-- change here
+    src: string;
     url: string;
     color: string;
   }[];
@@ -24,12 +24,11 @@ export default function ServiceCard({ projects }: ServiceProps) {
   });
 
   return (
-    <section ref={container} className="relative mt-[10vh] px-6">
-      {" "}
+    <section ref={container} className="relative mt-[10vh] px-4">
       <motion.p
-        initial={{ opacity: 0, x: -300 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: false }}
         className="text-center lg:text-right w-full lg:max-w-[90rem] font-michroma tracking-widest mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
       >

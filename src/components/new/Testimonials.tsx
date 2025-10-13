@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 interface Testimonial {
   id: number;
@@ -73,15 +74,14 @@ export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(3);
 
-  // Responsive items per slide based on screen size
   useEffect(() => {
     const updateItemsPerSlide = () => {
       if (window.innerWidth < 768) {
-        setItemsPerSlide(1); // Mobile: 1 card
+        setItemsPerSlide(1);
       } else if (window.innerWidth < 1024) {
-        setItemsPerSlide(2); // Tablet: 2 cards
+        setItemsPerSlide(2);
       } else {
-        setItemsPerSlide(3); // Desktop: 3 cards
+        setItemsPerSlide(3);
       }
     };
 
@@ -113,21 +113,30 @@ export default function TestimonialsSection() {
   return (
     <section className="mx-auto w-full bg-[#fbfbfb] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
       <div className="mx-auto max-w-7xl">
-        {/* Top Label */}
         <div className="mb-16 lg:mb-28 text-center">
           <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase tracking-[0.22em] text-gold-dark">
-            Happy Clients
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              viewport={{ once: false }}
+            >
+              Happy Clients
+            </motion.p>
           </div>
 
-          {/* Main Headline */}
-          <h2 className="font-display text-[clamp(18px,10vw,80px)] lg:text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-black">
+          <motion.h2
+            initial={{ opacity: 0, rotateX: -90 }}
+            whileInView={{ opacity: 1, rotateX: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: false }}
+            className="font-display text-[clamp(18px,10vw,80px)] lg:text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-black"
+          >
             TESTIMONIALS
-          </h2>
+          </motion.h2>
         </div>
 
-        {/* Testimonials Grid with Navigation - Centered relative to cards */}
         <div className="relative">
-          {/* Navigation Arrows - Positioned relative to the grid container */}
           <button
             onClick={prevSlide}
             className="absolute -left-6 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8]  backdrop-blur-sm transition-all hover:bg-white hover:shadow-md"
@@ -144,14 +153,13 @@ export default function TestimonialsSection() {
             <FaChevronRight />
           </button>
 
-          {/* Testimonials Grid - Responsive */}
           <div
             className={`grid gap-6 ${
               itemsPerSlide === 1
                 ? "grid-cols-1"
                 : itemsPerSlide === 2
-                  ? "grid-cols-1 md:grid-cols-2"
-                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                ? "grid-cols-1 md:grid-cols-2"
+                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             }`}
           >
             {getCurrentTestimonials().map((testimonial) => (
@@ -159,7 +167,6 @@ export default function TestimonialsSection() {
                 key={testimonial.id}
                 className="flex flex-col border border-[#fbfbfb] bg-[#fbfbfb] p-8 shadow-sm transition-all hover:shadow-md"
               >
-                {/* Company Logo */}
                 <div className="mb-6">
                   <div className="flex h-8 items-center">
                     <span className="text-lg font-semibold text-black font-michroma uppercase tracking-widest">
@@ -168,12 +175,10 @@ export default function TestimonialsSection() {
                   </div>
                 </div>
 
-                {/* Testimonial Text */}
                 <p className="mb-8 flex-1 text-[15px] leading-relaxed text-black flex-wrap font-geist-sans">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
-                {/* Profile Section */}
                 <div className="flex items-center">
                   <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-brown">
                     <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-black font-medium">
@@ -197,7 +202,6 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Dot Navigation */}
         <div className="mt-12 flex justify-center space-x-2">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
