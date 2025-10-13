@@ -26,7 +26,7 @@ export default function Preloader() {
         >
           <div className="masking-container flex items-center justify-center">
             <h1
-              className="masked-text text-[clamp(6rem,10vw,9rem)] font-extrabold"
+              className="masked-text text-[clamp(3.7rem,10vw,7rem)] font-extrabold"
               style={{
                 color: "transparent",
                 backgroundImage:
