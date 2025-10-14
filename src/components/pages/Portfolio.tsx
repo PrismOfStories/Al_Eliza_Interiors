@@ -22,10 +22,10 @@ export default function Portfolio() {
   const [lightboxSlides, setLightboxSlides] = useState<{ src: string }[]>([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  const handleImageClick = (project: (typeof projects)[0]) => {
-    const slides = project.children.map((url) => ({ src: url }));
+  const handleImageClick = (project: (typeof projects)[0], index: number) => {
+    const slides = project.images.map((url) => ({ src: url }));
     setLightboxSlides(slides);
-    setLightboxIndex(0);
+    setLightboxIndex(index);
     setLightboxOpen(true);
   };
 
@@ -41,6 +41,7 @@ export default function Portfolio() {
       </section>
 
       <div className="max-w-[90rem] mx-auto mt-8 md:mt-16">
+        {/* Tabs */}
         <div className="flex flex-wrap justify-center lg:justify-between gap-4 mb-8 px-4">
           {tabs.map((tab) => (
             <button
@@ -57,53 +58,54 @@ export default function Portfolio() {
           ))}
         </div>
 
+        {/* Gallery */}
         <AnimatePresence mode="popLayout">
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-4 md:px-6 pb-16"
             initial="hidden"
             animate="visible"
             variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.1,
-                },
-              },
+              visible: { transition: { staggerChildren: 0.1 } },
             }}
           >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={`${selectedTab}-${project.id}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                }}
-                layout
-                className="group relative overflow-hidden cursor-pointer"
-                onClick={() => handleImageClick(project)}
-              >
-                <div className="relative w-full h-56 sm:h-64 overflow-hidden">
-                  <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                    className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
-                    style={{ objectPosition: "center" }}
-                  />
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <h3 className="absolute bottom-3 md:bottom-7 left-3 md:left-4 text-white text-sm md:text-base tracking-[0.1rem] md:tracking-[0.2rem] exclusive-text z-10">
-                    {project.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
+            {filteredProjects.map((project) => {
+              const imagesToShow =
+                selectedTab === "all" ? [project.images[0]] : project.images;
+
+              return imagesToShow.map((img, index) => (
+                <motion.div
+                  key={`${project.id}-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.05,
+                  }}
+                  layout
+                  className="group relative overflow-hidden cursor-pointer"
+                  onClick={() => handleImageClick(project, index)}
+                >
+                  <div className="relative w-full h-56 sm:h-64 overflow-hidden">
+                    <Image
+                      src={img}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <h3 className="absolute bottom-3 md:bottom-7 left-3 md:left-4 text-white text-sm md:text-base tracking-[0.1rem] md:tracking-[0.2rem] exclusive-text z-10">
+                      {project.title}
+                    </h3>
+                  </div>
+                </motion.div>
+              ));
+            })}
           </motion.div>
         </AnimatePresence>
 
+        {/* Lightbox */}
         <Lightbox
           open={lightboxOpen}
           close={() => setLightboxOpen(false)}
@@ -111,16 +113,16 @@ export default function Portfolio() {
           slides={lightboxSlides}
           plugins={[Thumbnails, Fullscreen, Zoom]}
           carousel={{ finite: true }}
-         animation={{
-    fade: 300,      
-    swipe: 300,   
-    navigation: 300, 
-    easing: {
-      fade: "ease-in-out",
-      swipe: "ease-in-out",
-      navigation: "ease-in-out",
-    }
-  }}
+          animation={{
+            fade: 300,
+            swipe: 300,
+            navigation: 300,
+            easing: {
+              fade: "ease-in-out",
+              swipe: "ease-in-out",
+              navigation: "ease-in-out",
+            },
+          }}
         />
       </div>
     </div>

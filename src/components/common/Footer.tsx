@@ -57,7 +57,7 @@ export default function Footer() {
             alt="Watermark S"
             width={450}
             height={450}
-            className="opacity-30"
+            className="opacity-10"
           />
         </span>
       </div>

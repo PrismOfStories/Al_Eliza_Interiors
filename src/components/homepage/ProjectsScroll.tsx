@@ -6,18 +6,22 @@ import { useTransform, useScroll, motion, MotionValue } from "framer-motion";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 
 const images = [
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img1_crbyqj.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img5_nsn0nj.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img2_oziylz.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/img3_u7qqdu.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/about_3_tp5mmt.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/about_2_ucqtyb.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img1_crbyqj.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img5_nsn0nj.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img2_oziylz.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/img3_u7qqdu.webp",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375815/ef98fe25-cd43-4499-ab4e-a24dad202a42_zusqtb.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375814/d492e54e-b6b1-4d93-9b63-36f05ece262d_u5zyxl.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375813/ca4c19e7-033e-4075-9d2e-e476d52bfcc1_c3yzhj.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/fa13228c-c148-4355-937e-164ab472023e_wb5a7d.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/ccf5dab0-7149-4caa-92fa-4cdcb4de9ab6_rgs8qo.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456203/bc487908-e126-4148-b924-78986115f4f5_rxvqz8.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456202/a2d62774-9f89-4328-93f0-f6fd1fe37065_zgbpyf.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456014/IMG_6628_gcoud5.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456012/IMG_6610_lqgecg.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456012/IMG_6623_dz7rvs.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375810/71b6b0a0-c1ff-49f5-bbbf-e694f6dca606_emtygn.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375810/71a13c6c-a127-4918-a0cf-7d9c946b335f_l33i6d.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375808/6cf66ea9-936e-4598-99f0-cd34b85e87c9_wiwleg.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375807/59b4f14f-8c35-4b44-acec-169980d93575_lba5ek.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/fa13228c-c148-4355-937e-164ab472023e_wb5a7d.jpg",
+
 ];
 
 export default function ProjectsScroll() {
@@ -123,3 +127,5 @@ const Column = ({
     </motion.div>
   );
 };
+
+

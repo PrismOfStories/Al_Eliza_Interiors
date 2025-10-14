@@ -3,7 +3,7 @@ export const services = [
     title: "Residential & Commercial Designs",
     description:
       "We provide tailored interior design solutions for residential and commercial spaces with elegance and functionality.",
-    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
+    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760455334/01_1_jneboq.jpg",
     url: "/get-in-touch",
     color: "#000000",
   },
@@ -11,7 +11,7 @@ export const services = [
     title: "Design Consultancy",
     description:
       "Expert design consultations to turn your vision into reality, from layout planning to final finishes.",
-    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img1_crbyqj.webp",
+    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375896/IMG_0479_2_lwzj10.jpg",
     url: "/get-in-touch",
     color: "#000000",
   },
@@ -19,7 +19,7 @@ export const services = [
     title: "Virtual Reality 360° Designs",
     description:
       "Experience your space before it's built with immersive 360° VR walkthroughs and visualizations.",
-    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img5_nsn0nj.webp",
+    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375981/476183163_17978534825803107_4119508633750675449_n_p7rdkw.jpg",
     url: "/get-in-touch",
     color: "#000000",
   },
@@ -27,7 +27,7 @@ export const services = [
     title: "Fit out Approvals",
     description:
       "We manage and secure fit-out approvals with relevant authorities to ensure smooth project execution.",
-    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/img2_oziylz.webp",
+    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456010/472216578_1458259088464890_382310330078644935_n_clqtio.jpg",
     url: "/get-in-touch",
     color: "#000000",
   },
@@ -35,7 +35,7 @@ export const services = [
     title: "Turnkey Fit out Projects",
     description:
       "From concept to completion we handle every aspect of your project with end-to-end solutions.",
-    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/img3_u7qqdu.webp",
+    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/ccf5dab0-7149-4caa-92fa-4cdcb4de9ab6_rgs8qo.jpg",
     url: "/get-in-touch",
     color: "#000000",
   },
@@ -43,7 +43,7 @@ export const services = [
     title: "Landscaping",
     description:
       "Transform your outdoor spaces with creative and sustainable landscaping solutions.",
-    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/about_3_tp5mmt.webp",
+    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760182478/06_4_cxzfrg.webp",
     url: "/get-in-touch",
     color: "#000000",
   },
@@ -51,7 +51,7 @@ export const services = [
     title: "Maintenance",
     description:
       "Comprehensive maintenance services to keep your spaces functional, safe, and beautiful.",
-    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375127/about_2_ucqtyb.webp",
+    src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760463311/36_5_xtz7in.jpg",
     url: "/get-in-touch",
     color: "#000000",
   },

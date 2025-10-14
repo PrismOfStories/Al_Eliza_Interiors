@@ -87,29 +87,34 @@ function About() {
       <ToastContainer />
 
       <section className="relative w-full min-h-screen flex items-center justify-center">
-        <Image
-          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-        />
+  {/* Background Image */}
+  <Image
+    src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
+    alt="Background"
+    fill
+    className="object-cover"
+    priority
+  />
 
-        <div className="absolute inset-0 bg-black/70"></div>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center sm:items-end text-center sm:text-right">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: false }}
-            className="font-deltha text-9xl text-white  font-[700] leading-tight uppercase tracking-[0.1em]"
-          >
-            About <br />
-            Al Eliza
-          </motion.h1>
-        </div>
-      </section>
+  {/* Content */}
+  <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
+    <motion.h1
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: false }}
+      className="font-deltha text-white font-bold leading-[1.1] uppercase tracking-[0.08em]
+        text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+    >
+      About <br />
+      Al Eliza
+    </motion.h1>
+  </div>
+</section>
+
 
       <section className="w-full py-20 px-6 md:px-12 mt-14 lg:mt-48 ">
         <div className="max-w-7xl mx-auto">
@@ -367,7 +372,7 @@ function About() {
           <div className="w-full lg:w-1/2">
             <div className="h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative sm:[transform:skewX(-10deg)]">
               <Image
-                src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375128/about_1_zi61v1.webp"
+                src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376136/IMG_1583_jswnlj.jpg"
                 alt="Let's Chat"
                 fill
                 className="w-full object-cover"
