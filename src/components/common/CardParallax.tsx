@@ -121,7 +121,7 @@ const Card = ({
                 className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-deltha tracking-widest transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg w-fit"
               >
                 <span className="flex items-center gap-2 [transform:skewX(20deg)]">
-                  Learn More
+                  Contact us
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>

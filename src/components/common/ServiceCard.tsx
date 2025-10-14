@@ -33,6 +33,7 @@ export default function ServiceCard({
     once: false,
     margin: "0% 0px -40% 0px",
   });
+
   return (
     <section ref={container} className="relative mt-[10vh] px-4">
       {title && (

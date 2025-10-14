@@ -3,11 +3,50 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === href;
+    }
+    return pathname.startsWith(href);
+  };
+
+  const menu = [
+    { title: "Home", href: "/" },
+    { title: "Our Story", href: "/our-story" },
+    { title: "Expertise", href: "/expertise" },
+    { title: "Portfolio", href: "/portfolio" },
+    { title: "Contact", href: "/get-in-touch" },
+  ];
+
+  const services = [
+    {
+      title: "Residential & Commercial Designs",
+    },
+    {
+      title: "Design Consultancy",
+    },
+    {
+      title: "Virtual Reality 360° Designs",
+    },
+    {
+      title: "Fit out Approvals",
+    },
+    {
+      title: "Turnkey Fit out Projects",
+    },
+    {
+      title: "Landscaping",
+    },
+    { title: "Maintenance" },
+  ];
+
   return (
     <footer className="relative isolate w-full bg-[#161616] text-neutral-300">
-      {/* Watermark “S” on the right */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-end pr-10"
@@ -23,28 +62,23 @@ export default function Footer() {
         </span>
       </div>
 
-      {/* Centered brand block */}
       <div className="mx-auto max-w-7xl px-6 pt-24 pb-16">
         <div className="flex w-full items-center justify-center">
           <div className="text-center">
-            <h1 className="select-none text-[2.25rem] tracking-[0.35em] text-neutral-200">
-              {/* <span className="font-light">AL</span>{" "} */}
-              <span className="font-semibold text-white font-michroma">
-                AL ELIZA
-              </span>
+            <h1 className="select-none text-[2.25rem] tracking-[0.35em] text-gold">
+              <span className="font-semibold font-michroma">AL ELIZA</span>
             </h1>
-            <p className="mt-3 text-lg tracking-widest text-neutral-400 font-michroma">
+            <p className="mt-3 text-lg tracking-widest text-silver font-michroma">
               INTERIOR DESIGN
             </p>
           </div>
         </div>
       </div>
 
-      {/* Link columns */}
       <div className="relative mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver  font-michroma uppercase">
               Contact
             </h3>
             <div className="space-y-4 text-lg">
@@ -56,13 +90,13 @@ export default function Footer() {
               <div className="mt-2 space-y-1">
                 <Link
                   href="tel:+971522889300"
-                  className="block text-neutral-400 hover:text-white text-base sm:text-xl"
+                  className="block text-neutral-400 hover:text-gold text-base sm:text-xl"
                 >
                   +971 522 889 300
                 </Link>
                 <Link
                   href="tel:+971543783000"
-                  className="block  text-neutral-400 hover:text-white text-base sm:text-xl"
+                  className="block  text-neutral-400 hover:text-gold text-base sm:text-xl"
                 >
                   +971 54 378 3000
                 </Link>
@@ -70,7 +104,7 @@ export default function Footer() {
               <p className="font-geist-sans">
                 <Link
                   href="mailto:info@alelizainteriors.com"
-                  className="block text-neutral-400 hover:text-white mt-2 text-base sm:text-xl"
+                  className="block text-neutral-400 hover:text-gold mt-2 text-base sm:text-xl"
                 >
                   info@alelizainteriors.com
                 </Link>
@@ -78,82 +112,41 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400  font-michroma uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver  font-michroma uppercase">
               Services
             </h3>
-            <ul className="space-y-4 text-md  font-geist-sans uppercase">
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Residential & Commercial Designs
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Design Consultancy
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Virtual Reality 360° Designs
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Fit out Approvals
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Turnkey Fit out Projects
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Landscaping
-              </li>
-              <li className="text-neutral-400 hover:text-neutral-200">
-                Maintenance
-              </li>
+            <ul className="space-y-4 text-md font-geist-sans uppercase">
+              {services.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    href="/expertise"
+                    className="text-silver hover:text-gold"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Navigation */}
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-neutral-400 font-michroma uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver font-michroma uppercase">
               Menu
             </h3>
             <ul className="space-y-4 text-md font-geist-sans uppercase">
-              <li>
-                <Link
-                  href="/"
-                  className="inline-block text-neutral-200 underline underline-offset-4 hover:text-white"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/our-story"
-                  className="text-neutral-400 hover:text-neutral-200"
-                >
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-neutral-400 hover:text-neutral-200"
-                >
-                  Solutions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/portfolio"
-                  className="text-neutral-400 hover:text-neutral-200"
-                >
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-neutral-400 hover:text-neutral-200"
-                >
-                  Contact
-                </Link>
-              </li>
+              {menu.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    href={item.href}
+                    className={`inline-block ${
+                      isActive(item.href) ? "text-gold" : "text-silver"
+                    } hover:text-gold`}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

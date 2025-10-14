@@ -9,7 +9,7 @@ import { SlSocialLinkedin } from "react-icons/sl";
 const routes = [
   { title: "Home", href: "/" },
   { title: "Our Story", href: "/our-story" },
-  { title: "Expertise", href: "/services" },
+  { title: "Expertise", href: "/expertise" },
   { title: "Portfolio", href: "/portfolio" },
   { title: "Contact", href: "/get-in-touch" },
 ];
