@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import {
-  Bebas_Neue,
-  Geist,
-  Geist_Mono,
-  Geo,
-  Michroma,
-  Unbounded,
-  Poiret_One,
-  Red_Hat_Display,
-} from "next/font/google";
-import "./globals.css";
+import { Poppins } from "next/font/google";
 import Wrapper from "@/components/common/Wrapper";
+import "./globals.css";
 
 const deltha = localFont({
   src: [
@@ -20,13 +11,6 @@ const deltha = localFont({
   ],
   variable: "--font-deltha",
 });
-// const majer = localFont({
-//   src: [
-//     { path: "../../public/fonts/Majer.ttf", weight: "400", style: "normal" },
-//     { path: "../../public/fonts/majer.otf", weight: "700", style: "normal" },
-//   ],
-//   variable: "--font-majer",
-// });
 
 const environment = localFont({
   src: [
@@ -54,51 +38,10 @@ const environment = localFont({
   variable: "--font-environment",
 });
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const bebasNeue = Bebas_Neue({
-  variable: "--font-bebas-neue",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const unbounded = Unbounded({
-  variable: "--font-unbounded",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const michroma = Michroma({
-  variable: "--font-michroma",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const geo = Geo({
-  variable: "--font-geo",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const poiret = Poiret_One({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-poiret",
-});
-
-const redHat = Red_Hat_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-redhat",
+  weight: ["200", "300", "400", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -115,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${deltha.variable} ${environment.variable} ${geistSans.variable} ${redHat.variable} ${poiret.variable} ${geistMono.variable} ${bebasNeue.variable} ${unbounded.variable} ${michroma.variable} ${geo.variable} bg-background antialiased`}
+        className={`${poppins.variable} ${deltha.variable} ${environment.variable} bg-background antialiased`}
       >
         <Wrapper>{children}</Wrapper>
       </body>

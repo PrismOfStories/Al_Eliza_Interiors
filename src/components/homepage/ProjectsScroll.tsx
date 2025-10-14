@@ -77,18 +77,18 @@ export default function ProjectsScroll() {
 
       <div className="absolute inset-0  pointer-events-none">
         <div className="absolute top-20 right-20 text-right">
-          <p className="text-gold-dark text-xl sm:text-5xl font-semibold font-deltha uppercase tracking-widest">
+          <p className="text-gold-dark text-xl sm:text-5xl uppercase font-heading tracking-[0.4rem] ">
             Showcasing our finest projects
           </p>
-          <p className="text-white/90 mt-2 text-sm sm:text-3xl exclusive-text">
+          <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
             Every detail crafted with care and creativity
           </p>
         </div>
         <div className="absolute bottom-20 left-20 text-left">
-          <p className="text-gold-dark text-xl sm:text-5xl font-semibold font-deltha uppercase tracking-widest">
+          <p className="text-gold-dark text-xl sm:text-5xl uppercase font-heading tracking-[0.4rem]">
             Transforming spaces beautifully
           </p>
-          <p className="text-white/90 mt-2 text-sm sm:text-3xl exclusive-text">
+          <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
             Bringing your vision to life with elegance
           </p>
         </div>

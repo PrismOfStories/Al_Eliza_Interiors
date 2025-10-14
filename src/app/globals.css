@@ -16,14 +16,11 @@
   --color-gold-dark: var(--gold-dark);
   --color-brown: var(--color-brown);
   --color-silver: var(--silver);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-geist-sans: var(--font-geist-sans);
-  --font-geist-mono: var(--font-geist-mono);
-  --font-bebas-neue: var(--font-bebas-neue);
-  --font-unbounded: var(--font-unbounded);
-  --font-michroma: var(--font-michroma);
-  --font-geo: var(--font-geo);
+  --font-deltha: var(--font-deltha);
+  --font-environment: var(--font-environment);
+  --font-poppins: var(--font-poppins);
+  --font-heading: var(--font-deltha);
+  --font-paragraph: var(--font-poppins);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -38,17 +35,6 @@
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
-.font-deltha {
-  font-family: var(--font-deltha);
-}
-
-.font-majer {
-  font-family: var(--font-majer);
-}
-
-.font-ethnocentric {
-  font-family: var(--font-ethnocentric);
-}
 
 @layer base {
   .yarl__container {
@@ -63,4 +49,3 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-

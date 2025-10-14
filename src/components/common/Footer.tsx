@@ -66,9 +66,9 @@ export default function Footer() {
         <div className="flex w-full items-center justify-center">
           <div className="text-center">
             <h1 className="select-none text-[2.25rem] tracking-[0.35em] text-gold">
-              <span className="font-semibold font-michroma">AL ELIZA</span>
+              <span className="font-semibold font-poppins">AL ELIZA</span>
             </h1>
-            <p className="mt-3 text-lg tracking-widest text-silver font-michroma">
+            <p className="mt-3 text-lg tracking-widest text-silver font-poppins">
               INTERIOR DESIGN
             </p>
           </div>
@@ -78,11 +78,11 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver  font-michroma uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver  font-poppins uppercase">
               Contact
             </h3>
             <div className="space-y-4 text-lg">
-              <p className="max-w-sm text-neutral-400 font-geist-sans">
+              <p className="max-w-sm text-neutral-400 font-poppins">
                 Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
                 United Arab Emirates
               </p>
@@ -101,7 +101,7 @@ export default function Footer() {
                   +971 54 378 3000
                 </Link>
               </div>
-              <p className="font-geist-sans">
+              <p className="font-poppins">
                 <Link
                   href="mailto:info@alelizainteriors.com"
                   className="block text-neutral-400 hover:text-gold mt-2 text-base sm:text-xl"
@@ -113,10 +113,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver  font-michroma uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver font-poppins uppercase">
               Services
             </h3>
-            <ul className="space-y-4 text-md font-geist-sans uppercase">
+            <ul className="space-y-4 text-md font-poppins uppercase">
               {services.map((item) => (
                 <li key={item.title}>
                   <Link
@@ -131,10 +131,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver font-michroma uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver font-poppins uppercase">
               Menu
             </h3>
-            <ul className="space-y-4 text-md font-geist-sans uppercase">
+            <ul className="space-y-4 text-md font-poppins uppercase">
               {menu.map((item, index) => (
                 <li key={index}>
                   <Link

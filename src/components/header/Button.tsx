@@ -58,7 +58,7 @@ function PerspectiveText({
       style={{ transformStyle: "preserve-3d" }}
     >
       <motion.p
-        className={`transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:-translate-y-full group-hover:opacity-0 font-michroma tracking-widest`}
+        className={`transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:-translate-y-full group-hover:opacity-0 font-poppins tracking-widest`}
         animate={{
           fontSize: "0.875rem",
         }}
@@ -68,7 +68,7 @@ function PerspectiveText({
       </motion.p>
 
       <motion.p
-        className={`absolute bottom-0 transform -rotate-x-90 translate-y-[9px] opacity-0 transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:opacity-100 font-michroma tracking-widest`}
+        className={`absolute bottom-0 transform -rotate-x-90 translate-y-[9px] opacity-0 transition-all duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] pointer-events-none ${textColor} uppercase group-hover:opacity-100 font-poppins tracking-widest`}
         animate={{
           fontSize: "0.875rem",
         }}

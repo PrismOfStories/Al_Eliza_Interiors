@@ -59,22 +59,22 @@ const Card = ({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
-              className="text-center w-full exclusive-text text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 tracking-widest"
+              className="text-center w-full font-heading tracking-[0.4rem] leading-[1.8] sm:leading-[1.5] text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 "
             >
               {title}
             </motion.h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-              <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl  text-white exclusive-text">
+              <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-[1.8] sm:leading-[1.5] w-full max-w-3xl  text-white font-paragraph tracking-[0.21rem]">
                 {description}
               </p>
 
               <Link
                 href={url}
                 target="_blank"
-                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-michroma tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
+                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-poppins tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
               >
-                <span className="flex exclusive-text items-center gap-2 [transform:skewX(20deg)]">
+                <span className="flex font-heading font-[300] tracking-[0.20rem] items-center gap-2 [transform:skewX(20deg)]">
                   See more
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>

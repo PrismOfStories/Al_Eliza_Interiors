@@ -114,7 +114,7 @@ export default function TestimonialsSection() {
     <section className="mx-auto w-full bg-[#fbfbfb] px-6 py-20 sm:px-10 min-h-screen lg:py-28 lg:px-20 flex flex-col justify-center">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 lg:mb-28 text-center">
-          <div className="mb-8 text-[clamp(12px,8vw,18px)] font-deltha uppercase tracking-[0.22em] text-gold-dark">
+          <div className="mb-8 text-[clamp(12px,8vw,18px)] uppercase text-gold-dark font-paragraph font-[300] tracking-[0.3rem]">
             <motion.p
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, rotateX: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: false }}
-            className="font-display text-[clamp(18px,10vw,80px)] lg:text-[clamp(64px,8vw,140px)] font-black leading-[0.9] tracking-tight text-black"
+            className="font-heading tracking-[0.6rem] text-[clamp(18px,10vw,80px)] lg:text-[clamp(64px,8vw,120px)] font-black text-black"
           >
             TESTIMONIALS
           </motion.h2>
@@ -169,7 +169,7 @@ export default function TestimonialsSection() {
               >
                 <div className="mb-6">
                   <div className="flex h-8 items-center">
-                    <span className="text-lg font-semibold text-black font-michroma uppercase tracking-widest">
+                    <span className="text-lg font-semibold text-black font-poppins uppercase tracking-widest">
                       {testimonial.company}
                     </span>
                   </div>
@@ -189,10 +189,10 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <div>
-                    <div className="text-[15px] font-semibold text-black font-geist-sans ">
+                    <div className="text-[15px] font-semibold text-black font-poppins ">
                       {testimonial.name}
                     </div>
-                    <div className="text-[13px] text-[#7A7671] font-geist-sans">
+                    <div className="text-[13px] text-[#7A7671] font-poppins">
                       {testimonial.title}
                     </div>
                   </div>

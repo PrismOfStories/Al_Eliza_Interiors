@@ -187,7 +187,7 @@ function About() {
 
       <section className="sm:py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
-          <h2 className="font-deltha text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-bebas-neue font-medium text-gold">
+          <h2 className="font-deltha text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-poppins font-medium text-gold">
             Meet Our Team
           </h2>
           <p className="text-[#878787] exclusive-text mt-4  text-sm lg:text-lg">
@@ -239,7 +239,7 @@ function About() {
                 <h3 className="text-gold exclusive-text text-lg font-semibold ">
                   {member.name}
                 </h3>
-                <p className="text-white text-sm font-geist-sans mt-1">
+                <p className="text-white text-sm font-poppins mt-1">
                   {member.role}
                 </p>
               </div>
@@ -256,7 +256,7 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: false }}
-              className="font-deltha text-center  w-full text-[clamp(1.7rem,5vw,3rem)] font-bebas-neue font-medium text-gold mb-10 lg:mb-20"
+              className="font-deltha text-center  w-full text-[clamp(1.7rem,5vw,3rem)] font-poppins font-medium text-gold mb-10 lg:mb-20"
             >
               OUR PRESTIGIOUS CLIENTS
             </motion.p>
@@ -291,7 +291,9 @@ function About() {
               Get in Touch
             </h2>
             <div className="flex flex-col items-left mt-4 gap-2">
-              <p className="text-[#878787] exclusive-text text-xl">206-339-2947</p>
+              <p className="text-[#878787] exclusive-text text-xl">
+                206-339-2947
+              </p>
               <p className="text-2xl exclusive-text md:text-3xl font-semibold">
                 info@aleliza.com
               </p>
