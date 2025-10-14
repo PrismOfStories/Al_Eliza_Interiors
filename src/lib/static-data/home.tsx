@@ -2,7 +2,7 @@ export const services = [
   {
     title: "Residential & Commercial Designs",
     description:
-      "We provide tailored interior design solutions for residential and commercial spaces with elegance and functionality.",
+      "We craft elegant, functional interiors for homes and businesses.",
     src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760455334/01_1_jneboq.jpg",
     url: "/get-in-touch",
     color: "#000000",
@@ -18,7 +18,7 @@ export const services = [
   {
     title: "Virtual Reality 360° Designs",
     description:
-      "Experience your space before it's built with immersive 360° VR walkthroughs and visualizations.",
+      "Explore your space with immersive 360° VR previews.",
     src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375981/476183163_17978534825803107_4119508633750675449_n_p7rdkw.jpg",
     url: "/get-in-touch",
     color: "#000000",
