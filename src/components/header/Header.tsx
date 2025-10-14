@@ -6,16 +6,15 @@ import Button from "./Button";
 import Nav from "./Nav";
 import Link from "next/link";
 import Image from "next/image";
-import { useScrolled } from "@/lib/hooks/useScrolled";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
-  const isScrolled = useScrolled(50);
+
   const isMobile = useMediaQuery("(max-width: 768px)");
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const logoSize = isMobile ? (isScrolled ? 60 : 100) : isScrolled ? 80 : 150;
+  const logoSize = isMobile ? 100 : 150;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,14 +36,10 @@ export default function Header() {
 
   return (
     <div
-      className={`fixed left-0 right-0 z-50 px-4 md:px-12 transition-all duration-300 ease-in-out ${
-        isScrolled
-          ? "pt-0 py-1 backdrop-blur-md bg-black/30"
-          : "pt-4 backdrop-blur-none bg-transparent"
-      }`}
+      className={`absolute top-0 w-full z-50 px-4 md:px-12 transition-all duration-300 ease-in-out pt-4`}
     >
-      <div className="flex items-start justify-between">
-        <Link href="/" className="flex-shrink-0">
+      <div className="flex items-center justify-between">
+        <Link href="/" className="">
           <Image
             src="/images/logo.webp"
             alt="Al Eliza Interior Logo"
@@ -57,26 +52,14 @@ export default function Header() {
         </Link>
 
         <div
-          className="flex items-start justify-end gap-4 relative mt-3"
+          className="flex items-center justify-center mb-10 relative"
           ref={menuRef}
         >
           <motion.div
             className="bg-[#161616] absolute right-0 top-0 overflow-hidden"
             animate={{
-              width: isActive
-                ? isMobile
-                  ? "80vw"
-                  : "340px"
-                : isScrolled
-                ? "90px"
-                : "100px",
-              height: isActive
-                ? isMobile
-                  ? "60vh"
-                  : "410px"
-                : isScrolled
-                ? "35px"
-                : "40px",
+              width: isActive ? (isMobile ? "80vw" : "340px") : "100px",
+              height: isActive ? (isMobile ? "60vh" : "410px") : "40px",
               top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
               right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
               skewX: isActive ? "0deg" : "-20deg",
@@ -110,7 +93,6 @@ export default function Header() {
           <Button
             isActive={isActive}
             toggleMenu={() => setIsActive(!isActive)}
-            isScrolled={isScrolled}
           />
         </div>
       </div>
