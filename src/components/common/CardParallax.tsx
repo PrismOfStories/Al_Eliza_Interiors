@@ -108,7 +108,7 @@ const Card = ({
                 From Concept to Construction
               </p>
 
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gold mb-4 sm:mb-6 font-paragraph font-semibold">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gold mb-4 sm:mb-6 font-paragraph font-semibold uppercase">
                 {title}
               </h2>
 
