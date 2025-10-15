@@ -41,7 +41,7 @@ const Card = ({
       {type === "home" ? (
         <motion.div
           style={{ scale, top: `calc(-5vh + ${i * 25}px)` }}
-          className="relative flex flex-col rounded-xl p-8 sm:p-12 w-full max-w-[90rem] h-[450px] sm:h-[550px] lg:h-[650px] origin-top overflow-hidden"
+          className="relative flex flex-col rounded-xl px-2 py-4 md:p-12 w-full max-w-[90rem] h-[450px] sm:h-[550px] lg:h-[650px] origin-top overflow-hidden"
         >
           <Image
             src={src}
@@ -53,13 +53,13 @@ const Card = ({
 
           <div className="absolute inset-0 bg-black/40 rounded-xl"></div>
 
-          <div className="relative z-10 flex flex-col h-full justify-between p-4 sm:p-8">
+          <div className="relative z-10 flex flex-col h-full justify-between sm:p-8">
             <motion.h2
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
-              className="text-center w-full font-heading tracking-[0.4rem] leading-[1.8] sm:leading-[1.5] text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 "
+              className="text-center w-full font-heading sm:tracking-[0.4rem] leading-[1.4] pt-5 md:pt-0 sm:leading-[1.5] text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 "
             >
               {title}
             </motion.h2>

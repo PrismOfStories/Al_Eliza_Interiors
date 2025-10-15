@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
         <div className="relative">
           <button
             onClick={prevSlide}
-            className="hidden sm:flex absolute -left-3 md:-left-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
+            className="flex absolute -left-3 md:-left-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
             aria-label="Previous testimonials"
           >
             <FaChevronLeft className="text-xs md:text-base" />
@@ -146,32 +146,33 @@ export default function TestimonialsSection() {
 
           <button
             onClick={nextSlide}
-            className="hidden sm:flex absolute -right-3 md:-right-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
+            className="flex absolute -right-3 md:-right-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
             aria-label="Next testimonials"
           >
             <FaChevronRight className="text-xs md:text-base" />
           </button>
 
           <div
-            className={`grid gap-4 sm:gap-6 md:gap-8 ${itemsPerSlide === 1
+            className={`grid gap-4 ${
+              itemsPerSlide === 1
                 ? "grid-cols-1"
                 : itemsPerSlide === 2
-                  ? "grid-cols-1 sm:grid-cols-2"
-                  : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-              }`}
+                ? "grid-cols-1 sm:grid-cols-2"
+                : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+            }`}
           >
             {getCurrentTestimonials().map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="flex flex-col border border-[#E5E0D8]/40 bg-white rounded-xl p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all"
+                className="flex flex-col border border-[#E5E0D8]/40 bg-white rounded p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="mb-4 sm:mb-5">
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-black font-poppins uppercase tracking-widest">
+                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-black font-heading uppercase tracking-[0.2rem]">
                     {testimonial.company}
                   </h3>
                 </div>
 
-                <p className="mb-6 sm:mb-8 text-[12px] sm:text-[13px] md:text-[14px] leading-relaxed text-black/80 exclusive-text">
+                <p className="mb-6 sm:mb-8 text-[12px] sm:text-[13px] md:text-[14px] leading-[1.8] sm:leading-[1.5] text-black/80 font-paragraph tracking-[0.15rem]">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
 
@@ -185,10 +186,10 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <div>
-                    <p className="text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-black font-poppins">
+                    <p className="text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-black font-paragraph tracking-[0.15rem]">
                       {testimonial.name}
                     </p>
-                    <p className="text-[11px] sm:text-[12px] md:text-[13px] text-[#7A7671] font-poppins">
+                    <p className="text-[11px] sm:text-[12px] md:text-[13px] text-[#7A7671] font-paragraph tracking-[0.15rem]">
                       {testimonial.title}
                     </p>
                   </div>
@@ -198,23 +199,21 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-
         <div className="mt-10 flex justify-center space-x-2">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2 w-2 rounded-full transition-all ${index === currentSlide
+              className={`h-2 w-2 rounded-full transition-all ${
+                index === currentSlide
                   ? "bg-[#171614]"
                   : "bg-[#D1CCC4] hover:bg-[#B5AFA5]"
-                }`}
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
       </div>
     </section>
-
-
   );
 }

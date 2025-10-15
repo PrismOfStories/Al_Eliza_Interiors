@@ -65,10 +65,10 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pt-24 pb-16">
         <div className="flex w-full items-center justify-center">
           <div className="text-center">
-            <h1 className="select-none text-[2.25rem] tracking-[0.35em] text-gold">
-              <span className="font-semibold font-poppins">AL ELIZA</span>
+            <h1 className="select-none text-[2.25rem] tracking-[0.3rem] text-gold">
+              <span className="font-semibold font-paragraph">AL ELIZA</span>
             </h1>
-            <p className="mt-3 text-lg tracking-widest text-silver font-poppins">
+            <p className="mt-3 text-lg text-silver font-deltha tracking-[0.3rem]">
               INTERIOR DESIGN
             </p>
           </div>
@@ -78,11 +78,11 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver  font-poppins uppercase">
+            <h3 className="mb-6 text-lg font-medium text-silver tracking-[0.3rem] font-deltha uppercase">
               Contact
             </h3>
             <div className="space-y-4 text-lg">
-              <p className="max-w-sm text-neutral-400 font-poppins">
+              <p className="max-w-sm text-neutral-400 font-paragraph tracking-[0.12rem]">
                 Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
                 United Arab Emirates
               </p>
@@ -90,18 +90,18 @@ export default function Footer() {
               <div className="mt-2 space-y-1">
                 <Link
                   href="tel:+971522889300"
-                  className="block text-neutral-400 hover:text-gold text-base sm:text-xl"
+                  className="block text-neutral-400 hover:text-gold text-base sm:text-xl font-paragraph tracking-[0.12rem]"
                 >
                   +971 522 889 300
                 </Link>
                 <Link
                   href="tel:+971543783000"
-                  className="block  text-neutral-400 hover:text-gold text-base sm:text-xl"
+                  className="block  text-neutral-400 hover:text-gold text-base sm:text-xl font-paragraph tracking-[0.12rem]"
                 >
                   +971 54 378 3000
                 </Link>
               </div>
-              <p className="font-poppins">
+              <p className="font-paragraph tracking-[0.12rem]">
                 <Link
                   href="mailto:info@alelizainteriors.com"
                   className="block text-neutral-400 hover:text-gold mt-2 text-base sm:text-xl"
@@ -113,10 +113,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver font-poppins uppercase">
+            <h3 className="mb-6 text-lg font-medium text-silver font-deltha uppercase tracking-[0.3rem]">
               Services
             </h3>
-            <ul className="space-y-4 text-md font-poppins uppercase">
+            <ul className="space-y-4 text-md font-paragraph tracking-[0.12rem] uppercase">
               {services.map((item) => (
                 <li key={item.title}>
                   <Link
@@ -131,10 +131,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-wide text-silver font-poppins uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-[0.3rem] text-silver font-deltha uppercase">
               Menu
             </h3>
-            <ul className="space-y-4 text-md font-poppins uppercase">
+            <ul className="space-y-4 text-md font-paragraph tracking-[0.12rem] uppercase">
               {menu.map((item, index) => (
                 <li key={index}>
                   <Link

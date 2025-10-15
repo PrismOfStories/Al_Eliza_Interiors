@@ -21,7 +21,6 @@ const images = [
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375808/6cf66ea9-936e-4598-99f0-cd34b85e87c9_wiwleg.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375807/59b4f14f-8c35-4b44-acec-169980d93575_lba5ek.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/fa13228c-c148-4355-937e-164ab472023e_wb5a7d.jpg",
-
 ];
 
 export default function ProjectsScroll() {
@@ -62,7 +61,7 @@ export default function ProjectsScroll() {
     <main className="relative bg-background">
       <div
         ref={gallery}
-        className="flex gap-2 md:gap-8 p-4 md:p-8 overflow-hidden relative h-[175vh]"
+        className="flex gap-2 sm:gap-4 overflow-hidden relative h-[175vh]"
       >
         {isMobile ? (
           <>
@@ -80,16 +79,16 @@ export default function ProjectsScroll() {
       </div>
 
       <div className="absolute inset-0  pointer-events-none">
-        <div className="absolute top-20 right-20 text-right">
-          <p className="text-gold-dark text-xl sm:text-5xl uppercase font-heading tracking-[0.4rem] ">
+        <div className="absolute top-20 px-6 sm:right-20 sm:text-right">
+          <p className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem] ">
             Showcasing our finest projects
           </p>
           <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
             Every detail crafted with care and creativity
           </p>
         </div>
-        <div className="absolute bottom-20 left-20 text-left">
-          <p className="text-gold-dark text-xl sm:text-5xl uppercase font-heading tracking-[0.4rem]">
+        <div className="absolute bottom-20 px-6 sm:left-20 sm:text-left">
+          <p className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem]">
             Transforming spaces beautifully
           </p>
           <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
@@ -112,13 +111,13 @@ const Column = ({
 }) => {
   return (
     <motion.div
-      className="relative flex flex-col gap-4 md:gap-8 min-w-[150px] md:min-w-[250px] w-1/2 md:w-1/4"
+      className="relative flex flex-col gap-2 sm:gap-4 min-w-[150px] md:min-w-[250px] w-1/2 md:w-1/4"
       style={{ y, top }}
     >
       {images.map((src, i) => (
         <div
           key={i}
-          className="group relative w-full h-full rounded-[1vw] overflow-hidden cursor-pointer"
+          className="group relative w-full h-full rounded overflow-hidden cursor-pointer"
         >
           <Image src={src} alt="image" fill style={{ objectFit: "cover" }} />
           <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
@@ -127,5 +126,3 @@ const Column = ({
     </motion.div>
   );
 };
-
-

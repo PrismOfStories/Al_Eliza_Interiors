@@ -104,7 +104,7 @@ export default function ArchitectureHero() {
                 whileInView={{ opacity: 1, x: 0, skewX: -20 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                 viewport={{ once: true, margin: "0px 0px -40% 0px" }}
-                className="group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium transition-colors duration-300"
+                className="group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-3 sm:px-8 py-3 sm:py-4 text-[12px] sm:text-lg font-medium transition-colors duration-300"
               >
                 <span className="flex items-center font-heading font-[300] sm:tracking-[0.20rem] gap-2 [transform:skewX(20deg)]">
                   Tell us about your project

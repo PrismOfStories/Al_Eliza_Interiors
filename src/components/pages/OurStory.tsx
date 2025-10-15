@@ -87,34 +87,33 @@ function About() {
       <ToastContainer />
 
       <section className="relative w-full min-h-screen flex items-center justify-center">
-  {/* Background Image */}
-  <Image
-    src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
-    alt="Background"
-    fill
-    className="object-cover"
-    priority
-  />
+        {/* Background Image */}
+        <Image
+          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/70"></div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
 
-  {/* Content */}
-  <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
-    <motion.h1
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      viewport={{ once: false }}
-      className="font-deltha text-white font-bold leading-[1.1] uppercase tracking-[0.08em]
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: false }}
+            className="font-deltha text-white font-bold leading-[1.1] uppercase tracking-[0.08em]
         text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
-    >
-      About <br />
-      Al Eliza
-    </motion.h1>
-  </div>
-</section>
-
+          >
+            About <br />
+            Al Eliza
+          </motion.h1>
+        </div>
+      </section>
 
       <section className="w-full py-20 px-6 md:px-12 mt-14 lg:mt-48 ">
         <div className="max-w-7xl mx-auto">
@@ -192,7 +191,7 @@ function About() {
 
       <section className="sm:py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
-          <h2 className="font-deltha text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-poppins font-medium text-gold">
+          <h2 className="font-deltha text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-medium text-gold">
             Meet Our Team
           </h2>
           <p className="text-[#878787] exclusive-text mt-4  text-sm lg:text-lg">
@@ -261,7 +260,7 @@ function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: false }}
-              className="font-deltha text-center  w-full text-[clamp(1.7rem,5vw,3rem)] font-poppins font-medium text-gold mb-10 lg:mb-20"
+              className="font-deltha text-center  w-full text-[clamp(1.7rem,5vw,3rem)] font-medium text-gold mb-10 lg:mb-20"
             >
               OUR PRESTIGIOUS CLIENTS
             </motion.p>
