@@ -68,7 +68,7 @@ export default function Footer() {
             <h1 className="select-none text-[2.25rem] tracking-[0.3rem] text-gold">
               <span className="font-semibold font-paragraph">AL ELIZA</span>
             </h1>
-            <p className="mt-3 text-lg text-silver font-deltha tracking-[0.3rem]">
+            <p className="mt-3 text-lg text-silver font-heading tracking-[0.3rem]">
               INTERIOR DESIGN
             </p>
           </div>
@@ -78,9 +78,9 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
           <div>
-            <h3 className="mb-6 text-lg font-medium text-silver tracking-[0.3rem] font-deltha uppercase">
+            <h2 className="mb-6 text-lg font-medium text-silver tracking-[0.3rem] font-heading uppercase">
               Contact
-            </h3>
+            </h2>
             <div className="space-y-4 text-lg">
               <p className="max-w-sm text-neutral-400 font-paragraph tracking-[0.12rem]">
                 Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
@@ -113,7 +113,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium text-silver font-deltha uppercase tracking-[0.3rem]">
+            <h3 className="mb-6 text-lg font-medium text-silver font-heading uppercase tracking-[0.3rem]">
               Services
             </h3>
             <ul className="space-y-4 text-md font-paragraph tracking-[0.12rem] uppercase">
@@ -131,7 +131,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-[0.3rem] text-silver font-deltha uppercase">
+            <h3 className="mb-6 text-lg font-medium tracking-[0.3rem] text-silver font-heading uppercase">
               Menu
             </h3>
             <ul className="space-y-4 text-md font-paragraph tracking-[0.12rem] uppercase">

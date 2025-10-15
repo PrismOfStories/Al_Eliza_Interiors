@@ -16,16 +16,19 @@ export default function ScrollHero() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 
   return (
-    <div className="relative  min-h-screen">
+    <section
+      className="relative min-h-screen"
+      aria-label="Welcome introduction"
+    >
       <ScrollContainer>
         <ScrollPage>
           <Animator
             animation={batch(FadeIn(), Sticky(), MoveOut(0, -200))}
             className="w-full flex items-center justify-center min-h-screen flex-wrap text-center"
           >
-            <p className="leading-[1.8] sm:leading-[1.5] text-center text-[clamp(1.5rem,5vw,2.5rem)] font-light uppercase text-gold-dark px-8 font-heading tracking-[0.4rem] sm:tracking-[0.6rem] block">
+            <h2 className="leading-[1.8] sm:leading-[1.5] text-center text-[clamp(1.5rem,5vw,2.5rem)] font-light uppercase text-gold-dark px-8 font-heading tracking-[0.4rem] sm:tracking-[0.6rem] block">
               Welcome to <br /> Al-Eliza Interiors
-            </p>
+            </h2>
           </Animator>
         </ScrollPage>
 
@@ -34,12 +37,12 @@ export default function ScrollHero() {
             animation={ZoomInScrollOut}
             className="w-full px-8 flex items-center justify-center min-h-screen text-center"
           >
-            <p className=" text-center text-[clamp(1.5rem,5vw,2.5rem)] font-paragraph font-[200] tracking-[0.4rem] sm:tracking-[0.6rem] uppercase leading-tight text-white block">
+            <h3 className="text-center text-[clamp(1.5rem,5vw,2.5rem)] font-paragraph font-[200] tracking-[0.4rem] sm:tracking-[0.6rem] uppercase leading-tight text-white block">
               Crafting Spaces <br /> That Inspire & Delight
-            </p>
+            </h3>
           </Animator>
         </ScrollPage>
       </ScrollContainer>
-    </div>
+    </section>
   );
 }

@@ -30,19 +30,28 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="bg-background text-white mb-8 pt-20">
-      <section className="flex flex-col items-center justify-start pt-20 md:pt-40 px-4 md:px-6">
-        <h1 className="text-sm md:text-xl tracking-[0.3rem] md:tracking-[0.5rem] uppercase font-paragraph font-[300] text-gold">
-          Signature Projects
-        </h1>
-        <p className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-4 max-w-5xl text-center tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.5] uppercase font-heading font-bold">
-          Designed with Intention
-        </p>
+    <main className="bg-background text-white mb-8 pt-20">
+      {/* Hero Section */}
+      <section
+        className="flex flex-col items-center justify-start pt-20 md:pt-40 px-4 md:px-6"
+        aria-label="Portfolio introduction"
+      >
+        <header className="text-center">
+          <p className="text-sm md:text-xl tracking-[0.3rem] md:tracking-[0.5rem] uppercase font-paragraph font-[300] text-gold">
+            Signature Projects
+          </p>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-4 max-w-5xl text-center tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.5] uppercase font-heading font-bold">
+            Designed with Intention
+          </h1>
+        </header>
       </section>
 
       <div className="max-w-[90rem] mx-auto mt-8 md:mt-16">
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center lg:justify-between gap-4 mb-8 px-4">
+        {/* Navigation Tabs */}
+        <nav
+          className="flex flex-wrap justify-center lg:justify-between gap-4 mb-8 px-4"
+          aria-label="Portfolio category filters"
+        >
           {tabs.map((tab) => (
             <button
               key={tab.value}
@@ -52,53 +61,78 @@ export default function Portfolio() {
                   : "border-transparent text-white hover:text-gold"
               } font-paragraph  uppercase tracking-[0.2rem] font-[300] transition-colors duration-300 cursor-pointer`}
               onClick={() => setSelectedTab(tab.value)}
+              aria-pressed={selectedTab === tab.value}
+              aria-label={`Filter by ${tab.label}`}
             >
               {tab.label}
             </button>
           ))}
-        </div>
+        </nav>
 
-        {/* Gallery */}
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-4 md:px-6 pb-16"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              visible: { transition: { staggerChildren: 0.1 } },
-            }}
-          >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={`${project.id}-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                }}
-                layout
-                className="group relative overflow-hidden cursor-pointer"
-                onClick={() => handleImageClick(project, index)}
-              >
-                <div className="relative w-full h-56 sm:h-64 overflow-hidden">
-                  <Image
-                    src={project.images[0]}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <h3 className="absolute bottom-3 md:bottom-7 left-3 md:left-4 text-white text-lg md:text-lg tracking-[0.1rem] md:tracking-[0.2rem] font-paragraph font-[300] z-10">
-                    {project.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+        {/* Portfolio Gallery */}
+        <section aria-label="Portfolio gallery">
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-4 md:px-6 pb-16"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { transition: { staggerChildren: 0.1 } },
+              }}
+              role="list"
+              aria-label={`Portfolio projects - ${
+                selectedTab === "all"
+                  ? "All categories"
+                  : tabs.find((t) => t.value === selectedTab)?.label
+              }`}
+            >
+              {filteredProjects.map((project, index) => (
+                <motion.article
+                  key={`${project.id}-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.05,
+                  }}
+                  layout
+                  className="group relative overflow-hidden cursor-pointer"
+                  onClick={() => handleImageClick(project, index)}
+                  role="listitem"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleImageClick(project, index);
+                    }
+                  }}
+                  aria-label={`View project: ${project.title}`}
+                >
+                  <figure className="relative w-full h-56 sm:h-64 overflow-hidden">
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} - Interior design project by Al-Eliza Interiors`}
+                      fill
+                      className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    />
+                    <div
+                      className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"
+                      aria-hidden="true"
+                    ></div>
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+                      aria-hidden="true"
+                    ></div>
+                    <figcaption className="absolute bottom-3 md:bottom-7 left-3 md:left-4 text-white text-lg md:text-lg tracking-[0.1rem] md:tracking-[0.2rem] font-paragraph font-[300] z-10">
+                      {project.title}
+                    </figcaption>
+                  </figure>
+                </motion.article>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </section>
 
         {/* Lightbox */}
         <Lightbox
@@ -120,6 +154,6 @@ export default function Portfolio() {
           }}
         />
       </div>
-    </div>
+    </main>
   );
 }

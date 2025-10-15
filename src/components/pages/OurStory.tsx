@@ -84,24 +84,28 @@ function About() {
   };
 
   return (
-    <>
+    <main>
       <ToastContainer />
 
-      <section className="relative w-full min-h-screen flex items-center justify-center">
+      {/* Hero Section */}
+      <section
+        className="relative w-full min-h-screen flex items-center justify-center"
+        aria-label="About Al-Eliza Interiors hero section"
+      >
         {/* Background Image */}
         <Image
           src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
-          alt="Background"
+          alt="Al-Eliza Interiors office space background"
           fill
           className="object-cover"
           priority
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/70" aria-hidden="true"></div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
+        <header className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,15 +117,19 @@ function About() {
             About <br />
             Al Eliza
           </motion.h1>
-        </div>
+        </header>
       </section>
 
-      <section className="w-full py-20 px-6 md:px-12 mt-14 lg:mt-48 ">
+      {/* Mission and Statistics Section */}
+      <section
+        className="w-full py-20 px-6 md:px-12 mt-14 lg:mt-48"
+        aria-label="Our mission and company statistics"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18 lg:mb-48">
             <div className="col-span-1 flex items-center gap-2">
-              <span className="w-3 h-3 bg-gold"></span>
-              <span className="font-deltha tracking-[0.4rem] sm:tracking-[0.5rem]  uppercase text-sm font-semibold  text-white">
+              <span className="w-3 h-3 bg-gold" aria-hidden="true"></span>
+              <span className="font-heading tracking-[0.4rem] sm:tracking-[0.5rem]  uppercase text-sm font-semibold  text-white">
                 Our Mission
               </span>
             </div>
@@ -139,60 +147,61 @@ function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="flex  flex-col justify-between">
+            <article className="flex  flex-col justify-between">
               <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={98} />%
               </h3>
               <div className="sm:text-right mt-10">
-                <p className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
+                <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
                   Customer Satisfaction Rate
-                </p>
+                </h4>
                 <p className="text-base font-paragraph tracking-[0.2rem] text-silver">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
-            </div>
+            </article>
 
             <hr className="bg-gold h-0.5 sm:hidden" />
 
-            <div className="flex flex-col justify-between">
+            <article className="flex flex-col justify-between">
               <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={250} />+
               </h3>
               <div className="sm:text-right mt-10">
-                <p className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
+                <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
                   Projects Completed
-                </p>
+                </h4>
                 <p className="text-base font-paragraph tracking-[0.2rem] text-silver">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
-            </div>
+            </article>
 
             <hr className="bg-gold h-0.5 sm:hidden" />
 
-            <div className="flex flex-col justify-between">
+            <article className="flex flex-col justify-between">
               <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={64} />%
               </h3>
               <div className="sm:text-right mt-10">
-                <p className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
+                <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
                   Repeat Client Rate
-                </p>
+                </h4>
                 <p className="text-base font-paragraph tracking-[0.2rem] text-silver">
                   A majority of our clients trust us again for new projects.
                 </p>
               </div>
-            </div>
+            </article>
 
             <hr className="bg-gold h-0.5 sm:hidden" />
           </div>
         </div>
       </section>
 
-      <section className="sm:py-20 px-6 md:px-12">
+      {/* Team Section */}
+      <section className="sm:py-20 px-6 md:px-12" aria-label="Meet our team">
         <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
-          <h2 className="font-deltha text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-medium text-gold tracking-[0.4rem] sm:tracking-[0.5rem]">
+          <h2 className="font-heading text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-medium text-gold tracking-[0.4rem] sm:tracking-[0.5rem]">
             Meet Our Team
           </h2>
           <p className="text-silver font-paragraph tracking-[0.2rem] mt-4  text-sm lg:text-lg">
@@ -203,13 +212,13 @@ function About() {
 
         <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
           {team.map((member, index) => (
-            <div
+            <article
               key={index}
               className="relative group overflow-hidden shadow-lg aspect-[2/3]"
             >
               <Image
                 src={member.image}
-                alt={member.name}
+                alt={`${member.name} - ${member.role}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -224,22 +233,22 @@ function About() {
                   </p>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         <div className="sm:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pt-10">
           {team.map((member, index) => (
-            <div key={index} className="group">
+            <article key={index} className="group">
               {/* Image Container */}
-              <div className="relative h-[380px] w-full overflow-hidden shadow-lg">
+              <figure className="relative h-[380px] w-full overflow-hidden shadow-lg">
                 <Image
                   src={member.image}
-                  alt={member.name}
+                  alt={`${member.name} - ${member.role}`}
                   fill
                   className="object-fit transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
+              </figure>
 
               {/* Text Content Below Image */}
               <div className="exclusive-text mt-4 text-center">
@@ -250,15 +259,16 @@ function About() {
                   {member.role}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="py-16 lg:py-24">
+      {/* Clients Section */}
+      <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <motion.p
+          <header className="text-center mb-12 lg:mb-16">
+            <motion.h2
               initial={{ opacity: 0, x: -300 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -266,64 +276,81 @@ function About() {
               className="font-heading tracking-[0.5rem] leading-[1.8] sm:leading-[1.5] text-center  w-full text-[clamp(1rem,5vw,3rem)] font-medium text-gold mb-10 lg:mb-20"
             >
               OUR PRESTIGIOUS CLIENTS
-            </motion.p>
-          </div>
+            </motion.h2>
+          </header>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center">
+          <div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center"
+            role="list"
+            aria-label="Client logos"
+          >
             {logos.map((logo, index) => (
               <div
                 key={index}
                 className="group flex items-center justify-center p-4  transition-all duration-300 rounded-lg"
+                role="listitem"
               >
-                <div className="relative w-full h-20 sm:h-28">
+                <figure className="relative w-full h-20 sm:h-28">
                   <Image
                     src={logo}
-                    alt={`Client ${index + 1}`}
+                    alt={`Client ${index + 1} logo`}
                     fill
                     className="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
                   />
-                </div>
+                </figure>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-background text-white py-10 sm:py-20 px-6">
+      {/* Contact Form Section */}
+      <section
+        className="bg-background text-white py-10 sm:py-20 px-6"
+        aria-label="Contact us"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="flex flex-col justify-between">
             <h2 className="font-heading tracking-[0.3rem] flex items-center text-xl lg:text-3xl font-[300]">
-              <span className="w-6 h-6 bg-gold [transform:skewX(-20deg)] mr-3"></span>
+              <span
+                className="w-6 h-6 bg-gold [transform:skewX(-20deg)] mr-3"
+                aria-hidden="true"
+              ></span>
               Get in Touch
             </h2>
-            <div className="flex flex-col items-left mt-4 gap-2">
+            <address className="flex flex-col items-left mt-4 gap-2 not-italic">
               <p className="text-white font-paragraph tracking-[0.2rem] font-[300] text-xl">
-                <Link href="tel:206-339-2947" className=" hover:text-gold">
+                <Link href="tel:206-339-2947" className="hover:text-gold">
                   206-339-2947
                 </Link>
               </p>
               <p className="text-2xl font-paragraph tracking-[0.2rem] md:text-3xl font-[300]">
                 <Link
                   href="mailto:info@aleliza.com"
-                  className=" hover:text-gold"
+                  className="hover:text-gold"
                 >
                   info@aleliza.com
                 </Link>
               </p>
-            </div>
+            </address>
           </div>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col exclusive-text justify-between space-y-8"
+            aria-label="Contact form"
           >
             <div>
-              <label className="block text-sm mb-2 font-paragraph font-[300]">
+              <label
+                htmlFor="name"
+                className="block text-sm mb-2 font-paragraph font-[300]"
+              >
                 Name
               </label>
               <input
                 type="text"
                 name="name"
+                id="name"
                 placeholder="Enter name"
                 value={formData.name}
                 onChange={handleChange}
@@ -332,12 +359,16 @@ function About() {
             </div>
 
             <div>
-              <label className="block text-sm mb-2 font-paragraph font-[300]">
+              <label
+                htmlFor="email"
+                className="block text-sm mb-2 font-paragraph font-[300]"
+              >
                 Email*
               </label>
               <input
                 type="email"
                 name="email"
+                id="email"
                 placeholder="Enter email address"
                 value={formData.email}
                 onChange={handleChange}
@@ -346,12 +377,16 @@ function About() {
               />
             </div>
             <div>
-              <label className="block text-sm mb-2 font-paragraph font-[300]">
+              <label
+                htmlFor="subject"
+                className="block text-sm mb-2 font-paragraph font-[300]"
+              >
                 Subject
               </label>
               <input
                 type="text"
                 name="subject"
+                id="subject"
                 placeholder="Enter your subject"
                 value={formData.subject}
                 onChange={handleChange}
@@ -361,11 +396,15 @@ function About() {
             </div>
 
             <div>
-              <label className="block text-sm mb-2 font-paragraph font-[300]">
+              <label
+                htmlFor="message"
+                className="block text-sm mb-2 font-paragraph font-[300]"
+              >
                 Message*
               </label>
               <textarea
                 name="message"
+                id="message"
                 placeholder="Enter your message"
                 rows={4}
                 value={formData.message}
@@ -375,8 +414,12 @@ function About() {
               />
             </div>
 
-            <button className="w-52  justify-center group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-4 text-xl font-medium transition-colors duration-300 [transform:skewX(-20deg)]">
-              <span className="flex font-deltha tracking-[0.25rem] items-center gap-2 [transform:skewX(20deg)]">
+            <button
+              type="submit"
+              className="w-52  justify-center group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-4 text-xl font-medium transition-colors duration-300 [transform:skewX(-20deg)]"
+              aria-label="Submit contact form"
+            >
+              <span className="flex font-heading tracking-[0.25rem] items-center gap-2 [transform:skewX(20deg)]">
                 Submit
               </span>
             </button>
@@ -384,27 +427,31 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-background text-white py-10 sm:py-20 px-6">
+      {/* Call to Action Section */}
+      <section
+        className="bg-background text-white py-10 sm:py-20 px-6"
+        aria-label="Let's chat call to action"
+      >
         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row lg:justify-between gap-10">
-          <div className="w-full lg:w-1/2">
+          <figure className="w-full lg:w-1/2">
             <div className="h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative sm:[transform:skewX(-10deg)]">
               <Image
                 src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376136/IMG_1583_jswnlj.jpg"
-                alt="Let's Chat"
+                alt="Al-Eliza Interiors consultation space"
                 fill
                 className="w-full object-cover"
               />
             </div>
-          </div>
+          </figure>
 
           <div className="flex items-center w-full lg:w-1/2">
-            <h2 className="text-4xl font-deltha sm:text-7xl lg:text-9xl font-bold leading-none tracking-[0.3rem] text-gold">
+            <h2 className="text-4xl font-heading sm:text-7xl lg:text-9xl font-bold leading-none tracking-[0.3rem] text-gold">
               Let&apos;s Chat
             </h2>
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
 

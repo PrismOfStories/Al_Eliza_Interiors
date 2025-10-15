@@ -70,124 +70,163 @@ export default function GetInTouch() {
   };
 
   return (
-    <div className="pt-20">
+    <main className="pt-20">
       <ToastContainer />
 
+      {/* Hero Section */}
       <section
         ref={sectionRef}
         className="bg-background text-center py-24 px-6"
+        aria-label="Contact us introduction"
       >
-        <p className="text-sm md:text-xl pt-10 tracking-[0.3rem] md:tracking-[0.5rem] mb-3 uppercase font-paragraph font-[300] text-gold">
-          CONTACT US
-        </p>
+        <header>
+          <p className="text-sm md:text-xl pt-10 tracking-[0.3rem] md:tracking-[0.5rem] mb-3 uppercase font-paragraph font-[300] text-gold">
+            CONTACT US
+          </p>
 
-        <h1 className="contact-animate tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.3] uppercase font-heading font-bold text-6xl md:text-8xl text-white mb-6">
-          GET IN TOUCH
-        </h1>
+          <h1 className="contact-animate tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.3] uppercase font-heading font-bold text-6xl md:text-8xl text-white mb-6">
+            GET IN TOUCH
+          </h1>
 
-        <p className="contact-animate font-paragraph tracking-[0.2rem] font-[300] text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
-          Reach out to start the conversation, schedule a consultation, or ask
-          any questions.
-        </p>
+          <p className="contact-animate font-paragraph tracking-[0.2rem] font-[300] text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
+            Reach out to start the conversation, schedule a consultation, or ask
+            any questions.
+          </p>
+        </header>
 
-        {/* Social Icons */}
-        <div className="flex justify-center gap-6">
+        {/* Social Media Links */}
+        <nav
+          className="flex justify-center gap-6"
+          aria-label="Social media links"
+        >
           <Link
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
+            aria-label="Follow us on Instagram"
           >
-            <FaInstagram className="h-10 w-10" />
+            <FaInstagram className="h-10 w-10" aria-hidden="true" />
           </Link>
           <Link
             href="https://x.com"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
+            aria-label="Follow us on X (Twitter)"
           >
-            <FaXTwitter className="h-10 w-10" />
+            <FaXTwitter className="h-10 w-10" aria-hidden="true" />
           </Link>
           <Link
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
+            aria-label="Connect with us on LinkedIn"
           >
-            <FaLinkedinIn className="h-10 w-10" />
+            <FaLinkedinIn className="h-10 w-10" aria-hidden="true" />
           </Link>
           <Link
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
+            aria-label="Like us on Facebook"
           >
-            <FaFacebookF className="h-10 w-10" />
+            <FaFacebookF className="h-10 w-10" aria-hidden="true" />
           </Link>
-        </div>
+        </nav>
       </section>
 
-      <section className="relative min-h-screen flex items-center justify-center px-4">
+      {/* Contact Form Section */}
+      <section
+        className="relative min-h-screen flex items-center justify-center px-4"
+        aria-label="Contact form"
+      >
         {/* Background Image */}
         <Image
           src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760201119/form_vlsyjw.webp"
-          alt="Background"
+          alt="Al-Eliza Interiors contact form background"
           fill
           className="object-cover"
           priority
         />
 
         {/* Black Overlay */}
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
 
         {/* Form Container */}
         <div className="relative z-10 w-full max-w-2xl bg-white p-5 sm:p-10 exclusive-text rounded-xl sm:rounded-2xl ">
-          <form className="space-y-8" onSubmit={handleSubmit}>
+          <form
+            className="space-y-8"
+            onSubmit={handleSubmit}
+            aria-label="Contact form"
+          >
             <div className="border-b border-background pb-2">
-              <label className="block text-sm text-background mb-1 font-paragraph font-[300]">
+              <label
+                htmlFor="contact-name"
+                className="block text-sm text-background mb-1 font-paragraph font-[300]"
+              >
                 NAME
               </label>
               <input
                 name="name"
+                id="contact-name"
                 type="text"
                 required
                 className="w-full bg-transparent focus:outline-none text-background"
+                aria-describedby="name-help"
               />
             </div>
 
             <div className="border-b border-background pb-2">
-              <label className="block text-sm text-background mb-1 font-paragraph font-[300]">
+              <label
+                htmlFor="contact-email"
+                className="block text-sm text-background mb-1 font-paragraph font-[300]"
+              >
                 EMAIL ADDRESS
               </label>
               <input
                 name="email"
+                id="contact-email"
                 type="email"
                 required
                 className="w-full bg-transparent focus:outline-none text-background"
+                aria-describedby="email-help"
               />
             </div>
 
             <div className="border-b border-background pb-2">
-              <label className="block text-sm font-paragraph font-[300] text-background mb-1">
+              <label
+                htmlFor="contact-subject"
+                className="block text-sm font-paragraph font-[300] text-background mb-1"
+              >
                 SUBJECT
               </label>
               <input
                 name="subject"
+                id="contact-subject"
                 type="text"
                 required
                 className="w-full bg-transparent focus:outline-none text-background"
+                aria-describedby="subject-help"
               />
             </div>
 
             <div className="border-b border-background pb-2">
-              <label className="block text-sm font-paragraph font-[300] text-background mb-1">
+              <label
+                htmlFor="contact-message"
+                className="block text-sm font-paragraph font-[300] text-background mb-1"
+              >
                 MESSAGE
               </label>
               <textarea
                 name="message"
+                id="contact-message"
                 rows={4}
                 required
                 className="w-full bg-transparent focus:outline-none text-background"
+                aria-describedby="message-help"
               />
             </div>
 
@@ -195,6 +234,7 @@ export default function GetInTouch() {
               <button
                 type="submit"
                 className="group w-full justify-center cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-3 text-lg font-heading tracking-[0.2rem] transition-colors duration-300 [transform:skewX(-20deg)]"
+                aria-label="Send contact message"
               >
                 <span className="flex items-center gap-2 [transform:skewX(20deg)]">
                   SEND MESSAGE
@@ -205,16 +245,20 @@ export default function GetInTouch() {
         </div>
       </section>
 
-      <section className="bg-background text-center py-10 sm:py-24 px-6">
+      {/* Visit Us Section */}
+      <section
+        className="bg-background text-center py-10 sm:py-24 px-6"
+        aria-label="Visit our locations"
+      >
         {/* Small Heading */}
         <p className="text-sm font-paragraph tracking-[0.3rem] font-[400] text-silver mt-14 mb-4">
           OUR LOCATIONS
         </p>
 
         {/* Main Title */}
-        <h1 className=" text-4xl lg:text-6xl font-heading tracking-[0.25rem] md:text-8xl text-gold mb-8 leading-[1.5]">
+        <h2 className=" text-4xl lg:text-6xl font-heading tracking-[0.25rem] md:text-8xl text-gold mb-8 leading-[1.5]">
           VISIT US
-        </h1>
+        </h2>
 
         {/* Subtext */}
         <p className="text-base md:text-lg font-paragraph tracking-[0.2rem] leading-[1.5] text-silver max-w-2xl mx-auto mb-12">
@@ -224,16 +268,20 @@ export default function GetInTouch() {
         </p>
       </section>
 
-      <section className="bg-background pb-10 sm:py-20">
+      {/* Office Location Section */}
+      <section
+        className="bg-background pb-10 sm:py-20"
+        aria-label="Office location and contact details"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6 lg:px-12 items-center">
           {/* Left Side: Office Details (1/3) */}
-          <div className="flex flex-col justify-center relative md:col-span-1">
+          <address className="flex flex-col justify-center relative md:col-span-1 not-italic">
             <div className="pl-6 space-y-12">
               {/* Office Block */}
               <div>
-                <h2 className=" font-xl font-deltha font-bold text-gold uppercase tracking-[0.2rem]">
+                <h3 className=" font-xl font-heading font-bold text-gold uppercase tracking-[0.2rem]">
                   Head Office
-                </h2>
+                </h3>
                 <p className="text-white mt-2 text-base sm:text-lg cursor-pointer font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300">
                   <Link
                     href="https://maps.app.goo.gl/5GJHZDmpqdpkJmtb7"
@@ -249,9 +297,9 @@ export default function GetInTouch() {
 
               {/* Email */}
               <div className="exclusive-text">
-                <h2 className="text-xl font-deltha font-bold text-gold uppercase tracking-[0.2rem]">
+                <h3 className="text-xl font-heading font-bold text-gold uppercase tracking-[0.2rem]">
                   Email
-                </h2>
+                </h3>
                 <Link
                   href="mailto:info@alelizainteriors.com"
                   className="block text-white mt-2 text-base sm:text-xl font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300"
@@ -262,39 +310,41 @@ export default function GetInTouch() {
 
               {/* Phone */}
               <div className="exclusive-text">
-                <h2 className="text-xl font-deltha font-bold text-gold uppercase tracking-[0.2rem]">
+                <h3 className="text-xl font-heading font-bold text-gold uppercase tracking-[0.2rem]">
                   Call Us
-                </h2>
+                </h3>
 
                 <div className="mt-2 space-y-1">
                   <Link
                     href="tel:+971522889300"
                     className="block text-white text-base sm:text-xl font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300"
+                    aria-label="Call us at +971 522 889 300"
                   >
                     +971 522 889 300
                   </Link>
                   <Link
                     href="tel:+971543783000"
                     className="block  text-white text-base sm:text-xl font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300"
+                    aria-label="Call us at +971 54 378 3000"
                   >
                     +971 54 378 3000
                   </Link>
                 </div>
               </div>
             </div>
-          </div>
+          </address>
 
-          {/* Right Side: Office Image (2/3) */}
+          {/* Right Side: Office Map (2/3) */}
           <div className="relative w-full max-w-2xl ml-auto h-[350px] md:h-[450px] lg:h-[500px] md:col-span-2 rounded-xl overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225.46651462006213!2d55.35785207844792!3d25.28860235409731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d931d237c6d%3A0xc429f45c56e9c88!2sAl%20Eliza%20interior!5e0!3m2!1sen!2sae!4v1753894309606!5m2!1sen!2sae"
               loading="lazy"
-              title="Al Eliza Interior Location"
+              title="Al Eliza Interior Location Map"
               className="text-center w-full h-full"
             ></iframe>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

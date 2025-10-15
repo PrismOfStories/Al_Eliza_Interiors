@@ -58,10 +58,15 @@ export default function ProjectsScroll() {
   }, []);
 
   return (
-    <main className="relative bg-background">
+    <section
+      className="relative bg-background"
+      aria-label="Project portfolio gallery"
+    >
       <div
         ref={gallery}
         className="flex gap-2 sm:gap-4 overflow-hidden relative h-[175vh]"
+        role="img"
+        aria-label="Scrolling portfolio gallery showcasing Al-Eliza Interiors projects"
       >
         {isMobile ? (
           <>
@@ -78,25 +83,25 @@ export default function ProjectsScroll() {
         )}
       </div>
 
-      <div className="absolute inset-0  pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 px-6 sm:right-20 sm:text-right">
-          <p className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem] ">
+          <h3 className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem]">
             Showcasing our finest projects
-          </p>
+          </h3>
           <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
             Every detail crafted with care and creativity
           </p>
         </div>
         <div className="absolute bottom-20 px-6 sm:left-20 sm:text-left">
-          <p className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem]">
+          <h4 className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem]">
             Transforming spaces beautifully
-          </p>
+          </h4>
           <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
             Bringing your vision to life with elegance
           </p>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 
@@ -115,13 +120,18 @@ const Column = ({
       style={{ y, top }}
     >
       {images.map((src, i) => (
-        <div
+        <figure
           key={i}
           className="group relative w-full h-full rounded overflow-hidden cursor-pointer"
         >
-          <Image src={src} alt="image" fill style={{ objectFit: "cover" }} />
+          <Image
+            src={src}
+            alt={`Al-Eliza Interiors project showcase ${i + 1}`}
+            fill
+            style={{ objectFit: "cover" }}
+          />
           <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
-        </div>
+        </figure>
       ))}
     </motion.div>
   );

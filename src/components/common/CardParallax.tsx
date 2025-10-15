@@ -24,7 +24,6 @@ const Card = ({
   title,
   description,
   src,
-  url,
   progress,
   range,
   targetScale,
@@ -70,12 +69,12 @@ const Card = ({
               </p>
 
               <Link
-                href={url}
-                target="_blank"
-                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-poppins tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
+                href="/expertise"
+                className="group inline-flex bg-gold-dark hover:bg-gold text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-poppins tracking-widest transition-colors duration-300 [transform:skewX(-20deg)]"
               >
-                <span className="flex font-heading font-[300] tracking-[0.20rem] items-center gap-2 [transform:skewX(20deg)]">
+                <span className="flex font-heading font-[400] tracking-[0.20rem] items-center gap-2 [transform:skewX(20deg)]">
                   See more
+                  <span className="sr-only">about {title}</span>
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
@@ -117,8 +116,8 @@ const Card = ({
               </p>
 
               <Link
-                href={url}
-                className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-deltha tracking-widest transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg w-fit"
+                href="/get-in-touch"
+                className="group inline-flex bg-gold-dark hover:bg-gold text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-heading tracking-widest transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg w-fit"
               >
                 <span className="flex items-center gap-2 [transform:skewX(20deg)] tracking-[0.2rem]">
                   Contact us

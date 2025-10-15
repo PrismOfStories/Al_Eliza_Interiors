@@ -7,10 +7,10 @@ import Image from "next/image";
 
 export default function ClientsCard() {
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <motion.p
+        <header className="text-center mb-12 lg:mb-16">
+          <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
@@ -18,25 +18,30 @@ export default function ClientsCard() {
             className="text-center w-full text-xl lg:text-4xl font-heading tracking-[0.5rem] leading-[1.8] sm:leading-[1.5] text-gold-dark mb-10 lg:mb-20"
           >
             OUR PRESTIGIOUS CLIENTS
-          </motion.p>
-        </div>
+          </motion.h2>
+        </header>
 
         {/* Logo Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center">
+        <div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center"
+          role="list"
+          aria-label="Client logos"
+        >
           {logos.map((logo, index) => (
             <div
               key={index}
               className="group flex items-center justify-center p-4  transition-all duration-300 rounded-lg"
+              role="listitem"
             >
-              <div className="relative w-full h-20 sm:h-28">
+              <figure className="relative w-full h-20 sm:h-28">
                 <Image
                   src={logo}
-                  alt={`Client ${index + 1}`}
+                  alt={`Client ${index + 1} logo`}
                   fill
                   className="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
                 />
-              </div>
+              </figure>
             </div>
           ))}
         </div>

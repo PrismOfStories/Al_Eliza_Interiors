@@ -20,10 +20,14 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
+    <header
       ref={heroRef}
       className="relative w-full min-h-screen overflow-hidden"
+      role="banner"
     >
+      <h1 className="sr-only">
+        Al-Eliza Interiors - Premier Interior Design Services
+      </h1>
       {showVideo && (
         <video
           className="absolute inset-0 w-full h-full object-cover -z-10 preload-asset"
@@ -32,8 +36,9 @@ export default function Hero() {
           loop
           muted
           playsInline
+          aria-label="Al-Eliza Interiors showcase video"
         />
       )}
-    </section>
+    </header>
   );
 }

@@ -17,8 +17,7 @@ export const services = [
   },
   {
     title: "Virtual Reality 360° Designs",
-    description:
-      "Explore your space with immersive 360° VR previews.",
+    description: "Explore your space with immersive 360° VR previews.",
     src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375981/476183163_17978534825803107_4119508633750675449_n_p7rdkw.jpg",
     url: "/get-in-touch",
     color: "#000000",

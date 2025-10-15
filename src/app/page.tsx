@@ -10,16 +10,40 @@ import ProjectsScroll from "@/components/homepage/ProjectsScroll";
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <ScrollHero />
-      <ProjectsScroll />
-      <InteriorDesignHero />
-      <ServiceCard title="Expertise" projects={services} />
-      <section className="py-16 lg:py-28">
-        {" "}
+      {/* Hero Section */}
+      <section aria-label="Hero video introduction">
+        <Hero />
+      </section>
+
+      {/* Welcome Message */}
+      <section aria-label="Welcome message">
+        <ScrollHero />
+      </section>
+
+      {/* Portfolio Gallery */}
+      <section aria-label="Project portfolio gallery">
+        <ProjectsScroll />
+      </section>
+
+      {/* About Section */}
+      <section aria-label="About Al-Eliza Interiors">
+        <InteriorDesignHero />
+      </section>
+
+      {/* Services Section */}
+      <section aria-label="Our expertise and services">
+        <ServiceCard title="Expertise" projects={services} />
+      </section>
+
+      {/* Clients Section */}
+      <section className="py-16 lg:py-28" aria-label="Our prestigious clients">
         <ClientsCard />
       </section>
-      <Testimonials />
+
+      {/* Testimonials Section */}
+      <section aria-label="Client testimonials">
+        <Testimonials />
+      </section>
     </main>
   );
 }

@@ -111,9 +111,12 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="mx-auto w-full bg-[#fbfbfb] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24 lg:py-28 flex flex-col justify-center">
+    <section
+      className="mx-auto w-full bg-[#fbfbfb] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24 lg:py-28 flex flex-col justify-center"
+      aria-label="Client testimonials"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 md:mb-20 text-center">
+        <header className="mb-10 md:mb-20 text-center">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +136,7 @@ export default function TestimonialsSection() {
           >
             Testimonials
           </motion.h2>
-        </div>
+        </header>
 
         <div className="relative">
           <button
@@ -141,7 +144,10 @@ export default function TestimonialsSection() {
             className="flex absolute -left-3 md:-left-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
             aria-label="Previous testimonials"
           >
-            <FaChevronLeft className="text-xs md:text-base" />
+            <FaChevronLeft
+              className="text-xs md:text-base"
+              aria-hidden="true"
+            />
           </button>
 
           <button
@@ -149,7 +155,10 @@ export default function TestimonialsSection() {
             className="flex absolute -right-3 md:-right-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
             aria-label="Next testimonials"
           >
-            <FaChevronRight className="text-xs md:text-base" />
+            <FaChevronRight
+              className="text-xs md:text-base"
+              aria-hidden="true"
+            />
           </button>
 
           <div
@@ -160,23 +169,26 @@ export default function TestimonialsSection() {
                 ? "grid-cols-1 sm:grid-cols-2"
                 : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
             }`}
+            role="region"
+            aria-live="polite"
+            aria-label="Testimonials carousel"
           >
             {getCurrentTestimonials().map((testimonial) => (
-              <div
+              <article
                 key={testimonial.id}
                 className="flex flex-col border border-[#E5E0D8]/40 bg-white rounded p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all"
               >
-                <div className="mb-4 sm:mb-5">
+                <header className="mb-4 sm:mb-5">
                   <h3 className="text-sm sm:text-base md:text-lg font-semibold text-black font-heading uppercase tracking-[0.2rem]">
                     {testimonial.company}
                   </h3>
-                </div>
+                </header>
 
-                <p className="mb-6 sm:mb-8 text-[12px] sm:text-[13px] md:text-[14px] leading-[1.8] sm:leading-[1.5] text-black/80 font-paragraph tracking-[0.15rem]">
+                <blockquote className="mb-6 sm:mb-8 text-[12px] sm:text-[13px] md:text-[14px] leading-[1.8] sm:leading-[1.5] text-black/80 font-paragraph tracking-[0.15rem]">
                   &ldquo;{testimonial.text}&rdquo;
-                </p>
+                </blockquote>
 
-                <div className="flex items-center">
+                <footer className="flex items-center">
                   <div className="mr-3 sm:mr-4 h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 overflow-hidden rounded-full bg-brown">
                     <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-black font-medium text-sm sm:text-base">
                       {testimonial.name
@@ -186,33 +198,39 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <div>
-                    <p className="text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-black font-paragraph tracking-[0.15rem]">
+                    <cite className="text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-black font-paragraph tracking-[0.15rem] not-italic">
                       {testimonial.name}
-                    </p>
-                    <p className="text-[11px] sm:text-[12px] md:text-[13px] text-[#7A7671] font-paragraph tracking-[0.15rem]">
+                    </cite>
+                    <p className="text-[11px] sm:text-[12px] md:text-[13px] text-black font-paragraph font-[400] tracking-[0.15rem]">
                       {testimonial.title}
                     </p>
                   </div>
-                </div>
-              </div>
+                </footer>
+              </article>
             ))}
           </div>
         </div>
 
-        <div className="mt-10 flex justify-center space-x-2">
+        <nav
+          className="mt-10 flex justify-center space-x-2"
+          aria-label="Testimonials pagination"
+        >
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2 w-2 rounded-full transition-all ${
+              className={`h-4 w-4 min-h-[10px] min-w-[10px] flex items-center justify-center rounded-full transition-all focus:outline-none ${
                 index === currentSlide
                   ? "bg-[#171614]"
                   : "bg-[#D1CCC4] hover:bg-[#B5AFA5]"
               }`}
               aria-label={`Go to slide ${index + 1}`}
-            />
+              aria-current={index === currentSlide ? "true" : "false"}
+            >
+              <span className="sr-only">{`Go to slide ${index + 1}`}</span>
+            </button>
           ))}
-        </div>
+        </nav>
       </div>
     </section>
   );
