@@ -1,12 +1,8 @@
 "use client";
 
 import React from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { services as servicePage } from "@/lib/static-data/home";
 import ServiceCard from "../common/ServiceCard";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesCombined() {
   return (
@@ -21,20 +17,20 @@ export default function ServicesCombined() {
 
       <ServiceCard type="page" projects={servicePage} />
 
-      <section className="max-w-6xl mx-auto mt-28 px-6 py-20">
+      <section className="max-w-6xl mx-auto mt-28 px-6  lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18">
           <div className="col-span-1 flex items-center gap-2">
-            <span className="w-3 h-3 bg-yellow-500"></span>
-            <span className="font-deltha uppercase text-sm font-semibold tracking-wider text-white">
+            <span className="w-3 h-3 bg-gold"></span>
+            <span className="font-deltha tracking-[0.4rem] uppercase text-sm font-semibold  text-white">
               Our Services
             </span>
           </div>
 
           <div className="col-span-2 text-left">
-            <h2 className="text-xl md:text-3xl exclusive-text font-semibold text-[#878787] leading-snug">
+            <h2 className="leading-[1.8] sm:leading-[1.5] font-paragraph font-[200] tracking-[0.2rem] sm:tracking-[0.5rem] text-xl md:text-3xl text-silver">
               At Al Eliza Services, we deliver solutions with{" "}
-              <span className="font-bold">dedication, skill and care</span> —{" "}
-              <span className="text-white">
+              <span className="font-[200]">dedication, skill and care</span>{" "}
+              <span className="font-[200] text-white">
                 providing services that support, empower, and match your unique
                 way of living.
               </span>
@@ -44,13 +40,13 @@ export default function ServicesCombined() {
       </section>
 
       <section className="bg-background text-center py-8 px-4">
-        <p className="text-sm font-deltha tracking-widest text-gray-300 mt-10 mb-4">
+        <p className="text-sm font-paragraph font-[400] tracking-[0.2rem] text-silver mt-10 mb-4">
           START BUILDING
         </p>
         <h1 className="font-deltha text-6xl md:text-8xl font-extrabold text-gold mb-8 leading-none">
           LET&lsquo;S DESIGN
         </h1>
-        <p className="text-base exclusive-text md:text-lg text-gray-400 max-w-2xl mx-auto mb-12">
+        <p className="text-base font-paragraph font-[300] tracking-[0.15rem] md:text-lg text-silver max-w-2xl mx-auto mb-12">
           Ready to bring your vision to life? Whether it’s a home, a workspace,
           or a public space, we’re here to design environments that inspire,
           function, and endure. Let’s start your project together.

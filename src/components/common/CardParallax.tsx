@@ -104,15 +104,15 @@ const Card = ({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 font-deltha">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 font-paragraph font-[300]">
                 From Concept to Construction
               </p>
 
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-black mb-4 sm:mb-6 leading-tight exclusive-text">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gold mb-4 sm:mb-6 font-paragraph font-semibold">
                 {title}
               </h2>
 
-              <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-800 mb-6 sm:mb-8 exclusive-text max-w-xl">
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-800 mb-6 sm:mb-8 font-paragraph tracking-[0.2rem] font-[300] max-w-xl">
                 {description}
               </p>
 
@@ -120,7 +120,7 @@ const Card = ({
                 href={url}
                 className="group inline-flex bg-gold hover:bg-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-deltha tracking-widest transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg w-fit"
               >
-                <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                <span className="flex items-center gap-2 [transform:skewX(20deg)] tracking-[0.2rem]">
                   Contact us
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>

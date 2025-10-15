@@ -127,9 +127,9 @@ function About() {
             </div>
 
             <div className="col-span-2 text-left">
-              <h2 className="leading-[1.8] sm:leading-[1.5] font-paragraph font-[200] tracking-[0.2rem] sm:tracking-[0.6rem] text-xl md:text-3xl text-silver">
+              <h2 className="leading-[1.8] sm:leading-[1.5] font-paragraph font-[200] tracking-[0.2rem] sm:tracking-[0.5rem] text-xl md:text-3xl text-silver">
                 At AL Eliza, we transform spaces with{" "}
-                <span className="font-[200]">thoughtful design and care</span> —{" "}
+                <span className="font-[200]">thoughtful design and care</span>{" "}
                 <span className="font-[200] text-white">
                   creating spaces that inspire, nurture, and reflect your unique
                   way of living.
