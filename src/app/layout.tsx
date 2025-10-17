@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
-import Wrapper from "@/components/common/Wrapper";
+import Layout from "@/components/common/Layout";
 import "./globals.css";
 
 const deltha = localFont({
@@ -68,7 +68,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${deltha.variable} ${environment.variable} bg-background antialiased`}
       >
-        <Wrapper>{children}</Wrapper>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

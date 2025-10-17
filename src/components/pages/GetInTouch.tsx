@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import {
   FaInstagram,
@@ -13,16 +13,16 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
+import RevealWrapper from "../common/RevealWrapper";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function GetInTouch() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
+  useGSAP(
+    () => {
       gsap.from(".contact-animate", {
         y: 100,
         opacity: 0,
@@ -34,10 +34,9 @@ export default function GetInTouch() {
           start: "top 80%",
         },
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    },
+    { scope: sectionRef }
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -70,181 +69,179 @@ export default function GetInTouch() {
   };
 
   return (
-    <main className="pt-20">
+    <main className="overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
       <ToastContainer />
-
-      {/* Hero Section */}
-      <section
-        ref={sectionRef}
-        className="bg-background text-center py-24 px-6"
-        aria-label="Contact us introduction"
-      >
-        <header>
-          <p className="text-sm md:text-xl pt-10 tracking-[0.3rem] md:tracking-[0.5rem] mb-3 uppercase font-paragraph font-[300] text-gold">
-            CONTACT US
-          </p>
-
-          <h1 className="contact-animate tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.3] uppercase font-heading font-bold text-6xl md:text-8xl text-white mb-6">
-            GET IN TOUCH
-          </h1>
-
-          <p className="contact-animate font-paragraph tracking-[0.2rem] font-[300] text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
-            Reach out to start the conversation, schedule a consultation, or ask
-            any questions.
-          </p>
-        </header>
-
-        {/* Social Media Links */}
-        <nav
-          className="flex justify-center gap-6"
-          aria-label="Social media links"
+      <RevealWrapper>
+        {/* Hero Section */}
+        <section
+          ref={sectionRef}
+          className="bg-background text-center py-24 px-6 "
+          aria-label="Contact us introduction"
         >
-          <Link
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
-            aria-label="Follow us on Instagram"
+          <header>
+            <p className="text-sm md:text-xl pt-10 tracking-[0.3rem] md:tracking-[0.5rem] mb-3 uppercase font-paragraph font-[300] text-gold">
+              CONTACT US
+            </p>
+
+            <h1 className="contact-animate tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.3] uppercase font-heading font-bold text-6xl md:text-8xl text-white mb-6">
+              GET IN TOUCH
+            </h1>
+
+            <p className="contact-animate font-paragraph tracking-[0.2rem] font-[300] text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
+              Reach out to start the conversation, schedule a consultation, or
+              ask any questions.
+            </p>
+          </header>
+          {/* Social Media Links */}
+          <nav
+            className="flex justify-center gap-6"
+            aria-label="Social media links"
           >
-            <FaInstagram className="h-10 w-10" aria-hidden="true" />
-          </Link>
-          <Link
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
-            aria-label="Follow us on X (Twitter)"
-          >
-            <FaXTwitter className="h-10 w-10" aria-hidden="true" />
-          </Link>
-          <Link
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
-            aria-label="Connect with us on LinkedIn"
-          >
-            <FaLinkedinIn className="h-10 w-10" aria-hidden="true" />
-          </Link>
-          <Link
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
-            aria-label="Like us on Facebook"
-          >
-            <FaFacebookF className="h-10 w-10" aria-hidden="true" />
-          </Link>
-        </nav>
-      </section>
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
+              aria-label="Follow us on Instagram"
+            >
+              <FaInstagram className="h-10 w-10" aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
+              aria-label="Follow us on X (Twitter)"
+            >
+              <FaXTwitter className="h-10 w-10" aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
+              aria-label="Connect with us on LinkedIn"
+            >
+              <FaLinkedinIn className="h-10 w-10" aria-hidden="true" />
+            </Link>
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
+              aria-label="Like us on Facebook"
+            >
+              <FaFacebookF className="h-10 w-10" aria-hidden="true" />
+            </Link>
+          </nav>{" "}
+        </section>
+        {/* Contact Form Section */}
+        <section
+          className="relative min-h-screen flex items-center justify-center px-4"
+          aria-label="Contact form"
+        >
+          {/* Background Image */}
+          <Image
+            src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760201119/form_vlsyjw.webp"
+            alt="Al-Eliza Interiors contact form background"
+            fill
+            className="object-cover"
+            priority
+          />
 
-      {/* Contact Form Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center px-4"
-        aria-label="Contact form"
-      >
-        {/* Background Image */}
-        <Image
-          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760201119/form_vlsyjw.webp"
-          alt="Al-Eliza Interiors contact form background"
-          fill
-          className="object-cover"
-          priority
-        />
+          {/* Black Overlay */}
+          <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
 
-        {/* Black Overlay */}
-        <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
+          {/* Form Container */}
+          <div className="relative z-10 w-full max-w-2xl bg-white p-5 sm:p-10 exclusive-text rounded-xl sm:rounded-2xl ">
+            <form
+              className="space-y-8"
+              onSubmit={handleSubmit}
+              aria-label="Contact form"
+            >
+              <div className="border-b border-background pb-2">
+                <label
+                  htmlFor="contact-name"
+                  className="block text-sm text-background mb-1 font-paragraph font-[300]"
+                >
+                  NAME
+                </label>
+                <input
+                  name="name"
+                  id="contact-name"
+                  type="text"
+                  required
+                  className="w-full bg-transparent focus:outline-none text-background"
+                  aria-describedby="name-help"
+                />
+              </div>
 
-        {/* Form Container */}
-        <div className="relative z-10 w-full max-w-2xl bg-white p-5 sm:p-10 exclusive-text rounded-xl sm:rounded-2xl ">
-          <form
-            className="space-y-8"
-            onSubmit={handleSubmit}
-            aria-label="Contact form"
-          >
-            <div className="border-b border-background pb-2">
-              <label
-                htmlFor="contact-name"
-                className="block text-sm text-background mb-1 font-paragraph font-[300]"
-              >
-                NAME
-              </label>
-              <input
-                name="name"
-                id="contact-name"
-                type="text"
-                required
-                className="w-full bg-transparent focus:outline-none text-background"
-                aria-describedby="name-help"
-              />
-            </div>
+              <div className="border-b border-background pb-2">
+                <label
+                  htmlFor="contact-email"
+                  className="block text-sm text-background mb-1 font-paragraph font-[300]"
+                >
+                  EMAIL ADDRESS
+                </label>
+                <input
+                  name="email"
+                  id="contact-email"
+                  type="email"
+                  required
+                  className="w-full bg-transparent focus:outline-none text-background"
+                  aria-describedby="email-help"
+                />
+              </div>
 
-            <div className="border-b border-background pb-2">
-              <label
-                htmlFor="contact-email"
-                className="block text-sm text-background mb-1 font-paragraph font-[300]"
-              >
-                EMAIL ADDRESS
-              </label>
-              <input
-                name="email"
-                id="contact-email"
-                type="email"
-                required
-                className="w-full bg-transparent focus:outline-none text-background"
-                aria-describedby="email-help"
-              />
-            </div>
+              <div className="border-b border-background pb-2">
+                <label
+                  htmlFor="contact-subject"
+                  className="block text-sm font-paragraph font-[300] text-background mb-1"
+                >
+                  SUBJECT
+                </label>
+                <input
+                  name="subject"
+                  id="contact-subject"
+                  type="text"
+                  required
+                  className="w-full bg-transparent focus:outline-none text-background"
+                  aria-describedby="subject-help"
+                />
+              </div>
 
-            <div className="border-b border-background pb-2">
-              <label
-                htmlFor="contact-subject"
-                className="block text-sm font-paragraph font-[300] text-background mb-1"
-              >
-                SUBJECT
-              </label>
-              <input
-                name="subject"
-                id="contact-subject"
-                type="text"
-                required
-                className="w-full bg-transparent focus:outline-none text-background"
-                aria-describedby="subject-help"
-              />
-            </div>
+              <div className="border-b border-background pb-2">
+                <label
+                  htmlFor="contact-message"
+                  className="block text-sm font-paragraph font-[300] text-background mb-1"
+                >
+                  MESSAGE
+                </label>
+                <textarea
+                  name="message"
+                  id="contact-message"
+                  rows={4}
+                  required
+                  className="w-full bg-transparent focus:outline-none text-background"
+                  aria-describedby="message-help"
+                />
+              </div>
 
-            <div className="border-b border-background pb-2">
-              <label
-                htmlFor="contact-message"
-                className="block text-sm font-paragraph font-[300] text-background mb-1"
-              >
-                MESSAGE
-              </label>
-              <textarea
-                name="message"
-                id="contact-message"
-                rows={4}
-                required
-                className="w-full bg-transparent focus:outline-none text-background"
-                aria-describedby="message-help"
-              />
-            </div>
-
-            <div className="pt-4">
-              <button
-                type="submit"
-                className="group w-full justify-center cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-3 text-lg font-heading tracking-[0.2rem] transition-colors duration-300 [transform:skewX(-20deg)]"
-                aria-label="Send contact message"
-              >
-                <span className="flex items-center gap-2 [transform:skewX(20deg)]">
-                  SEND MESSAGE
-                </span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-
+              <div className="pt-4">
+                <button
+                  type="submit"
+                  className="group w-full justify-center cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-3 text-lg font-heading tracking-[0.2rem] transition-colors duration-300 [transform:skewX(-20deg)]"
+                  aria-label="Send contact message"
+                >
+                  <span className="flex items-center gap-2 [transform:skewX(20deg)]">
+                    SEND MESSAGE
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </RevealWrapper>
       {/* Visit Us Section */}
       <section
         className="bg-background text-center py-10 sm:py-24 px-6"
@@ -267,7 +264,6 @@ export default function GetInTouch() {
           space.
         </p>
       </section>
-
       {/* Office Location Section */}
       <section
         className="bg-background pb-10 sm:py-20"
@@ -344,7 +340,7 @@ export default function GetInTouch() {
             ></iframe>
           </div>
         </div>
-      </section>
+      </section>{" "}
     </main>
   );
 }

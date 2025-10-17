@@ -1,26 +1,57 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { services as servicePage } from "@/lib/static-data/home";
 import ServiceCard from "../common/ServiceCard";
+import RevealWrapper from "../common/RevealWrapper";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesCombined() {
+  const headerRef = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(
+    () => {
+      gsap.from(".expertise-animate", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 80%",
+        },
+      });
+    },
+    { scope: headerRef }
+  );
+
   return (
     <main className="bg-background text-white mb-8">
       {/* Hero Section */}
+
       <section
-        className="flex flex-col items-center justify-center min-h-screen px-6"
+        className="flex flex-col items-center justify-center min-h-screen px-6 overflow-hidden"
         aria-label="Our services introduction"
       >
-        <header className="text-center">
-          <p className="text-sm tracking-widest mb-6 font-paragraph font-[300] text-gold">
-            OUR SERVICES
-          </p>
-          <h1 className="text-[clamp(2rem,6vw,5rem)] font-heading text-center">
-            <span className="block font-extrabold">DESIGN</span>
-            <span className="block font-extrabold">SOLUTIONS</span>
-          </h1>
-        </header>
+        <RevealWrapper>
+          <header ref={headerRef} className="text-center">
+            <p className="expertise-animate text-sm md:text-xl pt-10 tracking-[0.3rem] md:tracking-[0.5rem] mb-3 uppercase font-paragraph font-[300] text-gold">
+              OUR EXPERTISE
+            </p>
+            <h1 className="expertise-animate text-[clamp(2rem,6vw,5rem)] font-heading text-center mb-6 tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.3] ">
+              DESIGN SOLUTIONS
+            </h1>
+            <p className="expertise-animate font-paragraph tracking-[0.2rem] font-[300] text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
+              &ldquo;Designing spaces that tell your story with elegance,
+              balance, and soul.&rdquo;
+            </p>
+          </header>{" "}
+        </RevealWrapper>
       </section>
 
       {/* Services Cards Section */}

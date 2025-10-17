@@ -1,60 +1,76 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import Logo from "@public/images/logo.webp";
+import { motion, useAnimation } from "framer-motion";
 import Button from "./Button";
 import Nav from "./Nav";
 import Link from "next/link";
 import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
-
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const menuRef = useRef<HTMLDivElement>(null);
-
   const logoSize = isMobile ? 100 : 150;
 
+  const controls = useAnimation();
+  const lastScrollY = useRef(0);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        isActive
-      ) {
-        setIsActive(false);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      console.log(isScrollingDown);
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
+        // ↓ Scroll down — hide
+        if (!isScrollingDown) {
+          setIsScrollingDown(true);
+          controls.start({
+            y: -150,
+            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+          });
+        }
+      } else if (currentScrollY < lastScrollY.current) {
+        // ↑ Scroll up — show
+        if (isScrollingDown) {
+          setIsScrollingDown(false);
+          controls.start({
+            y: 0,
+            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+          });
+        }
       }
+
+      lastScrollY.current = currentScrollY;
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isActive]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls, isScrollingDown]);
 
   return (
-    <div
-      className={`absolute top-0 w-full z-50 px-4 md:px-12 transition-all duration-300 ease-in-out pt-4`}
+    <motion.div
+      animate={controls}
+      initial={{ y: 0 }}
+      className="fixed top-0 left-0 w-full z-50  px-4 md:px-12 pt-1 transition-transform duration-500"
     >
       <div className="flex items-center justify-between">
         <Link href="/" className="">
           <Image
-            src="/images/logo.webp"
+            src={Logo}
             alt="Al Eliza Interior Logo"
             width={logoSize}
             height={logoSize}
             className="transition-all duration-300"
-            style={{ width: `${logoSize}px`, height: `${logoSize}px` }}
             priority
           />
         </Link>
 
-        <div
-          className="flex items-center justify-center mb-10 relative"
-          ref={menuRef}
-        >
+        {/* Menu Button + Nav */}
+        <div className="flex items-center justify-center mb-10 relative">
           <motion.div
             className="bg-[#161616] absolute right-0 top-0 overflow-hidden"
             animate={{
@@ -96,6 +112,6 @@ export default function Header() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

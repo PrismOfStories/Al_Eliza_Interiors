@@ -35,24 +35,18 @@ export default function ServiceCard({
   });
 
   return (
-    <section
-      ref={container}
-      className="relative mt-[10vh] px-4"
-      aria-label={title ? `${title} services` : "Our services"}
-    >
+    <section ref={container} className="relative mt-[10vh] px-4">
       {title && (
-        <header>
-          <motion.h2
-            ref={headingRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: false, margin: "0px 0px -40% 0px" }}
-            className="text-center lg:text-right w-full lg:max-w-[90rem] font-heading tracking-[0.4rem] leading-[1.8] sm:leading-[1.5] mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
-          >
-            {title}
-          </motion.h2>
-        </header>
+        <motion.p
+          ref={headingRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: false, margin: "0px 0px -40% 0px" }}
+          className="text-center lg:text-right w-full lg:max-w-[90rem] font-heading tracking-[0.4rem] leading-[1.8] sm:leading-[1.5] mx-auto text-2xl lg:text-6xl uppercase font-medium text-gold-dark mb-10 lg:mb-20"
+        >
+          {title}
+        </motion.p>
       )}
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;

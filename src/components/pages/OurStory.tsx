@@ -13,6 +13,7 @@ import { logos, team } from "@/lib/static-data/about";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
+import RevealWrapper from "../common/RevealWrapper";
 
 function Counter({ from = 0, to }: { from?: number; to: number }) {
   const spanRef = useRef<HTMLSpanElement>(null);
@@ -103,21 +104,22 @@ function About() {
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/70" aria-hidden="true"></div>
-
-        {/* Content */}
-        <header className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: false }}
-            className="font-heading text-white font-bold leading-[1.1] uppercase tracking-[0.08em]
+        <RevealWrapper>
+          {/* Content */}
+          <header className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              viewport={{ once: false }}
+              className="font-heading text-white font-bold leading-[1.1] uppercase tracking-[0.08em]
         text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
-          >
-            About <br />
-            Al Eliza
-          </motion.h1>
-        </header>
+            >
+              About <br />
+              Al Eliza
+            </motion.h1>
+          </header>
+        </RevealWrapper>
       </section>
 
       {/* Mission and Statistics Section */}

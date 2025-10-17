@@ -1,7 +1,6 @@
-import React from 'react';
-import GetInTouch from '@/components/pages/GetInTouch';
+import React from "react";
+import GetInTouch from "@/components/pages/GetInTouch";
+
 export default function page() {
-  return (
-    <GetInTouch/>
-  )
+  return <GetInTouch />;
 }
