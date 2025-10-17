@@ -14,6 +14,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import RevealWrapper from "../common/RevealWrapper";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Counter({ from = 0, to }: { from?: number; to: number }) {
   const spanRef = useRef<HTMLSpanElement>(null);
@@ -84,8 +89,48 @@ function About() {
     }
   };
 
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
+
+      const elements = sectionRef.current.querySelectorAll(".story-animate");
+      if (elements.length === 0) return;
+
+      // Use ScrollTrigger.batch for scroll-in-view animation
+      ScrollTrigger.batch(elements, {
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.2,
+          });
+        },
+        onLeaveBack: (batch) => {
+          gsap.to(batch, {
+            y: 100,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.in",
+            stagger: 0.1,
+          });
+        },
+        start: "top 80%",
+        end: "bottom 20%",
+        // markers: true, // Uncomment to debug
+      });
+
+      // Set initial state for animation
+      gsap.set(elements, { y: 100, opacity: 0 });
+    },
+    { scope: sectionRef, dependencies: [] }
+  );
+
   return (
-    <main>
+    <main ref={sectionRef}>
       <ToastContainer />
 
       {/* Hero Section */}
@@ -129,14 +174,14 @@ function About() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18 lg:mb-48">
-            <div className="col-span-1 flex items-center gap-2">
+            <div className="story-animate col-span-1 flex items-center gap-2">
               <span className="w-3 h-3 bg-gold" aria-hidden="true"></span>
-              <span className="font-heading tracking-[0.4rem] sm:tracking-[0.5rem]  uppercase text-sm font-semibold  text-white">
+              <span className=" font-heading tracking-[0.4rem] sm:tracking-[0.5rem]  uppercase text-sm font-semibold  text-white">
                 Our Mission
               </span>
             </div>
 
-            <div className="col-span-2 text-left">
+            <div className="col-span-2 text-left story-animate">
               <h2 className="leading-[1.8] sm:leading-[1.5] font-paragraph font-[200] tracking-[0.2rem] sm:tracking-[0.5rem] text-xl md:text-3xl text-silver">
                 At AL Eliza, we transform spaces with{" "}
                 <span className="font-[200]">thoughtful design and care</span>{" "}
@@ -153,7 +198,7 @@ function About() {
               <h3 className="text-6xl sm:text-right font-bold text-gold">
                 <Counter to={98} />%
               </h3>
-              <div className="sm:text-right mt-10">
+              <div className="story-animate sm:text-right mt-10">
                 <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
                   Customer Satisfaction Rate
                 </h4>
@@ -166,10 +211,10 @@ function About() {
             <hr className="bg-gold h-0.5 sm:hidden" />
 
             <article className="flex flex-col justify-between">
-              <h3 className="text-6xl sm:text-right font-bold text-gold">
+              <h3 className="story-animate text-6xl sm:text-right font-bold text-gold">
                 <Counter to={250} />+
               </h3>
-              <div className="sm:text-right mt-10">
+              <div className="story-animate sm:text-right mt-10">
                 <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
                   Projects Completed
                 </h4>
@@ -182,10 +227,10 @@ function About() {
             <hr className="bg-gold h-0.5 sm:hidden" />
 
             <article className="flex flex-col justify-between">
-              <h3 className="text-6xl sm:text-right font-bold text-gold">
+              <h3 className="story-animate text-6xl sm:text-right font-bold text-gold">
                 <Counter to={64} />%
               </h3>
-              <div className="sm:text-right mt-10">
+              <div className="story-animate sm:text-right mt-10">
                 <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
                   Repeat Client Rate
                 </h4>
@@ -203,10 +248,10 @@ function About() {
       {/* Team Section */}
       <section className="sm:py-20 px-6 md:px-12" aria-label="Meet our team">
         <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
-          <h2 className="font-heading text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-medium text-gold tracking-[0.4rem] sm:tracking-[0.5rem]">
+          <h2 className="story-animate font-heading text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-medium text-gold tracking-[0.4rem] sm:tracking-[0.5rem]">
             Meet Our Team
           </h2>
-          <p className="text-silver font-paragraph tracking-[0.2rem] mt-4  text-sm lg:text-lg">
+          <p className="story-animate text-silver font-paragraph tracking-[0.2rem] mt-4  text-sm lg:text-lg">
             Get to know the people turning ideas into inspiring homes and
             gardens.
           </p>
@@ -270,15 +315,9 @@ function About() {
       <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12 lg:mb-16">
-            <motion.h2
-              initial={{ opacity: 0, x: -300 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: false }}
-              className="font-heading tracking-[0.5rem] leading-[1.8] sm:leading-[1.5] text-center  w-full text-[clamp(1rem,5vw,3rem)] font-medium text-gold mb-10 lg:mb-20"
-            >
+            <h2 className="story-animate font-heading tracking-[0.5rem] leading-[1.8] sm:leading-[1.5] text-center  w-full text-[clamp(1rem,5vw,3rem)] font-medium text-gold mb-10 lg:mb-20">
               OUR PRESTIGIOUS CLIENTS
-            </motion.h2>
+            </h2>
           </header>
 
           <div
@@ -314,7 +353,7 @@ function About() {
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="flex flex-col justify-between">
-            <h2 className="font-heading tracking-[0.3rem] flex items-center text-xl lg:text-3xl font-[300]">
+            <h2 className="story-animate font-heading tracking-[0.3rem] flex items-center text-xl lg:text-3xl font-[300]">
               <span
                 className="w-6 h-6 bg-gold [transform:skewX(-20deg)] mr-3"
                 aria-hidden="true"
@@ -322,12 +361,12 @@ function About() {
               Get in Touch
             </h2>
             <address className="flex flex-col items-left mt-4 gap-2 not-italic">
-              <p className="text-white font-paragraph tracking-[0.2rem] font-[300] text-xl">
+              <p className="story-animate text-white font-paragraph tracking-[0.2rem] font-[300] text-xl">
                 <Link href="tel:206-339-2947" className="hover:text-gold">
                   206-339-2947
                 </Link>
               </p>
-              <p className="text-2xl font-paragraph tracking-[0.2rem] md:text-3xl font-[300]">
+              <p className="story-animate text-2xl font-paragraph tracking-[0.2rem] md:text-3xl font-[300]">
                 <Link
                   href="mailto:info@aleliza.com"
                   className="hover:text-gold"
@@ -446,7 +485,7 @@ function About() {
             </div>
           </figure>
 
-          <div className="flex items-center w-full lg:w-1/2">
+          <div className="story-animate flex items-center w-full lg:w-1/2">
             <h2 className="text-4xl font-heading sm:text-7xl lg:text-9xl font-bold leading-none tracking-[0.3rem] text-gold">
               Let&apos;s Chat
             </h2>

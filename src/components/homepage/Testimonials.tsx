@@ -1,7 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Testimonial {
   id: number;
@@ -73,8 +78,11 @@ const testimonials: Testimonial[] = [
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(3);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Responsive items per slide
+  useGSAP(() => {
     const updateItemsPerSlide = () => {
       if (window.innerWidth < 768) {
         setItemsPerSlide(1);
@@ -84,12 +92,79 @@ export default function TestimonialsSection() {
         setItemsPerSlide(3);
       }
     };
-
     updateItemsPerSlide();
     window.addEventListener("resize", updateItemsPerSlide);
-
     return () => window.removeEventListener("resize", updateItemsPerSlide);
   }, []);
+
+  // Only animate header on mount (not on slide change)
+  useGSAP(() => {
+    if (headerRef.current) {
+      const headerEls = headerRef.current.querySelectorAll(
+        ".testimonial-animate"
+      );
+      gsap.set(headerEls, { y: 60, opacity: 0 });
+      ScrollTrigger.batch(headerEls, {
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.15,
+          });
+        },
+        onLeaveBack: (batch) => {
+          gsap.to(batch, {
+            y: 60,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.in",
+            stagger: 0.1,
+          });
+        },
+        start: "top 85%",
+        end: "bottom 20%",
+      });
+    }
+    // Only run on mount
+    // eslint-disable-next-line
+  }, []);
+
+  // GSAP batch animation for testimonial cards (runs on slide change)
+  useGSAP(() => {
+    if (containerRef.current) {
+      const elements = containerRef.current.querySelectorAll(
+        ".testimonial-animate"
+      );
+      gsap.set(elements, { y: 100, opacity: 0 });
+      ScrollTrigger.batch(elements, {
+        onEnter: (batch) => {
+          gsap.to(batch, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.2,
+          });
+        },
+        onLeaveBack: (batch) => {
+          gsap.to(batch, {
+            y: 100,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.in",
+            stagger: 0.1,
+          });
+        },
+        start: "top 80%",
+        end: "bottom 20%",
+      });
+    }
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [itemsPerSlide, currentSlide]);
 
   const totalSlides = Math.ceil(testimonials.length / itemsPerSlide);
 
@@ -116,29 +191,16 @@ export default function TestimonialsSection() {
       aria-label="Client testimonials"
     >
       <div className="mx-auto max-w-7xl">
-        <header className="mb-10 md:mb-20 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="mb-4 text-[clamp(10px,1.8vw,16px)] uppercase text-gold-dark font-paragraph font-light tracking-[0.3rem]"
-          >
+        <header className="mb-10 md:mb-20 text-center" ref={headerRef}>
+          <p className="testimonial-animate mb-4 text-[clamp(10px,1.8vw,16px)] uppercase text-gold-dark font-paragraph font-light tracking-[0.3rem]">
             Happy Clients
-          </motion.p>
-
-          <motion.h2
-            initial={{ opacity: 0, rotateX: -90 }}
-            whileInView={{ opacity: 1, rotateX: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="font-heading text-[clamp(28px,5vw,72px)] font-black text-black uppercase tracking-[0.4rem] leading-tight"
-          >
+          </p>
+          <h2 className="testimonial-animate font-heading text-[clamp(28px,5vw,72px)] font-black text-black uppercase tracking-[0.4rem] leading-tight">
             Testimonials
-          </motion.h2>
+          </h2>
         </header>
 
-        <div className="relative">
+        <div className="relative" ref={containerRef}>
           <button
             onClick={prevSlide}
             className="flex absolute -left-3 md:-left-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
@@ -176,7 +238,7 @@ export default function TestimonialsSection() {
             {getCurrentTestimonials().map((testimonial) => (
               <article
                 key={testimonial.id}
-                className="flex flex-col border border-[#E5E0D8]/40 bg-white rounded p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all"
+                className="testimonial-animate flex flex-col border border-[#E5E0D8]/40 bg-white rounded p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all"
               >
                 <header className="mb-4 sm:mb-5">
                   <h3 className="text-sm sm:text-base md:text-lg font-semibold text-black font-heading uppercase tracking-[0.2rem]">
@@ -222,7 +284,7 @@ export default function TestimonialsSection() {
               className={`h-4 w-4 min-h-[10px] min-w-[10px] flex items-center justify-center rounded-full transition-all focus:outline-none ${
                 index === currentSlide
                   ? "bg-[#171614]"
-                  : "bg-[#D1CCC4] hover:bg-[#B5AFA5]"
+                  : "bg-[#D1CCC4] hover:bg-[#B5AFAF]"
               }`}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={index === currentSlide ? "true" : "false"}
