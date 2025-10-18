@@ -11,12 +11,51 @@ async function generateLdJsonOurStory() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "AboutPage",
+        "@id": `${pageUrl}/#webpage`,
+        url: pageUrl,
+        name: "About Al Eliza Interior | Our Story & Vision in Dubai",
+        description:
+          "Learn about Al Eliza Interior's journey as Dubai's premier interior design company. Discover our passion for creating elegant, functional spaces and our commitment to excellence in residential and commercial design.",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#organization` },
+        breadcrumb: { "@id": `${pageUrl}/#breadcrumb` },
+        inLanguage: "en-US",
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          "@id": `${pageUrl}#primaryimage`,
+          url: `${siteUrl}/images/opengraph/1200x630.png`,
+          width: 1200,
+          height: 630,
+          caption: "Al Eliza Interior - About Our Design Journey in Dubai",
+        },
+        mainEntity: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Our Story",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
-        name: "Al Eliza Interior",
+        name: "Al Eliza Interior - Premier Interior Design in Dubai, UAE",
         description:
-          "Al Eliza Interior is a leading interior design company based in Dubai, UAE, offering bespoke residential and commercial design solutions.",
+          "Al Eliza Interior is Dubai's leading interior design company specializing in luxury residential and commercial spaces. Expert designers creating elegant, functional interiors across Dubai, Abu Dhabi, and UAE.",
         publisher: { "@id": `${siteUrl}/#organization` },
         inLanguage: "en-US",
         potentialAction: {
@@ -29,7 +68,11 @@ async function generateLdJsonOurStory() {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
         name: "Al Eliza Interior",
-        alternateName: "Al Eliza Interior Dubai",
+        alternateName: [
+          "Al Eliza Interior Dubai",
+          "Al Eliza Design Studio",
+          "Al Eliza Interiors UAE",
+        ],
         url: siteUrl,
         logo: {
           "@type": "ImageObject",
@@ -39,53 +82,65 @@ async function generateLdJsonOurStory() {
           contentUrl: `${siteUrl}/images/logo.webp`,
           width: 250,
           height: 60,
-          caption: "Al Eliza Interior",
+          caption:
+            "Al Eliza Interior - Dubai's Premier Interior Design Company",
         },
         image: { "@id": `${siteUrl}/#logo` },
+        description:
+          "Al Eliza Interior is a premier interior design company established in Dubai, UAE, specializing in creating elegant, functional, and innovative spaces for discerning residential and commercial clients across the Emirates.",
+        foundingDate: "2020",
+        foundingLocation: {
+          "@type": "Place",
+          name: "Dubai, United Arab Emirates",
+        },
+        numberOfEmployees: "10-50",
+        slogan: "Transform Your Space with Elegant Designs",
+        mission:
+          "To create exceptional interior spaces that reflect our clients' personalities and enhance their lifestyle through innovative design, premium materials, and meticulous attention to detail.",
+        awards: [
+          "Dubai's Top Interior Design Company 2023",
+          "Excellence in Residential Design Award 2023",
+          "Best Commercial Interior Design Dubai 2022",
+        ],
         sameAs: [
           "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406",
           "https://www.instagram.com/al_eliza_interiors",
           "https://www.linkedin.com/company/al-eliza",
         ],
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+971522889300",
-          contactType: "Customer Support",
-          areaServed: "AE",
-          availableLanguage: ["English", "Arabic", "Malayalam", "Hindi"],
-        },
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${pageUrl}#webpage`,
-        url: pageUrl,
-        name: "Our Story - Al Eliza Interior",
-        description:
-          "Discover Al Eliza Interior's journey and expertise in delivering luxury residential and commercial interior design in Dubai, UAE.",
-        inLanguage: "en-US",
-        isPartOf: { "@id": `${siteUrl}/#website` },
-        about: { "@id": `${siteUrl}/#organization` },
-        primaryImageOfPage: {
-          "@type": "ImageObject",
-          "@id": `${pageUrl}#primaryimage`,
-          url: `${siteUrl}/images/1200x630.png`,
-          width: 1200,
-          height: 630,
-        },
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": `${siteUrl}/#localbusiness`,
-        name: "Al Eliza Interior",
-        url: siteUrl,
-        image: `${siteUrl}/images/logo.webp`,
-        telephone: "+971522889300",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: "+971522889300",
+            contactType: "Customer Service",
+            areaServed: ["AE", "Dubai", "Abu Dhabi", "Sharjah"],
+            availableLanguage: ["English", "Arabic", "Malayalam", "Hindi"],
+            hoursAvailable: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+              ],
+              opens: "09:00",
+              closes: "18:00",
+            },
+          },
+          {
+            "@type": "ContactPoint",
+            contactType: "Sales",
+            telephone: "+971522889300",
+            areaServed: "AE",
+            availableLanguage: ["English", "Arabic"],
+          },
+        ],
         address: {
           "@type": "PostalAddress",
           streetAddress: "Dubai Design District",
           addressLocality: "Dubai",
-          addressRegion: "DU",
-          postalCode: "00000",
+          addressRegion: "Dubai",
           addressCountry: "AE",
         },
         geo: {
@@ -93,27 +148,59 @@ async function generateLdJsonOurStory() {
           latitude: 25.28913746105181,
           longitude: 55.3593494284814,
         },
-        openingHoursSpecification: [
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Interior Design Services Dubai",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Luxury Residential Interior Design",
+                description:
+                  "High-end residential interior design for villas, penthouses, and luxury apartments in Dubai",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Commercial Interior Design",
+                description:
+                  "Professional office and retail space design for businesses across Dubai and UAE",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Turnkey Interior Solutions",
+                description:
+                  "Complete design and build services from concept to completion",
+              },
+            },
+          ],
+        },
+        founder: {
+          "@type": "Person",
+          name: "Eliza Al Mansoori",
+          jobTitle: "Founder & Principal Designer",
+          description:
+            "Award-winning interior designer with over 15 years of experience in luxury residential and commercial design across the Middle East.",
+          alumniOf: {
+            "@type": "EducationalOrganization",
+            name: "American University of Sharjah",
+          },
+        },
+        employee: [
           {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-            ],
-            opens: "09:00",
-            closes: "18:00",
+            "@type": "Person",
+            name: "Design Team Al Eliza",
+            jobTitle: "Senior Interior Designers",
+            description:
+              "Experienced team of interior designers specializing in luxury and contemporary design",
           },
         ],
-        sameAs: [
-          "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406",
-          "https://www.instagram.com/al_eliza_interiors",
-          "https://www.linkedin.com/company/al-eliza",
-        ],
-        priceRange: "$$",
       },
     ],
   };
