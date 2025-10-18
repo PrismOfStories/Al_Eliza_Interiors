@@ -257,7 +257,7 @@ function About() {
           </p>
         </div>
 
-        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+        <div className="story-animate hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
           {team.map((member, index) => (
             <article
               key={index}
@@ -284,7 +284,7 @@ function About() {
           ))}
         </div>
 
-        <div className="sm:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pt-10">
+        <div className="story-animate sm:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pt-10">
           {team.map((member, index) => (
             <article key={index} className="group">
               {/* Image Container */}
@@ -321,7 +321,7 @@ function About() {
           </header>
 
           <div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center"
+            className="story-animate grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center"
             role="list"
             aria-label="Client logos"
           >
@@ -378,7 +378,7 @@ function About() {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col exclusive-text justify-between space-y-8"
+            className="story-animate flex flex-col exclusive-text justify-between space-y-8"
             aria-label="Contact form"
           >
             <div>
@@ -475,7 +475,7 @@ function About() {
       >
         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row lg:justify-between gap-10">
           <figure className="w-full lg:w-1/2">
-            <div className="h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative sm:[transform:skewX(-10deg)]">
+            <div className="story-animate h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative sm:[transform:skewX(-10deg)]">
               <Image
                 src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376136/IMG_1583_jswnlj.jpg"
                 alt="Al-Eliza Interiors consultation space"

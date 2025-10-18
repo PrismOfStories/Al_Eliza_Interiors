@@ -1,15 +1,78 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { logos } from "@/lib/static-data/about";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ClientsCard() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    // Header animation
+    if (headerRef.current) {
+      gsap.set(headerRef.current, { y: 60, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: headerRef.current,
+        start: "top 85%",
+        onEnter: () => {
+          gsap.to(headerRef.current, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(headerRef.current, {
+            y: 60,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.in",
+          });
+        },
+      });
+    }
+
+    // Grid animation
+    if (gridRef.current) {
+      gsap.set(gridRef.current, { y: 80, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: gridRef.current,
+        start: "top 80%",
+        onEnter: () => {
+          gsap.to(gridRef.current, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(gridRef.current, {
+            y: 80,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.in",
+          });
+        },
+      });
+    }
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-12 lg:mb-16">
+        <header ref={headerRef} className="text-center mb-12 lg:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,6 +86,7 @@ export default function ClientsCard() {
 
         {/* Logo Grid */}
         <div
+          ref={gridRef}
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center"
           role="list"
           aria-label="Client logos"

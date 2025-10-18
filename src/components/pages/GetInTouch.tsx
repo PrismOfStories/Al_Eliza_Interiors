@@ -20,6 +20,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function GetInTouch() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
+  const ctaSectionRef = useRef<HTMLDivElement | null>(null);
+  const locationSectionRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
@@ -37,6 +39,49 @@ export default function GetInTouch() {
     },
     { scope: sectionRef }
   );
+
+  useGSAP(
+    () => {
+      gsap.from(".ctaContent-animate", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ctaSectionRef.current,
+          start: "top 80%",
+        },
+      });
+    },
+    { scope: ctaSectionRef }
+  );
+
+  useGSAP(() => {
+    if (locationSectionRef.current) {
+      gsap.set(locationSectionRef.current, { y: 100, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: locationSectionRef.current,
+        start: "top 85%",
+        onEnter: () => {
+          gsap.to(locationSectionRef.current, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(locationSectionRef.current, {
+            y: 60,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.in",
+          });
+        },
+      });
+    }
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -244,21 +289,22 @@ export default function GetInTouch() {
       </RevealWrapper>
       {/* Visit Us Section */}
       <section
+        ref={ctaSectionRef}
         className="bg-background text-center py-10 sm:py-24 px-6"
         aria-label="Visit our locations"
       >
         {/* Small Heading */}
-        <p className="text-sm font-paragraph tracking-[0.3rem] font-[400] text-silver mt-14 mb-4">
+        <p className="ctaContent-animate text-sm font-paragraph tracking-[0.3rem] font-[400] text-silver mt-14 mb-4">
           OUR LOCATIONS
         </p>
 
         {/* Main Title */}
-        <h2 className=" text-4xl lg:text-6xl font-heading tracking-[0.25rem] md:text-8xl text-gold mb-8 leading-[1.5]">
+        <h2 className="ctaContent-animate text-4xl lg:text-6xl font-heading tracking-[0.25rem] md:text-8xl text-gold mb-8 leading-[1.5]">
           VISIT US
         </h2>
 
         {/* Subtext */}
-        <p className="text-base md:text-lg font-paragraph tracking-[0.2rem] leading-[1.5] text-silver max-w-2xl mx-auto mb-12">
+        <p className="ctaContent-animate text-base md:text-lg font-paragraph tracking-[0.2rem] leading-[1.5] text-silver max-w-2xl mx-auto mb-12">
           Visit us at one of our conveniently located studios, where our team is
           ready to discuss your design goals and explore possibilities for your
           space.
@@ -266,6 +312,7 @@ export default function GetInTouch() {
       </section>
       {/* Office Location Section */}
       <section
+        ref={locationSectionRef}
         className="bg-background pb-10 sm:py-20"
         aria-label="Office location and contact details"
       >

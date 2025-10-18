@@ -5,6 +5,11 @@ import { useRef } from "react";
 import { useTransform, motion, MotionValue } from "framer-motion";
 import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type CardProps = {
   type: "home" | "page";
@@ -29,8 +34,39 @@ const Card = ({
   targetScale,
 }: CardProps) => {
   const container = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const scale = useTransform(progress, range, [1, targetScale]);
+
+  // GSAP animation for content div (title, description, link)
+  useGSAP(() => {
+    if (contentRef.current) {
+      gsap.set(contentRef.current, { y: 80, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: contentRef.current,
+        start: "top 80%",
+        onEnter: () => {
+          gsap.to(contentRef.current, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(contentRef.current, {
+            y: 80,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.in",
+          });
+        },
+      });
+    }
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
     <div
@@ -52,16 +88,13 @@ const Card = ({
 
           <div className="absolute inset-0 bg-black/40 rounded-xl"></div>
 
-          <div className="relative z-10 flex flex-col h-full justify-between sm:p-8">
-            <motion.h2
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              viewport={{ once: false }}
-              className="text-center w-full font-heading sm:tracking-[0.4rem] leading-[1.4] pt-5 md:pt-0 sm:leading-[1.5] text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 "
-            >
+          <div
+            ref={contentRef}
+            className="relative z-10 flex flex-col h-full justify-between sm:p-8"
+          >
+            <h2 className="text-center w-full font-heading sm:tracking-[0.4rem] leading-[1.4] pt-5 md:pt-0 sm:leading-[1.5] text-2xl sm:text-3xl lg:text-5xl font-semibold text-white m-0 ">
               {title}
-            </motion.h2>
+            </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <p className="text-center sm:text-left text-base sm:text-lg lg:text-xl leading-[1.8] sm:leading-[1.5] w-full max-w-3xl  text-white font-paragraph tracking-[0.21rem]">
@@ -98,11 +131,7 @@ const Card = ({
           </div>
 
           <div className="relative w-full md:w-1/2 h-auto md:h-full bg-[#f4f4f4] flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
+            <div ref={contentRef}>
               <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-500 mb-3 sm:mb-4 font-paragraph font-[300]">
                 From Concept to Construction
               </p>
@@ -124,7 +153,7 @@ const Card = ({
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       )}
