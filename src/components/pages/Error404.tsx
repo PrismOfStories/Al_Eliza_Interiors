@@ -25,24 +25,29 @@ const Error404 = () => {
           start: "top 80%",
         },
       });
+      // Cleanup on unmount
+
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: sectionRef }
   );
   return (
-    <main className="relative z-10 mb-0 bg-background overflow-hidden">
+    <main className="bg-background relative z-10 mb-0 overflow-hidden">
       <RevealWrapper>
         <section
           ref={sectionRef}
           className="relative flex h-screen flex-col items-center justify-center overflow-hidden px-4 text-center"
         >
-          <h1 className="notfound-animate font-paragraph text-[120px] leading-none md:text-[280px] lg:text-[400px] text-white">
+          <h1 className="notfound-animate font-paragraph text-[120px] leading-none text-white md:text-[280px] lg:text-[400px]">
             404
           </h1>
-          <h2 className="notfound-animate mb-8 mt-6 text-[28px] font-normal leading-tight md:mb-12 md:text-[48px] lg:text-[64px] text-gold">
+          <h2 className="notfound-animate text-gold mb-8 mt-6 text-[28px] font-normal leading-tight md:mb-12 md:text-[48px] lg:text-[64px]">
             Page Not Found
           </h2>
-          <Link href="/" className="inline-block notfound-animate">
-            <div className="text-center text-white hover:text-gold">
+          <Link href="/" className="notfound-animate inline-block">
+            <div className="hover:text-gold text-center text-white">
               <span>Back to Homepage</span>
             </div>
           </Link>

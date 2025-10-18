@@ -101,62 +101,66 @@ export default function ArchitectureHero() {
     });
 
     setTimeout(() => ScrollTrigger.refresh(), 100);
+    // Cleanup on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
   }, []);
 
   return (
     <section
-      className="h-full bg-[#fbfbfb] px-4 sm:px-6 lg:px-8 flex items-center justify-center"
+      className="flex h-full items-center justify-center bg-[#fbfbfb] px-4 sm:px-6 lg:px-8"
       aria-label="About Al-Eliza Interiors"
     >
       <div
-        className="w-full max-w-[100rem] min-h-screen mx-auto h-full flex flex-col justify-between space-y-8 py-20 lg:py-40"
+        className="mx-auto flex h-full min-h-screen w-full max-w-[100rem] flex-col justify-between space-y-8 py-20 lg:py-40"
         ref={sectionRef}
       >
         <header className="w-full">
           <p
             ref={establishedRef}
-            className="text-center text-sm sm:text-base lg:text-lg uppercase text-gold-dark font-paragraph font-[500] tracking-[0.3rem]"
+            className="text-gold-dark font-paragraph text-center text-sm font-[500] uppercase tracking-[0.3rem] sm:text-base lg:text-lg"
           >
             Established in 2021
           </p>
         </header>
 
-        <main className="flex justify-between flex-col lg:flex-row items-center lg:items-stretch gap-10 lg:gap-16">
+        <main className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-stretch lg:gap-16">
           <article className="font-poppins project-animate">
-            <div className="text-7xl sm:text-8xl lg:text-9xl mb-6 leading-none  text-black  text-center lg:text-start font-paragraph font-[300] tracking-[0.3rem]">
+            <div className="font-paragraph mb-6 text-center text-7xl font-[300]  leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
               <p>+4</p>
             </div>
-            <p className="text-xs sm:text-lg font-paragraph font-[500] tracking-[0.3rem] uppercase text-gold-dark mt-2 ml-1 text-center lg:text-start">
+            <p className="font-paragraph text-gold-dark ml-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] sm:text-lg lg:text-start">
               Years of experience
             </p>
           </article>
 
           <div className="project-animate">
-            <h2 className="font-black  text-black space-y-4 font-heading text-center lg:text-start">
-              <span className="block w-full text-center text-3xl sm:text-4xl lg:text-6xl xl:text-7xl tracking-[0.6rem]">
+            <h2 className="font-heading  space-y-4 text-center font-black text-black lg:text-start">
+              <span className="block w-full text-center text-3xl tracking-[0.6rem] sm:text-4xl lg:text-6xl xl:text-7xl">
                 YOUR DREAMS
               </span>
-              <span className="block w-full text-center text-2xl sm:text-3xl lg:text-5xl xl:text-6xl tracking-[0.6rem]">
+              <span className="block w-full text-center text-2xl tracking-[0.6rem] sm:text-3xl lg:text-5xl xl:text-6xl">
                 OUR EXPERTISE
               </span>
             </h2>
           </div>
 
           <article className="font-poppins project-animate">
-            <div className="text-7xl sm:text-8xl lg:text-9xl mb-6 leading-none text-black  text-center lg:text-start font-paragraph font-[300] tracking-[0.3rem]">
+            <div className="font-paragraph mb-6 text-center text-7xl font-[300] leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
               <p>10+</p>
             </div>
-            <p className="text-xs sm:text-lg font-paragraph font-[500] tracking-[0.3rem] uppercase text-gold-dark mt-2 mr-1 text-center lg:text-start">
+            <p className="font-paragraph text-gold-dark mr-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] sm:text-lg lg:text-start">
               Successful Projects
             </p>
           </article>
         </main>
 
-        <footer className="flex justify-between flex-col lg:flex-row items-center lg:items-stretch gap-10 lg:gap-0">
+        <footer className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-stretch lg:gap-0">
           <div>
             <p
               ref={descRef}
-              className="project-animate text-sm sm:text-base lg:text-lg text-black max-w-[80vh] mx-auto lg:mx-0 text-center lg:text-start font-paragraph font-[300] tracking-[0.21rem] leading-[1.8] sm:leading-[1.8]"
+              className="project-animate font-paragraph mx-auto max-w-[80vh] text-center text-sm font-[300] leading-[1.8] tracking-[0.21rem] text-black sm:text-base sm:leading-[1.8] lg:mx-0 lg:text-start lg:text-lg"
             >
               At Al Eliza Interior Design, we transform residential and
               commercial spaces into refined, functional environments. Our
@@ -166,9 +170,9 @@ export default function ArchitectureHero() {
             </p>
           </div>
           <div className="exclusive-text">
-            <p className="project-animate text-sm sm:text-base lg:text- text-black max-w-[50ch] mx-auto lg:mx-0 lg:ml-auto mb-5 text-center lg:text-right font-paragraph font-[300] tracking-[0.21rem] leading-[1.8] sm:leading-[1.5]">
+            <p className="project-animate lg:text- font-paragraph mx-auto mb-5 max-w-[50ch] text-center text-sm font-[300] leading-[1.8] tracking-[0.21rem] text-black sm:text-base sm:leading-[1.5] lg:mx-0 lg:ml-auto lg:text-right">
               Ready to begin?{" "}
-              <span className="text-brown italic font-medium font-paragraph ">
+              <span className="text-brown font-paragraph font-medium italic ">
                 Contact us
               </span>{" "}
               to bring your vision to life.
@@ -177,11 +181,11 @@ export default function ArchitectureHero() {
               <Link
                 ref={ctaRef}
                 href="/get-in-touch"
-                className="group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-3 sm:px-8 py-3 sm:py-4 text-[12px] sm:text-lg font-medium transition-colors duration-300"
+                className="bg-gold hover:bg-gold-dark group inline-flex cursor-pointer px-3 py-3 text-[12px] font-medium text-white transition-colors duration-300 sm:px-8 sm:py-4 sm:text-lg"
                 role="button"
                 aria-label="Tell us about your project - Contact Al-Eliza Interiors"
               >
-                <span className="flex items-center font-heading font-[300] sm:tracking-[0.20rem] gap-2 [transform:skewX(20deg)]">
+                <span className="font-heading flex items-center gap-2 font-[300] [transform:skewX(20deg)] sm:tracking-[0.20rem]">
                   Tell us about your project
                   <FaChevronRight aria-hidden="true" />
                 </span>

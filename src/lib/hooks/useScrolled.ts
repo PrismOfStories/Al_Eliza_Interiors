@@ -6,18 +6,18 @@ import { useEffect, useState } from "react";
  * @returns boolean - whether the user has scrolled past the offset
  */
 export function useScrolled(offset: number = 50): boolean {
-    const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > offset);
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > offset);
+    };
 
-        handleScroll(); // initialize on mount
+    handleScroll(); // initialize on mount
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [offset]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [offset]);
 
-    return scrolled;
+  return scrolled;
 }

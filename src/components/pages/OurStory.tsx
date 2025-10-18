@@ -125,6 +125,10 @@ function About() {
 
       // Set initial state for animation
       gsap.set(elements, { y: 100, opacity: 0 });
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: sectionRef, dependencies: [] }
   );
@@ -135,7 +139,7 @@ function About() {
 
       {/* Hero Section */}
       <section
-        className="relative w-full min-h-screen flex items-center justify-center"
+        className="relative flex min-h-screen w-full items-center justify-center"
         aria-label="About Al-Eliza Interiors hero section"
       >
         {/* Background Image */}
@@ -151,14 +155,14 @@ function About() {
         <div className="absolute inset-0 bg-black/70" aria-hidden="true"></div>
         <RevealWrapper>
           {/* Content */}
-          <header className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col items-center sm:items-end text-center sm:text-right">
+          <header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-end sm:px-6 sm:text-right md:px-10">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
-              className="font-heading text-white font-bold leading-[1.1] uppercase tracking-[0.08em]
-        text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+              className="font-heading text-5xl font-bold uppercase leading-[1.1] tracking-[0.08em]
+        text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
             >
               About <br />
               Al Eliza
@@ -169,20 +173,20 @@ function About() {
 
       {/* Mission and Statistics Section */}
       <section
-        className="w-full py-20 px-6 md:px-12 mt-14 lg:mt-48"
+        className="mt-14 w-full px-6 py-20 md:px-12 lg:mt-48"
         aria-label="Our mission and company statistics"
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18 lg:mb-48">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-18 grid grid-cols-1 items-start gap-12 md:grid-cols-3 lg:mb-48">
             <div className="story-animate col-span-1 flex items-center gap-2">
-              <span className="w-3 h-3 bg-gold" aria-hidden="true"></span>
-              <span className=" font-heading tracking-[0.4rem] sm:tracking-[0.5rem]  uppercase text-sm font-semibold  text-white">
+              <span className="bg-gold h-3 w-3" aria-hidden="true"></span>
+              <span className=" font-heading text-sm font-semibold  uppercase tracking-[0.4rem] text-white  sm:tracking-[0.5rem]">
                 Our Mission
               </span>
             </div>
 
-            <div className="col-span-2 text-left story-animate">
-              <h2 className="leading-[1.8] sm:leading-[1.5] font-paragraph font-[200] tracking-[0.2rem] sm:tracking-[0.5rem] text-xl md:text-3xl text-silver">
+            <div className="story-animate col-span-2 text-left">
+              <h2 className="font-paragraph text-silver text-xl font-[200] leading-[1.8] tracking-[0.2rem] sm:leading-[1.5] sm:tracking-[0.5rem] md:text-3xl">
                 At AL Eliza, we transform spaces with{" "}
                 <span className="font-[200]">thoughtful design and care</span>{" "}
                 <span className="font-[200] text-white">
@@ -193,16 +197,16 @@ function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             <article className="flex  flex-col justify-between">
-              <h3 className="text-6xl sm:text-right font-bold text-gold">
+              <h3 className="text-gold text-6xl font-bold sm:text-right">
                 <Counter to={98} />%
               </h3>
-              <div className="story-animate sm:text-right mt-10">
-                <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
+              <div className="story-animate mt-10 sm:text-right">
+                <h4 className="font-paragraph mb-2 text-lg font-medium tracking-[0.2rem] text-white">
                   Customer Satisfaction Rate
                 </h4>
-                <p className="text-base font-paragraph tracking-[0.2rem] text-silver">
+                <p className="font-paragraph text-silver text-base tracking-[0.2rem]">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
@@ -211,14 +215,14 @@ function About() {
             <hr className="bg-gold h-0.5 sm:hidden" />
 
             <article className="flex flex-col justify-between">
-              <h3 className="story-animate text-6xl sm:text-right font-bold text-gold">
+              <h3 className="story-animate text-gold text-6xl font-bold sm:text-right">
                 <Counter to={250} />+
               </h3>
-              <div className="story-animate sm:text-right mt-10">
-                <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
+              <div className="story-animate mt-10 sm:text-right">
+                <h4 className="font-paragraph mb-2 text-lg font-medium tracking-[0.2rem] text-white">
                   Projects Completed
                 </h4>
-                <p className="text-base font-paragraph tracking-[0.2rem] text-silver">
+                <p className="font-paragraph text-silver text-base tracking-[0.2rem]">
                   Our clients consistently rate their experience as excellent.
                 </p>
               </div>
@@ -227,14 +231,14 @@ function About() {
             <hr className="bg-gold h-0.5 sm:hidden" />
 
             <article className="flex flex-col justify-between">
-              <h3 className="story-animate text-6xl sm:text-right font-bold text-gold">
+              <h3 className="story-animate text-gold text-6xl font-bold sm:text-right">
                 <Counter to={64} />%
               </h3>
-              <div className="story-animate sm:text-right mt-10">
-                <h4 className="text-lg font-paragraph tracking-[0.2rem] font-medium text-white mb-2">
+              <div className="story-animate mt-10 sm:text-right">
+                <h4 className="font-paragraph mb-2 text-lg font-medium tracking-[0.2rem] text-white">
                   Repeat Client Rate
                 </h4>
-                <p className="text-base font-paragraph tracking-[0.2rem] text-silver">
+                <p className="font-paragraph text-silver text-base tracking-[0.2rem]">
                   A majority of our clients trust us again for new projects.
                 </p>
               </div>
@@ -246,22 +250,22 @@ function About() {
       </section>
 
       {/* Team Section */}
-      <section className="sm:py-20 px-6 md:px-12" aria-label="Meet our team">
-        <div className="max-w-7xl mx-auto text-left mb-10 lg:mb-20">
-          <h2 className="story-animate font-heading text-center sm:text-left text-[clamp(1.5rem,5vw,3rem)] font-medium text-gold tracking-[0.4rem] sm:tracking-[0.5rem]">
+      <section className="px-6 sm:py-20 md:px-12" aria-label="Meet our team">
+        <div className="mx-auto mb-10 max-w-7xl text-left lg:mb-20">
+          <h2 className="story-animate font-heading text-gold text-center text-[clamp(1.5rem,5vw,3rem)] font-medium tracking-[0.4rem] sm:text-left sm:tracking-[0.5rem]">
             Meet Our Team
           </h2>
-          <p className="story-animate text-silver font-paragraph tracking-[0.2rem] mt-4  text-sm lg:text-lg">
+          <p className="story-animate text-silver font-paragraph mt-4 text-sm  tracking-[0.2rem] lg:text-lg">
             Get to know the people turning ideas into inspiring homes and
             gardens.
           </p>
         </div>
 
-        <div className="story-animate hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+        <div className="story-animate hidden grid-cols-1 gap-2 sm:grid sm:grid-cols-2 md:grid-cols-4">
           {team.map((member, index) => (
             <article
               key={index}
-              className="relative group overflow-hidden shadow-lg aspect-[2/3]"
+              className="group relative aspect-[2/3] overflow-hidden shadow-lg"
             >
               <Image
                 src={member.image}
@@ -270,12 +274,12 @@ function About() {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-start transform translate-y-12 hover:translate-y-0">
+              <div className="absolute inset-0 flex translate-y-12 transform items-end justify-start bg-black/40 opacity-0 transition-all duration-500 hover:translate-y-0 group-hover:opacity-100">
                 <div className="bg-background w-full p-4 uppercase">
-                  <h3 className="text-gold font-[300] text-lg font-paragraph tracking-[0.25rem] ">
+                  <h3 className="text-gold font-paragraph text-lg font-[300] tracking-[0.25rem] ">
                     {member.name}
                   </h3>
-                  <p className="text-white text-sm font-paragraph font-[300] tracking-[0.25rem] mt-1">
+                  <p className="font-paragraph mt-1 text-sm font-[300] tracking-[0.25rem] text-white">
                     {member.role}
                   </p>
                 </div>
@@ -284,7 +288,7 @@ function About() {
           ))}
         </div>
 
-        <div className="story-animate sm:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pt-10">
+        <div className="story-animate grid grid-cols-1 gap-12 pt-10 sm:hidden sm:grid-cols-2 md:grid-cols-4">
           {team.map((member, index) => (
             <article key={index} className="group">
               {/* Image Container */}
@@ -299,10 +303,10 @@ function About() {
 
               {/* Text Content Below Image */}
               <div className="exclusive-text mt-4 text-center">
-                <h3 className="text-gold font-[300] text-lg font-paragraph tracking-[0.25rem] ">
+                <h3 className="text-gold font-paragraph text-lg font-[300] tracking-[0.25rem] ">
                   {member.name}
                 </h3>
-                <p className="text-white text-sm font-paragraph font-[300] tracking-[0.25rem] mt-1">
+                <p className="font-paragraph mt-1 text-sm font-[300] tracking-[0.25rem] text-white">
                   {member.role}
                 </p>
               </div>
@@ -313,30 +317,30 @@ function About() {
 
       {/* Clients Section */}
       <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12 lg:mb-16">
-            <h2 className="story-animate font-heading tracking-[0.5rem] leading-[1.8] sm:leading-[1.5] text-center  w-full text-[clamp(1rem,5vw,3rem)] font-medium text-gold mb-10 lg:mb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-12 text-center lg:mb-16">
+            <h2 className="story-animate font-heading text-gold mb-10 w-full text-center  text-[clamp(1rem,5vw,3rem)] font-medium leading-[1.8] tracking-[0.5rem] sm:leading-[1.5] lg:mb-20">
               OUR PRESTIGIOUS CLIENTS
             </h2>
           </header>
 
           <div
-            className="story-animate grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 items-center"
+            className="story-animate grid grid-cols-2 items-center gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-12 xl:grid-cols-6"
             role="list"
             aria-label="Client logos"
           >
             {logos.map((logo, index) => (
               <div
                 key={index}
-                className="group flex items-center justify-center p-4  transition-all duration-300 rounded-lg"
+                className="group flex items-center justify-center rounded-lg  p-4 transition-all duration-300"
                 role="listitem"
               >
-                <figure className="relative w-full h-20 sm:h-28">
+                <figure className="relative h-20 w-full sm:h-28">
                   <Image
                     src={logo}
                     alt={`Client ${index + 1} logo`}
                     fill
-                    className="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
+                    className="object-contain opacity-60 grayscale transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:grayscale-0"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
                   />
                 </figure>
@@ -348,25 +352,25 @@ function About() {
 
       {/* Contact Form Section */}
       <section
-        className="bg-background text-white py-10 sm:py-20 px-6"
+        className="bg-background px-6 py-10 text-white sm:py-20"
         aria-label="Contact us"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 md:grid-cols-2">
           <div className="flex flex-col justify-between">
-            <h2 className="story-animate font-heading tracking-[0.3rem] flex items-center text-xl lg:text-3xl font-[300]">
+            <h2 className="story-animate font-heading flex items-center text-xl font-[300] tracking-[0.3rem] lg:text-3xl">
               <span
-                className="w-6 h-6 bg-gold [transform:skewX(-20deg)] mr-3"
+                className="bg-gold mr-3 h-6 w-6 [transform:skewX(-20deg)]"
                 aria-hidden="true"
               ></span>
               Get in Touch
             </h2>
-            <address className="flex flex-col items-left mt-4 gap-2 not-italic">
-              <p className="story-animate text-white font-paragraph tracking-[0.2rem] font-[300] text-xl">
+            <address className="items-left mt-4 flex flex-col gap-2 not-italic">
+              <p className="story-animate font-paragraph text-xl font-[300] tracking-[0.2rem] text-white">
                 <Link href="tel:206-339-2947" className="hover:text-gold">
                   206-339-2947
                 </Link>
               </p>
-              <p className="story-animate text-2xl font-paragraph tracking-[0.2rem] md:text-3xl font-[300]">
+              <p className="story-animate font-paragraph text-2xl font-[300] tracking-[0.2rem] md:text-3xl">
                 <Link
                   href="mailto:info@aleliza.com"
                   className="hover:text-gold"
@@ -378,13 +382,13 @@ function About() {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="story-animate flex flex-col exclusive-text justify-between space-y-8"
+            className="story-animate exclusive-text flex flex-col justify-between space-y-8"
             aria-label="Contact form"
           >
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm mb-2 font-paragraph font-[300]"
+                className="font-paragraph mb-2 block text-sm font-[300]"
               >
                 Name
               </label>
@@ -395,14 +399,14 @@ function About() {
                 placeholder="Enter name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2 font-paragraph font-[300]"
+                className="bg-background font-paragraph w-full border-b border-[fbfbfb] py-2 font-[300] outline-none focus:border-[fbfbfb]"
               />
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm mb-2 font-paragraph font-[300]"
+                className="font-paragraph mb-2 block text-sm font-[300]"
               >
                 Email*
               </label>
@@ -413,14 +417,14 @@ function About() {
                 placeholder="Enter email address"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2 font-paragraph font-[300]"
+                className="bg-background font-paragraph w-full border-b border-[fbfbfb] py-2 font-[300] outline-none focus:border-[fbfbfb]"
                 required
               />
             </div>
             <div>
               <label
                 htmlFor="subject"
-                className="block text-sm mb-2 font-paragraph font-[300]"
+                className="font-paragraph mb-2 block text-sm font-[300]"
               >
                 Subject
               </label>
@@ -431,7 +435,7 @@ function About() {
                 placeholder="Enter your subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2 font-paragraph font-[300]"
+                className="bg-background font-paragraph w-full border-b border-[fbfbfb] py-2 font-[300] outline-none focus:border-[fbfbfb]"
                 required
               />
             </div>
@@ -439,7 +443,7 @@ function About() {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm mb-2 font-paragraph font-[300]"
+                className="font-paragraph mb-2 block text-sm font-[300]"
               >
                 Message*
               </label>
@@ -450,17 +454,17 @@ function About() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-background border-b border-[fbfbfb] focus:border-[fbfbfb] outline-none py-2 font-paragraph font-[300]"
+                className="bg-background font-paragraph w-full border-b border-[fbfbfb] py-2 font-[300] outline-none focus:border-[fbfbfb]"
                 required
               />
             </div>
 
             <button
               type="submit"
-              className="w-52  justify-center group cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-4 text-xl font-medium transition-colors duration-300 [transform:skewX(-20deg)]"
+              className="bg-gold  hover:bg-gold-dark group inline-flex w-52 cursor-pointer justify-center px-8 py-4 text-xl font-medium text-white transition-colors duration-300 [transform:skewX(-20deg)]"
               aria-label="Submit contact form"
             >
-              <span className="flex font-heading tracking-[0.25rem] items-center gap-2 [transform:skewX(20deg)]">
+              <span className="font-heading flex items-center gap-2 tracking-[0.25rem] [transform:skewX(20deg)]">
                 Submit
               </span>
             </button>
@@ -470,12 +474,12 @@ function About() {
 
       {/* Call to Action Section */}
       <section
-        className="bg-background text-white py-10 sm:py-20 px-6"
+        className="bg-background px-6 py-10 text-white sm:py-20"
         aria-label="Let's chat call to action"
       >
-        <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row lg:justify-between gap-10">
+        <div className="mx-auto flex max-w-7xl flex-col-reverse gap-10 lg:flex-row lg:justify-between">
           <figure className="w-full lg:w-1/2">
-            <div className="story-animate h-[300px] sm:h-[400px] lg:h-[500px] lg:w-[500px] relative sm:[transform:skewX(-10deg)]">
+            <div className="story-animate relative h-[300px] sm:h-[400px] sm:[transform:skewX(-10deg)] lg:h-[500px] lg:w-[500px]">
               <Image
                 src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376136/IMG_1583_jswnlj.jpg"
                 alt="Al-Eliza Interiors consultation space"
@@ -485,8 +489,8 @@ function About() {
             </div>
           </figure>
 
-          <div className="story-animate flex items-center w-full lg:w-1/2">
-            <h2 className="text-4xl font-heading sm:text-7xl lg:text-9xl font-bold leading-none tracking-[0.3rem] text-gold">
+          <div className="story-animate flex w-full items-center lg:w-1/2">
+            <h2 className="font-heading text-gold text-4xl font-bold leading-none tracking-[0.3rem] sm:text-7xl lg:text-9xl">
               Let&apos;s Chat
             </h2>
           </div>

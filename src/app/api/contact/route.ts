@@ -8,7 +8,10 @@ export async function POST(req: Request) {
     const { name, email, subject, message } = await req.json();
 
     if (!name || !email || !subject || !message) {
-      return NextResponse.json({ error: "All fields are required." }, { status: 400 });
+      return NextResponse.json(
+        { error: "All fields are required." },
+        { status: 400 }
+      );
     }
 
     // 1️⃣ Setup mail transporter
@@ -50,7 +53,9 @@ export async function POST(req: Request) {
         range: "Sheet1!A:E",
         valueInputOption: "USER_ENTERED",
         requestBody: {
-          values: [[name, email, subject, message, new Date().toLocaleString()]],
+          values: [
+            [name, email, subject, message, new Date().toLocaleString()],
+          ],
         },
       }),
     ]);
@@ -59,9 +64,9 @@ export async function POST(req: Request) {
       success: true,
       message: "Message sent and saved successfully!",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
-      { error: "Internal Server Error", details: error.message },
+      { error: "Internal Server Error", details: (error as Error).message },
       { status: 500 }
     );
   }

@@ -59,12 +59,12 @@ export default function ProjectsScroll() {
 
   return (
     <section
-      className="relative bg-background"
+      className="bg-background relative"
       aria-label="Project portfolio gallery"
     >
       <div
         ref={gallery}
-        className="flex gap-2 sm:gap-4 overflow-hidden relative h-[175vh]"
+        className="relative flex h-[175vh] gap-2 overflow-hidden sm:gap-4"
         role="img"
         aria-label="Scrolling portfolio gallery showcasing Al-Eliza Interiors projects"
       >
@@ -83,20 +83,20 @@ export default function ProjectsScroll() {
         )}
       </div>
 
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute top-20 px-6 sm:right-20 sm:text-right">
-          <h3 className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem]">
+          <h3 className="text-gold-dark font-heading text-base uppercase tracking-[0.4rem] sm:text-5xl">
             Showcasing our finest projects
           </h3>
-          <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
+          <p className="font-paragraph mt-2 text-sm font-[300] tracking-[0.25rem] text-white/90 sm:text-3xl">
             Every detail crafted with care and creativity
           </p>
         </div>
         <div className="absolute bottom-20 px-6 sm:left-20 sm:text-left">
-          <h4 className="text-gold-dark text-base sm:text-5xl uppercase font-heading tracking-[0.4rem]">
+          <h4 className="text-gold-dark font-heading text-base uppercase tracking-[0.4rem] sm:text-5xl">
             Transforming spaces beautifully
           </h4>
-          <p className="text-white/90 mt-2 text-sm sm:text-3xl font-paragraph font-[300] tracking-[0.25rem]">
+          <p className="font-paragraph mt-2 text-sm font-[300] tracking-[0.25rem] text-white/90 sm:text-3xl">
             Bringing your vision to life with elegance
           </p>
         </div>
@@ -116,13 +116,13 @@ const Column = ({
 }) => {
   return (
     <motion.div
-      className="relative flex flex-col gap-2 sm:gap-4 min-w-[150px] md:min-w-[250px] w-1/2 md:w-1/4"
+      className="relative flex w-1/2 min-w-[150px] flex-col gap-2 sm:gap-4 md:w-1/4 md:min-w-[250px]"
       style={{ y, top }}
     >
       {images.map((src, i) => (
         <figure
           key={i}
-          className="group relative w-full h-full rounded overflow-hidden cursor-pointer"
+          className="group relative h-full w-full cursor-pointer overflow-hidden rounded"
         >
           <Image
             src={src}

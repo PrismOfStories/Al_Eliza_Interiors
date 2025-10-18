@@ -28,6 +28,10 @@ export default function ServicesCombined() {
           start: "top 80%",
         },
       });
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: heroHeaderRef }
   );
@@ -48,6 +52,10 @@ export default function ServicesCombined() {
           },
         }
       );
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: aboutSectionRef }
   );
@@ -68,27 +76,31 @@ export default function ServicesCombined() {
           },
         }
       );
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: ctaSectionRef }
   );
 
   return (
-    <main className="bg-background text-white mb-8">
+    <main className="bg-background mb-8 text-white">
       {/* Hero Section */}
 
       <section
-        className="flex flex-col items-center justify-center min-h-screen px-6 overflow-hidden"
+        className="flex min-h-screen flex-col items-center justify-center overflow-hidden px-6"
         aria-label="Our services introduction"
       >
         <RevealWrapper>
           <header ref={heroHeaderRef} className="text-center">
-            <p className="expertise-animate text-sm md:text-xl pt-10 tracking-[0.3rem] md:tracking-[0.5rem] mb-3 uppercase font-paragraph font-[300] text-gold">
+            <p className="expertise-animate font-paragraph text-gold mb-3 pt-10 text-sm font-[300] uppercase tracking-[0.3rem] md:text-xl md:tracking-[0.5rem]">
               OUR EXPERTISE
             </p>
-            <h1 className="expertise-animate text-[clamp(2rem,6vw,5rem)] font-heading text-center mb-6 tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.3] ">
+            <h1 className="expertise-animate font-heading mb-6 text-center text-[clamp(2rem,6vw,5rem)] leading-[1.3] tracking-[0.2rem] md:tracking-[0.8rem] ">
               DESIGN SOLUTIONS
             </h1>
-            <p className="expertise-animate font-paragraph tracking-[0.2rem] font-[300] text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
+            <p className="expertise-animate font-paragraph text-silver mx-auto mb-12 max-w-2xl text-base font-[300] tracking-[0.2rem] md:text-lg">
               &ldquo;Designing spaces that tell your story with elegance,
               balance, and soul.&rdquo;
             </p>
@@ -104,19 +116,19 @@ export default function ServicesCombined() {
       {/* About Our Services Section */}
       <section
         ref={aboutSectionRef}
-        className="max-w-6xl mx-auto mt-28 px-6  lg:py-20"
+        className="mx-auto mt-28 max-w-6xl px-6  lg:py-20"
         aria-label="About our services"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-18">
+        <div className="mb-18 grid grid-cols-1 items-start gap-12 md:grid-cols-3">
           <div className="content-animate col-span-1 flex items-center gap-2">
-            <span className="w-3 h-3 bg-gold" aria-hidden="true"></span>
-            <span className="font-heading tracking-[0.4rem] uppercase text-sm font-semibold  text-white">
+            <span className="bg-gold h-3 w-3" aria-hidden="true"></span>
+            <span className="font-heading text-sm font-semibold uppercase tracking-[0.4rem]  text-white">
               Our Services
             </span>
           </div>
 
           <div className="col-span-2 text-left">
-            <h2 className="content-animate leading-[1.8] sm:leading-[1.5] font-paragraph font-[200] tracking-[0.2rem] sm:tracking-[0.5rem] text-xl md:text-3xl text-silver">
+            <h2 className="content-animate font-paragraph text-silver text-xl font-[200] leading-[1.8] tracking-[0.2rem] sm:leading-[1.5] sm:tracking-[0.5rem] md:text-3xl">
               At Al Eliza Services, we deliver solutions with{" "}
               <span className="font-[200]">dedication, skill and care</span>{" "}
               <span className="font-[200] text-white">
@@ -131,17 +143,17 @@ export default function ServicesCombined() {
       {/* Call to Action Section */}
       <section
         ref={ctaSectionRef}
-        className="bg-background text-center py-8 px-4"
+        className="bg-background px-4 py-8 text-center"
         aria-label="Start your project with us"
       >
         <header>
-          <p className="contentOne-animate text-sm font-paragraph font-[400] tracking-[0.2rem] text-silver mt-10 mb-4">
+          <p className="contentOne-animate font-paragraph text-silver mb-4 mt-10 text-sm font-[400] tracking-[0.2rem]">
             START BUILDING
           </p>
-          <h2 className="contentOne-animate font-heading text-6xl md:text-8xl font-extrabold text-gold mb-8 leading-none">
+          <h2 className="contentOne-animate font-heading text-gold mb-8 text-6xl font-extrabold leading-none md:text-8xl">
             LET&lsquo;S DESIGN
           </h2>
-          <p className="contentOne-animate text-base font-paragraph font-[300] tracking-[0.15rem] md:text-lg text-silver max-w-2xl mx-auto mb-12">
+          <p className="contentOne-animate font-paragraph text-silver mx-auto mb-12 max-w-2xl text-base font-[300] tracking-[0.15rem] md:text-lg">
             Ready to bring your vision to life? Whether it&apos;s a home, a
             workspace, or a public space, we&apos;re here to design environments
             that inspire, function, and endure. Let&apos;s start your project

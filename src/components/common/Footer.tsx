@@ -62,13 +62,13 @@ export default function Footer() {
         </span>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 pt-24 pb-16">
+      <div className="mx-auto max-w-7xl px-6 pb-16 pt-24">
         <div className="flex w-full items-center justify-center">
           <div className="text-center">
-            <h1 className="select-none text-[2.25rem] tracking-[0.3rem] text-gold">
-              <span className="font-semibold font-paragraph">AL ELIZA</span>
+            <h1 className="text-gold select-none text-[2.25rem] tracking-[0.3rem]">
+              <span className="font-paragraph font-semibold">AL ELIZA</span>
             </h1>
-            <p className="mt-3 text-lg text-silver font-heading tracking-[0.3rem]">
+            <p className="text-silver font-heading mt-3 text-lg tracking-[0.3rem]">
               INTERIOR DESIGN
             </p>
           </div>
@@ -78,11 +78,11 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
           <div>
-            <h2 className="mb-6 text-lg font-medium text-silver tracking-[0.3rem] font-heading uppercase">
+            <h2 className="text-silver font-heading mb-6 text-lg font-medium uppercase tracking-[0.3rem]">
               Contact
             </h2>
             <div className="space-y-4 text-lg">
-              <p className="max-w-sm text-neutral-400 font-paragraph tracking-[0.12rem]">
+              <p className="font-paragraph max-w-sm tracking-[0.12rem] text-neutral-400">
                 Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
                 United Arab Emirates
               </p>
@@ -90,13 +90,13 @@ export default function Footer() {
               <div className="mt-2 space-y-1">
                 <Link
                   href="tel:+971522889300"
-                  className="block text-neutral-400 hover:text-gold text-base sm:text-xl font-paragraph tracking-[0.12rem]"
+                  className="hover:text-gold font-paragraph block text-base tracking-[0.12rem] text-neutral-400 sm:text-xl"
                 >
                   +971 522 889 300
                 </Link>
                 <Link
                   href="tel:+971543783000"
-                  className="block  text-neutral-400 hover:text-gold text-base sm:text-xl font-paragraph tracking-[0.12rem]"
+                  className="hover:text-gold  font-paragraph block text-base tracking-[0.12rem] text-neutral-400 sm:text-xl"
                 >
                   +971 54 378 3000
                 </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
               <p className="font-paragraph tracking-[0.12rem]">
                 <Link
                   href="mailto:info@alelizainteriors.com"
-                  className="block text-neutral-400 hover:text-gold mt-2 text-base sm:text-xl"
+                  className="hover:text-gold mt-2 block text-base text-neutral-400 sm:text-xl"
                 >
                   info@alelizainteriors.com
                 </Link>
@@ -113,10 +113,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium text-silver font-heading uppercase tracking-[0.3rem]">
+            <h3 className="text-silver font-heading mb-6 text-lg font-medium uppercase tracking-[0.3rem]">
               Services
             </h3>
-            <ul className="space-y-4 text-md font-paragraph tracking-[0.12rem] uppercase">
+            <ul className="text-md font-paragraph space-y-4 uppercase tracking-[0.12rem]">
               {services.map((item) => (
                 <li key={item.title}>
                   <Link
@@ -131,10 +131,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-lg font-medium tracking-[0.3rem] text-silver font-heading uppercase">
+            <h3 className="text-silver font-heading mb-6 text-lg font-medium uppercase tracking-[0.3rem]">
               Menu
             </h3>
-            <ul className="space-y-4 text-md font-paragraph tracking-[0.12rem] uppercase">
+            <ul className="text-md font-paragraph space-y-4 uppercase tracking-[0.12rem]">
               {menu.map((item, index) => (
                 <li key={index}>
                   <Link

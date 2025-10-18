@@ -24,7 +24,7 @@ export default function Preloader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          <div className="masking-container flex items-center justify-center relative">
+          <div className="masking-container relative flex items-center justify-center">
             <h1
               className="masked-text text-[clamp(3.7rem,10vw,7rem)] font-extrabold"
               style={{
@@ -45,11 +45,11 @@ export default function Preloader() {
           </div>
 
           {/* Yellow progress line drawing from center to both sides */}
-          <div className="relative w-full max-w-xs h-2 overflow-hidden">
+          <div className="relative h-2 w-full max-w-xs overflow-hidden">
             {/* Left half expanding left from center */}
-            <div className="progress-line-left absolute top-0 right-1/2 h-full bg-gold-dark origin-right" />
+            <div className="progress-line-left bg-gold-dark absolute right-1/2 top-0 h-full origin-right" />
             {/* Right half expanding right from center */}
-            <div className="progress-line-right absolute top-0 left-1/2 h-full bg-gold-dark origin-left" />
+            <div className="progress-line-right bg-gold-dark absolute left-1/2 top-0 h-full origin-left" />
           </div>
 
           <style jsx>{`

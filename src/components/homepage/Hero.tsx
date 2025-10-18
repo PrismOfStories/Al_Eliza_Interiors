@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <header
       ref={heroRef}
-      className="relative w-full min-h-screen overflow-hidden"
+      className="relative min-h-screen w-full overflow-hidden"
       role="banner"
     >
       <h1 className="sr-only">
@@ -30,7 +30,7 @@ export default function Hero() {
       </h1>
       {showVideo && (
         <video
-          className="absolute inset-0 w-full h-full object-cover -z-10 preload-asset"
+          className="preload-asset absolute inset-0 -z-10 h-full w-full object-cover"
           src="https://res.cloudinary.com/dxhmpdgqj/video/upload/v1758311809/intro-video_gyb10k.mp4"
           autoPlay
           loop

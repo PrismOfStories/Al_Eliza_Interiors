@@ -2,17 +2,20 @@ export const team = [
   {
     name: "Mr. Mohammed Ashiq",
     role: "Managing Director",
-    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/ashiq_axmp9d.jpg",
+    image:
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/ashiq_axmp9d.jpg",
   },
   {
     name: "Mr. Harif Harry",
     role: "Business Development Manager",
-    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/harif_bc8lea.jpg",
+    image:
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/harif_bc8lea.jpg",
   },
   {
     name: "Mr. Jerais Mohammed",
     role: "Creative Consultant",
-    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/jerry_nrgv00.jpg",
+    image:
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/jerry_nrgv00.jpg",
   },
   {
     name: "Michael Park",

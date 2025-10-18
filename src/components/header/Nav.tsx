@@ -46,8 +46,8 @@ export default function Nav({ closeMenu }: NavProps) {
     return pathname.startsWith(href);
   };
   return (
-    <div className="flex flex-col justify-between h-full p-8 sm:px-12 box-border">
-      <div className="flex flex-col gap-4 mt-14">
+    <div className="box-border flex h-full flex-col justify-between p-8 sm:px-12">
+      <div className="mt-14 flex flex-col gap-4">
         {routes.map((link, i) => (
           <motion.div
             key={i}
@@ -70,8 +70,8 @@ export default function Nav({ closeMenu }: NavProps) {
             }}
           >
             <Link
-              className={`text-xl sm:text-2xl font-semibold no-underline block exclusive-text tracking-widest transition-colors duration-300 ${
-                isActive(link.href) ? "text-gold" : "text-white hover:text-gold"
+              className={`exclusive-text block text-xl font-semibold tracking-widest no-underline transition-colors duration-300 sm:text-2xl ${
+                isActive(link.href) ? "text-gold" : "hover:text-gold text-white"
               }`}
               href={link.href}
               onClick={() => closeMenu?.()}
@@ -82,7 +82,7 @@ export default function Nav({ closeMenu }: NavProps) {
         ))}
       </div>
 
-      <motion.div className="flex mt-6 gap-x-2 gap-y-1  sm:gap-y-2">
+      <motion.div className="mt-6 flex gap-x-2 gap-y-1  sm:gap-y-2">
         {footerLinks.map((link, i) => (
           <motion.div
             key={i}
@@ -100,7 +100,7 @@ export default function Nav({ closeMenu }: NavProps) {
           >
             <Link
               href={link.href}
-              className="text-xl sm:text-2xl  text-white block font-poppins hover:text-gold"
+              className="font-poppins hover:text-gold  block text-xl text-white sm:text-2xl"
               onClick={() => closeMenu?.()}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={

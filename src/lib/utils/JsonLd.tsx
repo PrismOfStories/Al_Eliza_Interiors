@@ -6,7 +6,7 @@ export default function JsonLd({ data }: Props) {
   if (data === undefined) {
     return null;
   }
-  
+
   return (
     <script
       type="application/ld+json"

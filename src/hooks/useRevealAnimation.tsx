@@ -49,6 +49,10 @@ const useRevealAnimation = (options: Partial<AnimationOptions> = {}) => {
       );
 
       ScrollTrigger.refresh();
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { dependencies: [options.delay, options.duration], scope: elementRef }
   );

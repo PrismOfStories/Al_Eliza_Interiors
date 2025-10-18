@@ -100,10 +100,10 @@ export default function SemiCircleFan() {
   }, []);
 
   return (
-    <section className="bg-black flex items-center mt-26 justify-center h-screen overflow-hidden">
+    <section className="mt-26 flex h-screen items-center justify-center overflow-hidden bg-black">
       <div
         ref={containerRef}
-        className="relative w-[1000px] h-[700px] ml-4 flex items-end justify-center"
+        className="relative ml-4 flex h-[700px] w-[1000px] items-end justify-center"
       >
         {/* Optional arc path */}
         <svg
@@ -126,13 +126,13 @@ export default function SemiCircleFan() {
             ref={(el) => {
               if (el) cardRefs.current[i] = el;
             }}
-            className="fan-card absolute  bottom-0 w-[240px] h-[320px] rounded-xl overflow-hidden shadow-2xl transition-all duration-300 ease-out"
+            className="fan-card absolute  bottom-0 h-[320px] w-[240px] overflow-hidden rounded-xl shadow-2xl transition-all duration-300 ease-out"
           >
             <Image
               src={src}
               alt={`Card ${i}`}
               fill
-              className="object-cover rounded-xl"
+              className="rounded-xl object-cover"
               priority={i < 4}
             />
           </div>

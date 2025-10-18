@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -127,8 +126,9 @@ export default function TestimonialsSection() {
         end: "bottom 20%",
       });
     }
-    // Only run on mount
-    // eslint-disable-next-line
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   // GSAP batch animation for testimonial cards (runs on slide change)
@@ -187,15 +187,15 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className="mx-auto w-full bg-[#fbfbfb] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24 lg:py-28 flex flex-col justify-center"
+      className="mx-auto flex w-full flex-col justify-center bg-[#fbfbfb] px-4 py-16 sm:px-6 md:px-10 md:py-24 lg:px-20 lg:py-28"
       aria-label="Client testimonials"
     >
       <div className="mx-auto max-w-7xl">
-        <header className="mb-10 md:mb-20 text-center" ref={headerRef}>
-          <p className="testimonial-animate mb-4 text-[clamp(10px,1.8vw,16px)] uppercase text-gold-dark font-paragraph font-light tracking-[0.3rem]">
+        <header className="mb-10 text-center md:mb-20" ref={headerRef}>
+          <p className="testimonial-animate text-gold-dark font-paragraph mb-4 text-[clamp(10px,1.8vw,16px)] font-light uppercase tracking-[0.3rem]">
             Happy Clients
           </p>
-          <h2 className="testimonial-animate font-heading text-[clamp(28px,5vw,72px)] font-black text-black uppercase tracking-[0.4rem] leading-tight">
+          <h2 className="testimonial-animate font-heading text-[clamp(28px,5vw,72px)] font-black uppercase leading-tight tracking-[0.4rem] text-black">
             Testimonials
           </h2>
         </header>
@@ -203,7 +203,7 @@ export default function TestimonialsSection() {
         <div className="relative" ref={containerRef}>
           <button
             onClick={prevSlide}
-            className="flex absolute -left-3 md:-left-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
+            className="absolute -left-3 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] text-black backdrop-blur-sm transition-all hover:bg-white hover:shadow-md md:-left-8 md:h-10 md:w-10"
             aria-label="Previous testimonials"
           >
             <FaChevronLeft
@@ -214,7 +214,7 @@ export default function TestimonialsSection() {
 
           <button
             onClick={nextSlide}
-            className="flex absolute -right-3 md:-right-8 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-[#E5E0D8] backdrop-blur-sm text-black transition-all hover:bg-white hover:shadow-md"
+            className="absolute -right-3 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E0D8] text-black backdrop-blur-sm transition-all hover:bg-white hover:shadow-md md:-right-8 md:h-10 md:w-10"
             aria-label="Next testimonials"
           >
             <FaChevronRight
@@ -228,8 +228,8 @@ export default function TestimonialsSection() {
               itemsPerSlide === 1
                 ? "grid-cols-1"
                 : itemsPerSlide === 2
-                ? "grid-cols-1 sm:grid-cols-2"
-                : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                  ? "grid-cols-1 sm:grid-cols-2"
+                  : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
             }`}
             role="region"
             aria-live="polite"
@@ -238,21 +238,21 @@ export default function TestimonialsSection() {
             {getCurrentTestimonials().map((testimonial) => (
               <article
                 key={testimonial.id}
-                className="testimonial-animate flex flex-col border border-[#E5E0D8]/40 bg-white rounded p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-md transition-all"
+                className="testimonial-animate flex flex-col rounded border border-[#E5E0D8]/40 bg-white p-5 shadow-sm transition-all hover:shadow-md sm:p-6 md:p-8"
               >
                 <header className="mb-4 sm:mb-5">
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-black font-heading uppercase tracking-[0.2rem]">
+                  <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.2rem] text-black sm:text-base md:text-lg">
                     {testimonial.company}
                   </h3>
                 </header>
 
-                <blockquote className="mb-6 sm:mb-8 text-[12px] sm:text-[13px] md:text-[14px] leading-[1.8] sm:leading-[1.5] text-black/80 font-paragraph tracking-[0.15rem]">
+                <blockquote className="font-paragraph mb-6 text-[12px] leading-[1.8] tracking-[0.15rem] text-black/80 sm:mb-8 sm:text-[13px] sm:leading-[1.5] md:text-[14px]">
                   &ldquo;{testimonial.text}&rdquo;
                 </blockquote>
 
                 <footer className="flex items-center">
-                  <div className="mr-3 sm:mr-4 h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 overflow-hidden rounded-full bg-brown">
-                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white to-brown text-black font-medium text-sm sm:text-base">
+                  <div className="bg-brown mr-3 h-10 w-10 overflow-hidden rounded-full sm:mr-4 sm:h-11 sm:w-11 md:h-12 md:w-12">
+                    <div className="to-brown flex h-full w-full items-center justify-center bg-gradient-to-br from-white text-sm font-medium text-black sm:text-base">
                       {testimonial.name
                         .split(" ")
                         .map((n) => n[0])
@@ -260,10 +260,10 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                   <div>
-                    <cite className="text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-black font-paragraph tracking-[0.15rem] not-italic">
+                    <cite className="font-paragraph text-[13px] font-semibold not-italic tracking-[0.15rem] text-black sm:text-[14px] md:text-[15px]">
                       {testimonial.name}
                     </cite>
-                    <p className="text-[11px] sm:text-[12px] md:text-[13px] text-black font-paragraph font-[400] tracking-[0.15rem]">
+                    <p className="font-paragraph text-[11px] font-[400] tracking-[0.15rem] text-black sm:text-[12px] md:text-[13px]">
                       {testimonial.title}
                     </p>
                   </div>
@@ -281,7 +281,7 @@ export default function TestimonialsSection() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-4 w-4 min-h-[10px] min-w-[10px] flex items-center justify-center rounded-full transition-all focus:outline-none ${
+              className={`flex h-4 min-h-[10px] w-4 min-w-[10px] items-center justify-center rounded-full transition-all focus:outline-none ${
                 index === currentSlide
                   ? "bg-[#171614]"
                   : "bg-[#D1CCC4] hover:bg-[#B5AFAF]"

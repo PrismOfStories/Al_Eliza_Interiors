@@ -36,6 +36,10 @@ export default function GetInTouch() {
           start: "top 80%",
         },
       });
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: sectionRef }
   );
@@ -53,6 +57,10 @@ export default function GetInTouch() {
           start: "top 80%",
         },
       });
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: ctaSectionRef }
   );
@@ -81,6 +89,10 @@ export default function GetInTouch() {
         },
       });
     }
+    // Cleanup on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -120,19 +132,19 @@ export default function GetInTouch() {
         {/* Hero Section */}
         <section
           ref={sectionRef}
-          className="bg-background text-center py-24 px-6 "
+          className="bg-background px-6 py-24 text-center "
           aria-label="Contact us introduction"
         >
           <header>
-            <p className="text-sm md:text-xl pt-10 tracking-[0.3rem] md:tracking-[0.5rem] mb-3 uppercase font-paragraph font-[300] text-gold">
+            <p className="font-paragraph text-gold mb-3 pt-10 text-sm font-[300] uppercase tracking-[0.3rem] md:text-xl md:tracking-[0.5rem]">
               CONTACT US
             </p>
 
-            <h1 className="contact-animate tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.3] uppercase font-heading font-bold text-6xl md:text-8xl text-white mb-6">
+            <h1 className="contact-animate font-heading mb-6 text-6xl font-bold uppercase leading-[1.3] tracking-[0.2rem] text-white md:text-8xl md:tracking-[0.8rem]">
               GET IN TOUCH
             </h1>
 
-            <p className="contact-animate font-paragraph tracking-[0.2rem] font-[300] text-base md:text-lg text-silver max-w-2xl mx-auto mb-12">
+            <p className="contact-animate font-paragraph text-silver mx-auto mb-12 max-w-2xl text-base font-[300] tracking-[0.2rem] md:text-lg">
               Reach out to start the conversation, schedule a consultation, or
               ask any questions.
             </p>
@@ -146,7 +158,7 @@ export default function GetInTouch() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
+              className="text-silver hover:text-gold flex h-12 w-12 items-center  justify-center rounded-full transition-all duration-300"
               aria-label="Follow us on Instagram"
             >
               <FaInstagram className="h-10 w-10" aria-hidden="true" />
@@ -155,7 +167,7 @@ export default function GetInTouch() {
               href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 flex items-center justify-center rounded-full  text-silver hover:text-gold transition-all duration-300"
+              className="text-silver hover:text-gold flex h-12 w-12 items-center  justify-center rounded-full transition-all duration-300"
               aria-label="Follow us on X (Twitter)"
             >
               <FaXTwitter className="h-10 w-10" aria-hidden="true" />
@@ -164,7 +176,7 @@ export default function GetInTouch() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
+              className="text-silver hover:text-gold flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300"
               aria-label="Connect with us on LinkedIn"
             >
               <FaLinkedinIn className="h-10 w-10" aria-hidden="true" />
@@ -173,7 +185,7 @@ export default function GetInTouch() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 flex items-center justify-center rounded-full text-silver hover:text-gold transition-all duration-300"
+              className="text-silver hover:text-gold flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300"
               aria-label="Like us on Facebook"
             >
               <FaFacebookF className="h-10 w-10" aria-hidden="true" />
@@ -182,7 +194,7 @@ export default function GetInTouch() {
         </section>
         {/* Contact Form Section */}
         <section
-          className="relative min-h-screen flex items-center justify-center px-4"
+          className="relative flex min-h-screen items-center justify-center px-4"
           aria-label="Contact form"
         >
           {/* Background Image */}
@@ -198,16 +210,16 @@ export default function GetInTouch() {
           <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
 
           {/* Form Container */}
-          <div className="relative z-10 w-full max-w-2xl bg-white p-5 sm:p-10 exclusive-text rounded-xl sm:rounded-2xl ">
+          <div className="exclusive-text relative z-10 w-full max-w-2xl rounded-xl bg-white p-5 sm:rounded-2xl sm:p-10 ">
             <form
               className="space-y-8"
               onSubmit={handleSubmit}
               aria-label="Contact form"
             >
-              <div className="border-b border-background pb-2">
+              <div className="border-background border-b pb-2">
                 <label
                   htmlFor="contact-name"
-                  className="block text-sm text-background mb-1 font-paragraph font-[300]"
+                  className="text-background font-paragraph mb-1 block text-sm font-[300]"
                 >
                   NAME
                 </label>
@@ -216,15 +228,15 @@ export default function GetInTouch() {
                   id="contact-name"
                   type="text"
                   required
-                  className="w-full bg-transparent focus:outline-none text-background"
+                  className="text-background w-full bg-transparent focus:outline-none"
                   aria-describedby="name-help"
                 />
               </div>
 
-              <div className="border-b border-background pb-2">
+              <div className="border-background border-b pb-2">
                 <label
                   htmlFor="contact-email"
-                  className="block text-sm text-background mb-1 font-paragraph font-[300]"
+                  className="text-background font-paragraph mb-1 block text-sm font-[300]"
                 >
                   EMAIL ADDRESS
                 </label>
@@ -233,15 +245,15 @@ export default function GetInTouch() {
                   id="contact-email"
                   type="email"
                   required
-                  className="w-full bg-transparent focus:outline-none text-background"
+                  className="text-background w-full bg-transparent focus:outline-none"
                   aria-describedby="email-help"
                 />
               </div>
 
-              <div className="border-b border-background pb-2">
+              <div className="border-background border-b pb-2">
                 <label
                   htmlFor="contact-subject"
-                  className="block text-sm font-paragraph font-[300] text-background mb-1"
+                  className="font-paragraph text-background mb-1 block text-sm font-[300]"
                 >
                   SUBJECT
                 </label>
@@ -250,15 +262,15 @@ export default function GetInTouch() {
                   id="contact-subject"
                   type="text"
                   required
-                  className="w-full bg-transparent focus:outline-none text-background"
+                  className="text-background w-full bg-transparent focus:outline-none"
                   aria-describedby="subject-help"
                 />
               </div>
 
-              <div className="border-b border-background pb-2">
+              <div className="border-background border-b pb-2">
                 <label
                   htmlFor="contact-message"
-                  className="block text-sm font-paragraph font-[300] text-background mb-1"
+                  className="font-paragraph text-background mb-1 block text-sm font-[300]"
                 >
                   MESSAGE
                 </label>
@@ -267,7 +279,7 @@ export default function GetInTouch() {
                   id="contact-message"
                   rows={4}
                   required
-                  className="w-full bg-transparent focus:outline-none text-background"
+                  className="text-background w-full bg-transparent focus:outline-none"
                   aria-describedby="message-help"
                 />
               </div>
@@ -275,7 +287,7 @@ export default function GetInTouch() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="group w-full justify-center cursor-pointer inline-flex bg-gold hover:bg-gold-dark text-white px-8 py-3 text-lg font-heading tracking-[0.2rem] transition-colors duration-300 [transform:skewX(-20deg)]"
+                  className="bg-gold hover:bg-gold-dark font-heading group inline-flex w-full cursor-pointer justify-center px-8 py-3 text-lg tracking-[0.2rem] text-white transition-colors duration-300 [transform:skewX(-20deg)]"
                   aria-label="Send contact message"
                 >
                   <span className="flex items-center gap-2 [transform:skewX(20deg)]">
@@ -290,21 +302,21 @@ export default function GetInTouch() {
       {/* Visit Us Section */}
       <section
         ref={ctaSectionRef}
-        className="bg-background text-center py-10 sm:py-24 px-6"
+        className="bg-background px-6 py-10 text-center sm:py-24"
         aria-label="Visit our locations"
       >
         {/* Small Heading */}
-        <p className="ctaContent-animate text-sm font-paragraph tracking-[0.3rem] font-[400] text-silver mt-14 mb-4">
+        <p className="ctaContent-animate font-paragraph text-silver mb-4 mt-14 text-sm font-[400] tracking-[0.3rem]">
           OUR LOCATIONS
         </p>
 
         {/* Main Title */}
-        <h2 className="ctaContent-animate text-4xl lg:text-6xl font-heading tracking-[0.25rem] md:text-8xl text-gold mb-8 leading-[1.5]">
+        <h2 className="ctaContent-animate font-heading text-gold mb-8 text-4xl leading-[1.5] tracking-[0.25rem] md:text-8xl lg:text-6xl">
           VISIT US
         </h2>
 
         {/* Subtext */}
-        <p className="ctaContent-animate text-base md:text-lg font-paragraph tracking-[0.2rem] leading-[1.5] text-silver max-w-2xl mx-auto mb-12">
+        <p className="ctaContent-animate font-paragraph text-silver mx-auto mb-12 max-w-2xl text-base leading-[1.5] tracking-[0.2rem] md:text-lg">
           Visit us at one of our conveniently located studios, where our team is
           ready to discuss your design goals and explore possibilities for your
           space.
@@ -316,16 +328,16 @@ export default function GetInTouch() {
         className="bg-background pb-10 sm:py-20"
         aria-label="Office location and contact details"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6 lg:px-12 items-center">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-3 lg:px-12">
           {/* Left Side: Office Details (1/3) */}
-          <address className="flex flex-col justify-center relative md:col-span-1 not-italic">
-            <div className="pl-6 space-y-12">
+          <address className="relative flex flex-col justify-center not-italic md:col-span-1">
+            <div className="space-y-12 pl-6">
               {/* Office Block */}
               <div>
-                <h3 className=" font-xl font-heading font-bold text-gold uppercase tracking-[0.2rem]">
+                <h3 className=" font-xl font-heading text-gold font-bold uppercase tracking-[0.2rem]">
                   Head Office
                 </h3>
-                <p className="text-white mt-2 text-base sm:text-lg cursor-pointer font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300">
+                <p className="font-paragraph hover:text-gold mt-2 cursor-pointer text-base font-[300] tracking-[0.2rem] text-white transition-colors duration-300 sm:text-lg">
                   <Link
                     href="https://maps.app.goo.gl/5GJHZDmpqdpkJmtb7"
                     target="_blank"
@@ -340,12 +352,12 @@ export default function GetInTouch() {
 
               {/* Email */}
               <div className="exclusive-text">
-                <h3 className="text-xl font-heading font-bold text-gold uppercase tracking-[0.2rem]">
+                <h3 className="font-heading text-gold text-xl font-bold uppercase tracking-[0.2rem]">
                   Email
                 </h3>
                 <Link
                   href="mailto:info@alelizainteriors.com"
-                  className="block text-white mt-2 text-base sm:text-xl font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300"
+                  className="font-paragraph hover:text-gold mt-2 block text-base font-[300] tracking-[0.2rem] text-white transition-colors duration-300 sm:text-xl"
                 >
                   info@alelizainteriors.com
                 </Link>
@@ -353,21 +365,21 @@ export default function GetInTouch() {
 
               {/* Phone */}
               <div className="exclusive-text">
-                <h3 className="text-xl font-heading font-bold text-gold uppercase tracking-[0.2rem]">
+                <h3 className="font-heading text-gold text-xl font-bold uppercase tracking-[0.2rem]">
                   Call Us
                 </h3>
 
                 <div className="mt-2 space-y-1">
                   <Link
                     href="tel:+971522889300"
-                    className="block text-white text-base sm:text-xl font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300"
+                    className="font-paragraph hover:text-gold block text-base font-[300] tracking-[0.2rem] text-white transition-colors duration-300 sm:text-xl"
                     aria-label="Call us at +971 522 889 300"
                   >
                     +971 522 889 300
                   </Link>
                   <Link
                     href="tel:+971543783000"
-                    className="block  text-white text-base sm:text-xl font-paragraph tracking-[0.2rem] font-[300] hover:text-gold transition-colors duration-300"
+                    className="font-paragraph  hover:text-gold block text-base font-[300] tracking-[0.2rem] text-white transition-colors duration-300 sm:text-xl"
                     aria-label="Call us at +971 54 378 3000"
                   >
                     +971 54 378 3000
@@ -378,12 +390,12 @@ export default function GetInTouch() {
           </address>
 
           {/* Right Side: Office Map (2/3) */}
-          <div className="relative w-full max-w-2xl ml-auto h-[350px] md:h-[450px] lg:h-[500px] md:col-span-2 rounded-xl overflow-hidden">
+          <div className="relative ml-auto h-[350px] w-full max-w-2xl overflow-hidden rounded-xl md:col-span-2 md:h-[450px] lg:h-[500px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225.46651462006213!2d55.35785207844792!3d25.28860235409731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d931d237c6d%3A0xc429f45c56e9c88!2sAl%20Eliza%20interior!5e0!3m2!1sen!2sae!4v1753894309606!5m2!1sen!2sae"
               loading="lazy"
               title="Al Eliza Interior Location Map"
-              className="text-center w-full h-full"
+              className="h-full w-full text-center"
             ></iframe>
           </div>
         </div>

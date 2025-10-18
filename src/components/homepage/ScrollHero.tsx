@@ -24,9 +24,9 @@ export default function ScrollHero() {
         <ScrollPage>
           <Animator
             animation={batch(FadeIn(), Sticky(), MoveOut(0, -200))}
-            className="w-full flex items-center justify-center min-h-screen flex-wrap text-center"
+            className="flex min-h-screen w-full flex-wrap items-center justify-center text-center"
           >
-            <h2 className="leading-[1.8] sm:leading-[1.5] text-center text-[clamp(1.5rem,5vw,2.5rem)] font-light uppercase text-gold-dark px-8 font-heading tracking-[0.4rem] sm:tracking-[0.6rem] block">
+            <h2 className="text-gold-dark font-heading block px-8 text-center text-[clamp(1.5rem,5vw,2.5rem)] font-light uppercase leading-[1.8] tracking-[0.4rem] sm:leading-[1.5] sm:tracking-[0.6rem]">
               Welcome to <br /> Al-Eliza Interiors
             </h2>
           </Animator>
@@ -35,9 +35,9 @@ export default function ScrollHero() {
         <ScrollPage>
           <Animator
             animation={ZoomInScrollOut}
-            className="w-full px-8 flex items-center justify-center min-h-screen text-center"
+            className="flex min-h-screen w-full items-center justify-center px-8 text-center"
           >
-            <h3 className="text-center text-[clamp(1.5rem,5vw,2.5rem)] font-paragraph font-[200] tracking-[0.4rem] sm:tracking-[0.6rem] uppercase leading-tight text-white block">
+            <h3 className="font-paragraph block text-center text-[clamp(1.5rem,5vw,2.5rem)] font-[200] uppercase leading-tight tracking-[0.4rem] text-white sm:tracking-[0.6rem]">
               Crafting Spaces <br /> That Inspire & Delight
             </h3>
           </Animator>

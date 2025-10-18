@@ -50,42 +50,46 @@ export default function Portfolio() {
           start: "top 80%",
         },
       });
+      // Cleanup on unmount
+      return () => {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      };
     },
     { scope: sectionRef }
   );
   return (
-    <main className="bg-background text-white overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+    <main className="bg-background overflow-hidden pb-14 pt-14 text-white md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
       {/* Hero Section */}
       <RevealWrapper>
         <section
           ref={sectionRef}
-          className="flex flex-col items-center justify-start pt-20 md:pt-40 px-4 md:px-6"
+          className="flex flex-col items-center justify-start px-4 pt-20 md:px-6 md:pt-40"
           aria-label="Portfolio introduction"
         >
           <header className="text-center">
-            <p className="portfolio-animate text-sm md:text-xl tracking-[0.3rem] md:tracking-[0.5rem] uppercase font-paragraph font-[300] text-gold">
+            <p className="portfolio-animate font-paragraph text-gold text-sm font-[300] uppercase tracking-[0.3rem] md:text-xl md:tracking-[0.5rem]">
               Signature Projects
             </p>
-            <h1 className="portfolio-animate text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-4 max-w-5xl text-center tracking-[0.2rem] md:tracking-[0.8rem] leading-[1.5] uppercase font-heading font-bold">
+            <h1 className="portfolio-animate font-heading mt-4 max-w-5xl text-center text-2xl font-bold uppercase leading-[1.5] tracking-[0.2rem] sm:text-4xl md:text-5xl md:tracking-[0.8rem] lg:text-6xl xl:text-7xl">
               Designed with Intention
             </h1>
           </header>
         </section>
 
-        <div className="max-w-[90rem] mx-auto mt-8 md:mt-28">
+        <div className="mx-auto mt-8 max-w-[90rem] md:mt-28">
           {/* Navigation Tabs */}
           <nav
-            className="flex flex-wrap justify-center lg:justify-between gap-4 mb-8 px-4"
+            className="mb-8 flex flex-wrap justify-center gap-4 px-4 lg:justify-between"
             aria-label="Portfolio category filters"
           >
             {tabs.map((tab) => (
               <button
                 key={tab.value}
-                className={`px-3 md:px-4 py-2 border-b-2 text-xs md:text-lg ${
+                className={`border-b-2 px-3 py-2 text-xs md:px-4 md:text-lg ${
                   selectedTab === tab.value
                     ? "border-gold text-gold"
-                    : "border-transparent text-white hover:text-gold"
-                } font-paragraph  uppercase tracking-[0.2rem] font-[300] transition-colors duration-300 cursor-pointer`}
+                    : "hover:text-gold border-transparent text-white"
+                } font-paragraph  cursor-pointer font-[300] uppercase tracking-[0.2rem] transition-colors duration-300`}
                 onClick={() => setSelectedTab(tab.value)}
                 aria-pressed={selectedTab === tab.value}
                 aria-label={`Filter by ${tab.label}`}
@@ -99,7 +103,7 @@ export default function Portfolio() {
           <section aria-label="Portfolio gallery">
             <AnimatePresence mode="popLayout">
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-4 md:px-6 pb-16"
+                className="grid grid-cols-1 gap-3 px-4 pb-16 sm:grid-cols-2 md:px-6 lg:grid-cols-3"
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -123,7 +127,7 @@ export default function Portfolio() {
                       delay: index * 0.05,
                     }}
                     layout
-                    className="group relative overflow-hidden cursor-pointer"
+                    className="group relative cursor-pointer overflow-hidden"
                     onClick={() => handleImageClick(project, index)}
                     role="listitem"
                     tabIndex={0}
@@ -135,7 +139,7 @@ export default function Portfolio() {
                     }}
                     aria-label={`View project: ${project.title}`}
                   >
-                    <figure className="relative w-full h-56 sm:h-64 overflow-hidden">
+                    <figure className="relative h-56 w-full overflow-hidden sm:h-64">
                       <Image
                         src={project.images[0]}
                         alt={`${project.title} - Interior design project by Al-Eliza Interiors`}
@@ -143,14 +147,14 @@ export default function Portfolio() {
                         className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
                       />
                       <div
-                        className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"
+                        className="absolute inset-0 bg-black opacity-0 transition-opacity duration-500 group-hover:opacity-50"
                         aria-hidden="true"
                       ></div>
                       <div
                         className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
                         aria-hidden="true"
                       ></div>
-                      <figcaption className="absolute bottom-3 md:bottom-7 left-3 md:left-4 text-white text-lg md:text-lg tracking-[0.1rem] md:tracking-[0.2rem] font-paragraph font-[300] z-10">
+                      <figcaption className="font-paragraph absolute bottom-3 left-3 z-10 text-lg font-[300] tracking-[0.1rem] text-white md:bottom-7 md:left-4 md:text-lg md:tracking-[0.2rem]">
                         {project.title}
                       </figcaption>
                     </figure>

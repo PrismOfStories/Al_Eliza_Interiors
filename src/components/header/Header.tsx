@@ -55,7 +55,7 @@ export default function Header() {
     <motion.div
       animate={controls}
       initial={{ y: 0 }}
-      className="fixed top-0 left-0 w-full z-50  px-4 md:px-12 pt-1 transition-transform duration-500"
+      className="fixed left-0 top-0 z-50 w-full  px-4 pt-1 transition-transform duration-500 md:px-12"
     >
       <div className="flex items-center justify-between">
         <Link href="/" className="">
@@ -70,9 +70,9 @@ export default function Header() {
         </Link>
 
         {/* Menu Button + Nav */}
-        <div className="flex items-center justify-center mb-10 relative">
+        <div className="relative mb-10 flex items-center justify-center">
           <motion.div
-            className="bg-[#161616] absolute right-0 top-0 overflow-hidden"
+            className="absolute right-0 top-0 overflow-hidden bg-[#161616]"
             animate={{
               width: isActive ? (isMobile ? "80vw" : "340px") : "100px",
               height: isActive ? (isMobile ? "60vh" : "410px") : "40px",
@@ -96,8 +96,8 @@ export default function Header() {
             <div
               className={
                 !isActive
-                  ? "[transform:skewX(20deg)] w-full h-full"
-                  : "w-full h-full"
+                  ? "h-full w-full [transform:skewX(20deg)]"
+                  : "h-full w-full"
               }
             >
               <AnimatePresence>
