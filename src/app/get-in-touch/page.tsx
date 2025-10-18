@@ -207,7 +207,7 @@ export async function generateMetadata() {
   return {
     title: "Contact Al Eliza Interiors | Dubai Luxury Interior Design Experts",
     description:
-      "Get in touch with Al Eliza Interiors, Dubai's premier luxury interior design firm. Reach out for bespoke residential and commercial design consultations, quotes, and inquiries.",
+      "Contact Al Eliza Interiors, Dubai's premier luxury interior design firm. Schedule a free consultation today for bespoke residential and commercial design services.",
     author: authorName,
     icons,
     robots: {
@@ -229,7 +229,7 @@ export async function generateMetadata() {
       title:
         "Contact Al Eliza Interiors | Dubai Luxury Interior Design Experts",
       description:
-        "Get in touch with Al Eliza Interiors, Dubai's premier luxury interior design firm. Reach out for bespoke residential and commercial design consultations, quotes, and inquiries.",
+        "Contact Al Eliza Interiors, Dubai's premier luxury interior design firm. Schedule a free consultation today for bespoke residential and commercial design services.",
       url: `${siteURL}/get-in-touch`,
       siteName: siteName,
       locale: "en_US",

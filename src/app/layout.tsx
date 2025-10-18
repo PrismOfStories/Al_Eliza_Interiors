@@ -45,9 +45,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Al Eliza Interior - Transform Your Space with Elegant Designs",
+  title: "Al Eliza Interior | Best Interior Design Company in Dubai, UAE",
   description:
-    "Al Eliza Interior specializes in creating beautiful, functional spaces with elegant design solutions. Transform your home or office with our expert interior design services.",
+    "Al Eliza Interior is a premier interior design company in Dubai, UAE. We specialize in bespoke residential and commercial interiors, transforming spaces into elegant, modern, and functional designs.",
 };
 
 export default function RootLayout({
