@@ -84,7 +84,7 @@ export const getOpenGraphData = ({
   title: `${title} | ${siteName}`,
   description:
     description ||
-    "Al-Eliza Interior Design provides exceptional interior design and fit-out solutions in Dubai, UAE. Transform your home or office with our expert team and elegant, tailored designs.",
+    "Al Eliza Interior is a premier interior design company in Dubai, UAE. We specialize in bespoke residential and commercial interiors, transforming spaces into elegant, modern, and functional designs.",
   images: [
     {
       url: `${siteUrl}/images/opengraph/2800x1600.png`,

@@ -30,10 +30,7 @@ async function generateLdJsonHome() {
         inLanguage: "en-US",
         potentialAction: {
           "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${siteUrl}/?s={search_term_string}`,
-          },
+          target: `${siteUrl}/?s={search_term_string}`,
           "query-input": "required name=search_term_string",
         },
       },
@@ -45,23 +42,23 @@ async function generateLdJsonHome() {
         url: siteUrl,
         logo: {
           "@type": "ImageObject",
-          "@id": `${siteUrl}/#/schema/logo/image/`,
+          "@id": `${siteUrl}/#logo`,
           inLanguage: "en-US",
-          url: `${siteUrl}/images/logo.png`,
-          contentUrl: `${siteUrl}/images/logo.png`,
+          url: `${siteUrl}/images/logo.webp`,
+          contentUrl: `${siteUrl}/images/logo.webp`,
           width: 250,
           height: 60,
           caption: "Al Eliza Interior",
         },
-        image: { "@id": `${siteUrl}/#/schema/logo/image/` },
+        image: { "@id": `${siteUrl}/#logo` },
         sameAs: [
-          "https://www.facebook.com/p/Al-eliza-design-Studio-100086651834406/?_rdr",
-          "https://www.instagram.com/alelizainteriors?igsh=NHgxYzUyc3dzMmVu",
-          "https://www.linkedin.com/company/al-eliza/",
+          "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406",
+          "https://www.instagram.com/al_eliza_interiors",
+          "https://www.linkedin.com/company/al-eliza",
         ],
         contactPoint: {
           "@type": "ContactPoint",
-          telephone: "+971 522 889 300",
+          telephone: "+971522889300",
           contactType: "Customer Support",
           areaServed: "AE",
           availableLanguage: ["English", "Arabic", "Malayalam", "Hindi"],
@@ -72,8 +69,8 @@ async function generateLdJsonHome() {
         "@id": `${siteUrl}/#localbusiness`,
         name: "Al Eliza Interior",
         url: siteUrl,
-        image: `${siteUrl}/images/logo.png`,
-        telephone: "+971 522 889 300",
+        image: `${siteUrl}/images/logo.webp`,
+        telephone: "+971522889300",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Dubai Design District",
@@ -82,11 +79,30 @@ async function generateLdJsonHome() {
           postalCode: "00000",
           addressCountry: "AE",
         },
-        openingHours: "Mo-Sa 09:00-18:00",
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 25.28913746105181,
+          longitude: 55.3593494284814,
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            opens: "09:00",
+            closes: "18:00",
+          },
+        ],
         sameAs: [
-          "https://www.facebook.com/p/Al-eliza-design-Studio-100086651834406/?_rdr",
-          "https://www.instagram.com/alelizainteriors?igsh=NHgxYzUyc3dzMmVu",
-          "https://www.linkedin.com/company/al-eliza/",
+          "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406",
+          "https://www.instagram.com/al_eliza_interiors",
+          "https://www.linkedin.com/company/al-eliza",
         ],
         priceRange: "$$",
       },
@@ -97,14 +113,14 @@ async function generateLdJsonHome() {
 const data = await generateLdJsonHome();
 
 export const metadata: Metadata = {
-  title: "Al Eliza Interior - Transform Your Space with Elegant Designs",
+  title: "Al Eliza Interior | Best Interior Design Company in Dubai, UAE",
   description:
-    "Al Eliza Interior specializes in creating beautiful, functional spaces with elegant design solutions. Transform your home or office with our expert interior design services.",
+    "Al Eliza Interior is a premier interior design company in Dubai, UAE. We specialize in bespoke residential and commercial interiors, transforming spaces into elegant, modern, and functional designs.",
   icons,
   openGraph: {
-    title: "Al Eliza Interior - Transform Your Space with Elegant Designs",
+    title: "Al Eliza Interior | Best Interior Design Company in Dubai, UAE",
     description:
-      "Welcome to Al Eliza Interior. Discover our elegant design solutions and transform your space with our expert interior design services.",
+      "Al Eliza Interior is a premier interior design company in Dubai, UAE. We specialize in bespoke residential and commercial interiors, transforming spaces into elegant, modern, and functional designs.",
     images: [
       {
         url: `${siteUrl}/images/opengraph/300x300.png`,

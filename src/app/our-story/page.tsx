@@ -3,52 +3,27 @@ import OurStory from "@/components/pages/OurStory";
 import { icons } from "@/lib/utils/meta";
 import JsonLd from "@/lib/utils/JsonLd";
 
-async function generateLdJsonAbout() {
+async function generateLdJsonOurStory() {
   const siteUrl = process.env.SITE_URL || "https://alelizainteriors.com";
+  const pageUrl = `${siteUrl}/our-story`;
 
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "AboutPage",
-        "@id": `${siteUrl}/about`,
-        url: `${siteUrl}/about`,
-        name: "About Al Eliza Interior",
-        isPartOf: { "@id": `${siteUrl}/#website` },
-        description:
-          "Learn more about Al Eliza Interior, a leading interior design company based in Dubai, UAE. Discover our story, vision, and approach to creating elegant and functional spaces.",
-        breadcrumb: {
-          "@id": `${siteUrl}/about/#breadcrumb`,
-        },
-        inLanguage: "en-US",
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${siteUrl}/about/#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: siteUrl,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "About Us",
-            item: `${siteUrl}/about`,
-          },
-        ],
-      },
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
         name: "Al Eliza Interior",
         description:
-          "Al Eliza Interior is a premier interior design studio in Dubai, UAE, delivering stylish and personalized interior solutions for residential and commercial spaces.",
+          "Al Eliza Interior is a leading interior design company based in Dubai, UAE, offering bespoke residential and commercial design solutions.",
         publisher: { "@id": `${siteUrl}/#organization` },
         inLanguage: "en-US",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${siteUrl}/?s={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "Organization",
@@ -58,26 +33,93 @@ async function generateLdJsonAbout() {
         url: siteUrl,
         logo: {
           "@type": "ImageObject",
+          "@id": `${siteUrl}/#logo`,
           inLanguage: "en-US",
-          "@id": `${siteUrl}/#/schema/logo/image/`,
-          url: `${siteUrl}/images/logo.png`,
-          contentUrl: `${siteUrl}/images/logo.png`,
+          url: `${siteUrl}/images/logo.webp`,
+          contentUrl: `${siteUrl}/images/logo.webp`,
           width: 250,
           height: 60,
           caption: "Al Eliza Interior",
         },
-        image: { "@id": `${siteUrl}/#/schema/logo/image/` },
+        image: { "@id": `${siteUrl}/#logo` },
         sameAs: [
-          "https://www.facebook.com/p/Al-eliza-design-Studio-100086651834406/?_rdr",
-          "https://www.instagram.com/alelizainteriors?igsh=NHgxYzUyc3dzMmVu",
-          "https://www.linkedin.com/company/al-eliza/",
+          "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406",
+          "https://www.instagram.com/al_eliza_interiors",
+          "https://www.linkedin.com/company/al-eliza",
         ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+971522889300",
+          contactType: "Customer Support",
+          areaServed: "AE",
+          availableLanguage: ["English", "Arabic", "Malayalam", "Hindi"],
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: "Our Story - Al Eliza Interior",
+        description:
+          "Discover Al Eliza Interior's journey and expertise in delivering luxury residential and commercial interior design in Dubai, UAE.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#organization` },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          "@id": `${pageUrl}#primaryimage`,
+          url: `${siteUrl}/images/1200x630.png`,
+          width: 1200,
+          height: 630,
+        },
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${siteUrl}/#localbusiness`,
+        name: "Al Eliza Interior",
+        url: siteUrl,
+        image: `${siteUrl}/images/logo.webp`,
+        telephone: "+971522889300",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Dubai Design District",
+          addressLocality: "Dubai",
+          addressRegion: "DU",
+          postalCode: "00000",
+          addressCountry: "AE",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 25.28913746105181,
+          longitude: 55.3593494284814,
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            opens: "09:00",
+            closes: "18:00",
+          },
+        ],
+        sameAs: [
+          "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406",
+          "https://www.instagram.com/al_eliza_interiors",
+          "https://www.linkedin.com/company/al-eliza",
+        ],
+        priceRange: "$$",
       },
     ],
   };
 }
 
-const data = await generateLdJsonAbout();
+const data = await generateLdJsonOurStory();
 
 export async function generateMetadata() {
   const siteURL = process.env.SITE_URL;
@@ -85,9 +127,8 @@ export async function generateMetadata() {
   const authorName = process.env.AUTHOR_NAME;
 
   return {
-    title: "Al Eliza Interior - About Us",
-    description: `Discover Al Eliza Interior, a premier interior design company in Dubai, UAE. We specialize in transforming residential and commercial spaces into stylish, functional environments that reflect elegance and innovation.
-`,
+    title: "Discover the Journey Behind Al Eliza Interiors' Success Story",
+    description: `Explore the inspiring journey of Al Eliza Interiors and how we became Dubai's leading luxury interior design firm. Learn what sets us apart and why clients trust us for bespoke residential and commercial interiors.`,
     author: authorName,
     icons,
     robots: {
@@ -103,26 +144,35 @@ export async function generateMetadata() {
       },
     },
     alternates: {
-      canonical: `${siteURL}/about`,
+      canonical: `${siteURL}/our-story`,
     },
     openGraph: {
-      title: `Al Eliza Interior - About Us`,
+      title: `Discover the Journey Behind Al Eliza Interiors' Success Story`,
       description:
-        "Discover Al Eliza Interior, a premier interior design company in Dubai, UAE. We specialize in transforming residential and commercial spaces into stylish, functional environments that reflect elegance and innovation.",
-      url: `${siteURL}/about`,
+        "Explore the inspiring journey of Al Eliza Interiors and how we became Dubai's leading luxury interior design firm. Learn what sets us apart and why clients trust us for bespoke residential and commercial interiors.",
+      url: `${siteURL}/our-story`,
       siteName: siteName,
       locale: "en_US",
       type: "article",
-      images: [],
+      images: [
+        {
+          url: `${siteURL}/images/opengraph/1200x630.png`,
+          width: 1200,
+          height: 630,
+          alt: "Al Eliza Interior - Our Story",
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
-      title: `Al Eliza Interior - About Us `,
-      description: `Discover Al Eliza Interior, a premier interior design company in Dubai, UAE. We specialize in transforming residential and commercial spaces into stylish, functional environments that reflect elegance and innovation.`,
-      creator: `@${authorName}`,
-      site: `@${siteName}`,
-      url: `${siteURL}/about`,
+      title: "Discover the Journey Behind Al Eliza Interiors' Success Story",
+      description:
+        "Explore the inspiring journey of Al Eliza Interiors and how we became Dubai's leading luxury interior design firm. Learn what sets us apart and why clients trust us for bespoke residential and commercial interiors.",
+      creator: "@al_eliza_interiors",
+      site: "@al_eliza_interiors",
+      image: `${siteURL}/images/opengraph/1200x630.png`,
+      url: `${siteURL}/our-story`,
     },
   };
 }
