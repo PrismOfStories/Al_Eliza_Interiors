@@ -17,7 +17,7 @@ const routes = [
 const footerLinks = [
   {
     title: "Facebook",
-    href: "https://m.facebook.com/p/Al-eliza-design-Studio-100086651834406/",
+    href: "https://www.instagram.com/alelizainteriors?utm_source=qr&igsh=a3drank5cHZka2py",
     icon: <FaFacebookF className="h-7 w-7" />,
   },
   {
@@ -27,7 +27,7 @@ const footerLinks = [
   },
   {
     title: "Linkedin",
-    href: "https://www.linkedin.com/in/al-eliza-interior-5618aa274/%20",
+    href: "https://www.linkedin.com/company/al-eliza/",
     icon: <SlSocialLinkedin className="h-7 w-7" />,
   },
 ];

@@ -1,77 +1,67 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { logos } from "@/lib/static-data/about";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ClientsCard() {
   const headerRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+  const row1Ref = useRef<HTMLDivElement>(null);
+  const row2Ref = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    // Header animation
+  useEffect(() => {
+    // Header fade-in
     if (headerRef.current) {
-      gsap.set(headerRef.current, { y: 60, opacity: 0 });
-      ScrollTrigger.create({
-        trigger: headerRef.current,
-        start: "top 85%",
-        onEnter: () => {
-          gsap.to(headerRef.current, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(headerRef.current, {
-            y: 60,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power3.in",
-          });
-        },
-      });
+      gsap.fromTo(
+        headerRef.current,
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+          },
+        }
+      );
     }
 
-    // Grid animation
-    if (gridRef.current) {
-      gsap.set(gridRef.current, { y: 80, opacity: 0 });
-      ScrollTrigger.create({
-        trigger: gridRef.current,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.to(gridRef.current, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(gridRef.current, {
-            y: 80,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power3.in",
-          });
-        },
-      });
-    }
+    const setupMarquee = (row: HTMLDivElement, direction: "left" | "right") => {
+      const totalWidth = row.scrollWidth / 2;
+      gsap.fromTo(
+        row,
+        { x: direction === "left" ? 0 : -totalWidth },
+        {
+          x: direction === "left" ? -totalWidth : 0,
+          duration: 35,
+          ease: "none",
+          repeat: -1,
+        }
+      );
+    };
+
+    if (row1Ref.current) setupMarquee(row1Ref.current, "left");
+    if (row2Ref.current) setupMarquee(row2Ref.current, "right");
+
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      gsap.killTweensOf(row1Ref.current);
+      gsap.killTweensOf(row2Ref.current);
     };
   }, []);
 
+  const duplicatedLogos = [...logos, ...logos];
+
   return (
-    <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
+    <section className="py-16 lg:py-24 mt-12 overflow-hidden ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <header ref={headerRef} className="mb-12 text-center lg:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
@@ -84,30 +74,38 @@ export default function ClientsCard() {
           </motion.h2>
         </header>
 
-        {/* Logo Grid */}
-        <div
-          ref={gridRef}
-          className="grid grid-cols-2 items-center gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-12 xl:grid-cols-6"
-          role="list"
-          aria-label="Client logos"
-        >
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="group flex items-center justify-center rounded-lg  p-4 transition-all duration-300"
-              role="listitem"
-            >
-              <figure className="relative h-20 w-full sm:h-28">
+        {/* Row 1 */}
+        <div className="relative mb-10 overflow-hidden">
+          <div ref={row1Ref} className="flex gap-6 sm:gap-10 w-max">
+            {duplicatedLogos.map((logo, index) => (
+              <div key={`row1-${index}`} className="relative h-16 w-28 sm:h-20 sm:w-36">
                 <Image
                   src={logo}
-                  alt={`Client ${index + 1} logo`}
+                  alt={`Client logo ${index + 1}`}
                   fill
-                  className="object-contain opacity-60 grayscale transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:grayscale-0"
-                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
+                  className="object-contain"
+                  sizes="(max-width: 768px) 80px, 120px"
                 />
-              </figure>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 */}
+        <div className="relative overflow-hidden">
+          <div ref={row2Ref} className="flex gap-6 sm:gap-10 w-max">
+            {duplicatedLogos.map((logo, index) => (
+              <div key={`row2-${index}`} className="relative h-16 w-28 sm:h-20 sm:w-36">
+                <Image
+                  src={logo}
+                  alt={`Client logo ${index + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 80px, 120px"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
