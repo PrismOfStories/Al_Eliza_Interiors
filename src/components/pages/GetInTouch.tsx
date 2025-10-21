@@ -155,7 +155,7 @@ export default function GetInTouch() {
             aria-label="Social media links"
           >
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/alelizainteriors?utm_source=qr&igsh=a3drank5cHZka2py"
               target="_blank"
               rel="noopener noreferrer"
               className="text-silver hover:text-gold flex h-12 w-12 items-center  justify-center rounded-full transition-all duration-300"
@@ -173,7 +173,7 @@ export default function GetInTouch() {
               <FaXTwitter className="h-10 w-10" aria-hidden="true" />
             </Link>
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/al-eliza/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-silver hover:text-gold flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300"
@@ -182,7 +182,7 @@ export default function GetInTouch() {
               <FaLinkedinIn className="h-10 w-10" aria-hidden="true" />
             </Link>
             <Link
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/19JmfS3Q7p/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="text-silver hover:text-gold flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300"

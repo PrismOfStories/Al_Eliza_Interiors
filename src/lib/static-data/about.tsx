@@ -3,24 +3,40 @@ export const team = [
     name: "Mr. Mohammed Ashiq",
     role: "Managing Director",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/ashiq_axmp9d.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066458/IMG_8263_erwkq8.png",
   },
   {
     name: "Mr. Harif Harry",
     role: "Business Development Manager",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/harif_bc8lea.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066396/IMG_8227_qgxnwe.jpg",
+  },
+  
+  {
+    name: "Michael Park",
+    role: "Creative Director",
+    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066395/IMG_8228_ka6w1u.jpg",
   },
   {
     name: "Mr. Jerais Mohammed",
     role: "Creative Consultant",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753899334/jerry_nrgv00.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066401/IMG_2444_mnpboa.jpg",
+  },
+   {
+    name: "Michael Park",
+    role: "Creative Director",
+    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066483/IMG_8262_hd6ntk.jpg",
   },
   {
     name: "Michael Park",
     role: "Creative Director",
-    image: "/images/harif.jpg",
+    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066389/IMG_8261_bmc5cu.jpg",
+  }
+ ,{
+    name: "Michael Park",
+    role: "Creative Director",
+    image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066463/IMG_8212_nb2llf.jpg",
   },
 ];
 

@@ -47,7 +47,7 @@ export default function Footer() {
 
   return (
     <footer className="relative isolate w-full bg-[#161616] text-neutral-300">
-      <div
+      {/* <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-end pr-10"
       >
@@ -60,7 +60,7 @@ export default function Footer() {
             className="opacity-10"
           />
         </span>
-      </div>
+      </div> */}
 
       <div className="mx-auto max-w-7xl px-6 pb-16 pt-24">
         <div className="flex w-full items-center justify-center">
@@ -152,6 +152,7 @@ export default function Footer() {
 
           {/* Contact */}
         </div>
+        
       </div>
     </footer>
   );
