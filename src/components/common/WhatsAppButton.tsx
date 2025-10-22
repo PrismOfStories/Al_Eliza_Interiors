@@ -36,8 +36,8 @@ export default function WhatsAppButton() {
         whileTap={{ scale: 0.95 }}
         aria-label="Contact us on WhatsApp"
       >
-        <div className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-xl flex items-center justify-center shadow-lg transition-colors duration-200">
-          <FaWhatsapp className="w-10 h-10 text-white" />
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-green-500 shadow-lg transition-colors duration-200 hover:bg-green-600">
+          <FaWhatsapp className="h-10 w-10 text-white" />
         </div>
       </motion.a>
     </motion.div>

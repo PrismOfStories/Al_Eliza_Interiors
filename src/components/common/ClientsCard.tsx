@@ -59,7 +59,7 @@ export default function ClientsCard() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="py-16 lg:py-24 mt-12 overflow-hidden ">
+    <section className="mt-12 overflow-hidden py-16 lg:py-24 ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header ref={headerRef} className="mb-12 text-center lg:mb-16">
@@ -76,9 +76,12 @@ export default function ClientsCard() {
 
         {/* Row 1 */}
         <div className="relative mb-10 overflow-hidden">
-          <div ref={row1Ref} className="flex gap-6 sm:gap-10 w-max">
+          <div ref={row1Ref} className="flex w-max gap-6 sm:gap-10">
             {duplicatedLogos.map((logo, index) => (
-              <div key={`row1-${index}`} className="relative h-16 w-28 sm:h-20 sm:w-36">
+              <div
+                key={`row1-${index}`}
+                className="relative h-16 w-28 sm:h-20 sm:w-36"
+              >
                 <Image
                   src={logo}
                   alt={`Client logo ${index + 1}`}
@@ -93,9 +96,12 @@ export default function ClientsCard() {
 
         {/* Row 2 */}
         <div className="relative overflow-hidden">
-          <div ref={row2Ref} className="flex gap-6 sm:gap-10 w-max">
+          <div ref={row2Ref} className="flex w-max gap-6 sm:gap-10">
             {duplicatedLogos.map((logo, index) => (
-              <div key={`row2-${index}`} className="relative h-16 w-28 sm:h-20 sm:w-36">
+              <div
+                key={`row2-${index}`}
+                className="relative h-16 w-28 sm:h-20 sm:w-36"
+              >
                 <Image
                   src={logo}
                   alt={`Client logo ${index + 1}`}

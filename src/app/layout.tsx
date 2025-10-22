@@ -70,7 +70,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${deltha.variable} ${environment.variable} bg-background antialiased`}
       >
         <Layout>{children}</Layout>
-        <WhatsAppButton/>
+        <WhatsAppButton />
       </body>
     </html>
   );

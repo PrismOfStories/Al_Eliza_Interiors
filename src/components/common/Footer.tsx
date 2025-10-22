@@ -9,9 +9,7 @@ export default function Footer() {
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === href;
-    }
+    if (href === "/") return pathname === href;
     return pathname.startsWith(href);
   };
 
@@ -24,135 +22,100 @@ export default function Footer() {
   ];
 
   const services = [
-    {
-      title: "Residential & Commercial Designs",
-    },
-    {
-      title: "Design Consultancy",
-    },
-    {
-      title: "Virtual Reality 360° Designs",
-    },
-    {
-      title: "Fit out Approvals",
-    },
-    {
-      title: "Turnkey Fit out Projects",
-    },
-    {
-      title: "Landscaping",
-    },
+    { title: "Residential & Commercial Designs" },
+    { title: "Design Consultancy" },
+    { title: "Virtual Reality 360° Designs" },
+    { title: "Fit out Approvals" },
+    { title: "Turnkey Fit out Projects" },
+    { title: "Landscaping" },
     { title: "Maintenance" },
   ];
 
   return (
-    <footer className="relative isolate w-full bg-[#161616] text-neutral-300">
-      {/* <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-end pr-10"
-      >
-        <span className="select-none font-serif text-[28rem] leading-none text-black/30">
+    <footer className="w-full bg-[#161616] py-20 text-neutral-300">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-12 px-6 sm:items-start md:flex-row md:flex-wrap md:justify-between">
+        {/* Logo */}
+        <div className="flex flex-col items-center space-y-4 text-center md:min-w-[250px] md:items-start md:text-left">
           <Image
             src="/images/logo.webp"
-            alt="Watermark S"
-            width={450}
-            height={450}
-            className="opacity-10"
+            alt="Al Eliza Logo"
+            width={200}
+            height={200}
+            className="h-40 w-auto object-contain"
           />
-        </span>
-      </div> */}
-
-      <div className="mx-auto max-w-7xl px-6 pb-16 pt-24">
-        <div className="flex w-full items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-gold select-none text-[2.25rem] tracking-[0.3rem]">
-              <span className="font-paragraph font-semibold">AL ELIZA</span>
-            </h1>
-            <p className="text-silver font-heading mt-3 text-lg tracking-[0.3rem]">
-              INTERIOR DESIGN
-            </p>
-          </div>
+          <p className="max-w-[220px] text-sm leading-relaxed text-neutral-400">
+            Transforming spaces into timeless works of art where creativity
+            meets craftsmanship.
+          </p>
         </div>
-      </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 pb-24">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-3">
-          <div>
-            <h2 className="text-silver font-heading mb-6 text-lg font-medium uppercase tracking-[0.3rem]">
-              Contact
-            </h2>
-            <div className="space-y-4 text-lg">
-              <p className="font-paragraph max-w-sm tracking-[0.12rem] text-neutral-400">
-                Al Eliza Interior, FBL Business Center, Al Mamzar - Dubai -
-                United Arab Emirates
-              </p>
-
-              <div className="mt-2 space-y-1">
+        {/* Menu */}
+        <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
+          <h3 className="text-silver font-heading mb-2 text-lg font-medium uppercase tracking-[0.3rem]">
+            Menu
+          </h3>
+          <ul className="space-y-2 text-sm uppercase">
+            {menu.map((item) => (
+              <li key={item.href}>
                 <Link
-                  href="tel:+971522889300"
-                  className="hover:text-gold font-paragraph block text-base tracking-[0.12rem] text-neutral-400 sm:text-xl"
+                  href={item.href}
+                  className={`${
+                    isActive(item.href) ? "text-gold" : "text-silver"
+                  } hover:text-gold`}
                 >
-                  +971 522 889 300
+                  {item.title}
                 </Link>
-                <Link
-                  href="tel:+971543783000"
-                  className="hover:text-gold  font-paragraph block text-base tracking-[0.12rem] text-neutral-400 sm:text-xl"
-                >
-                  +971 54 378 3000
-                </Link>
-              </div>
-              <p className="font-paragraph tracking-[0.12rem]">
-                <Link
-                  href="mailto:info@alelizainteriors.com"
-                  className="hover:text-gold mt-2 block text-base text-neutral-400 sm:text-xl"
-                >
-                  info@alelizainteriors.com
-                </Link>
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-silver font-heading mb-6 text-lg font-medium uppercase tracking-[0.3rem]">
-              Services
-            </h3>
-            <ul className="text-md font-paragraph space-y-4 uppercase tracking-[0.12rem]">
-              {services.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    href="/expertise"
-                    className="text-silver hover:text-gold"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-silver font-heading mb-6 text-lg font-medium uppercase tracking-[0.3rem]">
-              Menu
-            </h3>
-            <ul className="text-md font-paragraph space-y-4 uppercase tracking-[0.12rem]">
-              {menu.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href={item.href}
-                    className={`inline-block ${
-                      isActive(item.href) ? "text-gold" : "text-silver"
-                    } hover:text-gold`}
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
+              </li>
+            ))}
+          </ul>
         </div>
-        
+
+        {/* Services */}
+        <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
+          <h3 className="text-silver font-heading mb-2 text-lg font-medium uppercase tracking-[0.3rem]">
+            Services
+          </h3>
+          <ul className="space-y-2 text-sm uppercase">
+            {services.map((item) => (
+              <li key={item.title}>
+                <Link href="/expertise" className="text-silver hover:text-gold">
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div className="flex flex-col items-center space-y-4 text-center md:min-w-[250px] md:items-start md:text-left">
+          <h2 className="text-silver font-heading mb-2 text-lg font-medium uppercase tracking-[0.3rem]">
+            Contact
+          </h2>
+          <p className="text-sm text-neutral-400">
+            Al Eliza Interior, FBL Business Center,
+            <br /> Al Mamzar - Dubai - United Arab Emirates
+          </p>
+          <div>
+            <Link
+              href="tel:+971522889300"
+              className="hover:text-gold block text-neutral-400"
+            >
+              +971 522 889 300
+            </Link>
+            <Link
+              href="tel:+971543783000"
+              className="hover:text-gold block text-neutral-400"
+            >
+              +971 54 378 3000
+            </Link>
+          </div>
+          <Link
+            href="mailto:info@alelizainteriors.com"
+            className="hover:text-gold block text-neutral-400"
+          >
+            info@alelizainteriors.com
+          </Link>
+        </div>
       </div>
     </footer>
   );

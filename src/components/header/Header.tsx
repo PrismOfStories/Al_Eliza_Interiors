@@ -14,6 +14,7 @@ export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
   const logoSize = isMobile ? 100 : 150;
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const controls = useAnimation();
   const lastScrollY = useRef(0);
@@ -51,6 +52,19 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [controls, isScrollingDown]);
 
+  useEffect(() => {
+    if (!isActive) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setIsActive(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isActive]);
+
   return (
     <motion.div
       animate={controls}
@@ -70,7 +84,10 @@ export default function Header() {
         </Link>
 
         {/* Menu Button + Nav */}
-        <div className="relative mb-10 flex items-center justify-center">
+        <div
+          ref={menuRef}
+          className="relative mb-10 flex items-center justify-center"
+        >
           <motion.div
             className="absolute right-0 top-0 overflow-hidden bg-[#161616]"
             animate={{
