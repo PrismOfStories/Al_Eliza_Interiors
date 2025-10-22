@@ -15,10 +15,15 @@ export default function ClientsCard() {
   const row2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Cache refs
+    const row1 = row1Ref.current;
+    const row2 = row2Ref.current;
+    const header = headerRef.current;
+
     // Header fade-in
-    if (headerRef.current) {
+    if (header) {
       gsap.fromTo(
-        headerRef.current,
+        header,
         { y: 60, opacity: 0 },
         {
           y: 0,
@@ -26,7 +31,7 @@ export default function ClientsCard() {
           duration: 1,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: headerRef.current,
+            trigger: header,
             start: "top 85%",
           },
         }
@@ -47,12 +52,12 @@ export default function ClientsCard() {
       );
     };
 
-    if (row1Ref.current) setupMarquee(row1Ref.current, "left");
-    if (row2Ref.current) setupMarquee(row2Ref.current, "right");
+    if (row1) setupMarquee(row1, "left");
+    if (row2) setupMarquee(row2, "right");
 
     return () => {
-      gsap.killTweensOf(row1Ref.current);
-      gsap.killTweensOf(row2Ref.current);
+      if (row1) gsap.killTweensOf(row1);
+      if (row2) gsap.killTweensOf(row2);
     };
   }, []);
 
