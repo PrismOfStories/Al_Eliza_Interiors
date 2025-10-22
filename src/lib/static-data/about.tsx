@@ -1,7 +1,7 @@
 export const team = [
   {
-    name: "Mr. Mohammed Ashiq",
-    role: "Managing Director",
+    name: "Mr. Harif Harry",
+    role: "Business Development Manager",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066458/IMG_8263_erwkq8.png",
   },
@@ -13,8 +13,8 @@ export const team = [
   },
   
   {
-    name: "Michael Park",
-    role: "Creative Director",
+    name: "Mohammed Ashiq",
+    role: "Managing Director",
     image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066395/IMG_8228_ka6w1u.jpg",
   },
   {
@@ -24,8 +24,8 @@ export const team = [
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066401/IMG_2444_mnpboa.jpg",
   },
    {
-    name: "Michael Park",
-    role: "Creative Director",
+    name: "Mohammed Ashiq",
+    role: "Managing Director",
     image: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066483/IMG_8262_hd6ntk.jpg",
   },
   {
