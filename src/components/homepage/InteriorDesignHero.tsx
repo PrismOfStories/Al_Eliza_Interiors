@@ -128,7 +128,7 @@ export default function ArchitectureHero() {
         <main className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-stretch lg:gap-16">
           <article className="font-poppins project-animate">
             <div className="font-paragraph mb-6 text-center text-7xl font-[300]  leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
-              <p>+4</p>
+              <p>+5</p>
             </div>
             <p className="font-paragraph text-gold-dark ml-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] sm:text-lg lg:text-start">
               Years of experience
@@ -148,7 +148,7 @@ export default function ArchitectureHero() {
 
           <article className="font-poppins project-animate">
             <div className="font-paragraph mb-6 text-center text-7xl font-[300] leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
-              <p>10+</p>
+              <p>100+</p>
             </div>
             <p className="font-paragraph text-gold-dark mr-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] sm:text-lg lg:text-start">
               Successful Projects
