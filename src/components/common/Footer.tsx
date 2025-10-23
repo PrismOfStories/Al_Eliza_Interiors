@@ -53,7 +53,7 @@ export default function Footer() {
 
         {/* Menu */}
         <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
-          <h3 className="text-silver font-heading mb-2 text-lg font-medium uppercase tracking-[0.3rem]">
+          <h3 className="text-silver font-paragraph mb-2 text-lg font-semibold uppercase tracking-[0.3rem]">
             Menu
           </h3>
           <ul className="space-y-2 text-sm uppercase">
@@ -74,7 +74,7 @@ export default function Footer() {
 
         {/* Services */}
         <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
-          <h3 className="text-silver font-heading mb-2 text-lg font-medium uppercase tracking-[0.3rem]">
+          <h3 className="text-silver font-paragraph mb-2 text-lg font-semibold uppercase tracking-[0.3rem]">
             Services
           </h3>
           <ul className="space-y-2 text-sm uppercase">
@@ -89,8 +89,8 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="flex flex-col items-center space-y-4 text-center md:min-w-[250px] md:items-start md:text-left">
-          <h2 className="text-silver font-heading mb-2 text-lg font-medium uppercase tracking-[0.3rem]">
+        <div className="space-y- flex flex-col items-center space-y-2 text-center md:min-w-[250px] md:items-start md:text-left">
+          <h2 className="text-silver font-paragraph mb-2 text-lg font-semibold uppercase tracking-[0.3rem]">
             Contact
           </h2>
           <p className="text-sm text-neutral-400">
@@ -100,20 +100,20 @@ export default function Footer() {
           <div>
             <Link
               href="tel:+971522889300"
-              className="hover:text-gold block text-neutral-400"
+              className="hover:text-gold block text-sm text-neutral-400"
             >
               +971 522 889 300
             </Link>
             <Link
               href="tel:+971543783000"
-              className="hover:text-gold block text-neutral-400"
+              className="hover:text-gold block text-sm text-neutral-400"
             >
               +971 54 378 3000
             </Link>
           </div>
           <Link
             href="mailto:info@alelizainteriors.com"
-            className="hover:text-gold block text-neutral-400"
+            className="hover:text-gold block text-sm text-neutral-400"
           >
             info@alelizainteriors.com
           </Link>
