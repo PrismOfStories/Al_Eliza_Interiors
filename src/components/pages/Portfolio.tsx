@@ -145,6 +145,9 @@ export default function Portfolio() {
                         alt={`${project.title} - Interior design project by Al-Eliza Interiors`}
                         fill
                         className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                        crossOrigin="anonymous"
+                        referrerPolicy="no-referrer"
                       />
                       <div
                         className="absolute inset-0 bg-black opacity-0 transition-opacity duration-500 group-hover:opacity-50"

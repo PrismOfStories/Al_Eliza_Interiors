@@ -42,6 +42,8 @@ export default function Footer() {
             width={200}
             height={200}
             className="h-40 w-auto object-contain"
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
           />
           <p className="max-w-[220px] text-sm leading-relaxed text-neutral-400">
             Transforming spaces into timeless works of art where creativity

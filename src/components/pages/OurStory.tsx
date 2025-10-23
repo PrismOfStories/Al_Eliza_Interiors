@@ -149,6 +149,9 @@ function About() {
           fill
           className="object-cover"
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
         />
 
         {/* Overlay */}
@@ -272,6 +275,9 @@ function About() {
                 alt={`${member.name} - ${member.role}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                crossOrigin="anonymous"
+                referrerPolicy="no-referrer"
               />
 
               <div className="absolute inset-0 flex translate-y-12 transform items-end justify-start bg-black/40 opacity-0 transition-all duration-500 hover:translate-y-0 group-hover:opacity-100">
@@ -298,6 +304,9 @@ function About() {
                   alt={`${member.name} - ${member.role}`}
                   fill
                   className="object-fit transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
                 />
               </figure>
 
@@ -342,6 +351,8 @@ function About() {
                     fill
                     className="object-contain opacity-60 grayscale transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:grayscale-0"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
+                    crossOrigin="anonymous"
+                    referrerPolicy="no-referrer"
                   />
                 </figure>
               </div>
@@ -485,6 +496,9 @@ function About() {
                 alt="Al-Eliza Interiors consultation space"
                 fill
                 className="w-full object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                crossOrigin="anonymous"
+                referrerPolicy="no-referrer"
               />
             </div>
           </figure>

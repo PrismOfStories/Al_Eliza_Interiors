@@ -80,6 +80,8 @@ export default function Header() {
             height={logoSize}
             className="transition-all duration-300"
             priority
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
           />
         </Link>
 

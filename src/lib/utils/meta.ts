@@ -14,13 +14,6 @@ export const icons = {
     {
       rel: "icon",
       type: "image/png",
-      sizes: "32x32",
-      url: "/favicon-dark-32x32.png",
-      media: "(prefers-color-scheme: dark)",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
       sizes: "96x96",
       url: "/favicon-96x96.png",
     },
@@ -30,13 +23,6 @@ export const icons = {
       sizes: "16x16",
       url: "/favicon-16x16.png",
       media: "(prefers-color-scheme: light)",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      sizes: "16x16",
-      url: "/favicon-dark-16x16.png",
-      media: "(prefers-color-scheme: dark)",
     },
   ],
   apple: [

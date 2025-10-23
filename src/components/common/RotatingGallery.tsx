@@ -134,6 +134,9 @@ export default function SemiCircleFan() {
               fill
               className="rounded-xl object-cover"
               priority={i < 4}
+              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 70vw"
+              crossOrigin="anonymous"
+              referrerPolicy="no-referrer"
             />
           </div>
         ))}

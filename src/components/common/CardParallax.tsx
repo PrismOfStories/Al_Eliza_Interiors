@@ -84,6 +84,9 @@ const Card = ({
             fill
             className="absolute inset-0 rounded-xl object-cover"
             priority
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 70vw"
           />
 
           <div className="absolute inset-0 rounded-xl bg-black/40"></div>

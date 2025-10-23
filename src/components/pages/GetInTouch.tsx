@@ -204,6 +204,9 @@ export default function GetInTouch() {
             fill
             className="object-cover"
             priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
           />
 
           {/* Black Overlay */}

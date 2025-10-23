@@ -129,6 +129,9 @@ const Column = ({
             alt={`Al-Eliza Interiors project showcase ${i + 1}`}
             fill
             style={{ objectFit: "cover" }}
+            sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 25vw"
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
         </figure>
