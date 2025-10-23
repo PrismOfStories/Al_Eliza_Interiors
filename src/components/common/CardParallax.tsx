@@ -130,6 +130,9 @@ const Card = ({
               fill
               className="absolute inset-0 object-cover"
               priority
+              crossOrigin="anonymous"
+              referrerPolicy="no-referrer"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
           </div>
 

@@ -29,8 +29,7 @@ export default function Preloader() {
               className="masked-text text-[clamp(3.7rem,10vw,7rem)] font-extrabold"
               style={{
                 color: "transparent",
-                backgroundImage:
-                  "url('https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp')",
+                backgroundImage: "url('/images/preload.webp')",
                 backgroundSize: "200%",
                 backgroundPosition: "0 50%",
                 backgroundClip: "text",
@@ -44,11 +43,8 @@ export default function Preloader() {
             </h1>
           </div>
 
-          {/* Yellow progress line drawing from center to both sides */}
           <div className="relative h-2 w-full max-w-xs overflow-hidden">
-            {/* Left half expanding left from center */}
             <div className="progress-line-left bg-gold-dark absolute right-1/2 top-0 h-full origin-right" />
-            {/* Right half expanding right from center */}
             <div className="progress-line-right bg-gold-dark absolute left-1/2 top-0 h-full origin-left" />
           </div>
 
@@ -62,7 +58,6 @@ export default function Preloader() {
               }
             }
 
-            /* Animate both lines from center outward over 2 seconds */
             @keyframes drawLineLeft {
               0% {
                 width: 0;
@@ -84,14 +79,13 @@ export default function Preloader() {
               }
             }
 
-            /* Apply animation to lines */
             .progress-line-left {
               width: 0;
-              animation: drawLineLeft 2.5s forwards; /* 2.5 seconds */
+              animation: drawLineLeft 2.5s forwards;
             }
             .progress-line-right {
               width: 0;
-              animation: drawLineRight 2.5s forwards; /* 2.5 seconds */
+              animation: drawLineRight 2.5s forwards;
             }
           `}</style>
         </motion.div>

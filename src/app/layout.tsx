@@ -65,6 +65,12 @@ export default function RootLayout({
           as="image"
           fetchPriority="high"
         />
+        <link
+          rel="preload"
+          href="/images/preload.webp"
+          as="image"
+          fetchPriority="high"
+        />
       </head>
       <body
         className={`${poppins.variable} ${deltha.variable} ${environment.variable} bg-background antialiased`}

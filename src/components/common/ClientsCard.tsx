@@ -115,6 +115,8 @@ export default function ClientsCard() {
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 80px, 120px"
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
                 />
               </div>
             ))}
