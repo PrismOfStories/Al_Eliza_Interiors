@@ -19,33 +19,40 @@ export default function Header() {
   const controls = useAnimation();
   const lastScrollY = useRef(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const tickingRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      console.log(isScrollingDown);
+      if (!tickingRef.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
-        // ↓ Scroll down — hide
-        if (!isScrollingDown) {
-          setIsScrollingDown(true);
-          controls.start({
-            y: -150,
-            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
-          });
-        }
-      } else if (currentScrollY < lastScrollY.current) {
-        // ↑ Scroll up — show
-        if (isScrollingDown) {
-          setIsScrollingDown(false);
-          controls.start({
-            y: 0,
-            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
-          });
-        }
+          if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
+            // ↓ Scroll down — hide
+            if (!isScrollingDown) {
+              setIsScrollingDown(true);
+              controls.start({
+                y: -150,
+                transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+              });
+            }
+          } else if (currentScrollY < lastScrollY.current) {
+            // ↑ Scroll up — show
+            if (isScrollingDown) {
+              setIsScrollingDown(false);
+              controls.start({
+                y: 0,
+                transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+              });
+            }
+          }
+
+          lastScrollY.current = currentScrollY;
+          tickingRef.current = false;
+        });
+
+        tickingRef.current = true;
       }
-
-      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -69,7 +76,7 @@ export default function Header() {
     <motion.div
       animate={controls}
       initial={{ y: 0 }}
-      className="fixed left-0 top-0 z-50 w-full  px-4 pt-1 transition-transform duration-500 md:px-12"
+      className="fixed left-0 top-0 z-50 w-full px-4 pt-1 transition-transform duration-500 md:px-12"
     >
       <div className="flex items-center justify-between">
         <Link href="/" className="">
@@ -80,8 +87,6 @@ export default function Header() {
             height={logoSize}
             className="transition-all duration-300"
             priority
-            crossOrigin="anonymous"
-            referrerPolicy="no-referrer"
           />
         </Link>
 
@@ -98,7 +103,7 @@ export default function Header() {
               top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
               right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
               skewX: isActive ? "0deg" : "-20deg",
-              backgroundColor: isActive ? "#161616" : "rgba(0,0,0,0)", // Black when active, transparent otherwise
+              backgroundColor: isActive ? "#161616" : "rgba(0,0,0,0)",
               transition: {
                 duration: 0.75,
                 type: "tween",
