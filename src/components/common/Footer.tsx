@@ -100,13 +100,13 @@ export default function Footer() {
           <div>
             <Link
               href="tel:+971522889300"
-              className="hover:text-gold block text-sm text-neutral-400"
+              className="hover:text-gold block min-h-[8px] py-2 text-sm text-neutral-400"
             >
               +971 522 889 300
             </Link>
             <Link
               href="tel:+971543783000"
-              className="hover:text-gold block text-sm text-neutral-400"
+              className="hover:text-gold block min-h-[8px] py-2 text-sm text-neutral-400"
             >
               +971 54 378 3000
             </Link>
