@@ -27,7 +27,7 @@ export default function ScrollHero() {
             className="flex min-h-screen w-full flex-wrap items-center justify-center text-center"
           >
             <h2 className="text-gold-dark font-heading block px-8 text-center text-[clamp(1.5rem,5vw,2.5rem)] font-light uppercase leading-[1.8] tracking-[0.4rem] sm:leading-[1.5] sm:tracking-[0.6rem]">
-              Welcome to <br /> Al-Eliza Interiors
+              Welcome to <br /> Al Eliza Interiors
             </h2>
           </Animator>
         </ScrollPage>

@@ -89,13 +89,14 @@ export default function Header() {
           className="relative mb-10 flex items-center justify-center"
         >
           <motion.div
-            className="absolute right-0 top-0 overflow-hidden bg-[#161616]"
+            className="absolute right-0 top-0 overflow-hidden"
             animate={{
               width: isActive ? (isMobile ? "80vw" : "340px") : "100px",
               height: isActive ? (isMobile ? "60vh" : "410px") : "40px",
               top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
               right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
               skewX: isActive ? "0deg" : "-20deg",
+              backgroundColor: isActive ? "#161616" : "rgba(0,0,0,0)", // Black when active, transparent otherwise
               transition: {
                 duration: 0.75,
                 type: "tween",
@@ -108,6 +109,7 @@ export default function Header() {
               top: "0px",
               right: "0px",
               skewX: "-20deg",
+              backgroundColor: "rgba(0,0,0,0)",
             }}
           >
             <div
