@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import Layout from "@/components/common/Layout";
 import "./globals.css";
-import WhatsAppButton from "@/components/common/WhatsAppButton";
 
 const deltha = localFont({
   src: [
@@ -76,7 +75,6 @@ export default function RootLayout({
         className={`${poppins.variable} ${deltha.variable} ${environment.variable} bg-background antialiased`}
       >
         <Layout>{children}</Layout>
-        <WhatsAppButton />
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import Preloader from "../common/Preloader";
 import Header from "../header/Header";
 import Footer from "../common/Footer";
 import SmoothScrollProvider from "../common/SmoothScroll";
+import WhatsAppButton from "./WhatsAppButton";
 
 let hasShownPreloader = false;
 
@@ -45,6 +46,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             {children}
             <Footer />
           </SmoothScrollProvider>
+          <WhatsAppButton />
         </motion.div>
       )}
     </Fragment>
