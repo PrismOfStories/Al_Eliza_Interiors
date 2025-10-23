@@ -58,12 +58,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          rel="preload"
-          href="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp"
-          as="image"
-          fetchPriority="high"
-        />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link
           rel="preload"
           href="/images/preload.webp"
