@@ -100,7 +100,7 @@ const Card = ({
             </h2>
 
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <p className="font-paragraph w-full max-w-3xl text-center text-base leading-[1.8] tracking-[0.21rem] text-white sm:text-left  sm:text-lg sm:leading-[1.5] lg:text-xl">
+              <p className="font-paragraph w-full max-w-3xl text-center text-base leading-[1.8] tracking-[0.15rem] text-white sm:text-left  sm:text-lg sm:leading-[1.5] lg:text-xl">
                 {description}
               </p>
 

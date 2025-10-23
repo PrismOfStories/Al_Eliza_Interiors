@@ -32,7 +32,7 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
       <div className="group relative flex h-full w-full items-center justify-center bg-transparent [transform:skewX(20deg)]">
         {/* Top Line */}
         <motion.span
-          className="bg-gold absolute left-1/2 top-1/2 h-[2px] w-[36px] -translate-x-1/2"
+          className="absolute left-1/2 top-1/2 h-[2.2px] w-[36px] -translate-x-1/2 bg-zinc-500"
           animate={{
             rotate: isActive ? 45 : 0,
             y: topLineY,
@@ -42,7 +42,7 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
 
         {/* Middle Line - Only visible when not active */}
         <motion.span
-          className="bg-gold absolute left-1/2 top-1/2 h-[2px] w-[36px] -translate-x-1/2"
+          className="absolute left-1/2 top-1/2 h-[2.2px] w-[36px] -translate-x-1/2 bg-zinc-500"
           animate={{
             opacity: middleLineOpacity,
             x: middleLineX,
@@ -53,7 +53,7 @@ export default function Button({ isActive, toggleMenu }: ButtonProps) {
 
         {/* Bottom Line */}
         <motion.span
-          className="bg-gold absolute left-1/2 top-1/2 h-[2px] w-[36px] -translate-x-1/2"
+          className="absolute left-1/2 top-1/2 h-[2.2px] w-[36px] -translate-x-1/2 bg-zinc-500"
           animate={{
             rotate: isActive ? -45 : 0,
             y: bottomLineY,

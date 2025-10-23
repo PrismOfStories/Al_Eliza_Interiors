@@ -192,7 +192,7 @@ export default function TestimonialsSection() {
     >
       <div className="mx-auto max-w-7xl">
         <header className="mb-10 text-center md:mb-20" ref={headerRef}>
-          <p className="testimonial-animate text-gold-dark font-paragraph mb-4 text-[clamp(10px,1.8vw,16px)] font-light uppercase tracking-[0.3rem]">
+          <p className="testimonial-animate font-paragraph mb-4 text-[clamp(10px,1.8vw,16px)] font-light uppercase tracking-[0.3rem] text-zinc-500">
             Happy Clients
           </p>
           <h2 className="testimonial-animate font-heading text-[clamp(28px,5vw,72px)] font-black uppercase leading-tight tracking-[0.4rem] text-black">

@@ -119,7 +119,7 @@ export default function ArchitectureHero() {
         <header className="w-full">
           <p
             ref={establishedRef}
-            className="text-gold-dark font-paragraph text-center text-sm font-[500] uppercase tracking-[0.3rem] sm:text-base lg:text-lg"
+            className="font-paragraph text-center text-sm font-[500] uppercase tracking-[0.3rem] text-zinc-500 sm:text-base lg:text-lg"
           >
             Established in 2021
           </p>
@@ -130,7 +130,7 @@ export default function ArchitectureHero() {
             <div className="font-paragraph mb-6 text-center text-7xl font-[300]  leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
               <p>+5</p>
             </div>
-            <p className="font-paragraph text-gold-dark ml-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] sm:text-lg lg:text-start">
+            <p className="font-paragraph ml-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] text-zinc-500 sm:text-lg lg:text-start">
               Years of experience
             </p>
           </article>
@@ -150,7 +150,7 @@ export default function ArchitectureHero() {
             <div className="font-paragraph mb-6 text-center text-7xl font-[300] leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
               <p>100+</p>
             </div>
-            <p className="font-paragraph text-gold-dark mr-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] sm:text-lg lg:text-start">
+            <p className="font-paragraph mr-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] text-zinc-500 sm:text-lg lg:text-start">
               Successful Projects
             </p>
           </article>
@@ -160,7 +160,7 @@ export default function ArchitectureHero() {
           <div>
             <p
               ref={descRef}
-              className="project-animate font-paragraph mx-auto max-w-[80vh] text-center text-sm font-[300] leading-[1.8] tracking-[0.21rem] text-black sm:text-base sm:leading-[1.8] lg:mx-0 lg:text-start lg:text-lg"
+              className="project-animate font-paragraph mx-auto max-w-[80vh] text-center text-sm font-[300] leading-[1.8] tracking-[0.21rem] text-zinc-600 sm:text-base sm:leading-[1.8] lg:mx-0 lg:text-start lg:text-lg"
             >
               At Al Eliza Interior Design, we transform residential and
               commercial spaces into refined, functional environments. Our
@@ -170,9 +170,9 @@ export default function ArchitectureHero() {
             </p>
           </div>
           <div className="exclusive-text">
-            <p className="project-animate lg:text- font-paragraph mx-auto mb-5 max-w-[50ch] text-center text-sm font-[300] leading-[1.8] tracking-[0.21rem] text-black sm:text-base sm:leading-[1.5] lg:mx-0 lg:ml-auto lg:text-right">
+            <p className="project-animate lg:text- font-paragraph mx-auto mb-5 max-w-[50ch] text-center text-sm font-[300] leading-[1.8] tracking-[0.21rem] text-zinc-500 sm:text-base sm:leading-[1.5] lg:mx-0 lg:ml-auto lg:text-right">
               Ready to begin?{" "}
-              <span className="text-brown font-paragraph font-medium italic ">
+              <span className="font-paragraph font-medium italic text-zinc-500 ">
                 Contact us
               </span>{" "}
               to bring your vision to life.

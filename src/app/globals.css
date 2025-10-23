@@ -7,6 +7,7 @@
   --gold-dark: #a37e41;
   --color-brown: #25211d;
   --silver: #a1a1a1;
+  --gun-metal-gray: #818589;
 }
 
 @theme inline {
@@ -16,6 +17,7 @@
   --color-gold-dark: var(--gold-dark);
   --color-brown: var(--color-brown);
   --color-silver: var(--silver);
+  --color-gun-metal-gray: var(--gun-metal-gray);
   --font-deltha: var(--font-deltha);
   --font-environment: var(--font-environment);
   --font-poppins: var(--font-poppins);
