@@ -1,85 +1,110 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Logo from "@public/images/logo.webp";
-import { motion, useAnimation } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Button from "./Button";
 import Nav from "./Nav";
 import Link from "next/link";
 import Image from "next/image";
-import { AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
+
+gsap.registerPlugin(useGSAP);
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
   const logoSize = isMobile ? 100 : 150;
   const menuRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const menuContainerRef = useRef<HTMLDivElement>(null);
 
-  const controls = useAnimation();
   const lastScrollY = useRef(0);
-  const [isScrollingDown, setIsScrollingDown] = useState(false);
   const tickingRef = useRef(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!tickingRef.current) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
+  // GSAP context for scroll animation
+  useGSAP(
+    () => {
+      const handleScroll = () => {
+        if (!tickingRef.current) {
+          tickingRef.current = true;
 
-          if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
-            // ↓ Scroll down — hide
-            if (!isScrollingDown) {
-              setIsScrollingDown(true);
-              controls.start({
+          window.requestAnimationFrame(() => {
+            const currentScrollY = window.scrollY;
+
+            // Scroll down - hide header
+            if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
+              gsap.to(headerRef.current, {
                 y: -150,
-                transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+                duration: 0.5,
+                ease: "power3.out",
               });
             }
-          } else if (currentScrollY < lastScrollY.current) {
-            // ↑ Scroll up — show
-            if (isScrollingDown) {
-              setIsScrollingDown(false);
-              controls.start({
+            // Scroll up - show header
+            else if (currentScrollY < lastScrollY.current) {
+              gsap.to(headerRef.current, {
                 y: 0,
-                transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+                duration: 0.5,
+                ease: "power3.out",
               });
             }
-          }
 
-          lastScrollY.current = currentScrollY;
-          tickingRef.current = false;
-        });
+            lastScrollY.current = currentScrollY;
+            tickingRef.current = false;
+          });
+        }
+      };
 
-        tickingRef.current = true;
-      }
-    };
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
+    },
+    { scope: headerRef }
+  );
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [controls, isScrollingDown]);
+  // GSAP context for menu animation
+  useGSAP(
+    () => {
+      gsap.to(menuContainerRef.current, {
+        width: isActive ? (isMobile ? "80vw" : "340px") : "100px",
+        height: isActive ? (isMobile ? "60vh" : "410px") : "40px",
+        top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
+        right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
+        skewX: isActive ? "0deg" : "-20deg",
+        backgroundColor: isActive ? "#161616" : "rgba(0,0,0,0)",
+        duration: 0.75,
+        ease: "power3.inOut",
+      });
+    },
+    { dependencies: [isActive, isMobile], scope: menuContainerRef }
+  );
 
-  useEffect(() => {
-    if (!isActive) return;
+  // Click outside to close
+  useGSAP(
+    () => {
+      if (!isActive) return;
 
-    const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsActive(false);
-      }
-    };
+      const handleClickOutside = (e: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+          setIsActive(false);
+        }
+      };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isActive]);
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    },
+    { dependencies: [isActive] }
+  );
 
   return (
-    <motion.div
-      animate={controls}
-      initial={{ y: 0 }}
-      className="fixed left-0 top-0 z-50 w-full px-4 pt-1 transition-transform duration-500 md:px-12"
+    <div
+      ref={headerRef}
+      className="fixed left-0 top-0 z-50 w-full px-4 pt-1 md:px-12"
+      style={{ willChange: "transform" }}
     >
       <div className="flex items-center justify-between">
-        <Link href="/" className="">
+        <Link href="/">
           <Image
             src={Logo}
             alt="Al Eliza Interior Logo"
@@ -90,33 +115,20 @@ export default function Header() {
           />
         </Link>
 
-        {/* Menu Button + Nav */}
         <div
           ref={menuRef}
           className="relative mb-10 flex items-center justify-center"
         >
-          <motion.div
+          <div
+            ref={menuContainerRef}
             className="absolute right-0 top-0 overflow-hidden"
-            animate={{
-              width: isActive ? (isMobile ? "80vw" : "340px") : "100px",
-              height: isActive ? (isMobile ? "60vh" : "410px") : "40px",
-              top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
-              right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
-              skewX: isActive ? "0deg" : "-20deg",
-              backgroundColor: isActive ? "#161616" : "rgba(0,0,0,0)",
-              transition: {
-                duration: 0.75,
-                type: "tween",
-                ease: [0.76, 0, 0.24, 1],
-              },
-            }}
-            initial={{
+            style={{
               width: "100px",
               height: "40px",
               top: "0px",
               right: "0px",
-              skewX: "-20deg",
               backgroundColor: "rgba(0,0,0,0)",
+              willChange: "transform, width, height",
             }}
           >
             <div
@@ -126,11 +138,9 @@ export default function Header() {
                   : "h-full w-full"
               }
             >
-              <AnimatePresence>
-                {isActive && <Nav closeMenu={() => setIsActive(false)} />}
-              </AnimatePresence>
+              {isActive && <Nav closeMenu={() => setIsActive(false)} />}
             </div>
-          </motion.div>
+          </div>
 
           <Button
             isActive={isActive}
@@ -138,6 +148,6 @@ export default function Header() {
           />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
