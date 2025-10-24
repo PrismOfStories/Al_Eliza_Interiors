@@ -164,7 +164,7 @@ function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
-              className="font-heading text-5xl font-bold uppercase leading-[1.1] tracking-[0.08em]
+              className="font-outfit text-5xl font-bold uppercase leading-[1.1] tracking-[0.08em]
         text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
             >
               About <br />
@@ -183,21 +183,22 @@ function About() {
           <div className="mb-18 grid grid-cols-1 items-start gap-12 md:grid-cols-3 lg:mb-48">
             <div className="story-animate col-span-1 flex items-center gap-2">
               <span className="bg-gold h-3 w-3" aria-hidden="true"></span>
-              <span className=" font-heading text-sm font-semibold  uppercase tracking-[0.4rem] text-white  sm:tracking-[0.5rem]">
+              <span className=" font-outfit text-sm font-semibold  uppercase tracking-[0.4rem] text-white  sm:tracking-[0.5rem]">
                 Our Mission
               </span>
             </div>
 
             <div className="story-animate col-span-2 text-left">
-              <h2 className="font-paragraph text-silver text-xl font-[200] leading-[1.8] tracking-[0.2rem] sm:leading-[1.5] sm:tracking-[0.5rem] md:text-3xl">
+              <h2 className="font-paragraph text-silver text-xl font-light leading-relaxed tracking-[0.1rem] sm:leading-[1.6] sm:tracking-[0.1rem] md:text-3xl md:tracking-[0.1rem]">
                 At AL Eliza, we transform spaces with{" "}
-                <span className="font-[200]">thoughtful design and care</span>{" "}
-                <span className="font-[200] text-white">
-                  creating spaces that inspire, nurture, and reflect your unique
-                  way of living.
+                <span className="font-light">thoughtful design and care</span>{" "}
+                <span className="font-light text-white">
+                  creating spaces that inspire, nurture, and reflect your unique way of
+                  living.
                 </span>
               </h2>
             </div>
+
           </div>
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
@@ -255,10 +256,10 @@ function About() {
       {/* Team Section */}
       <section className="px-6 sm:py-20 md:px-12" aria-label="Meet our team">
         <div className="mx-auto mb-10 max-w-7xl text-left lg:mb-20">
-          <h2 className="story-animate font-heading text-gold text-center text-[clamp(1.5rem,5vw,3rem)] font-medium tracking-[0.4rem] sm:text-left sm:tracking-[0.5rem]">
+          <h2 className="story-animate font-outfit text-gold text-center text-[clamp(1.5rem,5vw,3rem)] font-medium tracking-[0.4rem] sm:text-left sm:tracking-[0.1rem]">
             Meet Our Team
           </h2>
-          <p className="story-animate text-silver font-paragraph mt-4 text-sm  tracking-[0.2rem] lg:text-lg">
+          <p className="story-animate text-silver font-paragraph mt-4 text-sm  tracking-[0.1rem] lg:text-lg">
             Get to know the people turning ideas into inspiring homes and
             gardens.
           </p>
@@ -328,7 +329,7 @@ function About() {
       <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <header className="mb-12 text-center lg:mb-16">
-            <h2 className="story-animate font-heading text-gold mb-10 w-full text-center  text-[clamp(1rem,5vw,3rem)] font-medium leading-[1.8] tracking-[0.5rem] sm:leading-[1.5] lg:mb-20">
+            <h2 className="story-animate font-outfit text-gold mb-10 w-full text-center  text-[clamp(1rem,5vw,3rem)] font-medium leading-[1.8] tracking-[0.2rem] sm:leading-[1.5] lg:mb-20">
               OUR PRESTIGIOUS CLIENTS
             </h2>
           </header>

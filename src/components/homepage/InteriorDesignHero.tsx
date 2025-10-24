@@ -136,7 +136,7 @@ export default function ArchitectureHero() {
           </article>
 
           <div className="project-animate">
-            <h2 className="font-heading  space-y-4 text-center font-black text-black lg:text-start">
+            <h2 className="font-paragraph  space-y-4 text-center font-black text-black lg:text-start">
               <span className="block w-full text-center text-3xl tracking-[0.6rem] sm:text-4xl lg:text-6xl xl:text-7xl">
                 YOUR DREAMS
               </span>
@@ -165,8 +165,8 @@ export default function ArchitectureHero() {
               At Al Eliza Interior Design, we transform residential and
               commercial spaces into refined, functional environments. Our
               designs elevate mood, enhance utility, and add lasting value.
-              Collaborating closely, we craft elegant yet practical interiors
-              that leave remarkable first impressions.
+              {/* Collaborating closely, we craft elegant yet practical interiors
+              that leave remarkable first impressions. */}
             </p>
           </div>
           <div className="exclusive-text">
@@ -177,15 +177,15 @@ export default function ArchitectureHero() {
               </span>{" "}
               to bring your vision to life.
             </p>
-            <div className="project-animate flex justify-center lg:justify-end">
+            <div className="project-animate  flex justify-center lg:justify-end">
               <Link
                 ref={ctaRef}
                 href="/get-in-touch"
-                className="bg-gold hover:bg-gold-dark group inline-flex cursor-pointer px-3 py-3 text-[12px] font-medium text-white transition-colors duration-300 sm:px-8 sm:py-4 sm:text-lg"
+                className="bg-black hover:bg-gold-dark group inline-flex cursor-pointer px-3 py-3 text-[12px] font-medium text-white transition-colors duration-300 sm:px-8 sm:py-4 sm:text-lg"
                 role="button"
                 aria-label="Tell us about your project - Contact Al-Eliza Interiors"
               >
-                <span className="font-heading flex items-center gap-2 font-[300] [transform:skewX(20deg)] sm:tracking-[0.20rem]">
+                <span className="font-paragraph flex items-center gap-2 font-[300] [transform:skewX(20deg)] sm:tracking-[0.20rem]">
                   Tell us about your project
                   <FaChevronRight aria-hidden="true" />
                 </span>

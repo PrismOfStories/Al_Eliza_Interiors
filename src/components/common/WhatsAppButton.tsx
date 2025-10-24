@@ -1,45 +1,77 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 export default function WhatsAppButton() {
   const whatsappUrl =
     "https://api.whatsapp.com/send/?phone=971543783000&text&type=phone_number&app_absent=0";
+  const phoneUrl = "tel:+971543783000";
 
   return (
-    <motion.div
-      initial={{ scale: 0, rotate: -180 }}
-      animate={{ scale: 1, rotate: 0 }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        delay: 0.2,
-      }}
-      className="fixed bottom-6 right-6 z-50"
-    >
-      <motion.a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-        whileHover={{
-          scale: 1.1,
-          rotate: 5,
-          transition: {
-            type: "spring",
-            stiffness: 400,
-            damping: 10,
-          },
+    <>
+      <motion.div
+        initial={{ scale: 0, rotate: -180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 20,
+          delay: 0.2,
         }}
-        whileTap={{ scale: 0.95 }}
-        aria-label="Contact us on WhatsApp"
+        className="hidden md:block fixed bottom-6 right-6 z-50"
       >
-        <div className="flex h-14 w-14 items-center justify-center rounded-xl  bg-zinc-700 shadow-lg transition-colors duration-200 hover:bg-green-600">
-          <FaWhatsapp className="h-10 w-10 text-zinc-100 " />
+        <motion.a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+          whileHover={{
+            scale: 1.1,
+            rotate: 5,
+            transition: {
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            },
+          }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Contact us on WhatsApp"
+        >
+          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-zinc-700 shadow-lg transition-colors duration-200 hover:bg-green-600">
+            <FaWhatsapp className="h-10 w-10 text-zinc-100" />
+          </div>
+        </motion.a>
+      </motion.div>
+
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        className="fixed bottom-0 left-0 z-50 w-full bg-black md:hidden"
+      >
+        <div className="flex justify-between">
+          {/* WhatsApp */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-1 items-center justify-center py-3 hover:bg-[#1ebe5d] transition"
+            aria-label="Chat on WhatsApp"
+          >
+            <FaWhatsapp className="text-white text-3xl" />
+          </a>
+
+          {/* Call */}
+          <a
+            href={phoneUrl}
+            className="flex flex-1 items-center justify-center py-3 hover:bg-[#1ebe5d] transition"
+            aria-label="Call Us"
+          >
+            <FaPhoneAlt className="text-white text-2xl" />
+          </a>
         </div>
-      </motion.a>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }

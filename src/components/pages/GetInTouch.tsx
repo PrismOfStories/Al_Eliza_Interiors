@@ -140,7 +140,7 @@ export default function GetInTouch() {
               CONTACT US
             </p>
 
-            <h1 className="contact-animate font-heading mb-6 text-6xl font-bold uppercase leading-[1.3] tracking-[0.2rem] text-white md:text-8xl md:tracking-[0.8rem]">
+            <h1 className="contact-animate font-outfit mb-6 text-6xl font-bold uppercase leading-[1.3] tracking-[0.2rem] text-white md:text-8xl md:tracking-[0.1rem]">
               GET IN TOUCH
             </h1>
 
@@ -314,7 +314,7 @@ export default function GetInTouch() {
         </p>
 
         {/* Main Title */}
-        <h2 className="ctaContent-animate font-heading text-gold mb-8 text-4xl leading-[1.5] tracking-[0.25rem] md:text-8xl lg:text-6xl">
+        <h2 className="ctaContent-animate font-heading text-white mb-8 text-5xl leading-[1.5] tracking-[0.1rem] md:text-8xl lg:text-6xl">
           VISIT US
         </h2>
 
