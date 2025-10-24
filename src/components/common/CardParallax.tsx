@@ -95,7 +95,7 @@ const Card = ({
             ref={contentRef}
             className="relative z-10 flex h-full flex-col justify-between sm:p-8"
           >
-            <h2 className="font-heading m-0 w-full pt-5 text-center text-2xl font-semibold leading-[1.4] text-white sm:text-3xl sm:leading-[1.5] sm:tracking-[0.4rem] md:pt-0 lg:text-5xl ">
+            <h2 className="font-outfit m-0 w-full pt-5 text-center text-2xl font-semibold leading-[1.4] text-white sm:text-3xl sm:leading-[1.5] sm:tracking-[0.4rem] md:pt-0 lg:text-5xl ">
               {title}
             </h2>
 
@@ -106,9 +106,9 @@ const Card = ({
 
               <Link
                 href="/expertise"
-                className="bg-gold-dark hover:bg-gold font-poppins group inline-flex px-6 py-3 text-sm tracking-widest text-white transition-colors duration-300 [transform:skewX(-20deg)] sm:px-8 sm:py-4 sm:text-base"
+                className="bg-black hover:bg-gold font-poppins group inline-flex px-6 py-3 text-sm tracking-widest text-white transition-colors duration-300 [transform:skewX(-20deg)] sm:px-8 sm:py-4 sm:text-base"
               >
-                <span className="font-heading flex items-center gap-2 font-[400] tracking-[0.20rem] [transform:skewX(20deg)]">
+                <span className="font-outfit flex items-center gap-2 font-[400] tracking-[0.20rem] [transform:skewX(20deg)]">
                   See more
                   <span className="sr-only">about {title}</span>
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
@@ -142,7 +142,7 @@ const Card = ({
                 From Concept to Construction
               </p>
 
-              <h2 className="text-gold font-paragraph mb-4 text-xl font-semibold uppercase sm:mb-6 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+              <h2 className="text-black font-paragraph mb-4 text-xl font-semibold uppercase sm:mb-6 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 {title}
               </h2>
 
@@ -152,7 +152,7 @@ const Card = ({
 
               <Link
                 href="/get-in-touch"
-                className="bg-gold-dark hover:bg-gold font-heading group inline-flex w-fit px-6 py-3 text-sm tracking-widest text-white transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg sm:px-8 sm:py-4 sm:text-base"
+                className="bg-black hover:bg-gold font-outfit group inline-flex w-fit px-6 py-3 text-sm tracking-widest text-white transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg sm:px-8 sm:py-4 sm:text-base"
               >
                 <span className="flex items-center gap-2 tracking-[0.2rem] [transform:skewX(20deg)]">
                   Contact us

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Poppins } from "next/font/google";
+import { Poppins, Outfit } from "next/font/google";
 import Layout from "@/components/common/Layout";
 import "./globals.css";
 
@@ -44,6 +44,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+   variable: "--font-outfit",
+});
+
 export const metadata: Metadata = {
   title: "Al Eliza Interior | Best Interior Design Company in Dubai, UAE",
   description:
@@ -68,7 +74,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${poppins.variable} ${deltha.variable} ${environment.variable} bg-background antialiased`}
+        className={`${poppins.variable} ${deltha.variable} ${environment.variable} ${outfit.variable} bg-background antialiased`}
       >
         <Layout>{children}</Layout>
       </body>

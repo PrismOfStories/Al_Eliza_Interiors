@@ -73,7 +73,7 @@ export default function ClientsCard() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="font-heading mb-10 w-full text-center text-xl leading-[1.8] tracking-[0.3rem] text-zinc-500 sm:leading-[1.5] lg:mb-20 lg:text-4xl"
+            className="font-outfit mb-10 w-full text-center text-xl leading-[1.8] tracking-[0.3rem] text-zinc-500 sm:leading-[1.5] lg:mb-20 lg:text-4xl"
           >
             OUR PRESTIGIOUS CLIENTS
           </motion.h2>

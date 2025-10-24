@@ -195,7 +195,7 @@ export default function TestimonialsSection() {
           <p className="testimonial-animate font-paragraph mb-4 text-[clamp(10px,1.8vw,16px)] font-light uppercase tracking-[0.3rem] text-zinc-500">
             Happy Clients
           </p>
-          <h2 className="testimonial-animate font-heading text-[clamp(28px,5vw,72px)] font-black uppercase leading-tight tracking-[0.4rem] text-black">
+          <h2 className="testimonial-animate font-outfit text-[clamp(28px,5vw,72px)] font-black uppercase leading-tight tracking-[0.4rem] text-black">
             Testimonials
           </h2>
         </header>
@@ -241,7 +241,7 @@ export default function TestimonialsSection() {
                 className="testimonial-animate flex flex-col rounded border border-[#E5E0D8]/40 bg-white p-5 shadow-sm transition-all hover:shadow-md sm:p-6 md:p-8"
               >
                 <header className="mb-4 sm:mb-5">
-                  <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.2rem] text-black sm:text-base md:text-lg">
+                  <h3 className="font-outfit text-sm font-semibold uppercase tracking-[0.2rem] text-black sm:text-base md:text-lg">
                     {testimonial.company}
                   </h3>
                 </header>
