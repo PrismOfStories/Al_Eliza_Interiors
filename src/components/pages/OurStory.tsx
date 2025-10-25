@@ -158,7 +158,7 @@ function About() {
         <div className="absolute inset-0 bg-black/70" aria-hidden="true"></div>
         <RevealWrapper>
           {/* Content */}
-          <header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-end sm:px-6 sm:text-right md:px-10">
+          <header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-end sm:px-6 sm:text-center md:px-10">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -193,12 +193,11 @@ function About() {
                 At AL Eliza, we transform spaces with{" "}
                 <span className="font-light">thoughtful design and care</span>{" "}
                 <span className="font-light text-white">
-                  creating spaces that inspire, nurture, and reflect your unique way of
-                  living.
+                  creating spaces that inspire, nurture, and reflect your unique
+                  way of living.
                 </span>
               </h2>
             </div>
-
           </div>
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">

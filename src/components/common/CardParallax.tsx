@@ -106,7 +106,7 @@ const Card = ({
 
               <Link
                 href="/expertise"
-                className="bg-black hover:bg-gold font-poppins group inline-flex px-6 py-3 text-sm tracking-widest text-white transition-colors duration-300 [transform:skewX(-20deg)] sm:px-8 sm:py-4 sm:text-base"
+                className="hover:bg-gold font-poppins group inline-flex bg-black px-6 py-3 text-sm tracking-widest text-white transition-colors duration-300 [transform:skewX(-20deg)] sm:px-8 sm:py-4 sm:text-base"
               >
                 <span className="font-outfit flex items-center gap-2 font-[400] tracking-[0.20rem] [transform:skewX(20deg)]">
                   See more
@@ -142,7 +142,7 @@ const Card = ({
                 From Concept to Construction
               </p>
 
-              <h2 className="text-black font-paragraph mb-4 text-xl font-semibold uppercase sm:mb-6 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+              <h2 className="font-paragraph mb-4 text-xl font-semibold uppercase text-black sm:mb-6 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 {title}
               </h2>
 
@@ -152,7 +152,7 @@ const Card = ({
 
               <Link
                 href="/get-in-touch"
-                className="bg-black hover:bg-gold font-outfit group inline-flex w-fit px-6 py-3 text-sm tracking-widest text-white transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg sm:px-8 sm:py-4 sm:text-base"
+                className="hover:bg-gold font-outfit group inline-flex w-fit bg-black px-6 py-3 text-sm tracking-widest text-white transition-all duration-300 [transform:skewX(-20deg)] hover:shadow-lg sm:px-8 sm:py-4 sm:text-base"
               >
                 <span className="flex items-center gap-2 tracking-[0.2rem] [transform:skewX(20deg)]">
                   Contact us

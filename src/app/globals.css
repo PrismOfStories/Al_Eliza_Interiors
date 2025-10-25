@@ -23,6 +23,7 @@
   --font-poppins: var(--font-poppins);
   --font-heading: var(--font-deltha);
   --font-paragraph: var(--font-poppins);
+  --font-outfit: var(--font-outfit);
 }
 
 /* @media (prefers-color-scheme: dark) {

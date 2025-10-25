@@ -137,10 +137,10 @@ export default function ArchitectureHero() {
 
           <div className="project-animate">
             <h2 className="font-paragraph  space-y-4 text-center font-black text-black lg:text-start">
-              <span className="block w-full text-center text-3xl tracking-[0.6rem] sm:text-4xl lg:text-6xl xl:text-7xl">
+              <span className="block w-full text-center text-3xl tracking-[0.3rem] sm:text-4xl lg:text-6xl xl:text-7xl">
                 YOUR DREAMS
               </span>
-              <span className="block w-full text-center text-2xl tracking-[0.6rem] sm:text-3xl lg:text-5xl xl:text-6xl">
+              <span className="block w-full text-center text-3xl tracking-[0.3rem] sm:text-4xl lg:text-6xl xl:text-7xl">
                 OUR EXPERTISE
               </span>
             </h2>
@@ -181,7 +181,7 @@ export default function ArchitectureHero() {
               <Link
                 ref={ctaRef}
                 href="/get-in-touch"
-                className="bg-black hover:bg-gold-dark group inline-flex cursor-pointer px-3 py-3 text-[12px] font-medium text-white transition-colors duration-300 sm:px-8 sm:py-4 sm:text-lg"
+                className="hover:bg-gold-dark group inline-flex cursor-pointer bg-black px-3 py-3 text-[12px] font-medium text-white transition-colors duration-300 sm:px-8 sm:py-4 sm:text-lg"
                 role="button"
                 aria-label="Tell us about your project - Contact Al-Eliza Interiors"
               >
