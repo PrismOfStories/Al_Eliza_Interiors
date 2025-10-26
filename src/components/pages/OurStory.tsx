@@ -144,7 +144,7 @@ function About() {
       >
         {/* Background Image */}
         <Image
-          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
+          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407535/ABOUT_AL_ELIZA_p8zwv9.png"
           alt="Al-Eliza Interiors office space background"
           fill
           className="object-cover"
@@ -333,31 +333,70 @@ function About() {
             </h2>
           </header>
 
-          <div
-            className="story-animate grid grid-cols-2 items-center gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-12 xl:grid-cols-6"
-            role="list"
-            aria-label="Client logos"
-          >
-            {logos.map((logo, index) => (
-              <div
-                key={index}
-                className="group flex items-center justify-center rounded-lg  p-4 transition-all duration-300"
-                role="listitem"
-              >
-                <figure className="relative h-20 w-full sm:h-28">
-                  <Image
-                    src={logo}
-                    alt={`Client ${index + 1} logo`}
-                    fill
-                    className="object-contain opacity-60 grayscale transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:grayscale-0"
-                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
-                    crossOrigin="anonymous"
-                    referrerPolicy="no-referrer"
-                  />
-                </figure>
-              </div>
-            ))}
+          <div className="space-y-10">
+
+            {/* --- ROW 1 : 4 LOGOS --- */}
+            <div className="grid grid-cols-4 gap-6">
+              {logos.slice(0, 4).map((logo, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center p-2"
+                  role="listitem"
+                >
+                  <figure className="relative h-16 w-full sm:h-20">
+                    <Image
+                      src={logo}
+                      alt={`Client ${index + 1} logo`}
+                      fill
+                      className="object-contain opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </figure>
+                </div>
+              ))}
+            </div>
+
+            {/* --- ROW 2 : 5 LOGOS --- */}
+            <div className="grid grid-cols-5 gap-6">
+              {logos.slice(4, 9).map((logo, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center p-2"
+                  role="listitem"
+                >
+                  <figure className="relative h-16 w-full sm:h-20">
+                    <Image
+                      src={logo}
+                      alt={`Client ${index + 5} logo`}
+                      fill
+                      className="object-contain opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </figure>
+                </div>
+              ))}
+            </div>
+
+            {/* --- ROW 3 : 4 LOGOS --- */}
+            <div className="grid grid-cols-4 gap-6">
+              {logos.slice(9, 13).map((logo, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center p-2"
+                  role="listitem"
+                >
+                  <figure className="relative h-16 w-full sm:h-20">
+                    <Image
+                      src={logo}
+                      alt={`Client ${index + 10} logo`}
+                      fill
+                      className="object-contain opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </figure>
+                </div>
+              ))}
+            </div>
+
           </div>
+
         </div>
       </section>
 
@@ -368,7 +407,7 @@ function About() {
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 md:grid-cols-2">
           <div className="flex flex-col justify-between">
-            <h2 className="story-animate font-heading flex items-center text-xl font-[300] tracking-[0.3rem] lg:text-3xl">
+            <h2 className="story-animate font-outfit flex items-center text-xl font-[300] tracking-[0.3rem] lg:text-3xl">
               <span
                 className="bg-gold mr-3 h-6 w-6 [transform:skewX(-20deg)]"
                 aria-hidden="true"
@@ -475,7 +514,7 @@ function About() {
               className="bg-gold  hover:bg-gold-dark group inline-flex w-52 cursor-pointer justify-center px-8 py-4 text-xl font-medium text-white transition-colors duration-300 [transform:skewX(-20deg)]"
               aria-label="Submit contact form"
             >
-              <span className="font-heading flex items-center gap-2 tracking-[0.25rem] [transform:skewX(20deg)]">
+              <span className="font-outfit flex items-center gap-2 tracking-[0.25rem] [transform:skewX(20deg)]">
                 Submit
               </span>
             </button>
@@ -492,7 +531,7 @@ function About() {
           <figure className="w-full lg:w-1/2">
             <div className="story-animate relative h-[300px] sm:h-[400px] sm:[transform:skewX(-10deg)] lg:h-[500px] lg:w-[500px]">
               <Image
-                src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376136/IMG_1583_jswnlj.jpg"
+                src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761406835/LET_S_CHAT_f8dl1o.png"
                 alt="Al-Eliza Interiors consultation space"
                 fill
                 className="w-full object-cover"
@@ -504,7 +543,7 @@ function About() {
           </figure>
 
           <div className="story-animate flex w-full items-center lg:w-1/2">
-            <h2 className="font-heading text-gold text-4xl font-bold leading-none tracking-[0.3rem] sm:text-7xl lg:text-9xl">
+            <h2 className="font-outfit text-gold text-4xl font-bold leading-none tracking-[0.3rem] sm:text-7xl lg:text-9xl">
               Let&apos;s Chat
             </h2>
           </div>

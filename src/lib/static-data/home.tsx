@@ -39,7 +39,7 @@ export const services = [
     color: "#000000",
   },
   {
-    title: "Landscaping",
+    title: "Exterior Landscaping",
     description:
       "Transform your outdoor spaces with creative and sustainable landscaping solutions.",
     src: "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760182478/06_4_cxzfrg.webp",

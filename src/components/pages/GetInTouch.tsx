@@ -290,7 +290,7 @@ export default function GetInTouch() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="bg-gold hover:bg-gold-dark font-heading group inline-flex w-full cursor-pointer justify-center px-8 py-3 text-lg tracking-[0.2rem] text-white transition-colors duration-300 [transform:skewX(-20deg)]"
+                  className="bg-gold hover:bg-gold-dark font-outfit group inline-flex w-full cursor-pointer justify-center px-8 py-3 text-lg tracking-[0.2rem] text-white transition-colors duration-300 [transform:skewX(-20deg)]"
                   aria-label="Send contact message"
                 >
                   <span className="flex items-center gap-2 [transform:skewX(20deg)]">
@@ -314,7 +314,7 @@ export default function GetInTouch() {
         </p>
 
         {/* Main Title */}
-        <h2 className="ctaContent-animate font-heading text-white mb-8 text-5xl leading-[1.5] tracking-[0.1rem] md:text-8xl lg:text-6xl">
+        <h2 className="ctaContent-animate font-outfit text-white mb-8 text-5xl leading-[1.5] tracking-[0.1rem] md:text-8xl lg:text-6xl">
           VISIT US
         </h2>
 
@@ -337,7 +337,7 @@ export default function GetInTouch() {
             <div className="space-y-12 pl-6">
               {/* Office Block */}
               <div>
-                <h3 className=" font-xl font-heading text-gold font-bold uppercase tracking-[0.2rem]">
+                <h3 className=" font-xl font-outfit text-gold font-bold uppercase tracking-[0.2rem]">
                   Head Office
                 </h3>
                 <p className="font-paragraph hover:text-gold mt-2 cursor-pointer text-base font-[300] tracking-[0.2rem] text-white transition-colors duration-300 sm:text-lg">
@@ -355,7 +355,7 @@ export default function GetInTouch() {
 
               {/* Email */}
               <div className="exclusive-text">
-                <h3 className="font-heading text-gold text-xl font-bold uppercase tracking-[0.2rem]">
+                <h3 className="font-outfit text-gold text-xl font-bold uppercase tracking-[0.2rem]">
                   Email
                 </h3>
                 <Link
@@ -368,7 +368,7 @@ export default function GetInTouch() {
 
               {/* Phone */}
               <div className="exclusive-text">
-                <h3 className="font-heading text-gold text-xl font-bold uppercase tracking-[0.2rem]">
+                <h3 className="font-outfit text-gold text-xl font-bold uppercase tracking-[0.2rem]">
                   Call Us
                 </h3>
 
