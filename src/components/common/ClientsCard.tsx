@@ -45,7 +45,7 @@ export default function ClientsCard() {
         { x: direction === "left" ? 0 : -totalWidth },
         {
           x: direction === "left" ? -totalWidth : 0,
-          duration: 35,
+          duration: 60,
           ease: "none",
           repeat: -1,
         }
