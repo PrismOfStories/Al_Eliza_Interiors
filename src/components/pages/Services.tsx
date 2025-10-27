@@ -152,7 +152,7 @@ export default function ServicesCombined() {
             START BUILDING
           </p>
           <h2 className="contentOne-animate font-outfit text-white mb-8 text-6xl font-extrabold leading-none md:text-8xl">
-            LET'S DESIGN
+            LET&apos;S DESIGN
           </h2>
           <p className="contentOne-animate font-paragraph text-silver mx-auto mb-12 max-w-2xl text-base font-[300] tracking-[0.15rem] md:text-lg">
             Ready to bring your vision to life? Whether it&apos;s a home, a
