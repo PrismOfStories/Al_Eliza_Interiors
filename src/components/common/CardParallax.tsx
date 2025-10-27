@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 type CardProps = {
@@ -95,7 +96,7 @@ const Card = ({
             ref={contentRef}
             className="relative z-10 flex h-full flex-col justify-between sm:p-8"
           >
-            <h2 className="font-outfit m-0 w-full pt-5 text-center text-2xl font-semibold leading-[1.4] text-white sm:text-3xl sm:leading-[1.5] sm:tracking-[0.4rem] md:pt-0 lg:text-5xl ">
+            <h2 className="font-outfit m-0 w-full uppercase pt-5 text-center text-2xl font-semibold leading-[1.4] text-white sm:text-3xl sm:leading-[1.5] sm:tracking-[0.4rem] md:pt-0 lg:text-5xl ">
               {title}
             </h2>
 

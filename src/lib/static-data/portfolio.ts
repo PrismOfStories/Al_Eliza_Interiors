@@ -1,7 +1,7 @@
 export const tabs = [
   { label: "All", value: "all" },
   { label: "Commercials", value: "commercials" },
-  { label: "Hospitality", value: "hospitality" },
+  // { label: "Hospitality", value: "hospitality" },
   { label: "Residential", value: "residential" },
   { label: "Restaurant", value: "restaurant" },
   { label: "Retail", value: "retail" },
@@ -73,12 +73,30 @@ export const projects = [
       {
         name: "Rag",
         images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761328499/36_5_m9nuqz.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761328501/IMG_0404_2_zsne4j.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376500/IMG_0404_2_b2ploa.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376497/fh_4_vpw1fh.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376494/36_5_we7plh.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376494/36_4_wefhm6.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585292/IMG_0403_3_mh0vrl.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585298/MEETING_ROOM_1__2_bqwt76.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585293/IMG_0406_3_bit4is.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585294/MEETING_ROOM_1__01_llzsyl.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585290/MEETING_ROOM_2__01_sbpa0x.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585272/IMG_0407_2_kcdklk.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585271/IMG_0404_2_aktdid.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585266/CABIN_CORRIDOR_av1xhr.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585265/HUDDLE_ROOM_01_bkhziv.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585265/HUDDLE_ROOM_3_nryejg.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585263/HUDDLE_ROOM_2_ocuqvb.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585262/PANTRY_1_huvlzs.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585261/ENTRANCE_FH_METAL_4_iog2ju.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585259/Gemini_Generated_Image_n33oorn33oorn33o_2_lihfwo.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585258/Gemini_Generated_Image_k7d92mk7d92mk7d9_2_xyzqjb.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585257/fh_4_nbj5ri.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585257/ENTRANCE_FH_METAL_3_ndni00.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585255/CABIN_1_eu5awc.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585254/CORRIDOR_3_moued6.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585253/CORRIDOR_01_vxlgnz.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585250/CABIN_LOBBY_2_pst768.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585250/CABIN_3_oof9pf.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585249/PHONE_BOOTH_2_laswzo.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585246/PANTRY_2_zybmrb.jpg"
         ],
       },
       {
@@ -99,27 +117,27 @@ export const projects = [
     ],
   },
 
-  {
-    id: 2,
-    title: "Hospitality",
-    category: "hospitality",
-    subcategories: [
-      {
-        name: "Luxury Hotel Lobby",
-        images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
-        ],
-      },
-      {
-        name: "Resort Lounge",
-        images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456014/IMG_6628_gcoud5.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456012/IMG_6610_lqgecg.jpg",
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: 2,
+  //   title: "Hospitality",
+  //   category: "hospitality",
+  //   subcategories: [
+  //     {
+  //       name: "Luxury Hotel Lobby",
+  //       images: [
+  //         "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
+  //         "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753375129/img4_te0upt.webp",
+  //       ],
+  //     },
+  //     {
+  //       name: "Resort Lounge",
+  //       images: [
+  //         "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456014/IMG_6628_gcoud5.jpg",
+  //         "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456012/IMG_6610_lqgecg.jpg",
+  //       ],
+  //     },
+  //   ],
+  // },
 
   {
     id: 3,
@@ -151,17 +169,35 @@ export const projects = [
     category: "restaurant",
     subcategories: [
       {
-        name: "Fine Dining Spaces",
+        name: "Arabian Majilis",
         images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456014/IMG_6628_gcoud5.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456011/IMG_6602_loigqm.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761485543/324270528_492662939673859_698805251888653373_n_kklwre.jpg",
         ],
       },
       {
-        name: "Casual Cafes",
+        name: "Chapathi Rashid",
         images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760455757/324270528_492662939673859_698805251888653373_n_wp2odi.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456010/472216578_1458259088464890_382310330078644935_n_clqtio.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486480/1_5_zjuqo6.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486480/3_4_krojz2.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486482/8_tbwluc.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486480/5_1_xq6mf9.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486480/6_1_tpstgv.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486481/7_2_cwifv3.jpg"
+        ],
+      },
+            {
+        name: "Cotha Cafe",
+        images: [
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487083/fa7cab3c-7d9d-413d-95b3-cacceb194469_slsk6b.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/be23b873-e309-4ff9-ba1b-90d88f02cd0e_tkezhy.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/ea162ef0-16d8-4e56-b169-fedaacc68ed9_wuvynq.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/45240ba2-5e08-424e-bd46-7eb5a9c156c6_bmzgxp.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/63a13723-398c-4d0e-833d-07feebb0198e_ttwrio.jpg"
+        ],
+      },      {
+        name: "Exotic Shoreline",
+        images: [
+          "",
         ],
       },
     ],
@@ -173,19 +209,17 @@ export const projects = [
     category: "retail",
     subcategories: [
       {
-        name: "Fashion Boutiques",
+        name: "Flower Shop",
         images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/fa13228c-c148-4355-937e-164ab472023e_wb5a7d.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/ccf5dab0-7149-4caa-92fa-4cdcb4de9ab6_rgs8qo.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491453/5efb083a-c8a5-45d2-b9cb-e1a2b6d0dc8a_hy4qd7.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491453/09a9dfca-af2a-4e87-b4b8-8d3037d3b166_r0y1ed.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491453/67251057-8149-4d9a-815a-0b11dafeb356_vcatcg.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491453/ccf5dab0-7149-4caa-92fa-4cdcb4de9ab6_veq5zi.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491455/fa13228c-c148-4355-937e-164ab472023e_j0pz9p.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491454/bc487908-e126-4148-b924-78986115f4f5_ntbyvh.jpg",
         ],
       },
-      {
-        name: "Luxury Stores",
-        images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456203/bc487908-e126-4148-b924-78986115f4f5_rxvqz8.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456200/5efb083a-c8a5-45d2-b9cb-e1a2b6d0dc8a_bdufit.jpg",
-        ],
-      },
+     
     ],
   },
 ];

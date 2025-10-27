@@ -128,7 +128,7 @@ export default function ArchitectureHero() {
         <main className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-stretch lg:gap-16">
           <article className="font-poppins project-animate">
             <div className="font-paragraph mb-6 text-center text-7xl font-[300]  leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
-              <p>+5</p>
+              <p>7+</p>
             </div>
             <p className="font-paragraph ml-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] text-zinc-500 sm:text-lg lg:text-start">
               Years of experience

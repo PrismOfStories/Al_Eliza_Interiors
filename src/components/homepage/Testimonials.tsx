@@ -20,59 +20,60 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    company: "delaware",
+    company: "VINOD",
     logo: "/logos/delaware.svg",
-    text: "From start to finish, Al Eliza Interiors showcased remarkable expertise and precision, turning our vision into reality with finesse. Truly among the best in the region.",
-    name: "Liam Cole",
+    text: "Al Eliza Interior Design transformed our office into a modern, inspiring space. Their creativity, attention to detail, and professionalism made the entire process effortless and enjoyable.",
+    name: "VINOD",
     title: "CEO",
     image: "/avatars/liam.jpg",
   },
   {
     id: 2,
-    company: "Amsterdam",
+    company: "RUSSELL AHMED",
     logo: "/logos/amsterdam.svg",
-    text: "Al Eliza Interiors transformed our space beautifully. Their creativity, precision, and passion for design made every detail stand out. Truly a seamless and inspiring experience.",
-    name: "Emma Gray",
+    text: "Working with Al Eliza Interior Design was an incredible experience. They turned our vision into a stunning reality with elegance, precision, and exceptional craftsmanship.",
+    name: "RUSSELL AHMED",
     title: "CEO",
     image: "/avatars/emma.jpg",
   },
   {
     id: 3,
-    company: "sweden",
+    company: "ASHFAK",
     logo: "/logos/sweden.svg",
-    text: "Al Eliza Interiors exceeded every expectation. Their eye for detail and seamless coordination brought elegance and functionality together beautifully. A truly professional team that delivers excellence every time.",
-    name: "Emily Hill",
+    text: "Al Eliza Interior Design transformed my restaurant into a stylish, welcoming space. Their creativity, attention to detail, and professionalism made the entire project exceptional.",
+    name: "ASHFAK",
     title: "CEO",
     image: "/avatars/emily.jpg",
   },
   {
     id: 4,
-    company: "norway",
+    company: "ALEX JOHNSON",
     logo: "/logos/norway.svg",
-    text: "The team at Al Eliza Interiors turned our ideas into reality with stunning precision. Their creativity and commitment made the entire design process smooth, inspiring, and deeply satisfying.",
+    text: "Al Eliza Interior Design brought warmth and sophistication to our home. Every corner reflects their thoughtful approach and commitment to creating timeless interiors.",
     name: "Alex Johnson",
     title: "CTO",
     image: "/avatars/alex.jpg",
   },
   {
     id: 5,
-    company: "finland",
+    company: "SARAH WILSON",
     logo: "/logos/finland.svg",
-    text: "Working with Al Eliza Interiors was a pleasure from concept to completion. Their refined taste, dedication, and flawless execution transformed our space into something truly exceptional.",
+    text: "From the first meeting to the final reveal, Al Eliza Interior Design exceeded expectations. Their design sense, clear communication, and professionalism were outstanding.",
     name: "Sarah Wilson",
     title: "CMO",
     image: "/avatars/sarah.jpg",
   },
   {
     id: 6,
-    company: "denmark",
+    company: "MICHAEL BROWN",
     logo: "/logos/denmark.svg",
-    text: "Al Eliza Interiors brings both artistry and expertise to every project. Their ability to blend style with practicality results in interiors that are not only beautiful but perfectly functional.",
+    text: "Al Eliza Interior Design reimagined our retail space with creativity and precision. Their seamless process and aesthetic vision resulted in an environment our clients love.",
     name: "Michael Brown",
     title: "CEO",
     image: "/avatars/michael.jpg",
   },
 ];
+
 
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -263,9 +264,9 @@ export default function TestimonialsSection() {
                     <cite className="font-paragraph text-[13px] font-semibold not-italic tracking-[0.15rem] text-black sm:text-[14px] md:text-[15px]">
                       {testimonial.name}
                     </cite>
-                    <p className="font-paragraph text-[11px] font-[400] tracking-[0.15rem] text-black sm:text-[12px] md:text-[13px]">
+                    {/* <p className="font-paragraph text-[11px] font-[400] tracking-[0.15rem] text-black sm:text-[12px] md:text-[13px]">
                       {testimonial.title}
-                    </p>
+                    </p> */}
                   </div>
                 </footer>
               </article>

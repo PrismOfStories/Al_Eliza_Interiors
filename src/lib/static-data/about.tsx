@@ -1,46 +1,58 @@
 export const team = [
-  {
+ {
     name: "Mr. Harif Harry",
-    role: "Business Development Manager",
+    role: "CEO & Founder",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066458/IMG_8263_erwkq8.png",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/HARRY_suqssn.jpg",
   },
   {
-    name: "Mr. Harif Harry",
-    role: "Business Development Manager",
+    name: "Mr. Jarisy Abuthahir",
+    role: "Chairman",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066396/IMG_8227_qgxnwe.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/JERISY_w4zbyv.jpg",
   },
 
   {
-    name: "Mohammed Ashiq",
+    name: "Mr. Muhammed Ashiq,",
     role: "Managing Director",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066395/IMG_8228_ka6w1u.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/ASHIQ_c852sx.jpg",
+  },
+  
+  {
+    name: "Paul Topson",
+    role: "Project Manager",
+    image:
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407923/PAUL_TOPSON_hjoclo.jpg",
   },
   {
-    name: "Mr. Jerais Mohammed",
-    role: "Creative Consultant",
+    name: "Dharsana Akhil",
+    role: "Accountant & Admin",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066401/IMG_2444_mnpboa.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/DHARSANA_tvgrj6.jpg",
   },
   {
-    name: "Mohammed Ashiq",
-    role: "Managing Director",
+    name: "Mr. Shahid Aslam",
+    role: "Videographer & Editor",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066483/IMG_8262_hd6ntk.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407923/SHAHID_wvwbzp.jpg",
   },
   {
-    name: "Michael Park",
-    role: "Creative Director",
+    name: "Gayathry",
+    role: "Interior Architect & Designer",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066389/IMG_8261_bmc5cu.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/GAYATHRY_npx25t.jpg",
   },
   {
-    name: "Michael Park",
-    role: "Creative Director",
+    name: "Mr.Fahad",
+    role: "Site Supervisor",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066463/IMG_8212_nb2llf.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/FAHAD_kwl8y8.jpg",
+  },{
+    name: "Mr.Roshan",
+    role: "3D Visulizer",
+    image:
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761578079/IMG_8562_ypp2hq.jpg",
   },
 ];
 
@@ -57,4 +69,5 @@ export const logos = [
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649511/client_4_ymbtyk.webp",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649510/client_2_bzhf63.webp",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649510/client_1_x55ndy.webp",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761408538/RAG_LOGO_nojdgf.jpg"
 ];

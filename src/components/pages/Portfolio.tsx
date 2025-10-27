@@ -92,7 +92,7 @@ export default function Portfolio() {
             <p className="portfolio-animate font-paragraph text-gold text-sm font-[300] uppercase tracking-[0.2rem] md:text-xl">
               Signature Projects
             </p>
-            <h1 className="portfolio-animate font-heading mt-4 max-w-5xl text-center text-2xl font-bold uppercase leading-[1.5] tracking-[0.2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="portfolio-animate font-outfit mt-4 max-w-5xl text-center text-2xl font-bold uppercase leading-[1.5] tracking-[0.2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               Designed with Intention
             </h1>
           </header>

@@ -133,6 +133,9 @@ function About() {
     { scope: sectionRef, dependencies: [] }
   );
 
+  const text = "Let's Chat";
+
+
   return (
     <main ref={sectionRef}>
       <ToastContainer />
@@ -144,7 +147,7 @@ function About() {
       >
         {/* Background Image */}
         <Image
-          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760026091/IMG_6632_sibdtf.jpg"
+          src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407535/ABOUT_AL_ELIZA_p8zwv9.png"
           alt="Al-Eliza Interiors office space background"
           fill
           className="object-cover"
@@ -159,18 +162,42 @@ function About() {
         <RevealWrapper>
           {/* Content */}
           <header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-end sm:px-6 sm:text-center md:px-10">
+            {/* Small quote above */}
+            <motion.p
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="font-poppins text-sm uppercase tracking-[0.2em] text-gold sm:text-base"
+            >
+              “Designing Spaces That Tell Your Story”
+            </motion.p>
+
+            {/* Main Heading - single line */}
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
-              className="font-outfit text-5xl font-bold uppercase leading-[1.1] tracking-[0.08em]
-        text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+              className="font-outfit text-3xl font-bold uppercase leading-[1.1] tracking-[0.08em]
+      text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-nowrap"
             >
-              About <br />
-              Al Eliza
+              About Aleliza
             </motion.h1>
+
+            {/* One sentence below */}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="font-paragraph mt-3 max-w-2xl text-center text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg"
+            >
+              We create timeless interiors that balance beauty, functionality, and the unique personality of every client we serve.
+            </motion.p>
           </header>
+
+
         </RevealWrapper>
       </section>
 
@@ -258,31 +285,31 @@ function About() {
           <h2 className="story-animate font-outfit text-gold text-center text-[clamp(1.5rem,5vw,3rem)] font-medium tracking-[0.4rem] sm:text-left sm:tracking-[0.1rem]">
             Meet Our Team
           </h2>
-          <p className="story-animate text-silver font-paragraph mt-4 text-sm  tracking-[0.1rem] lg:text-lg">
-            Get to know the people turning ideas into inspiring homes and
-            gardens.
+          <p className="story-animate text-silver font-paragraph mt-4 text-sm tracking-[0.1rem] lg:text-lg">
+            Get to know the people turning ideas into inspiring homes and gardens.
           </p>
         </div>
 
-        <div className="story-animate hidden grid-cols-1 gap-2 sm:grid sm:grid-cols-2 md:grid-cols-4">
+        {/* Desktop View — 3 in a row, smaller height */}
+        <div className="story-animate hidden grid-cols-1 gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {team.map((member, index) => (
             <article
               key={index}
-              className="group relative aspect-[2/3] overflow-hidden shadow-lg"
+              className="group relative aspect-[3/4] overflow-hidden shadow-lg"
             >
               <Image
                 src={member.image}
                 alt={`${member.name} - ${member.role}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw"
                 crossOrigin="anonymous"
                 referrerPolicy="no-referrer"
               />
 
-              <div className="absolute inset-0 flex translate-y-12 transform items-end justify-start bg-black/40 opacity-0 transition-all duration-500 hover:translate-y-0 group-hover:opacity-100">
+              <div className="absolute inset-0 flex translate-y-12 transform items-end justify-start bg-black/40 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <div className="bg-background w-full p-4 uppercase">
-                  <h3 className="text-gold font-paragraph text-lg font-[300] tracking-[0.25rem] ">
+                  <h3 className="text-gold font-paragraph text-lg font-[300] tracking-[0.25rem]">
                     {member.name}
                   </h3>
                   <p className="font-paragraph mt-1 text-sm font-[300] tracking-[0.25rem] text-white">
@@ -294,6 +321,7 @@ function About() {
           ))}
         </div>
 
+        {/* Mobile View — original layout (unchanged) */}
         <div className="story-animate grid grid-cols-1 gap-12 pt-10 sm:hidden sm:grid-cols-2 md:grid-cols-4">
           {team.map((member, index) => (
             <article key={index} className="group">
@@ -312,7 +340,7 @@ function About() {
 
               {/* Text Content Below Image */}
               <div className="exclusive-text mt-4 text-center">
-                <h3 className="text-gold font-paragraph text-lg font-[300] tracking-[0.25rem] ">
+                <h3 className="text-gold font-paragraph text-lg font-[300] tracking-[0.25rem]">
                   {member.name}
                 </h3>
                 <p className="font-paragraph mt-1 text-sm font-[300] tracking-[0.25rem] text-white">
@@ -324,6 +352,9 @@ function About() {
         </div>
       </section>
 
+
+
+
       {/* Clients Section */}
       <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -333,33 +364,117 @@ function About() {
             </h2>
           </header>
 
-          <div
-            className="story-animate grid grid-cols-2 items-center gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-12 xl:grid-cols-6"
-            role="list"
-            aria-label="Client logos"
-          >
-            {logos.map((logo, index) => (
-              <div
-                key={index}
-                className="group flex items-center justify-center rounded-lg  p-4 transition-all duration-300"
-                role="listitem"
-              >
-                <figure className="relative h-20 w-full sm:h-28">
-                  <Image
-                    src={logo}
-                    alt={`Client ${index + 1} logo`}
-                    fill
-                    className="object-contain opacity-60 grayscale transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:grayscale-0"
-                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
-                    crossOrigin="anonymous"
-                    referrerPolicy="no-referrer"
-                  />
-                </figure>
-              </div>
-            ))}
+          <div className="space-y-10">
+
+            {/* --- ROW 1 : 4 LOGOS --- */}
+            <div className="grid grid-cols-4 gap-6">
+              {logos.slice(0, 4).map((logo, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center p-2"
+                  role="listitem"
+                >
+                  <figure className="relative h-16 w-full sm:h-20">
+                    <Image
+                      src={logo}
+                      alt={`Client ${index + 1} logo`}
+                      fill
+                      className="object-contain opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </figure>
+                </div>
+              ))}
+            </div>
+
+            {/* --- ROW 2 : 5 LOGOS --- */}
+            <div className="grid grid-cols-5 gap-6">
+              {logos.slice(4, 9).map((logo, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center p-2"
+                  role="listitem"
+                >
+                  <figure className="relative h-16 w-full sm:h-20">
+                    <Image
+                      src={logo}
+                      alt={`Client ${index + 5} logo`}
+                      fill
+                      className="object-contain opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </figure>
+                </div>
+              ))}
+            </div>
+
+            {/* --- ROW 3 : 4 LOGOS --- */}
+            <div className="grid grid-cols-4 gap-6">
+              {logos.slice(9, 13).map((logo, index) => (
+                <div
+                  key={index}
+                  className="group flex items-center justify-center p-2"
+                  role="listitem"
+                >
+                  <figure className="relative h-16 w-full sm:h-20">
+                    <Image
+                      src={logo}
+                      alt={`Client ${index + 10} logo`}
+                      fill
+                      className="object-contain opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    />
+                  </figure>
+                </div>
+              ))}
+            </div>
+
           </div>
+
         </div>
       </section>
+      <section
+        className="bg-background px-6 py-10 text-white sm:py-20"
+        aria-label="Let's chat call to action"
+      >
+        <div className="mx-auto flex max-w-7xl flex-col-reverse gap-10 lg:flex-row lg:items-center lg:justify-between">
+
+          {/* IMAGE */}
+          <figure className="w-full lg:w-1/2 flex justify-center">
+            <div className="relative w-full max-w-[400px] h-[400px]">
+              <Image
+                src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761406835/LET_S_CHAT_f8dl1o.png"
+                alt="Let's Chat Visual"
+                fill
+                className="object-contain"
+                crossOrigin="anonymous"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </figure>
+
+          {/* TEXT */}
+          <div className="flex w-full lg:w-1/2 overflow-visible">
+            <h2 className="font-outfit text-gold text-4xl font-bold leading-none tracking-[0.25rem] sm:text-7xl lg:text-8xl whitespace-nowrap">
+              {text.split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{
+                    delay: i * 0.04,
+                    duration: 0.35,
+                    ease: "easeOut",
+                  }}
+                  className="inline-block"
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
+            </h2>
+          </div>
+
+        </div>
+      </section>
+
 
       {/* Contact Form Section */}
       <section
@@ -368,7 +483,7 @@ function About() {
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 md:grid-cols-2">
           <div className="flex flex-col justify-between">
-            <h2 className="story-animate font-heading flex items-center text-xl font-[300] tracking-[0.3rem] lg:text-3xl">
+            <h2 className="story-animate font-outfit flex items-center text-xl font-[300] tracking-[0.3rem] lg:text-3xl">
               <span
                 className="bg-gold mr-3 h-6 w-6 [transform:skewX(-20deg)]"
                 aria-hidden="true"
@@ -475,7 +590,7 @@ function About() {
               className="bg-gold  hover:bg-gold-dark group inline-flex w-52 cursor-pointer justify-center px-8 py-4 text-xl font-medium text-white transition-colors duration-300 [transform:skewX(-20deg)]"
               aria-label="Submit contact form"
             >
-              <span className="font-heading flex items-center gap-2 tracking-[0.25rem] [transform:skewX(20deg)]">
+              <span className="font-outfit flex items-center gap-2 tracking-[0.25rem] [transform:skewX(20deg)]">
                 Submit
               </span>
             </button>
@@ -484,32 +599,7 @@ function About() {
       </section>
 
       {/* Call to Action Section */}
-      <section
-        className="bg-background px-6 py-10 text-white sm:py-20"
-        aria-label="Let's chat call to action"
-      >
-        <div className="mx-auto flex max-w-7xl flex-col-reverse gap-10 lg:flex-row lg:justify-between">
-          <figure className="w-full lg:w-1/2">
-            <div className="story-animate relative h-[300px] sm:h-[400px] sm:[transform:skewX(-10deg)] lg:h-[500px] lg:w-[500px]">
-              <Image
-                src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376136/IMG_1583_jswnlj.jpg"
-                alt="Al-Eliza Interiors consultation space"
-                fill
-                className="w-full object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                crossOrigin="anonymous"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </figure>
 
-          <div className="story-animate flex w-full items-center lg:w-1/2">
-            <h2 className="font-heading text-gold text-4xl font-bold leading-none tracking-[0.3rem] sm:text-7xl lg:text-9xl">
-              Let&apos;s Chat
-            </h2>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
