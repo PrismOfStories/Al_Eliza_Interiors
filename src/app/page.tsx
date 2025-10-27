@@ -2,13 +2,13 @@ import ServiceCard from "@/components/common/ServiceCard";
 import Hero from "@/components/homepage/Hero";
 import InteriorDesignHero from "@/components/homepage/InteriorDesignHero";
 import Testimonials from "@/components/homepage/Testimonials";
-import ScrollHero from "@/components/homepage/ScrollHero";
 import { services } from "@/lib/static-data/home";
 import ClientsCard from "@/components/common/ClientsCard";
 import ProjectsScroll from "@/components/homepage/ProjectsScroll";
 import { Metadata } from "next";
 import { icons, title } from "@/lib/utils/meta";
 import JsonLd from "@/lib/utils/JsonLd";
+import ScrollReveal from "@/components/homepage/ScrollReveal";
 
 const siteName = process.env.SITE_NAME;
 const siteUrl = process.env.SITE_URL;
@@ -441,9 +441,8 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/* Welcome Message */}
-      <section aria-label="Welcome message">
-        <ScrollHero />
+      <section aria-label="Welcome to Al Eliza Interiors">
+        <ScrollReveal />
       </section>
 
       {/* Portfolio Gallery */}
