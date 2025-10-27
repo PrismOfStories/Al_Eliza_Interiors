@@ -113,11 +113,11 @@ export default function Nav({ closeMenu }: NavProps) {
       ref={navRef}
       className="box-border flex h-full flex-col justify-between p-8 sm:px-12"
     >
-      <div ref={navLinksRef} className="mt-14 flex flex-col gap-4">
+      <div ref={navLinksRef} className="mt-6 flex flex-col gap-4 md:mt-14">
         {routes.map((link, i) => (
           <div key={i} style={{ transformOrigin: "top center" }}>
             <Link
-              className={`exclusive-text block text-xl font-semibold tracking-widest no-underline transition-colors duration-300 sm:text-2xl ${
+              className={`exclusive-text text-md block font-semibold tracking-widest no-underline transition-colors duration-300 sm:text-2xl ${
                 isActive(link.href) ? "text-gold" : "hover:text-gold text-white"
               }`}
               href={link.href}
@@ -137,7 +137,7 @@ export default function Nav({ closeMenu }: NavProps) {
           <div key={i} className="w-1/2 sm:w-1/4">
             <Link
               href={link.href}
-              className="font-poppins hover:text-gold block text-xl text-white sm:text-2xl"
+              className="font-poppins hover:text-gold text-md block text-white sm:text-2xl"
               onClick={() => closeMenu?.()}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={

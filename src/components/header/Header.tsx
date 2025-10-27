@@ -66,8 +66,8 @@ export default function Header() {
   useGSAP(
     () => {
       gsap.to(menuContainerRef.current, {
-        width: isActive ? (isMobile ? "80vw" : "340px") : "100px",
-        height: isActive ? (isMobile ? "60vh" : "410px") : "40px",
+        width: isActive ? (isMobile ? "50vw" : "300px") : "100px",
+        height: isActive ? (isMobile ? "42vh" : "410px") : "40px",
         top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
         right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
         skewX: isActive ? "0deg" : "-20deg",
