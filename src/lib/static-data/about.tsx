@@ -1,13 +1,13 @@
 export const team = [
-  {
+ {
     name: "Mr. Harif Harry",
-    role: "Business Development Manager",
+    role: "CEO & Founder",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761066458/IMG_8263_erwkq8.png",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/HARRY_suqssn.jpg",
   },
   {
-    name: "Mr. Harif Harry",
-    role: "Business Development Manager",
+    name: "Mr. Jarisy Abuthahir",
+    role: "Chairman",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/JERISY_w4zbyv.jpg",
   },
@@ -18,33 +18,28 @@ export const team = [
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/ASHIQ_c852sx.jpg",
   },
+  
   {
-    name: "Mr. Harif Harry",
-    role: "CEO",
-    image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/HARRY_suqssn.jpg",
-  },
-  {
-    name: "Mohammed Ashiq",
-    role: "Managing Director",
+    name: "Paul Topson",
+    role: "Project Manager",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407923/PAUL_TOPSON_hjoclo.jpg",
   },
   {
-    name: "Michael Park",
-    role: "Creative Director",
+    name: "Dharsana Akhil",
+    role: "Accountant & Admin",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/DHARSANA_tvgrj6.jpg",
   },
   {
     name: "Mr. Shahid Aslam",
-    role: "Videographer cum Editor",
+    role: "Videographer & Editor",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407923/SHAHID_wvwbzp.jpg",
   },
   {
-    name: "Gaayathry",
-    role: "Architect",
+    name: "Gayathry",
+    role: "Interior Architect & Designer",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/GAYATHRY_npx25t.jpg",
   },
@@ -57,7 +52,7 @@ export const team = [
     name: "Mr.Roshan",
     role: "3D Visulizer",
     image:
-      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407923/ROSHAN_vgjwbg.jpg",
+      "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761578079/IMG_8562_ypp2hq.jpg",
   },
 ];
 
