@@ -107,7 +107,12 @@ const Card = ({
 
               <Link
                 href="/expertise"
-                className="hover:bg-gold font-poppins group inline-flex bg-black px-6 py-3 text-sm tracking-widest text-white transition-colors duration-300 [transform:skewX(-20deg)] sm:px-8 sm:py-4 sm:text-base"
+                className="hover:bg-gold font-poppins group inline-flex
+             bg-gradient-to-b from-[#2b2b2b] via-[#1a1a1a] to-[#0d0d0d]
+             hover:from-[#3a3a3a] hover:via-[#1f1f1f] hover:to-[#000]
+             px-6 py-3 text-sm tracking-widest text-white transition-colors duration-300
+             [transform:skewX(-20deg)] sm:px-8 sm:py-4 sm:text-base
+             rounded-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_2px_6px_rgba(0,0,0,0.4)]"
               >
                 <span className="font-outfit flex items-center gap-2 font-[400] tracking-[0.20rem] [transform:skewX(20deg)]">
                   See more
@@ -115,6 +120,7 @@ const Card = ({
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
+
             </div>
           </div>
         </motion.div>
