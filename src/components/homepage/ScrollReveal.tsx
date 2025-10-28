@@ -55,8 +55,8 @@ export default function ScrollReveal() {
           ref={textRef}
           className="font-outfit text-center text-lg font-bold text-white md:text-8xl"
         >
-          <FillText text="Welcome to" />
-          <FillText text="Al Eliza" />
+          <FillText text="WELCOME TO" />
+          <FillText text="ALELIZA" />
         </div>
       </div>
     </div>
