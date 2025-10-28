@@ -161,7 +161,7 @@ function About() {
         <div className="absolute inset-0 bg-black/70" aria-hidden="true"></div>
         <RevealWrapper>
           {/* Content */}
-          <header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-end sm:px-6 sm:text-center md:px-10">
+<header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-center sm:px-6 md:px-10">
             {/* Small quote above */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
@@ -492,8 +492,8 @@ function About() {
             </h2>
             <address className="items-left mt-4 flex flex-col gap-2 not-italic">
               <p className="story-animate font-paragraph text-xl font-[300] tracking-[0.2rem] text-white">
-                <Link href="tel:206-339-2947" className="hover:text-gold">
-                  206-339-2947
+                <Link href="tel:+971 522 889 300" className="hover:text-gold">
+                  +971 522 889 300
                 </Link>
               </p>
               <p className="story-animate font-paragraph text-2xl font-[300] tracking-[0.2rem] md:text-3xl">

@@ -3,24 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  const pathname = usePathname();
-
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === href;
-    return pathname.startsWith(href);
-  };
-
-  const menu = [
-    { title: "Home", href: "/" },
-    { title: "Our Story", href: "/our-story" },
-    { title: "Expertise", href: "/expertise" },
-    { title: "Portfolio", href: "/portfolio" },
-    { title: "Contact", href: "/get-in-touch" },
-  ];
-
   const services = [
     { title: "Residential & Commercial Designs" },
     { title: "Design Consultancy" },
@@ -32,52 +16,29 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#161616] py-20 text-neutral-300">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-12 px-6 sm:items-start md:flex-row md:flex-wrap md:justify-between">
-        {/* Logo */}
-        <div className="flex flex-col items-center space-y-4 text-center md:min-w-[250px] md:items-start md:text-left">
-          <Image
-            src="/images/logo.webp"
-            alt="Al Eliza Logo"
-            width={200}
-            height={200}
-            className="h-40 w-auto object-contain"
-            crossOrigin="anonymous"
-            referrerPolicy="no-referrer"
-          />
-          <p className="max-w-[220px] text-sm leading-relaxed text-neutral-400">
-            Transforming spaces into timeless works of art where creativity
-            meets craftsmanship.
-          </p>
-        </div>
-
-        {/* Menu */}
-        <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
-          <h3 className="text-silver font-paragraph mb-2 text-lg font-semibold uppercase tracking-[0.3rem]">
-            Menu
-          </h3>
-          <ul className="space-y-2 text-sm uppercase">
-            {menu.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`${
-                    isActive(item.href) ? "text-gold" : "text-silver"
-                  } hover:text-gold`}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
+    <footer className="w-full bg-[#161616] py-16 text-neutral-300">
+      <div
+        className="
+          mx-auto 
+          flex 
+          max-w-7xl 
+          flex-col 
+          items-center 
+          justify-center 
+          px-8   /* ✅ Added balanced side padding */
+          gap-10 /* ✅ Reduced center spacing for mobile */
+          sm:items-start 
+          md:flex-row 
+          md:justify-between 
+          md:gap-8 /* ✅ Reduced desktop spacing */
+        "
+      >
         {/* Services */}
-        <div className="flex flex-col items-center space-y-4 text-center md:items-start md:text-left">
+        <div className="order-1 flex flex-col items-center space-y-3 text-center md:order-none md:items-start md:text-left">
           <h3 className="text-silver font-paragraph mb-2 text-lg font-semibold uppercase tracking-[0.3rem]">
             Services
           </h3>
-          <ul className="space-y-2 text-sm uppercase">
+          <ul className="space-y-1 text-sm uppercase">
             {services.map((item) => (
               <li key={item.title}>
                 <Link href="/expertise" className="text-silver hover:text-gold">
@@ -89,24 +50,24 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="space-y- flex flex-col items-center space-y-2 text-center md:min-w-[250px] md:items-start md:text-left">
+        <div className="order-2 flex flex-col items-center space-y-1 text-center md:order-none md:min-w-[230px] md:items-start md:text-left">
           <h2 className="text-silver font-paragraph mb-2 text-lg font-semibold uppercase tracking-[0.3rem]">
             Contact
           </h2>
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-neutral-400 leading-relaxed">
             Al Eliza Interior, FBL Business Center,
             <br /> Al Mamzar - Dubai - United Arab Emirates
           </p>
           <div>
             <Link
               href="tel:+971522889300"
-              className="hover:text-gold block min-h-[8px] py-2 text-sm text-neutral-400"
+              className="hover:text-gold block py-1 text-sm text-neutral-400"
             >
               +971 522 889 300
             </Link>
             <Link
               href="tel:+971543783000"
-              className="hover:text-gold block min-h-[8px] py-2 text-sm text-neutral-400"
+              className="hover:text-gold block py-1 text-sm text-neutral-400"
             >
               +971 54 378 3000
             </Link>
@@ -117,6 +78,23 @@ export default function Footer() {
           >
             info@alelizainteriors.com
           </Link>
+        </div>
+
+        {/* Logo (last on mobile) */}
+        <div className="order-3 flex flex-col items-center space-y-3 text-center md:order-none md:min-w-[220px] md:items-start md:text-left">
+          <Image
+            src="/images/logo.webp"
+            alt="Al Eliza Logo"
+            width={180}
+            height={180}
+            className="h-32 w-auto object-contain"
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
+          />
+          <p className="max-w-[220px] text-sm leading-relaxed text-neutral-400">
+            Transforming spaces into timeless works of art where creativity
+            meets craftsmanship.
+          </p>
         </div>
       </div>
     </footer>
