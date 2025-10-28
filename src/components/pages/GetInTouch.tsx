@@ -163,7 +163,7 @@ export default function GetInTouch() {
             >
               <FaInstagram className="h-10 w-10" aria-hidden="true" />
             </Link>
-            <Link
+            {/* <Link
               href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -171,7 +171,7 @@ export default function GetInTouch() {
               aria-label="Follow us on X (Twitter)"
             >
               <FaXTwitter className="h-10 w-10" aria-hidden="true" />
-            </Link>
+            </Link> */}
             <Link
               href="https://www.linkedin.com/company/al-eliza/"
               target="_blank"
