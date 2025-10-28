@@ -13,7 +13,7 @@ export const team = [
   },
 
   {
-    name: "Mr. Muhammed Ashiq,",
+    name: "Mr. Muhammed Ashiq",
     role: "Managing Director",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/ASHIQ_c852sx.jpg",
