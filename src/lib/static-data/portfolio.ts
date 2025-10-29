@@ -147,19 +147,44 @@ export const projects = [
       {
         name: "Alfattan",
         images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760455334/01_1_jneboq.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760455335/02_bdnawd.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760455334/02_1_nl4olv.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760455334/02_1_nl4olv.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761754632/a_6_uiinbm.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761753262/02_4_wpj5hb.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761753259/01_1_x0blom.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761753259/02_2_xluaag.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761753259/02_3_pcop9f.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761753259/02_6_yjejvf.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761754649/view1_t8baup.jpg",
         ],
       },
       {
         name: "Luxury Villas",
         images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376060/IMG_6632_lidxl5.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376080/IMG_6647_hj30ru.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756707/02_4_s9qwrg.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756728/1_11_ofgxoq.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756727/2_14_yz21xe.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756725/1_12_t4em1n.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_29_-_Copy_wez5zu.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_33_erlmnk.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_33_erlmnk.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756706/1_6_axmuei.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756702/1_4_jdoqix.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756701/06_4_dk1r4x.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_6_zmp337.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_31_njaras.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_4_jccfm4.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756695/3_5_omgtol.jpg"
         ],
       },
+      {
+        name:"Other Works",
+        images:[
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758484/471634004_636187642173610_5506335059134365935_n_dqgfqg.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758482/471638286_1984814978698671_6642679942470541950_n_h2yozt.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468698485_925840175696302_5071801304647805683_n_nnhpwd.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/470487632_955103769826032_539565077760587167_n_qhdldh.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468619289_1304599844310818_625097438196359495_n_gq9tce.jpg"
+        ]
+      }
     ],
   },
 
@@ -185,7 +210,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486481/7_2_cwifv3.jpg"
         ],
       },
-            {
+      {
         name: "Cotha Cafe",
         images: [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487083/fa7cab3c-7d9d-413d-95b3-cacceb194469_slsk6b.jpg",
@@ -194,7 +219,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/45240ba2-5e08-424e-bd46-7eb5a9c156c6_bmzgxp.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/63a13723-398c-4d0e-833d-07feebb0198e_ttwrio.jpg"
         ],
-      },      {
+      }, {
         name: "Exotic Shoreline",
         images: [
           "",
@@ -219,7 +244,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491454/bc487908-e126-4148-b924-78986115f4f5_ntbyvh.jpg",
         ],
       },
-     
+
     ],
   },
 ];
