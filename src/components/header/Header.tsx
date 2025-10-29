@@ -67,7 +67,7 @@ export default function Header() {
     () => {
       gsap.to(menuContainerRef.current, {
         width: isActive ? (isMobile ? "50vw" : "300px") : "100px",
-        height: isActive ? (isMobile ? "42vh" : "410px") : "40px",
+        height: isActive ? (isMobile ? "43vh" : "390px") : "40px",
         top: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
         right: isActive ? (isMobile ? "-10px" : "-25px") : "0px",
         skewX: isActive ? "0deg" : "-20deg",
@@ -121,7 +121,7 @@ export default function Header() {
         >
           <div
             ref={menuContainerRef}
-            className="absolute right-0 top-0 overflow-hidden"
+            className="absolute right-0 top-0 overflow-hidden rounded-2xl"
             style={{
               width: "100px",
               height: "40px",

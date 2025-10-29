@@ -113,11 +113,11 @@ export default function Nav({ closeMenu }: NavProps) {
       ref={navRef}
       className="box-border flex h-full flex-col justify-between p-8 sm:px-12"
     >
-      <div ref={navLinksRef} className="mt-6 flex flex-col gap-4 md:mt-14">
+      <div ref={navLinksRef} className="mt-4 flex flex-col gap-3 md:mt-14">
         {routes.map((link, i) => (
           <div key={i} style={{ transformOrigin: "top center" }}>
             <Link
-              className={`exclusive-text text-md block font-semibold tracking-widest no-underline transition-colors duration-300 sm:text-2xl ${
+              className={`font-outfit block text-lg font-extrabold uppercase tracking-widest no-underline transition-colors duration-300 sm:text-2xl ${
                 isActive(link.href) ? "text-gold" : "hover:text-gold text-white"
               }`}
               href={link.href}
