@@ -111,7 +111,7 @@ export default function Nav({ closeMenu }: NavProps) {
   return (
     <div
       ref={navRef}
-      className="box-border flex h-full flex-col justify-between p-8 sm:px-12"
+      className="box-border flex h-full flex-col justify-between  p-8 sm:px-12"
     >
       <div ref={navLinksRef} className="mt-6 flex flex-col gap-4 md:mt-14">
         {routes.map((link, i) => (

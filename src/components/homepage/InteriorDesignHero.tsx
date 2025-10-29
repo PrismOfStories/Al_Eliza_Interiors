@@ -178,7 +178,7 @@ export default function ArchitectureHero() {
               </span>{" "}
               to bring your vision to life.
             </p>
-            <div className="project-animate flex justify-center lg:justify-end">
+            {/* <div className="project-animate flex justify-center lg:justify-end">
               <Link
                 ref={ctaRef}
                 href="/get-in-touch"
@@ -189,6 +189,23 @@ export default function ArchitectureHero() {
                 <span className="font-paragraph flex items-center gap-2 font-[300] [transform:skewX(20deg)] sm:tracking-[0.20rem]">
                   Tell us about your project
                   <FaChevronRight aria-hidden="true" />
+                </span>
+              </Link>
+            </div> */}
+            <div className="project-animate flex justify-center lg:justify-end">
+              <Link
+                ref={ctaRef}
+                href="/get-in-touch"
+                className="group inline-flex items-center gap-3 text-[#1a1a1a] font-paragraph font-bold text-lg sm:text-2xl tracking-[0.05rem] transition-all duration-300 hover:text-[#000] hover:scale-[1.03]"
+                role="link"
+                aria-label="Tell us about your project - Contact Al-Eliza Interiors"
+              >
+                <span className="flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+                  Tell us about your project
+                  <FaChevronRight
+                    aria-hidden="true"
+                    className="transition-transform duration-300 group-hover:translate-x-2"
+                  />
                 </span>
               </Link>
             </div>

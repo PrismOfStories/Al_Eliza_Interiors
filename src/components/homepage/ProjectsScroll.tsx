@@ -10,7 +10,7 @@ const images = [
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375815/ef98fe25-cd43-4499-ab4e-a24dad202a42_zusqtb.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375814/d492e54e-b6b1-4d93-9b63-36f05ece262d_u5zyxl.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456206/fa13228c-c148-4355-937e-164ab472023e_wb5a7d.jpg",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585263/HUDDLE_ROOM_2_ocuqvb.jpg",
+  // "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585263/HUDDLE_ROOM_2_ocuqvb.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585263/HUDDLE_ROOM_2_ocuqvb.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761577706/RESIDENTIAL_AND_COMMERCIAL_DESIGNS_votvjt.webp",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760456202/a2d62774-9f89-4328-93f0-f6fd1fe37065_zgbpyf.jpg",
