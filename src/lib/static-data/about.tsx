@@ -13,7 +13,7 @@ export const team = [
   },
 
   {
-    name: "Mr. Muhammed Ashiq,",
+    name: "Mr. Muhammed Ashiq",
     role: "Managing Director",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/ASHIQ_c852sx.jpg",
@@ -32,7 +32,7 @@ export const team = [
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/DHARSANA_tvgrj6.jpg",
   },
   {
-    name: "Mr. Shahid Aslam",
+    name: "Shahid Aslam",
     role: "Videographer & Editor",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407923/SHAHID_wvwbzp.jpg",
@@ -44,12 +44,12 @@ export const team = [
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407922/GAYATHRY_npx25t.jpg",
   },
   {
-    name: "Mr.Fahad",
+    name: "Fahad",
     role: "Site Supervisor",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/FAHAD_kwl8y8.jpg",
   },{
-    name: "Mr.Roshan",
+    name: "Roshan",
     role: "3D Visulizer",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761578079/IMG_8562_ypp2hq.jpg",

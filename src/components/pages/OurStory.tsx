@@ -161,7 +161,7 @@ function About() {
         <div className="absolute inset-0 bg-black/70" aria-hidden="true"></div>
         <RevealWrapper>
           {/* Content */}
-          <header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-end sm:px-6 sm:text-center md:px-10">
+          <header className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center sm:items-center sm:px-6 md:px-10">
             {/* Small quote above */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
@@ -246,7 +246,7 @@ function About() {
 
             <article className="flex flex-col justify-between">
               <h3 className="story-animate text-gold text-6xl font-bold sm:text-right">
-                <Counter to={250} />+
+                <Counter to={100} />+
               </h3>
               <div className="story-animate mt-10 sm:text-right">
                 <h4 className="font-paragraph mb-2 text-lg font-medium tracking-[0.2rem] text-white">
@@ -321,21 +321,25 @@ function About() {
           ))}
         </div>
 
-        {/* Mobile View — original layout (unchanged) */}
+        {/* Mobile View — high-quality layout */}
         <div className="story-animate grid grid-cols-1 gap-12 pt-10 sm:hidden sm:grid-cols-2 md:grid-cols-4">
           {team.map((member, index) => (
             <article key={index} className="group">
               {/* Image Container */}
-              <figure className="relative h-[380px] w-full overflow-hidden shadow-lg">
-                <Image
-                  src={member.image}
-                  alt={`${member.name} - ${member.role}`}
-                  fill
-                  className="object-fit transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
-                  crossOrigin="anonymous"
-                  referrerPolicy="no-referrer"
-                />
+              <figure className="relative w-full overflow-hidden shadow-lg">
+                <div className="relative aspect-[3/4] w-full">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.role}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="100vw"
+                    quality={100}
+                    crossOrigin="anonymous"
+                    referrerPolicy="no-referrer"
+                    priority
+                  />
+                </div>
               </figure>
 
               {/* Text Content Below Image */}
@@ -350,6 +354,7 @@ function About() {
             </article>
           ))}
         </div>
+
       </section>
 
 
@@ -492,8 +497,8 @@ function About() {
             </h2>
             <address className="items-left mt-4 flex flex-col gap-2 not-italic">
               <p className="story-animate font-paragraph text-xl font-[300] tracking-[0.2rem] text-white">
-                <Link href="tel:206-339-2947" className="hover:text-gold">
-                  206-339-2947
+                <Link href="tel:+971 522 889 300" className="hover:text-gold">
+                  +971 522 889 300
                 </Link>
               </p>
               <p className="story-animate font-paragraph text-2xl font-[300] tracking-[0.2rem] md:text-3xl">

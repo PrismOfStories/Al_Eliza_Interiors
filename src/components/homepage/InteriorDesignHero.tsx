@@ -107,6 +107,7 @@ export default function ArchitectureHero() {
     };
   }, []);
 
+
   return (
     <section
       className="flex h-full items-center justify-center bg-[#fbfbfb] px-4 sm:px-6 lg:px-8"
@@ -177,11 +178,11 @@ export default function ArchitectureHero() {
               </span>{" "}
               to bring your vision to life.
             </p>
-            <div className="project-animate  flex justify-center lg:justify-end">
+            {/* <div className="project-animate flex justify-center lg:justify-end">
               <Link
                 ref={ctaRef}
                 href="/get-in-touch"
-                className="hover:bg-gold-dark group inline-flex cursor-pointer bg-black px-3 py-3 text-[12px] font-medium text-white transition-colors duration-300 sm:px-8 sm:py-4 sm:text-lg"
+                className="group inline-flex cursor-pointer bg-gradient-to-b from-[#2b2b2b] via-[#1a1a1a] to-[#0d0d0d] hover:from-[#3a3a3a] hover:via-[#1f1f1f] hover:to-[#000] px-3 py-3 text-[12px] font-medium text-white transition-all duration-300 sm:px-8 sm:py-4 sm:text-lg rounded-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_2px_6px_rgba(0,0,0,0.4)]"
                 role="button"
                 aria-label="Tell us about your project - Contact Al-Eliza Interiors"
               >
@@ -190,7 +191,25 @@ export default function ArchitectureHero() {
                   <FaChevronRight aria-hidden="true" />
                 </span>
               </Link>
+            </div> */}
+            <div className="project-animate flex justify-center lg:justify-end">
+              <Link
+                ref={ctaRef}
+                href="/get-in-touch"
+                className="group inline-flex items-center gap-3 text-[#1a1a1a] font-paragraph font-bold text-lg sm:text-2xl tracking-[0.05rem] transition-all duration-300 hover:text-[#000] hover:scale-[1.03]"
+                role="link"
+                aria-label="Tell us about your project - Contact Al-Eliza Interiors"
+              >
+                <span className="flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+                  Tell us about your project
+                  <FaChevronRight
+                    aria-hidden="true"
+                    className="transition-transform duration-300 group-hover:translate-x-2"
+                  />
+                </span>
+              </Link>
             </div>
+
           </div>
         </footer>
       </div>

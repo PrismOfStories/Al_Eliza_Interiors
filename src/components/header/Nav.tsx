@@ -22,12 +22,12 @@ const routes = [
 const footerLinks = [
   {
     title: "Facebook",
-    href: "https://www.instagram.com/alelizainteriors?utm_source=qr&igsh=a3drank5cHZka2py",
+    href: "https://www.facebook.com/share/19JmfS3Q7p/?mibextid=wwXIfr",
     icon: <FaFacebookF className="h-7 w-7" />,
   },
   {
     title: "Instagram",
-    href: "https://www.instagram.com/al_eliza_interiors/",
+    href: "https://www.instagram.com/alelizainteriors?utm_source=qr&igsh=a3drank5cHZka2py",
     icon: <FiInstagram className="h-7 w-7" />,
   },
   {
@@ -111,7 +111,7 @@ export default function Nav({ closeMenu }: NavProps) {
   return (
     <div
       ref={navRef}
-      className="box-border flex h-full flex-col justify-between p-8 sm:px-12"
+      className="box-border flex h-full flex-col justify-between  p-8 sm:px-12"
     >
       <div ref={navLinksRef} className="mt-4 flex flex-col gap-3 md:mt-14">
         {routes.map((link, i) => (
