@@ -1,5 +1,5 @@
 export const tabs = [
-  { label: "All", value: "all" },
+  // { label: "All", value: "all" },
   { label: "Commercials", value: "commercials" },
   // { label: "Hospitality", value: "hospitality" },
   { label: "Residential", value: "residential" },
@@ -99,21 +99,21 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585246/PANTRY_2_zybmrb.jpg"
         ],
       },
-      {
-        name: "Other Works",
-        images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376081/IMG_6648_cmnzgh.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376082/IMG_6649_xalpqr.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376080/IMG_6647_hj30ru.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376079/IMG_6646_eh37ld.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376078/IMG_6645_s5tzos.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376075/IMG_6643_t7wxrv.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376068/IMG_6642_dyszem.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376067/IMG_6641_wpb864.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376063/IMG_6637_hpfdiq.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376060/IMG_6632_lidxl5.jpg"
-        ],
-      },
+      // {
+      //   name: "Other Works",
+      //   images: [
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376081/IMG_6648_cmnzgh.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376082/IMG_6649_xalpqr.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376080/IMG_6647_hj30ru.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376079/IMG_6646_eh37ld.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376078/IMG_6645_s5tzos.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376075/IMG_6643_t7wxrv.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376068/IMG_6642_dyszem.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376067/IMG_6641_wpb864.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376063/IMG_6637_hpfdiq.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376060/IMG_6632_lidxl5.jpg"
+      //   ],
+      // },
     ],
   },
 
@@ -176,15 +176,38 @@ export const projects = [
         ],
       },
       {
-        name:"Other Works",
+        name:"Ahmed Villa",
         images:[
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758484/471634004_636187642173610_5506335059134365935_n_dqgfqg.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758482/471638286_1984814978698671_6642679942470541950_n_h2yozt.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468698485_925840175696302_5071801304647805683_n_nnhpwd.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/470487632_955103769826032_539565077760587167_n_qhdldh.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468619289_1304599844310818_625097438196359495_n_gq9tce.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838735/03_33_5_IMGCentury_tw8v8g.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838752/09_2_IMGCentury_mcyn5a.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838745/08_1_IMGCentury_fbc23x.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838744/06_2_1__9_IMGCentury_nx1kx5.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838742/06_1__8_IMGCentury_tm2i8k.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838741/05_7_IMGCentury_ierqka.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838734/03_30_4_IMGCentury_smclmv.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838734/03_41_6_IMGCentury_pc9dt2.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838728/03_3_IMGCentury_i86bez.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838722/2_84_-_Copy_14_IMGCentury_ewplnt.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838719/02_12_IMGCentury_xk5v9j.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838718/02_3_13_IMGCentury_p4n3ri.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838713/02_1__11_IMGCentury_gexyey.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838707/1_28_18_IMGCentury_sph8vb.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838705/1_27_17_IMGCentury_yyhgki.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838703/01_20_IMGCentury_cfgt5a.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838700/01_6_21_IMGCentury_u3exum.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838697/01_3_16_IMGCentury_uhv7b1.jpg"
         ]
-      }
+      },
+      // {
+      //   name:"Other Works",
+      //   images:[
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758484/471634004_636187642173610_5506335059134365935_n_dqgfqg.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758482/471638286_1984814978698671_6642679942470541950_n_h2yozt.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468698485_925840175696302_5071801304647805683_n_nnhpwd.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/470487632_955103769826032_539565077760587167_n_qhdldh.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468619289_1304599844310818_625097438196359495_n_gq9tce.jpg"
+      //   ]
+      // }
     ],
   },
 
