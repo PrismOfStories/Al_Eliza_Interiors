@@ -18,6 +18,7 @@ const images = [
    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756706/1_6_axmuei.jpg",
    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375987/C6F902C5-CD8D-4B96-A477-DE927D17587A_lkhbff.jpg",
    "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_4_jccfm4.jpg",
+   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0001_esvs77.jpg"
 ];
 // 
 
