@@ -45,28 +45,36 @@ export const projects = [
       {
         name: "Morfin",
         images: [
-          // "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375992/IMG_3942_ubuylz.heic",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375991/IMG_0388_3_ymlkhs.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375989/IMG_0386_3_kao0s1.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375988/IMG_0346_2_gk2sft.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375987/IMG_0341_xip5kg.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375987/IMG_0341_xip5kg.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375987/C6F902C5-CD8D-4B96-A477-DE927D17587A_lkhbff.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375986/CFAC5EF9-3275-4895-82CD-E5741347DA7A_yoc7ev.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375985/476389693_17978534816803107_498755482509711870_n_izqc8w.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375984/851E13D9-47D6-445A-8FFA-A9C019B423FC_pkqktt.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375981/476183163_17978534825803107_4119508633750675449_n_p7rdkw.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375980/2226249B-6F42-4CB7-A6C7-BFEE6D5E80A8_ieufb4.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375980/3316B4D3-8DF7-4129-BCB1-A71CAFEDC9CA_dq9min.jpg"
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0001_esvs77.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933117/MORFIN1_page-00061_enk1nd.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933116/MORFIN1_page-0020_djshh7.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933115/MORFIN1_page-0017_qgneli.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933114/MORFIN1_page-0019_w62pl9.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933111/MORFIN1_page-0018_nyfwlo.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933107/MORFIN1_page-0011_bcf1d7.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933107/MORFIN1_page-0012_vqefm7.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933098/MORFIN1_page-0007_do7ws3.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933084/MORFIN1_page-0005_gxylat.jpg",
+        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0002_cgd6je.jpg"
         ],
       },
       {
         name: "Positive Properties",
         images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376138/IMG_1586_mtmx3x.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376140/IMG_1591_nykqh4.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376137/IMG_1584_qi8boh.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760376136/IMG_1583_jswnlj.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934398/PositivePropertiesOffice3D_page-0006_nwt3zf.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934397/PositivePropertiesOffice3D_page-0005_uqx6fd.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934396/41556_wmtzzc.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934403/PositivePropertiesOffice3D_page-0008_iqm3ij.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934406/PositivePropertiesOffice3D_page-0010_kqjn7w.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934407/PositivePropertiesOffice3D_page-0011_eet5vf.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934413/PositivePropertiesOffice3D_page-0013_hgqcjv.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934413/PositivePropertiesOffice3D_page-0014_fhdsts.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934429/PositivePropertiesOffice3D_page-0018_rkh4ba.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934437/PositivePropertiesOffice3D_page-0020_evzntn.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934442/PositivePropertiesOffice3D_page-0019_wvafft.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934442/PositivePropertiesOffice3D_page-0024_bsd98g.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934448/PositivePropertiesOffice3D_page-0025_aob1rq.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934450/PositivePropertiesOffice3D_page-0027_hcqx4a.jpg"
 
         ],
       },
@@ -156,25 +164,25 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761754649/view1_t8baup.jpg",
         ],
       },
-      {
-        name: "Luxury Villas",
-        images: [
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756707/02_4_s9qwrg.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756728/1_11_ofgxoq.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756727/2_14_yz21xe.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756725/1_12_t4em1n.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_29_-_Copy_wez5zu.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_33_erlmnk.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_33_erlmnk.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756706/1_6_axmuei.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756702/1_4_jdoqix.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756701/06_4_dk1r4x.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_6_zmp337.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_31_njaras.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_4_jccfm4.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756695/3_5_omgtol.jpg"
-        ],
-      },
+      // {
+      //   name: "Luxury Villas",
+      //   images: [
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756707/02_4_s9qwrg.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756728/1_11_ofgxoq.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756727/2_14_yz21xe.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756725/1_12_t4em1n.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_29_-_Copy_wez5zu.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_33_erlmnk.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756718/3_33_erlmnk.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756706/1_6_axmuei.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756702/1_4_jdoqix.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756701/06_4_dk1r4x.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_6_zmp337.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_31_njaras.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_4_jccfm4.jpg",
+      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756695/3_5_omgtol.jpg"
+      //   ],
+      // },
       {
         name:"Ahmed Villa",
         images:[
@@ -198,16 +206,36 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838697/01_3_16_IMGCentury_uhv7b1.jpg"
         ]
       },
-      // {
-      //   name:"Other Works",
-      //   images:[
-      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758484/471634004_636187642173610_5506335059134365935_n_dqgfqg.jpg",
-      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758482/471638286_1984814978698671_6642679942470541950_n_h2yozt.jpg",
-      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468698485_925840175696302_5071801304647805683_n_nnhpwd.jpg",
-      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/470487632_955103769826032_539565077760587167_n_qhdldh.jpg",
-      //     "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761758480/468619289_1304599844310818_625097438196359495_n_gq9tce.jpg"
-      //   ]
-      // }
+      {
+        name:"Benzir Studio",
+        images:[
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935045/06_2_nssqjj.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935046/468619289_1304599844310818_625097438196359495_n_vquztu.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935045/01_11_oibwen.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935045/07_2_rzsxda.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935045/05_2_1_o1mdiy.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935048/471634004_636187642173610_5506335059134365935_n_nyyi2n.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935048/468698485_925840175696302_5071801304647805683_n_qfpfia.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935049/471638286_1984814978698671_6642679942470541950_n_jquc6o.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935049/DESIGN_CONSULTANCY_rzfr3d.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935048/470487632_955103769826032_539565077760587167_n_daaojr.jpg"
+
+        ]
+      },
+      {
+        name:"Wazim Villa",
+        images:[
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761936629/024_uapdx6.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761936629/043_ftsk83.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761936629/M2_hdf5tx.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935953/FH_4_uxfn48.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935952/FH_5_dhybxw.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935952/FH_2_g3ljww.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935948/F_2_erbdj5.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935943/B3_b_lzs08x.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935944/B3_c_tjcxpa.jpg"
+        ]
+      }
     ],
   },
 
@@ -245,7 +273,12 @@ export const projects = [
       }, {
         name: "Exotic Shoreline",
         images: [
-          "",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761930544/IMG_7195_br2asi.webp",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761930538/IMG_7194_i0yz0y.webp",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761930540/IMG_7193_qdovju.webp",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761929142/IMG_7194_yocdan.webp",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761929122/IMG_7195_yyr3ec.webp",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761928793/IMG_7190_biynbp.webp"
         ],
       },
     ],
