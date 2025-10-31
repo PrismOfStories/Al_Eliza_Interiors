@@ -53,12 +53,12 @@ export default function ArchitectureHero() {
     if (ctaRef.current) {
       gsap.fromTo(
         ctaRef.current,
-        { opacity: 0, x: -90, skewX: 0 },
+        { opacity: 0, x: -90, scale: 0.95 },
         {
           opacity: 1,
           x: 0,
-          skewX: -20,
-          duration: 0.7,
+          scale: 1,
+          duration: 0.9,
           delay: 0.2,
           ease: "power3.out",
           scrollTrigger: {
@@ -69,6 +69,7 @@ export default function ArchitectureHero() {
         }
       );
     }
+
 
     // Batch animation for project cards
     const elements = sectionRef.current.querySelectorAll(".project-animate");
@@ -122,14 +123,14 @@ export default function ArchitectureHero() {
             ref={establishedRef}
             className="font-paragraph text-center text-sm font-[500] uppercase tracking-[0.3rem] text-zinc-500 sm:text-base lg:text-lg"
           >
-            Established in 2021
+            Established in 2017
           </p>
         </header>
 
         <main className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-stretch lg:gap-16">
           <article className="font-poppins project-animate">
             <div className="font-paragraph mb-6 text-center text-7xl font-[300]  leading-none  tracking-[0.3rem] text-black sm:text-8xl lg:text-start lg:text-9xl">
-              <p>7+</p>
+              <p>9+</p>
             </div>
             <p className="font-paragraph ml-1 mt-2 text-center text-xs font-[500] uppercase tracking-[0.3rem] text-zinc-500 sm:text-lg lg:text-start">
               Years of experience
@@ -196,19 +197,20 @@ export default function ArchitectureHero() {
               <Link
                 ref={ctaRef}
                 href="/get-in-touch"
-                className="group inline-flex items-center gap-3 text-[#1a1a1a] font-paragraph font-bold text-lg sm:text-2xl tracking-[0.05rem] transition-all duration-300 hover:text-[#000] hover:scale-[1.03]"
+                className="group inline-flex items-center gap-3 text-[#1a1a1a] font-paragraph font-bold text-lg sm:text-2xl tracking-[0.05rem] transition-all duration-300 hover:text-[#000] hover:scale-[1.03] not-italic"
                 role="link"
                 aria-label="Tell us about your project - Contact Al-Eliza Interiors"
               >
-                <span className="flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
-                  Tell us about your project
+                <span className="flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1 not-italic">
+                  TELL US ABOUT YOUR PROJECT
                   <FaChevronRight
                     aria-hidden="true"
-                    className="transition-transform duration-300 group-hover:translate-x-2"
+                    className="transition-transform duration-300 group-hover:translate-x-2 not-italic"
                   />
                 </span>
               </Link>
             </div>
+
 
           </div>
         </footer>

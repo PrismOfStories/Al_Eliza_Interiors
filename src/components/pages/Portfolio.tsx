@@ -22,9 +22,13 @@ export default function Portfolio() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxSlides, setLightboxSlides] = useState<{ src: string }[]>([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
+  // 🔹 Cloudinary optimization helper
+  const optimizeImage = (url: string, width = 1200) =>
+    url.replace("/upload/", `/upload/f_auto,q_auto,w_${width}/`);
+
+  // 🔹 GSAP Animations
   useGSAP(
     () => {
       gsap.from(".portfolio-animate", {
@@ -46,34 +50,35 @@ export default function Portfolio() {
     { scope: sectionRef }
   );
 
+  // 🔹 Lightbox image loader
   const handleImageClick = (subcategory: any) => {
-    const slides = subcategory.images.map((src: string) => ({ src }));
+    const slides = subcategory.images.map((src: string) => ({
+      src: optimizeImage(src, 1600),
+    }));
     setLightboxSlides(slides);
     setLightboxIndex(0);
     setLightboxOpen(true);
   };
 
-  // Helper: Get display images depending on tab
+  // 🔹 Get display images depending on active tab
   const getDisplayItems = () => {
     if (selectedTab === "all") {
-      // Show only first image from first subcategory of each main category
       return projects.map((project) => {
         const firstSub = project.subcategories?.[0];
         const firstImage = firstSub?.images?.[0];
         return {
           ...project,
           subcategory: firstSub,
-          image: firstImage,
+          image: optimizeImage(firstImage || "", 500),
         };
       });
     } else {
-      // Show each subcategory’s first image under the selected main category
       const project = projects.find((p) => p.category === selectedTab);
       if (!project) return [];
       return project.subcategories.map((sub: any) => ({
         ...project,
         subcategory: sub,
-        image: sub.images?.[0],
+        image: optimizeImage(sub.images?.[0] || "", 500),
       }));
     }
   };
@@ -98,8 +103,8 @@ export default function Portfolio() {
           </header>
         </section>
 
+        {/* Tabs */}
         <div className="mx-auto mt-8 max-w-[90rem] md:mt-28">
-          {/* Tabs */}
           <nav className="mb-8 flex flex-wrap justify-center gap-4 px-4 lg:justify-between">
             {tabs.map((tab) => (
               <button
@@ -147,16 +152,19 @@ export default function Portfolio() {
                       <figure className="relative h-56 w-full overflow-hidden sm:h-64">
                         <Image
                           src={item.image}
-                          alt={`${item.category} preview`}
+                          alt={`${item.subcategory?.name || item.category} preview`}
                           fill
                           className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw"
+                          placeholder="blur"
+                          blurDataURL="/blur-placeholder.jpg"
+                          priority={index < 3}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                        <figcaption className="font-paragraph absolute bottom-3 left-3 z-10 text-lg font-[300] tracking-[0.1rem] text-white md:bottom-7 md:left-4 md:text-lg">
+                        <figcaption className="font-paragraph absolute bottom-3 left-3 z-10 text-lg font-[400] tracking-[0.1rem] text-white md:bottom-7 md:left-4 md:text-lg">
                           {selectedTab === "all"
-                            ? item.category
-                            : item.subcategory?.title || ""}
+                            ? item.subcategory?.name || item.category
+                            : item.subcategory?.name}
                         </figcaption>
                       </figure>
                     </motion.article>
@@ -173,10 +181,11 @@ export default function Portfolio() {
             index={lightboxIndex}
             slides={lightboxSlides}
             plugins={[Thumbnails, Fullscreen, Zoom]}
-            carousel={{ finite: true }}
+            carousel={{ finite: true, preload: 1 }}
           />
         </div>
       </RevealWrapper>
     </main>
   );
 }
+  

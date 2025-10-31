@@ -503,10 +503,10 @@ function About() {
               </p>
               <p className="story-animate font-paragraph text-2xl font-[300] tracking-[0.2rem] md:text-3xl">
                 <Link
-                  href="mailto:info@aleliza.com"
+                  href="mailto:info@alelizainteriors.com"
                   className="hover:text-gold"
                 >
-                  info@aleliza.com
+                  info@alelizainteriors.com
                 </Link>
               </p>
             </address>
