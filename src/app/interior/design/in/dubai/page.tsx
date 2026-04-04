@@ -66,6 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
+  // page data list
   const features = [
     "Custom designs tailored to your lifestyle",
     "Realistic 3D room design before execution",
