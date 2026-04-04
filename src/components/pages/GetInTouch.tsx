@@ -6,7 +6,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaFacebookF,
-  FaXTwitter,
+  // FaXTwitter,
 } from "react-icons/fa6";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -314,7 +314,7 @@ export default function GetInTouch() {
         </p>
 
         {/* Main Title */}
-        <h2 className="ctaContent-animate font-outfit text-white mb-8 text-5xl leading-[1.5] tracking-[0.1rem] md:text-8xl lg:text-6xl">
+        <h2 className="ctaContent-animate font-outfit mb-8 text-5xl leading-[1.5] tracking-[0.1rem] text-white md:text-8xl lg:text-6xl">
           VISIT US
         </h2>
 

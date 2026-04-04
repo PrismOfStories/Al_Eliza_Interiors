@@ -2,6 +2,7 @@ import React from "react";
 import Services from "@/components/pages/Services";
 import JsonLd from "@/lib/utils/JsonLd";
 import { icons } from "@/lib/utils/meta";
+import { Metadata } from "next";
 
 async function generateLdJsonExpertise() {
   const siteUrl = process.env.SITE_URL || "https://alelizainteriors.com";
@@ -264,7 +265,7 @@ async function generateLdJsonExpertise() {
 
 const data = await generateLdJsonExpertise();
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const siteURL = process.env.SITE_URL;
   const siteName = process.env.SITE_NAME;
   const authorName = process.env.AUTHOR_NAME;
@@ -272,7 +273,7 @@ export async function generateMetadata() {
   return {
     title: "Al Eliza Interiors | Expert Interior Design Services in Dubai, UAE",
     description: `Premium interior design services in Dubai, UAE. From luxury villas to commercial spaces, Al Eliza Interiors brings your vision to life`,
-    author: authorName,
+    authors: [{ name: authorName || "Al Eliza Interiors" }],
     icons,
     robots: {
       index: true,
@@ -315,8 +316,6 @@ export async function generateMetadata() {
         "Premium interior design services in Dubai, UAE. From luxury villas to commercial spaces, Al Eliza Interiors brings your vision to life",
       creator: "@al_eliza_interiors",
       site: "@al_eliza_interiors",
-      image: `${siteURL}/images/opengraph/1200x630.png`,
-      url: `${siteURL}/expertise`,
     },
   };
 }

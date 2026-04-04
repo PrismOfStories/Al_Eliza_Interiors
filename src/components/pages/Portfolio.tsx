@@ -17,6 +17,11 @@ import { tabs, projects } from "@/lib/static-data/portfolio";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type Subcategory = {
+  name?: string;
+  images: string[];
+};
+
 export default function Portfolio() {
   const [selectedTab, setSelectedTab] = useState(tabs[0].value);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -51,7 +56,7 @@ export default function Portfolio() {
   );
 
   // 🔹 Lightbox image loader
-  const handleImageClick = (subcategory: any) => {
+  const handleImageClick = (subcategory: Subcategory) => {
     const slides = subcategory.images.map((src: string) => ({
       src: optimizeImage(src, 1600),
     }));
@@ -75,7 +80,7 @@ export default function Portfolio() {
     } else {
       const project = projects.find((p) => p.category === selectedTab);
       if (!project) return [];
-      return project.subcategories.map((sub: any) => ({
+      return project.subcategories.map((sub: Subcategory) => ({
         ...project,
         subcategory: sub,
         image: optimizeImage(sub.images?.[0] || "", 500),
@@ -157,7 +162,7 @@ export default function Portfolio() {
                           className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw"
                           placeholder="blur"
-                          blurDataURL="/blur-placeholder.jpg"
+                          blurDataURL={optimizeImage(item.image, 20)}
                           priority={index < 3}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
@@ -188,4 +193,3 @@ export default function Portfolio() {
     </main>
   );
 }
-  

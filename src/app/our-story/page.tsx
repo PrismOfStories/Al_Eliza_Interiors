@@ -2,6 +2,7 @@ import React from "react";
 import OurStory from "@/components/pages/OurStory";
 import { icons } from "@/lib/utils/meta";
 import JsonLd from "@/lib/utils/JsonLd";
+import { Metadata } from "next";
 
 async function generateLdJsonOurStory() {
   const siteUrl = process.env.SITE_URL || "https://alelizainteriors.com";
@@ -208,7 +209,7 @@ async function generateLdJsonOurStory() {
 
 const data = await generateLdJsonOurStory();
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const siteURL = process.env.SITE_URL;
   const siteName = process.env.SITE_NAME;
   const authorName = process.env.AUTHOR_NAME;
@@ -216,7 +217,7 @@ export async function generateMetadata() {
   return {
     title: "Discover the Journey Behind Al Eliza Interiors' Success Story",
     description: `Explore the inspiring journey of Al Eliza Interiors and how we became Dubai's leading luxury interior design firm. Learn what sets us apart and why clients trust us for bespoke residential and commercial interiors.`,
-    author: authorName,
+    authors: [{ name: authorName || "Al Eliza Interiors" }],
     icons,
     robots: {
       index: true,
@@ -258,8 +259,6 @@ export async function generateMetadata() {
         "Explore the inspiring journey of Al Eliza Interiors and how we became Dubai's leading luxury interior design firm. Learn what sets us apart and why clients trust us for bespoke residential and commercial interiors.",
       creator: "@al_eliza_interiors",
       site: "@al_eliza_interiors",
-      image: `${siteURL}/images/opengraph/1200x630.png`,
-      url: `${siteURL}/our-story`,
     },
   };
 }

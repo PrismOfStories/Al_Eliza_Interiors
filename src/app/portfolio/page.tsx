@@ -1,6 +1,7 @@
 import Portfolio from "@/components/pages/Portfolio";
 import JsonLd from "@/lib/utils/JsonLd";
 import { icons } from "@/lib/utils/meta";
+import { Metadata } from "next";
 import React from "react";
 
 async function generateLdJsonPortfolio() {
@@ -222,7 +223,7 @@ async function generateLdJsonPortfolio() {
 
 const data = await generateLdJsonPortfolio();
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const siteURL = process.env.SITE_URL;
   const siteName = process.env.SITE_NAME;
   const authorName = process.env.AUTHOR_NAME;
@@ -232,7 +233,7 @@ export async function generateMetadata() {
       "Al Eliza Interiors | Stunning Interior Design Portfolio in Dubai, UAE",
     description:
       "Explore Al Eliza Interiors' exclusive portfolio showcasing luxury villas, apartments, and commercial spaces in Dubai. See our bespoke interior designs that transform spaces into elegant and functional masterpieces.",
-    author: authorName,
+    authors: [{ name: authorName || "Al Eliza Interiors" }],
     icons,
     robots: {
       index: true,
@@ -274,8 +275,6 @@ export async function generateMetadata() {
         "Explore Al Eliza Interiors' exclusive portfolio showcasing luxury villas, apartments, and commercial spaces in Dubai. See our bespoke interior designs that transform spaces into elegant and functional masterpieces.",
       creator: "@al_eliza_interiors",
       site: "@al_eliza_interiors",
-      image: `${siteURL}/images/opengraph/1200x630.png`,
-      url: `${siteURL}/portfolio`,
     },
   };
 }

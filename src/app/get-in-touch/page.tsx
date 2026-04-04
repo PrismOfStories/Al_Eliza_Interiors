@@ -2,6 +2,7 @@ import React from "react";
 import GetInTouch from "@/components/pages/GetInTouch";
 import { icons } from "@/lib/utils/meta";
 import JsonLd from "@/lib/utils/JsonLd";
+import { Metadata } from "next";
 
 async function generateLdJsonContact() {
   const siteUrl = process.env.SITE_URL || "https://alelizainteriors.com";
@@ -199,7 +200,7 @@ async function generateLdJsonContact() {
 
 const data = await generateLdJsonContact();
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const siteURL = process.env.SITE_URL;
   const siteName = process.env.SITE_NAME;
   const authorName = process.env.AUTHOR_NAME;
@@ -208,7 +209,7 @@ export async function generateMetadata() {
     title: "Contact Al Eliza Interiors | Dubai Luxury Interior Design Experts",
     description:
       "Contact Al Eliza Interiors, Dubai's premier luxury interior design firm. Schedule a free consultation today for bespoke residential and commercial design services.",
-    author: authorName,
+    authors: [{ name: authorName || "Al Eliza Interiors" }],
     icons,
     robots: {
       index: true,
@@ -252,7 +253,6 @@ export async function generateMetadata() {
         "Get in touch with Al Eliza Interiors, Dubai's premier luxury interior design firm. Reach out for bespoke residential and commercial design consultations, quotes, and inquiries.",
       creator: `@${authorName}`,
       site: `@${siteName}`,
-      url: `${siteURL}/get-in-touch`,
     },
   };
 }
