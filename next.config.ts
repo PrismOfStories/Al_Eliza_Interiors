@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/interior/design/in/dubai/:path*',
-        destination: 'https://decor-delta.lovable.app',
+        destination: 'https://seo-aleliza.vercel.app/',
         permanent: true,
       },
     ]
