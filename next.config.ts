@@ -9,15 +9,6 @@ const nextConfig: NextConfig = {
         pathname: '/dxhmpdgqj/**',
       },
     ],
-  },
-  async redirects() {
-    return [
-      {
-        source: '/interior/design/in/dubai/:path*',
-        destination: 'https://decor-delta.lovable.app',
-        permanent: true,
-      },
-    ]
   }
 };
 
