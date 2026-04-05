@@ -1,20 +1,18 @@
-// src/app/api/contact/route.ts
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, subject, message } = await req.json();
+    const { name, email, phone, message } = await req.json();
 
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !phone || !message) {
       return NextResponse.json(
         { error: "All fields are required." },
         { status: 400 }
       );
     }
 
-    // 1️⃣ Setup mail transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -25,26 +23,24 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "aleenavincentneo@gmail.com",
-      subject: `New Contact Form: ${subject}`,
+      to: "info@alelizainteriors.com",
+      subject: "New Contact Form Submission",
       text: `
         Name: ${name}
         Email: ${email}
-        Subject: ${subject}
+        Phone: ${phone}
         Message: ${message}
       `,
     };
 
-    // 2️⃣ Send email first
     await transporter.sendMail(mailOptions);
 
-    // ✅ Respond immediately after email is sent
     const response = NextResponse.json({
       success: true,
-      message: "Message sent successfully! (Saving to Google Sheets in background...)",
+      message: "Message sent successfully!",
     });
 
-    // 3️⃣ Save to Google Sheets in the background (no await)
+    // ✅ Google Sheets (updated columns)
     (async () => {
       try {
         const auth = new google.auth.JWT({
@@ -54,15 +50,14 @@ export async function POST(req: Request) {
         });
 
         const sheets = google.sheets({ version: "v4", auth });
-        const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
         await sheets.spreadsheets.values.append({
-          spreadsheetId,
+          spreadsheetId: process.env.GOOGLE_SHEET_ID,
           range: "Sheet1!A:E",
           valueInputOption: "USER_ENTERED",
           requestBody: {
             values: [
-              [name, email, subject, message, new Date().toLocaleString()],
+              [name, email, phone, message, new Date().toLocaleString()],
             ],
           },
         });
@@ -72,9 +67,9 @@ export async function POST(req: Request) {
     })();
 
     return response;
-  } catch (error: unknown) {
+  } catch (error) {
     return NextResponse.json(
-      { error: "Internal Server Error", details: (error as Error).message },
+      { error: "Internal Server Error" },
       { status: 500 }
     );
   }
