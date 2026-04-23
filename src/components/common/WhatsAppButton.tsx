@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
           damping: 20,
           delay: 0.2,
         }}
-        className="hidden md:block fixed bottom-6 right-6 z-50"
+        className="fixed bottom-6 right-6 z-50 hidden md:block"
       >
         <motion.a
           href={whatsappUrl}
@@ -56,19 +56,19 @@ export default function WhatsAppButton() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center py-3 hover:bg-[#1ebe5d] transition"
+            className="flex flex-1 items-center justify-center py-3 transition hover:bg-[#1ebe5d]"
             aria-label="Chat on WhatsApp"
           >
-            <FaWhatsapp className="text-white text-3xl" />
+            <FaWhatsapp className="text-3xl text-white" />
           </a>
 
           {/* Call */}
           <a
             href={phoneUrl}
-            className="flex flex-1 items-center justify-center py-3 hover:bg-[#1ebe5d] transition"
+            className="flex flex-1 items-center justify-center py-3 transition hover:bg-[#1ebe5d]"
             aria-label="Call Us"
           >
-            <FaPhoneAlt className="text-white text-2xl" />
+            <FaPhoneAlt className="text-2xl text-white" />
           </a>
         </div>
       </motion.div>

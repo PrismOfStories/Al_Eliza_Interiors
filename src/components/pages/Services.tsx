@@ -97,7 +97,7 @@ export default function ServicesCombined() {
             <p className="expertise-animate font-paragraph text-gold mb-3 pt-10 text-sm font-[300] uppercase tracking-[0.3rem] md:text-xl md:tracking-[0.5rem]">
               OUR EXPERTISE
             </p>
-            <h1 className="expertise-animate font-outfit font-bold mb-6 text-center text-[clamp(2rem,6vw,5rem)] leading-[1.3] tracking-[0.2rem] md:tracking-[0.1rem]">
+            <h1 className="expertise-animate font-outfit mb-6 text-center text-[clamp(2rem,6vw,5rem)] font-bold leading-[1.3] tracking-[0.2rem] md:tracking-[0.1rem]">
               DESIGN SOLUTIONS
             </h1>
 
@@ -151,7 +151,7 @@ export default function ServicesCombined() {
           <p className="contentOne-animate font-paragraph text-silver mb-4 mt-10 text-sm font-[400] tracking-[0.2rem]">
             START BUILDING
           </p>
-          <h2 className="contentOne-animate font-outfit text-white mb-8 text-6xl font-extrabold leading-none md:text-8xl">
+          <h2 className="contentOne-animate font-outfit mb-8 text-6xl font-extrabold leading-none text-white md:text-8xl">
             LET&apos;S DESIGN
           </h2>
           <p className="contentOne-animate font-paragraph text-silver mx-auto mb-12 max-w-2xl text-base font-[300] tracking-[0.15rem] md:text-lg">

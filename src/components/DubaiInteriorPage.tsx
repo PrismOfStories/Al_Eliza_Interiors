@@ -1,17 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { CheckCircle, MapPin, ArrowRight } from "lucide-react";
+import { CheckCircle, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { BsCircleFill } from "react-icons/bs";
-import { FAQSection } from "@/components/FAQSection";
+import FAQAccordion from "./ui/FAQAccordation";
 export default function DubaiInteriorPage() {
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
-
-  // page data list
   const features = [
     "Custom designs tailored to your lifestyle",
     "Realistic 3D room design before execution",
@@ -88,6 +86,64 @@ export default function DubaiInteriorPage() {
     "Scandinavian interior design",
   ];
 
+  const faqs = [
+    {
+      q: "What is included in interior design services?",
+      a: "Our services include consultation, concept development, 3D visualization, material selection, procurement, and project execution.",
+    },
+    {
+      q: "How do I choose the right interior designer?",
+      a: "Look for experience, portfolio quality, client reviews, and transparency. We tick all the boxes!",
+    },
+    {
+      q: "Is 3D interior design accurate?",
+      a: "Our 3D renders are highly accurate and give you a realistic preview of the final result.",
+    },
+    {
+      q: "Can I customize my design?",
+      a: "Every design is fully customizable to your preferences, needs, and budget.",
+    },
+    {
+      q: "Do you work on commercial projects?",
+      a: "Yes, we handle restaurants, retail spaces, showrooms, and office interiors across Dubai.",
+    },
+    {
+      q: "Do you offer budget-friendly designs?",
+      a: "We have packages for every budget without compromising on quality or aesthetics.",
+    },
+  ];
+
+  const paqs = [
+    {
+      q: "What is the cost of interior design in Dubai?",
+      a: "Costs vary based on size, scope, and materials. We offer transparent pricing with packages to fit every budget. Contact us for a free estimate.",
+    },
+    {
+      q: "How long does interior design take?",
+      a: "Typical projects take 4-12 weeks depending on complexity. We provide detailed timelines during the consultation phase.",
+    },
+    {
+      q: "Do you provide 3D interior design?",
+      a: "Yes! We use advanced 3D visualization so you can see your space come alive before any construction begins.",
+    },
+    {
+      q: "Can I design a small apartment?",
+      a: "Absolutely. We specialize in maximizing small spaces with smart layouts and creative storage solutions.",
+    },
+    {
+      q: "Do you handle execution also?",
+      a: "Yes, we provide complete solutions from design to execution, ensuring quality at every step.",
+    },
+    {
+      q: "What styles do you offer?",
+      a: "We work with all styles—modern, contemporary, minimalist, Scandinavian, Arabic-inspired, and more.",
+    },
+    {
+      q: "Do you offer virtual interior design services?",
+      a: "Yes, we offer virtual consultations and remote design services for clients anywhere.",
+    },
+  ];
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -121,20 +177,18 @@ export default function DubaiInteriorPage() {
     }
   };
 
-
   return (
-    <><Toaster position="top-right" />
+    <>
+      <Toaster position="top-right" />
       <div>
         {openModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-
             {/* Modal Box */}
             <div className="relative w-full max-w-2xl rounded-2xl bg-white p-6 sm:p-10">
-
               {/* Close Button */}
               <button
                 onClick={() => setOpenModal(false)}
-                className="absolute right-4 top-4 text-gray-500 hover:text-black text-xl"
+                className="absolute right-4 top-4 text-xl text-gray-500 hover:text-black"
               >
                 ✕
               </button>
@@ -145,7 +199,6 @@ export default function DubaiInteriorPage() {
 
               {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-6">
-
                 <div className="border-b pb-2">
                   <label className="text-sm text-gray-600">NAME</label>
                   <input
@@ -188,7 +241,7 @@ export default function DubaiInteriorPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gold py-3 text-white font-medium rounded-lg hover:bg-gold-dark transition"
+                  className="bg-gold hover:bg-gold-dark w-full rounded-lg py-3 font-medium text-white transition"
                 >
                   SEND MESSAGE
                 </button>
@@ -220,7 +273,8 @@ export default function DubaiInteriorPage() {
 
             <p className="font-paragraph mx-auto mt-6 max-w-2xl text-lg text-neutral-300">
               Modern, functional, and stunning interiors with advanced 3D
-              visualization. See your space come alive before construction begins.
+              visualization. See your space come alive before construction
+              begins.
             </p>
 
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -264,7 +318,9 @@ export default function DubaiInteriorPage() {
                     <CheckCircle className="text-gold h-6 w-6" />
                   </div>
 
-                  <span className=" font-paragraph text-neutral-600">{item}</span>
+                  <span className=" font-paragraph text-neutral-600">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -444,8 +500,8 @@ export default function DubaiInteriorPage() {
               <div className="border-gold/20 rounded-2xl border bg-white p-6 text-left transition-all duration-500 hover:-translate-y-4">
                 <div className="mb-3 flex text-[#d89c2b]">{"★★★★★"}</div>
                 <p className="italic leading-relaxed text-gray-600">
-                  &quot;Amazing transformation! The 3D design helped us visualize
-                  everything.&quot;
+                  &quot;Amazing transformation! The 3D design helped us
+                  visualize everything.&quot;
                 </p>
               </div>
 
@@ -496,18 +552,36 @@ export default function DubaiInteriorPage() {
             </p>
 
             <button
-                onClick={() => setOpenModal(true)}
-                className="hover:bg-gold-dark bg-gold rounded-lg px-6 py-3 text-lg font-medium text-white transition"
-              >
-                👉 Get Free Design Consultation
-              </button>
+              onClick={() => setOpenModal(true)}
+              className="hover:bg-gold-dark bg-gold rounded-lg px-6 py-3 text-lg font-medium text-white transition"
+            >
+              👉 Get Free Design Consultation
+            </button>
             <p className="text-silver mt-6 flex items-center justify-center text-sm">
               ⏱️ Limited slots available this week!
             </p>
           </div>
         </section>
 
-        <FAQSection />
+        <section className="bg-[#faf8f5] py-24">
+          <div className="container mx-auto max-w-4xl px-6">
+            <FAQAccordion
+              items={paqs}
+              title="People Also Ask"
+              subtitle="Common Questions"
+            />
+          </div>
+        </section>
+
+        <section className="bg-white py-24">
+          <div className="container mx-auto max-w-4xl px-6">
+            <FAQAccordion
+              items={faqs}
+              title="Frequently Asked Questions"
+              subtitle=""
+            />
+          </div>
+        </section>
 
         <section id="about" className="bg-[#f7f7f7] py-12 sm:py-24">
           <div className="container mx-auto px-6">
@@ -535,9 +609,9 @@ export default function DubaiInteriorPage() {
 
                 <p className="mb-4 leading-relaxed text-neutral-600">
                   Finding the right interior design in Dubai can feel
-                  overwhelming. You want a space that looks beautiful, works well,
-                  and fits your budget. But choosing the right designer, style,
-                  and layout isn&apos;t easy.
+                  overwhelming. You want a space that looks beautiful, works
+                  well, and fits your budget. But choosing the right designer,
+                  style, and layout isn&apos;t easy.
                 </p>
 
                 <p className="text-gold mb-4 leading-relaxed">
@@ -546,27 +620,27 @@ export default function DubaiInteriorPage() {
 
                 <p className="mb-4 leading-relaxed text-neutral-600">
                   We offer expert interior designing in Dubai with advanced 3D
-                  interior design solutions. Whether it&apos;s your home, office,
-                  or commercial space, we turn your ideas into reality—before the
-                  work even starts.
+                  interior design solutions. Whether it&apos;s your home,
+                  office, or commercial space, we turn your ideas into
+                  reality—before the work even starts.
                 </p>
 
                 <p className="mb-8 leading-relaxed text-neutral-600">
-                  From living room decor ideas to full office interior design, we
-                  create spaces that reflect your personality and purpose.
+                  From living room decor ideas to full office interior design,
+                  we create spaces that reflect your personality and purpose.
                 </p>
 
-               <button
-                onClick={() => setOpenModal(true)}
-                className="hover:bg-gold-dark bg-gold rounded-lg px-6 py-3 text-lg font-medium text-white transition"
-              >
-                👉 Get Free Design Consultation
-              </button>
+                <button
+                  onClick={() => setOpenModal(true)}
+                  className="hover:bg-gold-dark bg-gold rounded-lg px-6 py-3 text-lg font-medium text-white transition"
+                >
+                  👉 Get Free Design Consultation
+                </button>
               </div>
             </div>
           </div>
         </section>
       </div>
     </>
-  )
+  );
 }

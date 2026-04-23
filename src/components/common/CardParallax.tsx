@@ -9,7 +9,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 type CardProps = {
@@ -96,7 +95,7 @@ const Card = ({
             ref={contentRef}
             className="relative z-10 flex h-full flex-col justify-between sm:p-8"
           >
-            <h2 className="font-outfit m-0 w-full uppercase pt-5 text-center text-2xl font-semibold leading-[1.4] text-white sm:text-3xl sm:leading-[1.5] sm:tracking-[0.4rem] md:pt-0 lg:text-5xl ">
+            <h2 className="font-outfit m-0 w-full pt-5 text-center text-2xl font-semibold uppercase leading-[1.4] text-white sm:text-3xl sm:leading-[1.5] sm:tracking-[0.4rem] md:pt-0 lg:text-5xl ">
               {title}
             </h2>
 
@@ -108,11 +107,11 @@ const Card = ({
               <Link
                 href="/expertise"
                 className="hover:bg-gold font-poppins group inline-flex
-             bg-gradient-to-b from-[#2b2b2b] via-[#1a1a1a] to-[#0d0d0d]
-             hover:from-[#3a3a3a] hover:via-[#1f1f1f] hover:to-[#000]
-             px-6 py-3 text-sm tracking-widest text-white transition-colors duration-300
-             [transform:skewX(-20deg)] sm:px-8 sm:py-4 sm:text-base
-             rounded-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_2px_6px_rgba(0,0,0,0.4)]"
+             rounded-md bg-gradient-to-b from-[#2b2b2b] via-[#1a1a1a]
+             to-[#0d0d0d] px-6 py-3
+             text-sm tracking-widest text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_2px_6px_rgba(0,0,0,0.4)] transition-colors duration-300 [transform:skewX(-20deg)]
+             hover:from-[#3a3a3a] hover:via-[#1f1f1f] hover:to-[#000] sm:px-8
+             sm:py-4 sm:text-base"
               >
                 <span className="font-outfit flex items-center gap-2 font-[400] tracking-[0.20rem] [transform:skewX(20deg)]">
                   See more
@@ -120,7 +119,6 @@ const Card = ({
                   <FaChevronRight className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
-
             </div>
           </div>
         </motion.div>

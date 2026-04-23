@@ -19,18 +19,18 @@ export default function Footer() {
     <footer className="w-full bg-[#161616] py-16 text-neutral-300">
       <div
         className="
-          mx-auto 
-          flex 
+          /* 
+          ✅ 
+          Added 
+          balanced 
+          side 
+          padding 
+          */   /* ✅ Reduced center spacing for mobile
+          */ /* ✅ Reduced desktop spacing */ mx-auto flex
           max-w-7xl 
           flex-col 
           items-center 
-          justify-center 
-          px-8   /* ✅ Added balanced side padding */
-          gap-10 /* ✅ Reduced center spacing for mobile */
-          sm:items-start 
-          md:flex-row 
-          md:justify-between 
-          md:gap-8 /* ✅ Reduced desktop spacing */
+          justify-center gap-10 px-8 sm:items-start md:flex-row md:justify-between md:gap-8
         "
       >
         {/* Services */}
@@ -54,7 +54,7 @@ export default function Footer() {
           <h2 className="text-silver font-paragraph mb-2 text-lg font-semibold uppercase tracking-[0.3rem]">
             Contact
           </h2>
-          <p className="text-sm text-neutral-400 leading-relaxed">
+          <p className="text-sm leading-relaxed text-neutral-400">
             Al Eliza Interior, FBL Business Center,
             <br /> Al Mamzar - Dubai - United Arab Emirates
           </p>

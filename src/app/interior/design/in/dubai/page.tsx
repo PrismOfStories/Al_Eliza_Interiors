@@ -1,9 +1,3 @@
-import React from "react";
-import { CheckCircle, MapPin, ArrowRight } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import { BsCircleFill } from "react-icons/bs";
-import { FAQSection } from "@/components/FAQSection";
 import { icons } from "@/lib/utils/meta";
 import { Metadata } from "next";
 import DubaiInteriorPage from "@/components/DubaiInteriorPage";
@@ -12,7 +6,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteURL = process.env.SITE_URL;
   const siteName = process.env.SITE_NAME;
   const authorName = process.env.AUTHOR_NAME;
-
 
   return {
     title:
@@ -68,10 +61,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-
-  
-
-  return (
-    <DubaiInteriorPage/>
-  );
+  return <DubaiInteriorPage />;
 }

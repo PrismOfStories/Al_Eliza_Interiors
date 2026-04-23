@@ -70,7 +70,6 @@ export default function ArchitectureHero() {
       );
     }
 
-
     // Batch animation for project cards
     const elements = sectionRef.current.querySelectorAll(".project-animate");
     if (elements.length === 0) return;
@@ -107,7 +106,6 @@ export default function ArchitectureHero() {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
-
 
   return (
     <section
@@ -197,21 +195,19 @@ export default function ArchitectureHero() {
               <Link
                 ref={ctaRef}
                 href="/get-in-touch"
-                className="group inline-flex items-center gap-3 text-[#1a1a1a] font-paragraph font-bold text-lg sm:text-2xl tracking-[0.05rem] transition-all duration-300 hover:text-[#000] hover:scale-[1.03] not-italic"
+                className="font-paragraph group inline-flex items-center gap-3 text-lg font-bold not-italic tracking-[0.05rem] text-[#1a1a1a] transition-all duration-300 hover:scale-[1.03] hover:text-[#000] sm:text-2xl"
                 role="link"
                 aria-label="Tell us about your project - Contact Al-Eliza Interiors"
               >
-                <span className="flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1 not-italic">
+                <span className="flex items-center gap-2 not-italic transition-transform duration-300 group-hover:translate-x-1">
                   TELL US ABOUT YOUR PROJECT
                   <FaChevronRight
                     aria-hidden="true"
-                    className="transition-transform duration-300 group-hover:translate-x-2 not-italic"
+                    className="not-italic transition-transform duration-300 group-hover:translate-x-2"
                   />
                 </span>
               </Link>
             </div>
-
-
           </div>
         </footer>
       </div>

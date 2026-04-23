@@ -74,7 +74,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(3);

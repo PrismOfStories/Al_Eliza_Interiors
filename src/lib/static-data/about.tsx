@@ -1,5 +1,5 @@
 export const team = [
- {
+  {
     name: "Mr. Harif Harry",
     role: "CEO & Founder",
     image:
@@ -18,7 +18,7 @@ export const team = [
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/ASHIQ_c852sx.jpg",
   },
-  
+
   {
     name: "Paul Topson",
     role: "Project Manager",
@@ -48,7 +48,8 @@ export const team = [
     role: "Site Supervisor",
     image:
       "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761407921/FAHAD_kwl8y8.jpg",
-  },{
+  },
+  {
     name: "Roshan",
     role: "3D Visulizer",
     image:
@@ -69,5 +70,5 @@ export const logos = [
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649511/client_4_ymbtyk.webp",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649510/client_2_bzhf63.webp",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1753649510/client_1_x55ndy.webp",
-  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761408538/RAG_LOGO_nojdgf.jpg"
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761408538/RAG_LOGO_nojdgf.jpg",
 ];

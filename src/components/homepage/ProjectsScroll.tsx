@@ -12,15 +12,15 @@ const images = [
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585250/CABIN_LOBBY_2_pst768.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375810/71a13c6c-a127-4918-a0cf-7d9c946b335f_l33i6d.jpg",
   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375808/6cf66ea9-936e-4598-99f0-cd34b85e87c9_wiwleg.jpg",
-   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761582945/Gemini_Generated_Image_n33oorn33oorn33o_2_ymdiw4.png",
-   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375811/a022a7f7-c63b-4659-9964-c49762a1e48c_awcmul.jpg",
-   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375896/IMG_0479_2_lwzj10.jpg",
-   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756706/1_6_axmuei.jpg",
-   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375987/C6F902C5-CD8D-4B96-A477-DE927D17587A_lkhbff.jpg",
-   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_4_jccfm4.jpg",
-   "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0001_esvs77.jpg"
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761582945/Gemini_Generated_Image_n33oorn33oorn33o_2_ymdiw4.png",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375811/a022a7f7-c63b-4659-9964-c49762a1e48c_awcmul.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375896/IMG_0479_2_lwzj10.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756706/1_6_axmuei.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375987/C6F902C5-CD8D-4B96-A477-DE927D17587A_lkhbff.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761756696/3_4_jccfm4.jpg",
+  "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0001_esvs77.jpg",
 ];
-// 
+//
 
 export default function ProjectsScroll() {
   const gallery = useRef(null);
