@@ -4,7 +4,32 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import { CheckCircle2, Move } from "lucide-react";
 
-export default function TransformationSection() {
+export type TransformationSectionProps = {
+  title?: string;
+  subtitle?: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+  gainTitle?: string;
+  gainItems?: string[];
+  beforeImage?: string;
+  afterImage?: string;
+};
+
+export default function TransformationSection({
+  title = "The Transformation You Experience",
+  subtitle = "From ordinary to exceptional.",
+  beforeLabel = "Cluttered, underutilized, lacking identity",
+  afterLabel = "Elegant, spacious, and visually stunning",
+  gainTitle = "What You Gain:",
+  gainItems = [
+    "A living room that reflects your lifestyle and status",
+    "Enhanced comfort and functionality",
+    "Seamless flow in open-plan living spaces",
+    "A space designed for both relaxation and entertaining",
+  ],
+  beforeImage = "/images/commercial.webp",
+  afterImage = "/images/home.webp"
+}: TransformationSectionProps = {}) {
   const [position, setPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -31,10 +56,10 @@ export default function TransformationSection() {
       <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-16 text-center">
           <h2 className="font-outfit mb-4 text-4xl md:text-5xl">
-            The Transformation You Experience
+            {title}
           </h2>
           <p className="font-paragraph text-lg text-gray-400">
-            From ordinary to exceptional.
+            {subtitle}
           </p>
         </div>
 
@@ -45,7 +70,7 @@ export default function TransformationSection() {
           >
             {/* AFTER IMAGE AND LABEL */}
             <Image
-              src="/images/home.webp"
+              src={afterImage}
               alt="After"
               fill
               className="object-cover"
@@ -55,7 +80,7 @@ export default function TransformationSection() {
                 AFTER
               </span>
               <p className="font-paragraph mt-2 text-base font-medium text-white drop-shadow-lg">
-                Elegant, spacious, and visually stunning
+                {afterLabel}
               </p>
             </div>
 
@@ -65,7 +90,7 @@ export default function TransformationSection() {
               style={{ width: `${position}%` }}
             >
               <Image
-                src="/images/commercial.webp"
+                src={beforeImage}
                 alt="Before"
                 fill
                 className="object-cover"
@@ -75,7 +100,7 @@ export default function TransformationSection() {
                   BEFORE
                 </span>
                 <p className="font-paragraph mt-2 text-base font-medium text-white drop-shadow-lg">
-                  Cluttered, underutilized, lacking identity
+                  {beforeLabel}
                 </p>
               </div>
             </div>
@@ -93,20 +118,15 @@ export default function TransformationSection() {
           </div>
 
           <div className="col-span-1 md:col-span-4">
-            <h3 className="mb-6 text-2xl font-bold">What You Gain:</h3>
+            <h3 className="mb-6 text-2xl font-bold">{gainTitle}</h3>
 
             <ul className="space-y-4">
-              {[
-                "A living room that reflects your lifestyle and status",
-                "Enhanced comfort and functionality",
-                "Seamless flow in open-plan living spaces",
-                "A space designed for both relaxation and entertaining",
-              ].map((item, i) => (
+              {gainItems.map((item, i) => (
                 <li
                   key={i}
                   className="flex items-center gap-3 rounded-lg bg-white/5 p-4"
                 >
-                  <CheckCircle2 className="h-6 w-6 text-[#CFA767]" />
+                  <CheckCircle2 className="h-6 w-6 text-[#CFA767] shrink-0" />
                   <span className="text-gray-300">{item}</span>
                 </li>
               ))}
