@@ -28,7 +28,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375815/ef98fe25-cd43-4499-ab4e-a24dad202a42_zusqtb.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375814/d492e54e-b6b1-4d93-9b63-36f05ece262d_u5zyxl.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375805/1910ddfa-7071-4c94-a121-f4bf5e54aa68_dbd9v7.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375806/01d23908-ab7f-4b9f-bdf5-8f49b975d1f8_rc4ctf.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375806/01d23908-ab7f-4b9f-bdf5-8f49b975d1f8_rc4ctf.jpg",
         ],
       },
       {
@@ -39,23 +39,23 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375893/IMG_0454_5_itoimo.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375897/IMG_0481_2_zfrf1d.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375900/IMG_0490_2_svbil8.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375895/IMG_0474_4_dpi2lz.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1760375895/IMG_0474_4_dpi2lz.jpg",
         ],
       },
       {
         name: "Morfin",
         images: [
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0001_esvs77.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933117/MORFIN1_page-00061_enk1nd.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933116/MORFIN1_page-0020_djshh7.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933115/MORFIN1_page-0017_qgneli.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933114/MORFIN1_page-0019_w62pl9.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933111/MORFIN1_page-0018_nyfwlo.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933107/MORFIN1_page-0011_bcf1d7.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933107/MORFIN1_page-0012_vqefm7.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933098/MORFIN1_page-0007_do7ws3.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933084/MORFIN1_page-0005_gxylat.jpg",
-        "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0002_cgd6je.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0001_esvs77.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933117/MORFIN1_page-00061_enk1nd.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933116/MORFIN1_page-0020_djshh7.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933115/MORFIN1_page-0017_qgneli.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933114/MORFIN1_page-0019_w62pl9.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933111/MORFIN1_page-0018_nyfwlo.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933107/MORFIN1_page-0011_bcf1d7.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933107/MORFIN1_page-0012_vqefm7.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933098/MORFIN1_page-0007_do7ws3.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933084/MORFIN1_page-0005_gxylat.jpg",
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761933078/MORFIN1_page-0002_cgd6je.jpg",
         ],
       },
       {
@@ -74,8 +74,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934442/PositivePropertiesOffice3D_page-0019_wvafft.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934442/PositivePropertiesOffice3D_page-0024_bsd98g.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934448/PositivePropertiesOffice3D_page-0025_aob1rq.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934450/PositivePropertiesOffice3D_page-0027_hcqx4a.jpg"
-
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761934450/PositivePropertiesOffice3D_page-0027_hcqx4a.jpg",
         ],
       },
       {
@@ -104,7 +103,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585250/CABIN_LOBBY_2_pst768.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585250/CABIN_3_oof9pf.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585249/PHONE_BOOTH_2_laswzo.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585246/PANTRY_2_zybmrb.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761585246/PANTRY_2_zybmrb.jpg",
         ],
       },
       // {
@@ -184,8 +183,8 @@ export const projects = [
       //   ],
       // },
       {
-        name:"Ahmed Villa",
-        images:[
+        name: "Ahmed Villa",
+        images: [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838735/03_33_5_IMGCentury_tw8v8g.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838752/09_2_IMGCentury_mcyn5a.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838745/08_1_IMGCentury_fbc23x.jpg",
@@ -203,12 +202,12 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838705/1_27_17_IMGCentury_yyhgki.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838703/01_20_IMGCentury_cfgt5a.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838700/01_6_21_IMGCentury_u3exum.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838697/01_3_16_IMGCentury_uhv7b1.jpg"
-        ]
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761838697/01_3_16_IMGCentury_uhv7b1.jpg",
+        ],
       },
       {
-        name:"Benzir Studio",
-        images:[
+        name: "Benzir Studio",
+        images: [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935045/06_2_nssqjj.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935046/468619289_1304599844310818_625097438196359495_n_vquztu.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935045/01_11_oibwen.jpg",
@@ -218,13 +217,12 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935048/468698485_925840175696302_5071801304647805683_n_qfpfia.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935049/471638286_1984814978698671_6642679942470541950_n_jquc6o.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935049/DESIGN_CONSULTANCY_rzfr3d.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935048/470487632_955103769826032_539565077760587167_n_daaojr.jpg"
-
-        ]
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935048/470487632_955103769826032_539565077760587167_n_daaojr.jpg",
+        ],
       },
       {
-        name:"Wazim Villa",
-        images:[
+        name: "Wazim Villa",
+        images: [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761936629/024_uapdx6.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761936629/043_ftsk83.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761936629/M2_hdf5tx.jpg",
@@ -233,9 +231,9 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935952/FH_2_g3ljww.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935948/F_2_erbdj5.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935943/B3_b_lzs08x.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935944/B3_c_tjcxpa.jpg"
-        ]
-      }
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761935944/B3_c_tjcxpa.jpg",
+        ],
+      },
     ],
   },
 
@@ -258,7 +256,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486482/8_tbwluc.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486480/5_1_xq6mf9.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486480/6_1_tpstgv.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486481/7_2_cwifv3.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761486481/7_2_cwifv3.jpg",
         ],
       },
       {
@@ -268,9 +266,10 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/be23b873-e309-4ff9-ba1b-90d88f02cd0e_tkezhy.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/ea162ef0-16d8-4e56-b169-fedaacc68ed9_wuvynq.jpg",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/45240ba2-5e08-424e-bd46-7eb5a9c156c6_bmzgxp.jpg",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/63a13723-398c-4d0e-833d-07feebb0198e_ttwrio.jpg"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761487081/63a13723-398c-4d0e-833d-07feebb0198e_ttwrio.jpg",
         ],
-      }, {
+      },
+      {
         name: "Exotic Shoreline",
         images: [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761930544/IMG_7195_br2asi.webp",
@@ -278,7 +277,7 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761930540/IMG_7193_qdovju.webp",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761929142/IMG_7194_yocdan.webp",
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761929122/IMG_7195_yyr3ec.webp",
-          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761928793/IMG_7190_biynbp.webp"
+          "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761928793/IMG_7190_biynbp.webp",
         ],
       },
     ],
@@ -300,7 +299,6 @@ export const projects = [
           "https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761491454/bc487908-e126-4148-b924-78986115f4f5_ntbyvh.jpg",
         ],
       },
-
     ],
   },
 ];

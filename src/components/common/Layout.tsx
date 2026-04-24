@@ -7,6 +7,7 @@ import Header from "../header/Header";
 import Footer from "../common/Footer";
 import SmoothScrollProvider from "../common/SmoothScroll";
 import WhatsAppButton from "./WhatsAppButton";
+import { Toaster } from "react-hot-toast";
 
 let hasShownPreloader = false;
 
@@ -30,6 +31,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <Fragment>
+      <Toaster position="top-right" />
       <AnimatePresence mode="wait">
         {loading && <Preloader key="preloader" />}
       </AnimatePresence>

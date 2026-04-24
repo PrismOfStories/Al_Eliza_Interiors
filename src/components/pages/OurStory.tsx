@@ -135,7 +135,6 @@ function About() {
 
   const text = "Let's Chat";
 
-
   return (
     <main ref={sectionRef}>
       <ToastContainer />
@@ -168,7 +167,7 @@ function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="font-poppins text-sm uppercase tracking-[0.2em] text-gold sm:text-base"
+              className="font-poppins text-gold text-sm uppercase tracking-[0.2em] sm:text-base"
             >
               “Designing Spaces That Tell Your Story”
             </motion.p>
@@ -179,8 +178,8 @@ function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: false }}
-              className="font-outfit text-3xl font-bold uppercase leading-[1.1] tracking-[0.08em]
-      text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-nowrap"
+              className="font-outfit whitespace-nowrap text-3xl font-bold uppercase leading-[1.1]
+      tracking-[0.08em] text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
             >
               About Aleliza
             </motion.h1>
@@ -193,11 +192,10 @@ function About() {
               viewport={{ once: true }}
               className="font-paragraph mt-3 max-w-2xl text-center text-sm leading-relaxed text-gray-300 sm:text-base md:text-lg"
             >
-              We create timeless interiors that balance beauty, functionality, and the unique personality of every client we serve.
+              We create timeless interiors that balance beauty, functionality,
+              and the unique personality of every client we serve.
             </motion.p>
           </header>
-
-
         </RevealWrapper>
       </section>
 
@@ -286,7 +284,8 @@ function About() {
             Meet Our Team
           </h2>
           <p className="story-animate text-silver font-paragraph mt-4 text-sm tracking-[0.1rem] lg:text-lg">
-            Get to know the people turning ideas into inspiring homes and gardens.
+            Get to know the people turning ideas into inspiring homes and
+            gardens.
           </p>
         </div>
 
@@ -354,11 +353,7 @@ function About() {
             </article>
           ))}
         </div>
-
       </section>
-
-
-
 
       {/* Clients Section */}
       <section className="py-16 lg:py-24" aria-label="Our prestigious clients">
@@ -370,7 +365,6 @@ function About() {
           </header>
 
           <div className="space-y-10">
-
             {/* --- ROW 1 : 4 LOGOS --- */}
             <div className="grid grid-cols-4 gap-6">
               {logos.slice(0, 4).map((logo, index) => (
@@ -430,9 +424,7 @@ function About() {
                 </div>
               ))}
             </div>
-
           </div>
-
         </div>
       </section>
       <section
@@ -440,10 +432,9 @@ function About() {
         aria-label="Let's chat call to action"
       >
         <div className="mx-auto flex max-w-7xl flex-col-reverse gap-10 lg:flex-row lg:items-center lg:justify-between">
-
           {/* IMAGE */}
-          <figure className="w-full lg:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-[400px] h-[400px]">
+          <figure className="flex w-full justify-center lg:w-1/2">
+            <div className="relative h-[400px] w-full max-w-[400px]">
               <Image
                 src="https://res.cloudinary.com/dxhmpdgqj/image/upload/v1761406835/LET_S_CHAT_f8dl1o.png"
                 alt="Let's Chat Visual"
@@ -456,8 +447,8 @@ function About() {
           </figure>
 
           {/* TEXT */}
-          <div className="flex w-full lg:w-1/2 overflow-visible">
-            <h2 className="font-outfit text-gold text-4xl font-bold leading-none tracking-[0.25rem] sm:text-7xl lg:text-8xl whitespace-nowrap">
+          <div className="flex w-full overflow-visible lg:w-1/2">
+            <h2 className="font-outfit text-gold whitespace-nowrap text-4xl font-bold leading-none tracking-[0.25rem] sm:text-7xl lg:text-8xl">
               {text.split("").map((letter, i) => (
                 <motion.span
                   key={i}
@@ -476,10 +467,8 @@ function About() {
               ))}
             </h2>
           </div>
-
         </div>
       </section>
-
 
       {/* Contact Form Section */}
       <section
@@ -604,7 +593,6 @@ function About() {
       </section>
 
       {/* Call to Action Section */}
-
     </main>
   );
 }
