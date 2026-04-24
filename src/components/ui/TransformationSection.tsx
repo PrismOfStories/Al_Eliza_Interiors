@@ -7,6 +7,7 @@ import { CheckCircle2, Move } from "lucide-react";
 export type TransformationSectionProps = {
   title?: string;
   subtitle?: string;
+  footerParagraph?: string;
   beforeLabel?: string;
   afterLabel?: string;
   gainTitle?: string;
@@ -18,6 +19,7 @@ export type TransformationSectionProps = {
 export default function TransformationSection({
   title = "The Transformation You Experience",
   subtitle = "From ordinary to exceptional.",
+  footerParagraph = "",
   beforeLabel = "Cluttered, underutilized, lacking identity",
   afterLabel = "Elegant, spacious, and visually stunning",
   gainTitle = "What You Gain:",
@@ -28,7 +30,7 @@ export default function TransformationSection({
     "A space designed for both relaxation and entertaining",
   ],
   beforeImage = "/images/commercial.webp",
-  afterImage = "/images/home.webp"
+  afterImage = "/images/home.webp",
 }: TransformationSectionProps = {}) {
   const [position, setPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -55,12 +57,8 @@ export default function TransformationSection({
     <section className="bg-background py-20 text-white">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-16 text-center">
-          <h2 className="font-outfit mb-4 text-4xl md:text-5xl">
-            {title}
-          </h2>
-          <p className="font-paragraph text-lg text-gray-400">
-            {subtitle}
-          </p>
+          <h2 className="font-outfit mb-4 text-4xl md:text-5xl">{title}</h2>
+          <p className="font-paragraph text-lg text-gray-400">{subtitle}</p>
         </div>
 
         <div className="grid items-center gap-12 md:grid-cols-12">
@@ -69,12 +67,7 @@ export default function TransformationSection({
             className="relative col-span-1 h-[400px] w-full touch-none select-none overflow-hidden rounded-xl md:col-span-8"
           >
             {/* AFTER IMAGE AND LABEL */}
-            <Image
-              src={afterImage}
-              alt="After"
-              fill
-              className="object-cover"
-            />
+            <Image src={afterImage} alt="After" fill className="object-cover" />
             <div className="absolute right-6 top-6 z-0 flex max-w-[220px] flex-col items-end text-right">
               <span className="font-outfit text-3xl font-bold tracking-wider text-white drop-shadow-md">
                 AFTER
@@ -126,13 +119,19 @@ export default function TransformationSection({
                   key={i}
                   className="flex items-center gap-3 rounded-lg bg-white/5 p-4"
                 >
-                  <CheckCircle2 className="h-6 w-6 text-[#CFA767] shrink-0" />
+                  <CheckCircle2 className="h-6 w-6 shrink-0 text-[#CFA767]" />
                   <span className="text-gray-300">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
+
+        {footerParagraph && (
+          <p className="font-paragraph mt-10 text-center text-lg text-gray-400">
+            {footerParagraph}
+          </p>
+        )}
       </div>
     </section>
   );

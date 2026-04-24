@@ -219,7 +219,7 @@ export default function LivingRoomDecorIdeas() {
             </p>
 
             <p className="font-paragraph  text-base text-neutral-100">
-              ✨ Turn your living room into a masterpiece of comfort, style, and
+              Turn your living room into a masterpiece of comfort, style, and
               sophistication.
             </p>
 
@@ -294,7 +294,7 @@ export default function LivingRoomDecorIdeas() {
         </div>
       </section>
 
-      <section className="bg-background py-20">
+      {/* <section className="bg-background py-20">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
             <h2 className="text-gold-dark font-outfit mb-4 text-4xl  md:text-5xl">
@@ -331,6 +331,34 @@ export default function LivingRoomDecorIdeas() {
                     </p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-16 text-center">
+            <h2 className="text-gold-dark font-outfit mb-4 text-4xl md:text-5xl">
+              Our Living Room Design Solutions
+            </h2>
+            <p className="text-silver mx-auto max-w-3xl text-lg">
+              Discover the perfect style tailored to your space and preferences.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((item, i) => (
+              <div
+                key={i}
+                className="border-gold/25 rounded-xl border bg-[#faf8f5] p-8 transition-all duration-300 hover:shadow-lg"
+              >
+                <h3 className="text-gold-dark font-outfit mb-4 text-xl font-semibold">
+                  {item.title}
+                </h3>
+
+                <p className="mb-4 text-neutral-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -473,7 +501,7 @@ export default function LivingRoomDecorIdeas() {
             </button>
           </div>
           <p className="border-gold/50 bg-gold/5 inline-block rounded-full border px-6 py-2 text-base font-medium text-white">
-            ✨ Limited consultation slots available for premium clients in Dubai
+            Limited consultation slots available for premium clients in Dubai
           </p>
         </div>
       </section>

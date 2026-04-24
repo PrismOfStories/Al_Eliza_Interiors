@@ -1,16 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import {
-  CheckCircle2,
-  ChevronRight,
-  Home,
-  Layout,
-  Maximize,
-  PaintBucket,
-  Sofa,
-  Star,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { icons } from "@/lib/utils/meta";
 import FAQAccordion from "@/components/ui/FAQAccordation";
 import TransformationSection from "@/components/ui/TransformationSection";
@@ -23,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Bedroom Decor Ideas Dubai | Luxury Interiors by Al Eliza Interiors",
     description:
-      "Explore luxury bedroom decor ideas in Dubai for villas and apartments. Al Eliza Interiors creates bespoke, modern, hotel-style bedrooms with premium finishes. Book your consultation today.",
+      "Explore luxury bedroom decor ideas in Dubai for villas and apartments. Al Eliza Interiors creates bespoke, modern, hotel style bedrooms with premium finishes. Book your consultation today.",
     authors: [{ name: authorName || "Al Eliza Interiors" }],
     icons,
     robots: {
@@ -42,7 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: `${siteURL}/bedroom-decor-ideas-dubai`,
     },
     openGraph: {
-      title: "Bedroom Decor Ideas Dubai | Luxury Interiors by Al Eliza Interiors",
+      title:
+        "Bedroom Decor Ideas Dubai | Luxury Interiors by Al Eliza Interiors",
       description:
         "Explore luxury bedroom decor ideas in Dubai for villas and apartments. Al Eliza Interiors creates bespoke, modern, hotel-style bedrooms with premium finishes. Book your consultation today.",
       url: `${siteURL}/bedroom-decor-ideas-dubai`,
@@ -60,7 +51,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Bedroom Decor Ideas Dubai | Luxury Interiors by Al Eliza Interiors",
+      title:
+        "Bedroom Decor Ideas Dubai | Luxury Interiors by Al Eliza Interiors",
       description:
         "Explore luxury bedroom decor ideas in Dubai for villas and apartments. Al Eliza Interiors creates bespoke, modern, hotel-style bedrooms with premium finishes. Book your consultation today.",
       creator: `@${authorName}`,
@@ -70,49 +62,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function BedroomDecorIdeas() {
-  const services = [
-    {
-      title: "Luxury Bedroom Design Dubai",
-      desc: "Experience opulence through custom headboards, premium bedding, marble, wood finishes, and statement lighting perfectly tailored for villas.",
-      img: "/images/home.webp",
-      icon: Star,
-    },
-    {
-      title: "Modern Bedroom Interiors UAE",
-      desc: "Clean lines, smart living. Neutral tones with bold accents, integrated smart lighting systems, and minimalist layouts with maximum impact.",
-      img: "/images/home.webp",
-      icon: Sofa,
-    },
-    {
-      title: "Dubai Apartment Bedroom Ideas",
-      desc: "Designed for space optimization with space-saving furniture, smart storage solutions, and multi-functional layouts.",
-      img: "/images/home.webp",
-      icon: Layout,
-    },
-    {
-      title: "Villa Bedroom Decor Dubai",
-      desc: "Grand spaces with walk-in wardrobe design, layered ambient lighting, and flawless hotel-style bedroom aesthetics.",
-      img: "/images/home.webp",
-      icon: Home,
-    },
-    {
-      title: "Minimalist Bedroom Dubai",
-      desc: "Serene, clutter-free environments using soft palettes, natural textures, and functional yet elegant furniture.",
-      img: "/images/home.webp",
-      icon: Maximize,
-    },
-    {
-      title: "Contemporary Bedroom UAE",
-      desc: "Trend-forward yet timeless. A balanced mix of luxury and comfort utilizing sculptural furniture and artistic decor elements.",
-      img: "/images/home.webp",
-      icon: PaintBucket,
-    },
-  ];
-
   const insightsFAQs = [
     {
       q: "What are the best bedroom decor ideas for Dubai homes?",
-      a: "The best bedroom decor ideas combine luxury finishes, smart technology, and climate-conscious materials. Think ambient lighting, premium fabrics, and layouts that maximize both comfort and space.",
+      a: "The best bedroom decor ideas combine luxury finishes, smart technology, and climate conscious materials. Think ambient lighting, premium fabrics, and layouts that maximize both comfort and space.",
     },
     {
       q: "How can I create a luxury bedroom in Dubai?",
@@ -124,11 +77,11 @@ export default function BedroomDecorIdeas() {
     },
     {
       q: "How to design a small bedroom in a Dubai apartment?",
-      a: "Use space-saving furniture, vertical storage, mirrors, and light color palettes. Smart layouts and multifunctional pieces are key to maximizing space.",
+      a: "Use space saving furniture, vertical storage, mirrors, and light color palettes. Smart layouts and multifunctional pieces are key to maximizing space.",
     },
     {
       q: "What bedroom styles are popular in Dubai villas?",
-      a: "Popular styles include hotel-style luxury bedrooms, contemporary minimalist themes, and modern Arabic-inspired interiors.",
+      a: "Popular styles include hotel style luxury bedrooms, contemporary minimalist themes, and modern Arabic inspired interiors.",
     },
     {
       q: "How can I make my bedroom look like a hotel in Dubai?",
@@ -194,6 +147,64 @@ export default function BedroomDecorIdeas() {
     },
   ];
 
+  const bedroomServices = [
+    {
+      title: "Luxury Bedroom Design Dubai",
+      subTitle: "Experience opulence through",
+      points: [
+        "Custom headboards & premium bedding",
+        "Marble, wood, and textured wall finishes",
+        "Statement lighting & chandeliers",
+        "Perfect for villas and high-end residences",
+      ],
+    },
+    {
+      title: "Modern Bedroom Interiors UAE",
+      subTitle: "Clean lines. Smart living. Elevated simplicity.",
+      points: [
+        "Neutral tones with bold accents",
+        "Integrated smart lighting systems",
+        "Minimalist layouts with maximum impact",
+      ],
+    },
+    {
+      title: "Dubai Apartment Bedroom Ideas",
+      subTitle: "Designed for space optimization",
+      points: [
+        "Space-saving furniture",
+        "Smart storage solutions",
+        "Multi-functional layouts",
+        "Ideal for urban professionals and compact living",
+      ],
+    },
+    {
+      title: "Villa Bedroom Decor Dubai",
+      subTitle: "Grand spaces deserve grand design",
+      points: [
+        "Walk-in wardrobe design",
+        "Layered ambient lighting",
+        "Hotel-style bedroom aesthetics",
+      ],
+    },
+    {
+      title: "Minimalist Bedroom Dubai",
+      subTitle: "Serene, clutter-free environments",
+      points: [
+        "Soft palettes and natural textures",
+        "Functional yet elegant furniture",
+        "Calm, breathable spaces",
+      ],
+    },
+    {
+      title: "Contemporary Bedroom UAE",
+      subTitle: "Trend-forward yet timeless",
+      points: [
+        "Sculptural furniture",
+        "Artistic decor elements",
+        "Balanced mix of luxury and comfort",
+      ],
+    },
+  ];
   return (
     <main className="flex min-h-screen flex-col">
       <section className="relative flex min-h-screen w-full items-center overflow-hidden">
@@ -219,25 +230,25 @@ export default function BedroomDecorIdeas() {
             </h1>
 
             <p className="font-paragraph text-lg text-neutral-300">
-              Elevate your living experience with curated bedroom decor ideas tailored for Dubai homes—where elegance meets functionality. From high-end villas to modern apartments, Al Eliza Interiors designs bedrooms that reflect luxury, comfort, and refined taste.
+              Elevate your living experience with curated bedroom decor ideas
+              tailored for Dubai homes where elegance meets functionality. From
+              high end villas to modern apartments, Al Eliza Interiors designs
+              bedrooms that reflect luxury, comfort, and refined taste.
             </p>
 
             <p className="font-paragraph text-base text-neutral-300">
-              ✨ Create a sanctuary that feels like a 5-star retreat—every single day.
+              Create a sanctuary that feels like a 5 star retreat every single
+              day.
             </p>
 
             <div className="flex flex-col gap-4 md:flex-row">
               <button className="hover:bg-gold-dark bg-gold flex items-center gap-1 rounded-lg px-6 py-3 text-lg font-medium text-white transition">
                 Book Your Private Design Consultation{" "}
-                <ChevronRight className="h-5 w-5" />
               </button>
 
-              <Link
-                href="/services"
-                className="hover:bg-gold-dark bg-gold rounded-lg px-6 py-3 text-lg font-medium text-white transition"
-              >
+              <button className="hover:bg-gold-dark bg-gold rounded-lg px-6 py-3 text-lg font-medium text-white transition">
                 Get a Custom Quote for Your Bedroom Makeover
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -250,7 +261,9 @@ export default function BedroomDecorIdeas() {
               Why Choose Al Eliza Interiors
             </h2>
             <p className="text-lg font-medium text-gray-900">
-              Designing bedrooms in Dubai requires more than aesthetics—it demands cultural awareness, architectural harmony, and luxury expertise.
+              Designing bedrooms in Dubai requires more than aesthetics it
+              demands cultural awareness, architectural harmony, and luxury
+              expertise.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -293,57 +306,54 @@ export default function BedroomDecorIdeas() {
                 </div>
               </div>
             ))}
-          </div>
+          </div>{" "}
+          <p className="mx-auto mt-10 text-center text-lg text-neutral-600">
+            We don’t just design bedrooms we craft personal sanctuaries that
+            reflect your lifestyle.
+          </p>
         </div>
       </section>
 
-      <section className="bg-background py-20">
+      <section className="bg-white py-20">
         <div className="container mx-auto px-4">
+          {/* HEADER */}
           <div className="mb-16 text-center">
             <h2 className="text-gold-dark font-outfit mb-4 text-4xl md:text-5xl">
               Our Bedroom Design Solutions
             </h2>
-            <p className="text-silver mx-auto max-w-2xl text-lg">
-              We don’t just design bedrooms—we craft personal sanctuaries that reflect your lifestyle.
+            <p className="text-silver mx-auto max-w-3xl text-lg">
+              We don’t just design bedrooms we craft personal sanctuaries that
+              reflect your lifestyle.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((item, i) => (
+            {bedroomServices.map((item, i) => (
               <div
                 key={i}
-                className="group relative h-[300px] cursor-pointer overflow-hidden rounded-xl"
+                className="border-gold/25 rounded-xl border bg-[#faf8f5] p-8 transition-all duration-300 hover:shadow-lg"
               >
-                {/* IMAGE */}
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                <h3 className="text-gold-dark font-outfit mb-4 text-xl font-semibold">
+                  {item.title}
+                </h3>
 
-                {/* OVERLAY */}
-                <div className="absolute inset-0 bg-black/50 transition duration-500 group-hover:bg-black/70" />
+                <p className="mb-4 text-neutral-600">{item.subTitle}</p>
 
-                {/* CONTENT */}
-                <div className="absolute bottom-0 left-0 right-0 overflow-hidden p-6">
-                  <div className="transition-all duration-500 md:translate-y-14 md:group-hover:-translate-y-6">
-                    <h3 className="font-paragraph text-xl font-medium text-white">
-                      {item.title}
-                    </h3>
-
-                    <p className="font-paragraph mt-2 translate-y-0 text-base text-neutral-300 opacity-100 transition-all duration-500 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
+                <ul className="ml-4 space-y-3">
+                  {item.points.map((point, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle2 className="text-gold-dark mt-1 h-5 w-5 shrink-0" />
+                      <span className="text-neutral-600">{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-[#faf8f5] py-24">
         <div className="container mx-auto max-w-4xl px-6">
           <FAQAccordion
             items={insightsFAQs}
@@ -353,9 +363,10 @@ export default function BedroomDecorIdeas() {
         </div>
       </section>
 
-      <TransformationSection 
+      <TransformationSection
         title="The Transformation You’ll Experience"
         subtitle="Designed for Dubai living—where style meets sophistication."
+        footerParagraph="Designed for Dubai living where style meets sophistication."
         beforeLabel="Cluttered layouts, Poor lighting, Generic furniture"
         afterLabel="A refined, luxury retreat, reflecting your true identity"
         gainTitle="What You Gain:"
@@ -363,7 +374,7 @@ export default function BedroomDecorIdeas() {
           "A refined, luxury retreat",
           "Intelligent space utilization",
           "Elevated comfort & ambiance",
-          "A bedroom that reflects your identity"
+          "A bedroom that reflects your identity",
         ]}
       />
 
@@ -405,7 +416,7 @@ export default function BedroomDecorIdeas() {
               {
                 step: "5",
                 title: "Final Reveal",
-                desc: "A stunning transformation—ready to experience.",
+                desc: "A stunning transformation ready to experience.",
               },
             ].map((item, i) => (
               <div
@@ -447,7 +458,7 @@ export default function BedroomDecorIdeas() {
                   “{item.text}”
                 </p>
 
-                <p className="font-semibold text-gray-900">— {item.author}</p>
+                <p className="font-semibold text-gray-900">{item.author}</p>
               </div>
             ))}
           </div>
@@ -456,10 +467,7 @@ export default function BedroomDecorIdeas() {
 
       <section className="bg-white py-24">
         <div className="container mx-auto max-w-4xl px-6">
-          <FAQAccordion
-            items={faq}
-            title="Frequently Asked Questions"
-          />
+          <FAQAccordion items={faq} title="Frequently Asked Questions" />
         </div>
       </section>
 
@@ -470,13 +478,21 @@ export default function BedroomDecorIdeas() {
             Ready to Redefine Your Bedroom?
           </h2>
           <p className="mb-4 text-xl font-light text-gray-300 md:text-2xl">
-            Your dream bedroom isn’t just a vision—it’s a <span className="font-semibold text-[#CFA767]">designed experience</span> waiting to happen.
+            Your dream bedroom isn’t just a vision it’s a{" "}
+            <span className="font-semibold text-[#CFA767]">
+              designed experience
+            </span>{" "}
+            waiting to happen.
           </p>
-          <p className="mb-12 text-lg text-gray-400">
-            With Al Eliza Interiors, you get: Bespoke luxury design, Dubai-focused expertise, and seamless execution.
+          <p className="mb-6 text-lg text-gray-400">
+            With Al Eliza Interiors, you get - Bespoke luxury design,{" "}
+            Dubai-focused expertise, and seamless execution.
+          </p>
+          <p className="border-gold/50 bg-gold/5 inline-block rounded-full border px-6 py-2 text-base font-medium text-white">
+            ✨ Limited consultation slots available this month
           </p>
 
-          <div className="mb-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
             <button className="hover:bg-gold-dark bg-gold flex items-center gap-1 rounded-lg px-6 py-3 text-lg font-medium text-white transition">
               Book Your Consultation Now
             </button>
@@ -485,9 +501,6 @@ export default function BedroomDecorIdeas() {
               Get Your Personalized Bedroom Design Plan
             </button>
           </div>
-          <p className="border-gold/50 bg-gold/5 inline-block rounded-full border px-6 py-2 text-base font-medium text-white">
-            ✨ Limited consultation slots available this month
-          </p>
         </div>
       </section>
     </main>
