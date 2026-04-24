@@ -222,7 +222,7 @@ export default function BedroomDecorIdeas() {
         <div className="absolute inset-0 bg-black/60" />
 
         {/* Content */}
-        <div className="md:px-18 w-7xl relative mt-14 mx-auto flex min-h-screen items-center px-6">
+        <div className="md:px-18 w-7xl relative mt-16 mx-auto flex min-h-screen items-center px-6">
           <div className="max-w-4xl space-y-6">
             <h1 className="font-paragraph text-4xl font-medium leading-tight text-white md:text-6xl">
               Transform Your
