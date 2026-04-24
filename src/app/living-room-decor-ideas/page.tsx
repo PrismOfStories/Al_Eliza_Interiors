@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   CheckCircle2,
-  ChevronRight,
   Home,
   Layout,
   Maximize,
@@ -12,8 +11,9 @@ import {
   Star,
 } from "lucide-react";
 import { icons } from "@/lib/utils/meta";
-import FAQAccordion from "@/components/ui/FAQAccordation";
-import TransformationSection from "@/components/ui/TransformationSection";
+import FAQAccordion from "@/components/common/FAQAccordation";
+import TransformationSection from "@/components/common/TransformationSection";
+import ConsultationCTA from "@/components/common/ConsultationCTA";
 
 export async function generateMetadata(): Promise<Metadata> {
   const siteURL = process.env.SITE_URL;
@@ -224,14 +224,14 @@ export default function LivingRoomDecorIdeas() {
             </p>
 
             <div className="flex flex-col gap-4 md:flex-row">
-              <button className="hover:bg-gold-dark bg-gold flex items-center gap-1 rounded-lg px-6 py-3 text-lg font-medium text-white transition">
-                Book Your Private Design Consultation{" "}
-                <ChevronRight className="h-5 w-5" />
-              </button>
+              <ConsultationCTA
+                buttonText="👉 Book Your Private Design Consultation"
+                modalTitle="Book Your Private Design Consultation"
+              />
 
               <Link
                 href="/expertise"
-                className="hover:bg-gold-dark bg-gold rounded-lg px-6 py-3 text-lg font-medium text-white transition"
+                className="hover:bg-gold-dark hover:border-gold-dark rounded-lg border border-white bg-transparent px-6 py-3 text-lg font-medium text-white transition "
               >
                 View Services
               </Link>
@@ -492,13 +492,16 @@ export default function LivingRoomDecorIdeas() {
           </p>
 
           <div className="mb-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
-            <button className="hover:bg-gold-dark bg-gold flex items-center gap-1 rounded-lg px-6 py-3 text-lg font-medium text-white transition">
-              Book Your Consultation Now
-            </button>
+            <ConsultationCTA
+              buttonText="👉  Book Your Consultation Now"
+              modalTitle=" Book Your Consultation Now"
+            />
 
-            <button className="hover:bg-gold-dark flex items-center gap-1 rounded-lg border border-white bg-transparent px-6 py-3 text-lg font-medium text-white transition">
-              Get a Custom Quote
-            </button>
+            <ConsultationCTA
+              className="border border-white bg-transparent"
+              buttonText="Get a Custom Quote"
+              modalTitle="Get a Custom Quote"
+            />
           </div>
           <p className="border-gold/50 bg-gold/5 inline-block rounded-full border px-6 py-2 text-base font-medium text-white">
             Limited consultation slots available for premium clients in Dubai
